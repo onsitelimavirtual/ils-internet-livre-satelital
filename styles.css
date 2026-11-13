@@ -101,3 +101,32 @@ button,a,[data-goto]{touch-action:manipulation}
  .sidebar-bottom{flex:none}
  .view.active{scroll-margin-top:8px}
 }
+
+/* ILS 5.4 — satélites ilustrados e mapa orbital amigável */
+.satellite-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px;margin:16px 0 22px}
+.satellite-card{display:grid;grid-template-columns:82px 1fr;gap:12px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:14px;box-shadow:var(--shadow)}
+.satellite-card-art{height:82px;border-radius:13px;background:radial-gradient(circle at 50% 40%,#dceeff,#eef5ff 65%,#f7f9fd);display:grid;place-items:center;font-size:43px}
+.satellite-card-body h3{font:600 15px 'Space Grotesk';margin:8px 0 3px;line-height:1.25}
+.satellite-card-body p{font-size:11px;color:var(--muted);margin:0 0 10px}
+.satellite-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.satellite-facts span{font-size:10px;color:var(--muted);background:#f4f7fb;padding:8px;border-radius:8px}
+.satellite-facts strong{display:block;color:var(--ink);font-size:12px;margin-top:3px}
+.satellite-card .btn{grid-column:1/-1;width:100%;padding:9px;font-size:11px}
+.satellite-raw{margin-top:12px}
+.satellite-raw summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:12px}
+.orbit-map-legend{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0;color:var(--muted);font-size:11px}
+.orbit-map-legend>span{display:flex;align-items:center;gap:6px}
+.legend-satellite{font-style:normal;font-size:19px}
+.legend-track{display:inline-block;width:25px;border-top:3px dashed #38a4ef}
+.satellite-map-marker-wrap{background:transparent;border:0}
+.satellite-map-marker{width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#dceeff);border:2px solid #2476df;box-shadow:0 3px 13px #143d6870;display:grid;place-items:center;animation:satPulse 2.2s infinite}
+.satellite-map-marker span{font-size:24px;line-height:1}
+@keyframes satPulse{0%,100%{box-shadow:0 3px 13px #143d6870}50%{box-shadow:0 0 0 7px #3a9cf033,0 3px 13px #143d6870}}
+.satellite-popup{font:12px/1.65 'DM Sans',sans-serif;min-width:190px}
+.map-satellite-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px;margin-top:13px}
+.map-satellite-card{display:flex;align-items:center;gap:11px;padding:11px;border:1px solid var(--line);background:var(--panel);border-radius:11px}
+.map-satellite-emoji{font-size:27px}
+.map-satellite-card strong,.map-satellite-card small{display:block}
+.map-satellite-card strong{font-size:12px}
+.map-satellite-card small{font-size:10px;color:var(--muted);margin-top:3px}
+@media(max-width:760px){.satellite-card-grid{grid-template-columns:1fr}.satellite-card{grid-template-columns:68px 1fr;padding:11px}.satellite-card-art{height:68px;font-size:36px}.orbit-map-legend{gap:8px}.map-satellite-cards{grid-template-columns:1fr}}
