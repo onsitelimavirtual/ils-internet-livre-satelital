@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "ILS — Internet Livre Satelital",
-  "short_name": "ILS",
-  "description": "Inteligência de conectividade e inclusão digital",
+  "name": "ILS 6.0 — Internet Livre Satelital",
+  "short_name": "ILS 6.0",
+  "description": "Plataforma de inteligência em conectividade, diagnóstico de áreas remotas e mensuração de inclusão digital.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
