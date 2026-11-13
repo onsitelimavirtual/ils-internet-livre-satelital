@@ -23,6 +23,16 @@ function formatDistance(m){
 }
 
 function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
+function scrollToView(target){
+ // Aguarda o navegador recalcular o layout após alternar a seção visível.
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const header=$(".topbar"),offset=(header?.getBoundingClientRect().height||0)+14;
+  const top=window.scrollY+target.getBoundingClientRect().top-offset;
+  window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
+  // Fallback para navegadores móveis que não atualizam scrollY no primeiro frame.
+  setTimeout(()=>{const rect=target.getBoundingClientRect();if(rect.top>offset+36||rect.bottom<offset){window.scrollTo({top:Math.max(0,window.scrollY+rect.top-offset),behavior:"smooth"});}},420);
+ }));
+}
 function setView(name){
  const target=$("#view-"+name);
  if(!target){toast("Esta seção não está disponível.");return;}
@@ -32,13 +42,14 @@ function setView(name){
  $("#page-title").textContent=labels[name]||name;
  $("#sidebar").classList.remove("open");
  $("#menuBtn").setAttribute("aria-expanded","false");
- requestAnimationFrame(()=>{target.scrollIntoView({behavior:"smooth",block:"start"});window.scrollBy({top:-12,behavior:"smooth"});});
+ scrollToView(target);
+ if(name==="satellites"&&!state.satellites.length){$("#sat-count").textContent="Carregando dados orbitais…";loadSatellites();}
  if(name==="data")refreshDataSummary();
  if(name==="business")renderIlsLicenses();
  if(name==="opportunities")renderOpportunityCatalog();
- if(name==="locator")setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},180);
+ if(name==="locator")setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},250);
  if(name==="intelligence")renderCases();
- if(name==="map")setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},180);
+ if(name==="map")setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},250);
 }
 document.addEventListener("click",event=>{
  const nav=event.target.closest(".nav-item[data-view]");
@@ -95,7 +106,7 @@ function renderSatellites(){
 function renderFeatured(){$("#featured-list").innerHTML=state.satellites.slice(0,5).map(s=>`<div class="simple-row"><span>${esc(s.name)}</span><small>NORAD ${esc(s.l1.slice(2,7).trim())}</small></div>`).join("")||'<div class="empty">Nenhum dado disponível.</div>'}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 document.addEventListener("click",event=>{const b=event.target.closest("[data-map-sat]");if(!b)return;const index=Number(b.dataset.mapSat);setView("map");setTimeout(()=>{if($("#mapSatSelect")){$("#mapSatSelect").value=String(index);updateOrbitMap();}},250);});
-$("#loadSatBtn").addEventListener("click",loadSatellites);$("#refreshBtn").addEventListener("click",()=>{if($("#view-satellites").classList.contains("active"))loadSatellites();else toast("Abra o catálogo orbital para atualizar os dados.")});$("#satSearch").addEventListener("input",renderSatellites);$("#satGroup").addEventListener("change",loadSatellites);
+$("#loadSatBtn").addEventListener("click",loadSatellites);$("#refreshBtn").addEventListener("click",()=>{if(!navigator.onLine){toast("Sem conexão. Os dados orbitais não podem ser atualizados agora.");return;}$("#last-updated").textContent="Atualizando dados orbitais…";loadSatellites();});$("#satSearch").addEventListener("input",renderSatellites);$("#satGroup").addEventListener("change",loadSatellites);
 $("#useExample").addEventListener("click",()=>{$("#lat").value="-15.7939";$("#lon").value="-47.8828";$("#alt").value="1172";toast("Coordenadas de exemplo preenchidas.");});
 async function calculateVisibility(){
  const lat=parseLocaleNumber($("#lat").value),lon=parseLocaleNumber($("#lon").value),alt=parseLocaleNumber($("#alt").value),min=parseLocaleNumber($("#minElev").value);
