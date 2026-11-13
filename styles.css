@@ -149,3 +149,18 @@ button[data-goto]:focus-visible,.nav-item:focus-visible{outline:3px solid #65aef
  .top-actions .pill{display:none}
  .view{scroll-margin-top:10px}
 }
+
+/* ILS 5.6 — menu móvel e rolagem confiável */
+html{scroll-behavior:smooth;scroll-padding-top:12px}
+body{overflow-x:hidden}
+.sidebar{transition:transform .22s ease,visibility .22s ease}
+.mobile-menu{position:relative;z-index:1002;min-width:48px;min-height:48px;display:grid;place-items:center;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+.nav-item{min-height:46px;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+.view{scroll-margin-top:12px}
+@media(max-width:760px){
+ .sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,330px);height:100dvh;max-height:100dvh;transform:translateX(-110%);visibility:hidden;z-index:1001;overflow-y:auto;pointer-events:none}
+ .sidebar.open{transform:translateX(0);visibility:visible;pointer-events:auto}
+ .main{margin-left:0;width:auto;max-width:none;padding:0 18px 26px}
+ .topbar{position:relative;z-index:10;min-height:90px;height:auto;gap:9px}
+ .view.active{display:block;visibility:visible}
+}
