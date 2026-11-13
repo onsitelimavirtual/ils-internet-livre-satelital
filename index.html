@@ -110,6 +110,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
 
+
+/* ILS 6.0 — layout additions for Remote and Impact */
+.grid-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
+.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.stats-grid .stat{background:#f4f7fb;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.stats-grid .stat span{display:block;color:var(--muted);font-size:11px;line-height:1.4}
+.stats-grid .stat strong{display:block;font:600 22px 'Space Grotesk';margin-top:8px;overflow-wrap:anywhere}
+#view-remote .panel,#view-impact .panel{min-width:0}
+#view-remote .form-grid,#view-impact .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#view-remote .form-grid label,#view-impact .form-grid label{display:grid;gap:6px;color:#52657d;font-size:12px;font-weight:600}
+#view-remote .form-grid input,#view-remote .form-grid select,#view-remote .form-grid textarea,#view-impact .form-grid input,#view-impact .form-grid select,#view-impact .form-grid textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff;color:var(--ink);font:400 13px 'DM Sans'}
+#view-remote .form-grid .full,#view-impact .form-grid .full{grid-column:1/-1}
+#view-remote .saved-item,#view-impact .saved-item{padding:13px 0;border-bottom:1px solid var(--line);line-height:1.6}
+#view-remote .saved-item:last-child,#view-impact .saved-item:last-child{border-bottom:0}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){#view-remote .form-grid,#view-impact .form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
 </style>
 <style>
 /* ILS 1.2 hardening: ensure layout remains styled in local Android file previews */
