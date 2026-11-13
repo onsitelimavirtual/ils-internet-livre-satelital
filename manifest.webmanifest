@@ -1,11 +1,11 @@
 {
-  "name": "ILS 5.1 — Inteligência de Conectividade",
-  "short_name": "ILS 5.1",
+  "name": "ILS 5.2 — Inteligência de Conectividade",
+  "short_name": "ILS 5.2",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f3f6fb",
   "theme_color": "#071525",
-  "description": "ILS 5.1 — Plataforma PWA de inteligência territorial, conectividade e licenciamento de uso.",
+  "description": "ILS 5.2 — Plataforma PWA de inteligência territorial, conectividade e licenciamento de uso.",
   "icons": [
     {
       "src": "./icon-192.png",
