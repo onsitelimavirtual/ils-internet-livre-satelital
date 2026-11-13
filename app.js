@@ -23,10 +23,31 @@ function formatDistance(m){
 }
 
 function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
-function setView(name){$$(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name));$$(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===name));const labels={overview:"Visão geral",satellites:"Catálogo orbital",visibility:"Visibilidade",map:"Mapa orbital",signals:"Frequências e sinais",sdr:"Integração SDR",access:"Acesso gratuito",opportunities:"Oportunidades reais",locator:"Localizador Wi-Fi",intelligence:"Inteligência de conectividade",diagnostics:"Diagnóstico",about:"Sobre e fontes",legal:"Termos e privacidade",feasibility:"Viabilidade",roadmap:"Plano de implantação",report:"Relatórios",data:"Dados e backup",business:"Negócios e licenças"};$("#page-title").textContent=labels[name]||name;$("#sidebar").classList.remove("open");if(name==="data"){refreshDataSummary();}if(name==="business"){renderIlsLicenses();}if(name==="opportunities"){renderOpportunityCatalog();}if(name==="locator"){setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},120);}if(name==="intelligence"){renderCases();}if(name==="map"){setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},100);}}
-$$(".nav-item").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
-$$("[data-goto]").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.goto)));
-$("#menuBtn").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+function setView(name){
+ const target=$("#view-"+name);
+ if(!target){toast("Esta seção não está disponível.");return;}
+ $$(".view").forEach(v=>v.classList.toggle("active",v===target));
+ $$(".nav-item").forEach(b=>{const active=b.dataset.view===name;b.classList.toggle("active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+ const labels={overview:"Visão geral",satellites:"Catálogo orbital",visibility:"Visibilidade",map:"Mapa orbital",signals:"Frequências e sinais",sdr:"Integração SDR",access:"Acesso gratuito",opportunities:"Oportunidades reais",locator:"Localizador Wi-Fi",intelligence:"Inteligência de conectividade",diagnostics:"Diagnóstico",about:"Sobre e fontes",legal:"Termos e privacidade",feasibility:"Viabilidade",roadmap:"Plano de implantação",report:"Relatórios",data:"Dados e backup",business:"Negócios e licenças"};
+ $("#page-title").textContent=labels[name]||name;
+ $("#sidebar").classList.remove("open");
+ $("#menuBtn").setAttribute("aria-expanded","false");
+ requestAnimationFrame(()=>{target.scrollIntoView({behavior:"smooth",block:"start"});window.scrollBy({top:-12,behavior:"smooth"});});
+ if(name==="data")refreshDataSummary();
+ if(name==="business")renderIlsLicenses();
+ if(name==="opportunities")renderOpportunityCatalog();
+ if(name==="locator")setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},180);
+ if(name==="intelligence")renderCases();
+ if(name==="map")setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},180);
+}
+document.addEventListener("click",event=>{
+ const nav=event.target.closest(".nav-item[data-view]");
+ if(nav){event.preventDefault();setView(nav.dataset.view);return;}
+ const goto=event.target.closest("[data-goto]");
+ if(goto){event.preventDefault();setView(goto.dataset.goto);}
+});
+$("#menuBtn").addEventListener("click",()=>{const open=!$("#sidebar").classList.contains("open");$("#sidebar").classList.toggle("open",open);$("#menuBtn").setAttribute("aria-expanded",String(open));});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"){$("#sidebar").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded","false");}});
 function updateNetwork(){const on=navigator.onLine;$("#network-label").textContent=on?"Conectado à rede":"Modo offline";$("#network-label").previousElementSibling.style.background=on?"#35c58b":"#d49a38"}
 window.addEventListener("online",updateNetwork);window.addEventListener("offline",updateNetwork);updateNetwork();
 
