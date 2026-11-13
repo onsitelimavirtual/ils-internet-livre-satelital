@@ -1,0 +1,16 @@
+# ILS 5.6.1 — correção de navegação (base estável 5.1)
+
+Correções: menu mobile, botões de navegação, mudança imediata de telas, fechamento do menu, cartões ilustrados de satélites, marcadores 🛰️ e trajetórias indicativas, coordenadas com vírgula/ponto, cache PWA atualizado.
+
+## GitHub Pages
+Envie os arquivos da raiz deste pacote para a raiz da branch publicada do repositório `onsitelimavirtual/ils-internet-livre-satelital` (no projeto atual: `portfoliolimavirtual`). Não envie o ZIP sem extrair. Confirme Settings > Pages > Branch.
+
+Abra `https://onsitelimavirtual.github.io/ils-internet-livre-satelital/?v=561` após a publicação. No Android, se ainda aparecer versão antiga, remova os dados do site/cache ou abra uma guia anônima. Não apague os dados locais sem fazer backup, pois o ILS guarda alguns registros em localStorage.
+
+## Limites
+Os satélites só são carregados quando a fonte pública CelesTrak responde. As posições são estimativas de TLE e não indicam Internet gratuita. Os pontos Wi-Fi dependem da API pública Overpass/OSM, não representam varredura de redes e precisam de confirmação local. Leitura RSSI exige Android Bridge instalado; receptor SDR exige hardware e ponte local.
+
+## Testes
+O pacote foi verificado quanto à sintaxe JS e à navegação por cliques em navegador automatizado local, sem testes em aparelho Android real nem disponibilidade das APIs externas.
+
+Copyright © 2026 Nailson Lima — Todos os direitos reservados. Contato: onsite.limavirtual@gmail.com.
