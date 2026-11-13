@@ -527,8 +527,12 @@ const groups={
 };
 
 function parseLocaleNumber(value){
- const normalized=String(value??"").trim().replace(/\s/g,"").replace(",",".");
+ let normalized=String(value??"").trim().replace(/[−–]/g,"-").replace(/[º°]/g,"").replace(/\s/g,"");
  if(!normalized)return NaN;
+ // Coordenadas não usam separador de milhar. Aceita decimal brasileiro (vírgula) e internacional (ponto).
+ if(normalized.includes(",")&&normalized.includes("."))normalized=normalized.replace(/\./g,"").replace(",",".");
+ else normalized=normalized.replace(",",".");
+ if(!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(normalized))return NaN;
  return Number(normalized);
 }
 function haversineMeters(lat1,lon1,lat2,lon2){
@@ -796,7 +800,7 @@ function initLocatorMap(){
  state.locMarkers=L.layerGroup().addTo(state.locMap);
  setTimeout(()=>state.locMap.invalidateSize(),150);return true;
 }
-function validLocatorCoords(lat,lon){return Number.isFinite(lat)&&lat>=-90&&lat<=90&&Number.isFinite(lon)&&lon>=-180&&lon<=180;}
+function validLocatorCoords(lat,lon){lat=parseLocaleNumber(lat);lon=parseLocaleNumber(lon);return Number.isFinite(lat)&&lat>=-90&&lat<=90&&Number.isFinite(lon)&&lon>=-180&&lon<=180;}
 function setLocatorCoords(lat,lon,origin){document.getElementById("locLat").value=Number(lat).toFixed(6);document.getElementById("locLon").value=Number(lon).toFixed(6);document.getElementById("locOrigin").value=origin||"manual";}
 function useDeviceLocation(){const status=document.getElementById("locStatus");if(!navigator.geolocation){status.textContent="Este navegador não disponibiliza geolocalização.";return;}status.textContent="Solicitando permissão de localização ao dispositivo…";navigator.geolocation.getCurrentPosition(pos=>{setLocatorCoords(pos.coords.latitude,pos.coords.longitude,"device");status.textContent=`Localização recebida (precisão informada pelo dispositivo: ${Math.round(pos.coords.accuracy)} m). Toque em Pesquisar pontos próximos para consultar o mapa.`;if(initLocatorMap()){state.locMap.setView([pos.coords.latitude,pos.coords.longitude],14);}},err=>{const msg={1:"Permissão de localização negada. Você pode informar coordenadas manualmente.",2:"Não foi possível determinar a localização. Tente novamente ou informe coordenadas.",3:"A solicitação de localização expirou. Tente novamente."};status.textContent=msg[err.code]||"Falha ao obter localização.";},{enableHighAccuracy:false,timeout:12000,maximumAge:60000});}
 function renderLocatorResults(elements,lat,lon){
@@ -943,8 +947,9 @@ async function queryOverpassResilient(query, statusEl){
  throw new Error(lastError);
 }
 function buildPublicWifiQuery(lat,lon,radius){
- // Inclui qualquer valor registrado em internet_access e evita presumir que seja gratuito.
- return `[out:json][timeout:10];(node(around:${radius},${lat},${lon})["internet_access"];way(around:${radius},${lat},${lon})["internet_access"];relation(around:${radius},${lat},${lon})["internet_access"];);out center tags;`;
+ // Busca somente registros mapeados com etiquetas explícitas de conectividade.
+ // Não é varredura de RF e não confirma disponibilidade no local.
+ return `[out:json][timeout:18];(node(around:${radius},${lat},${lon})["internet_access"];way(around:${radius},${lat},${lon})["internet_access"];relation(around:${radius},${lat},${lon})["internet_access"];node(around:${radius},${lat},${lon})["wifi"];way(around:${radius},${lat},${lon})["wifi"];relation(around:${radius},${lat},${lon})["wifi"];);out center tags;`;
 }
 async function searchLawfulPublicWifi(){
  const status=document.getElementById('publicWifiStatus'),results=document.getElementById('publicWifiResults'),btn=document.getElementById('searchPublicWifi');
@@ -967,15 +972,15 @@ async function searchLawfulPublicWifi(){
    return {...el,_lat:la,_lon:lo,_distance:haversineMeters(lat,lon,la,lo)};
   }).filter(Boolean).sort((a,b)=>a._distance-b._distance);
   if(!entries.length){
-   status.textContent='Consulta concluída: nenhum registro com a etiqueta internet_access foi encontrado neste raio. Isso não comprova ausência de Wi-Fi público.';
-   results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Experimente ampliar o raio ou consultar bibliotecas, órgãos públicos, universidades e estabelecimentos locais.</div>';
+   status.textContent='Consulta concluída: nenhum registro com as etiquetas internet_access ou wifi foi encontrado neste raio. Isso não comprova ausência de Wi-Fi público.';
+   results.innerHTML='<div class="empty">Nenhum ponto com etiqueta de conectividade foi encontrado nesta consulta. Experimente ampliar o raio ou consultar bibliotecas, órgãos públicos, universidades e estabelecimentos locais.</div>';
    return;
   }
-  status.textContent=`${entries.length} registro(s) encontrado(s), ordenados por proximidade. Fonte: OpenStreetMap/Overpass. Disponibilidade não verificada.`;
+  const osmBase=data.osm3s?.timestamp_osm_base||data.timestamp_osm_base||null;\n  const baseLabel=osmBase?new Date(osmBase).toLocaleString('pt-BR'):'data-base não informada pela resposta';\n  status.textContent=`${entries.length} registro(s) mapeado(s), ordenados por distância em linha reta. OpenStreetMap/Overpass; base: ${baseLabel}. Funcionamento e gratuidade não verificados.`;
   results.innerHTML=entries.map(el=>{
    const t=el.tags||{},name=t.name||t.operator||'Ponto de acesso sem nome informado';
    const kind=t.amenity||t.shop||t.tourism||t.leisure||t.office||'Local cadastrado';
-   const access=t.internet_access||'não informado',fee=t.internet_access_fee||'não informado';
+   const access=t.internet_access||t.wifi||'não informado',fee=t['internet_access:fee']||t.internet_access_fee||'não informado';
    const addr=[t['addr:street'],t['addr:housenumber'],t['addr:suburb'],t['addr:city']].filter(Boolean).join(', ');
    const map=`https://www.openstreetmap.org/?mlat=${el._lat}&mlon=${el._lon}#map=18/${el._lat}/${el._lon}`;
    const directions=`https://www.google.com/maps/dir/?api=1&destination=${el._lat},${el._lon}`;
@@ -987,6 +992,7 @@ async function searchLawfulPublicWifi(){
   results.innerHTML='<div class="empty">Os servidores de dados geográficos não responderam dentro do limite. Nenhum resultado foi inventado. Tente novamente mais tarde.</div>';
  }finally{if(btn){btn.disabled=false;btn.textContent=oldLabel}}
 }
+["publicWifiLat","publicWifiLon"].forEach(id=>document.getElementById(id)?.addEventListener("blur",e=>{const n=parseLocaleNumber(e.target.value);if(Number.isFinite(n))e.target.value=String(n)}));
 document.getElementById("searchPublicWifi")?.addEventListener("click",searchLawfulPublicWifi);
 document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
  const status=document.getElementById("publicWifiStatus");
