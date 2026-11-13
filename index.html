@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 5.6.1">
+<meta name="application-name" content="ILS 6.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 5.6.1 — Internet Livre Satelital</title>
+<title>ILS 6.0 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -93,7 +93,7 @@ footer a:hover{text-decoration:underline}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 5.6.1 accessibility and analyzer refinements */
+/* ILS 6.0 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
@@ -105,7 +105,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #lawful-connectivity .locator-result{border:1px solid var(--line,#d9e1eb);border-radius:14px;padding:1rem;background:var(--surface,#fff)}
 
 
-/* ILS 5.6.1 business workspace */
+/* ILS 6.0 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -132,7 +132,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 5.6.1: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 6.0: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -166,7 +166,7 @@ html{scroll-behavior:auto}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 5.6.1 — Internet Livre Satelital"></div>
+    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 6.0 — Internet Livre Satelital"></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -185,16 +185,18 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="diagnostics"><span>⌁</span> Diagnóstico</button>
       <button class="nav-item" data-view="about"><span>ⓘ</span> Sobre e fontes</button>
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
+      <button class="nav-item" data-view="remote"><span>⌁</span> ILS Remote</button>
+      <button class="nav-item" data-view="impact"><span>▥</span> ILS Impact</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 5.6.1 · offline-first</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.0 · offline-first</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 5.6.1</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.0</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 5.6.1 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 6.0 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -430,7 +432,7 @@ html{scroll-behavior:auto}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 5.6.1 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 6.0 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -470,8 +472,80 @@ html{scroll-behavior:auto}
   <p class="micro">A data de validade é uma informação cadastral. A ativação comercial real exige backend, autenticação, registro de pagamento, trilha de auditoria e mecanismo de validação no servidor.</p>
 </section>
 
+<section class="view" id="view-remote">
+  <div class="section-head"><div><span class="eyebrow">DIAGNÓSTICO TERRITORIAL · V6.0</span><h2>ILS Remote — conectividade em áreas remotas</h2><p class="muted">Registre condições observadas e compare alternativas. O resultado é uma triagem técnica preliminar, não um projeto executivo nem garantia de cobertura.</p></div></div>
+  <div class="grid-2">
+    <div class="panel">
+      <h3>Caracterização da localidade</h3>
+      <form id="remoteForm" class="form-grid">
+        <label>Localidade / comunidade<input id="remoteName" required maxlength="100" placeholder="Ex.: comunidade rural piloto"></label>
+        <label>Município / UF<input id="remotePlace" required maxlength="100" placeholder="Ex.: Planaltina, DF"></label>
+        <label>Latitude<input id="remoteLat" type="number" step="any" min="-90" max="90" placeholder="-15.6"></label>
+        <label>Longitude<input id="remoteLon" type="number" step="any" min="-180" max="180" placeholder="-47.7"></label>
+        <label>Condição atual<select id="remoteCurrent"><option value="none">Sem conexão conhecida</option><option value="weak">Sinal fraco ou instável</option><option value="mobile">Rede móvel disponível</option><option value="fixed">Banda larga fixa disponível</option><option value="sat">Conexão satelital disponível</option></select></label>
+        <label>Energia elétrica<select id="remotePower"><option value="stable">Estável</option><option value="unstable">Instável</option><option value="none">Indisponível</option></select></label>
+        <label>Distância aproximada da infraestrutura (km)<input id="remoteDistance" type="number" min="0" step="0.1" value="10"></label>
+        <label>Usuários potenciais<input id="remoteUsers" type="number" min="1" max="100000" value="50"></label>
+        <label>Obstáculos / relevo<select id="remoteTerrain"><option value="open">Área aberta / pouca obstrução</option><option value="mixed">Relevo ou vegetação moderados</option><option value="hard">Relevo difícil / vegetação densa</option></select></label>
+        <label>Orçamento mensal estimado (R$)<input id="remoteBudget" type="number" min="0" step="0.01" value="1000"></label>
+        <label class="full">Observações de campo<textarea id="remoteNotes" rows="3" maxlength="1000" placeholder="Fonte da informação, data da observação, medições e limitações…"></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">Gerar diagnóstico preliminar</button></div>
+      </form>
+    </div>
+    <div class="panel">
+      <h3>Resultado e alternativas</h3>
+      <div id="remoteResult" class="empty">Preencha os dados da localidade e gere um diagnóstico.</div>
+      <div class="micro">As alternativas (fibra, rádio, rede móvel, satélite e ponto comunitário) precisam de validação de linha de visada, capacidade, licenciamento, disponibilidade comercial, energia, custo e visita técnica. Não há recomendação automática de equipamento ou operadora.</div>
+    </div>
+  </div>
+  <div class="section-head"><div><h3>Diagnósticos salvos neste dispositivo</h3><p class="muted">Armazenamento local do navegador; não sincroniza com outros usuários.</p></div><button class="btn btn-ghost" id="remoteExport">Exportar JSON</button></div>
+  <div id="remoteHistory" class="panel"><div class="empty">Nenhum diagnóstico registrado.</div></div>
+  <div class="panel prose">
+    <h3>Fontes de referência</h3>
+    <p><a href="https://informacoes.anatel.gov.br/paineis/infraestrutura/cobertura-movel" target="_blank" rel="noopener">Anatel — cobertura móvel</a> · <a href="https://sistemas.anatel.gov.br/se/public/cmap.php" target="_blank" rel="noopener">Anatel — estimativa de nível de sinal</a> · <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html" target="_blank" rel="noopener">IBGE — Censo e malhas territoriais</a>.</p>
+    <p class="micro">Mapas de cobertura e intensidade de sinal são estimativas teóricas e podem divergir da experiência real. Sempre registrar fonte, data, escala e método de validação.</p>
+  </div>
+</section>
+
+<section class="view" id="view-impact">
+  <div class="section-head"><div><span class="eyebrow">RESULTADOS E INCLUSÃO DIGITAL · V6.0</span><h2>ILS Impact — mensuração de melhorias</h2><p class="muted">Compare indicadores antes e depois de uma intervenção. Não confunda ponto cadastrado, ponto verificado e pessoa efetivamente beneficiada.</p></div></div>
+  <div class="grid-2">
+    <div class="panel">
+      <h3>Registrar avaliação de impacto</h3>
+      <form id="impactForm" class="form-grid">
+        <label>Localidade<input id="impactName" required maxlength="100" placeholder="Nome da comunidade"></label>
+        <label>Intervenção<input id="impactAction" required maxlength="140" placeholder="Ex.: instalação de enlace autorizado"></label>
+        <label>Data da medição inicial<input id="impactBeforeDate" type="date" required></label>
+        <label>Data da medição posterior<input id="impactAfterDate" type="date" required></label>
+        <label>Download antes (Mbps)<input id="impactDownBefore" type="number" min="0" step="0.01" required></label>
+        <label>Download depois (Mbps)<input id="impactDownAfter" type="number" min="0" step="0.01" required></label>
+        <label>Upload antes (Mbps)<input id="impactUpBefore" type="number" min="0" step="0.01" required></label>
+        <label>Upload depois (Mbps)<input id="impactUpAfter" type="number" min="0" step="0.01" required></label>
+        <label>Latência antes (ms)<input id="impactPingBefore" type="number" min="0" step="1" required></label>
+        <label>Latência depois (ms)<input id="impactPingAfter" type="number" min="0" step="1" required></label>
+        <label>Usuários efetivamente beneficiados<input id="impactPeople" type="number" min="0" step="1" value="0" required></label>
+        <label>Verificação<select id="impactVerified"><option value="no">Ainda não verificado em campo</option><option value="yes">Verificado em campo, com evidências</option></select></label>
+        <label class="full">Método e evidências<textarea id="impactEvidence" rows="3" maxlength="1200" placeholder="Ferramenta, equipamento, horários, número de testes, comprovantes e responsável…"></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">Calcular e registrar impacto</button></div>
+      </form>
+    </div>
+    <div class="panel">
+      <h3>Indicadores consolidados</h3>
+      <div class="stats-grid">
+        <div class="stat"><span>Registros</span><strong id="impactCount">0</strong></div>
+        <div class="stat"><span>Verificados em campo</span><strong id="impactVerifiedCount">0</strong></div>
+        <div class="stat"><span>Pessoas informadas como beneficiadas</span><strong id="impactPeopleTotal">0</strong></div>
+      </div>
+      <div id="impactSummary" class="empty">Ainda não há avaliações registradas.</div>
+    </div>
+  </div>
+  <div class="section-head"><div><h3>Histórico de impacto</h3><p class="muted">Registros locais, exportáveis para auditoria e relatórios.</p></div><button class="btn btn-ghost" id="impactExport">Exportar CSV</button></div>
+  <div id="impactHistory" class="panel"><div class="empty">Nenhuma avaliação registrada.</div></div>
+  <div class="panel prose"><h3>Critério de evidência</h3><p>Resultados só devem ser divulgados como impacto comprovado quando houver medições comparáveis, método documentado, datas, fonte, evidências e verificação adequada. Valores declarados sem comprovação permanecem identificados como informados.</p></div>
+</section>
+
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 5.6.1</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.0</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -500,7 +574,7 @@ html{scroll-behavior:auto}
 </section>
 
 <footer>
-  <span>© 2026 Nailson Lima · ILS 5.6.1 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 6.0 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -546,7 +620,60 @@ html{scroll-behavior:auto}
 </main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js">
+/* ILS 6.0 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
+(()=>{
+ const $=id=>document.getElementById(id);
+ const read=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
+ const write=(key,rows)=>{try{localStorage.setItem(key,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar: armazenamento local indisponível.");return false}};
+ const safe=v=>typeof esc==="function"?esc(String(v??"")):String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const REMOTE="ils60-remote-records", IMPACT="ils60-impact-records";
+ function renderRemote(){
+  const rows=read(REMOTE),box=$("remoteHistory"); if(!box)return;
+  box.innerHTML=rows.length?rows.slice().reverse().map(r=>'<article class="saved-item"><strong>'+safe(r.name)+'</strong> · '+safe(r.place)+'<br><small>'+safe(r.createdAt)+' · '+safe(r.level)+'</small><p>'+safe(r.recommendations.join(" | "))+'</p></article>').join(""):'<div class="empty">Nenhum diagnóstico registrado.</div>';
+ }
+ $("remoteForm")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const r={id:"rem-"+Date.now(),name:$("remoteName").value.trim(),place:$("remotePlace").value.trim(),lat:$("remoteLat").value,lon:$("remoteLon").value,current:$("remoteCurrent").value,power:$("remotePower").value,distance:Number($("remoteDistance").value),users:Number($("remoteUsers").value),terrain:$("remoteTerrain").value,budget:Number($("remoteBudget").value),notes:$("remoteNotes").value.trim(),createdAt:new Date().toISOString()};
+  const rec=[];
+  if(r.current==="none"||r.current==="weak")rec.push("Diagnosticar alternativa de transporte: rádio, fibra ou satélite conforme viabilidade local.");
+  if(r.distance>15)rec.push("Estudar backhaul de maior alcance; validar rota, linha de visada, capacidade e custo.");
+  else rec.push("Avaliar extensão de rede existente e enlace local, conforme disponibilidade.");
+  if(r.terrain==="hard")rec.push("Executar estudo de perfil do terreno e obstáculos antes de dimensionar enlaces.");
+  if(r.power!=="stable")rec.push("Dimensionar solução de energia e autonomia, incluindo proteção e manutenção.");
+  if(r.users>100)rec.push("Dimensionar capacidade e compartilhamento para demanda simultânea; não usar apenas a quantidade total de moradores.");
+  if(r.current==="sat")rec.push("Comparar custo total, franquia, latência, disponibilidade e condições de instalação do serviço satelital.");
+  if(r.current==="mobile")rec.push("Realizar medições em diferentes horários e pontos; mapa teórico não substitui teste de campo.");
+  if(r.current==="fixed")rec.push("Verificar capacidade, estabilidade, custo e possibilidade de extensão da rede fixa.");
+  r.recommendations=rec;r.level=(r.current==="none"||r.current==="weak")?"Prioridade de diagnóstico": "Avaliação de qualidade e capacidade";
+  $("remoteResult").innerHTML='<h4>'+safe(r.level)+'</h4><ul>'+rec.map(x=>'<li>'+safe(x)+'</li>').join("")+'</ul><p><strong>Próxima etapa:</strong> visita técnica, medições georreferenciadas, confirmação de fornecedores e estimativa de custo.</p><p class="micro">Resultado preliminar baseado nos dados informados; não é previsão de cobertura nem projeto executivo.</p>';
+  const rows=read(REMOTE);rows.push(r);if(write(REMOTE,rows)){renderRemote();toast("Diagnóstico salvo neste dispositivo.");}
+ });
+ $("remoteExport")?.addEventListener("click",()=>downloadFile("ils60-diagnosticos-remotos.json",JSON.stringify({exportedAt:new Date().toISOString(),records:read(REMOTE)},null,2),"application/json"));
+ function renderImpact(){
+  const rows=read(IMPACT),verified=rows.filter(r=>r.verified==="yes"),people=verified.reduce((a,r)=>a+r.people,0);
+  if($("impactCount"))$("impactCount").textContent=rows.length;
+  if($("impactVerifiedCount"))$("impactVerifiedCount").textContent=verified.length;
+  if($("impactPeopleTotal"))$("impactPeopleTotal").textContent=people;
+  if($("impactSummary"))$("impactSummary").textContent=rows.length?("Medições registradas: "+rows.length+". Pessoas contabilizadas apenas nos registros verificados: "+people+"."): "Ainda não há avaliações registradas.";
+  if($("impactHistory"))$("impactHistory").innerHTML=rows.length?rows.slice().reverse().map(r=>'<article class="saved-item"><strong>'+safe(r.name)+'</strong> · '+safe(r.action)+'<br><small>'+safe(r.beforeDate)+' → '+safe(r.afterDate)+' · '+(r.verified==="yes"?"Verificado em campo":"Não verificado")+'</small><p>Download: '+r.downBefore+' → '+r.downAfter+' Mbps; upload: '+r.upBefore+' → '+r.upAfter+' Mbps; latência: '+r.pingBefore+' → '+r.pingAfter+' ms.</p><p>'+safe(r.evidence)+'</p></article>').join(""):'<div class="empty">Nenhuma avaliação registrada.</div>';
+ }
+ $("impactForm")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const n=id=>Number($(id).value);
+  const r={id:"imp-"+Date.now(),name:$("impactName").value.trim(),action:$("impactAction").value.trim(),beforeDate:$("impactBeforeDate").value,afterDate:$("impactAfterDate").value,downBefore:n("impactDownBefore"),downAfter:n("impactDownAfter"),upBefore:n("impactUpBefore"),upAfter:n("impactUpAfter"),pingBefore:n("impactPingBefore"),pingAfter:n("impactPingAfter"),people:n("impactPeople"),verified:$("impactVerified").value,evidence:$("impactEvidence").value.trim(),createdAt:new Date().toISOString()};
+  if(r.afterDate<r.beforeDate){toast("A data posterior não pode ser anterior à medição inicial.");return;}
+  if(r.verified==="yes"&&!r.evidence){toast("Descreva o método e as evidências da verificação em campo.");return;}
+  const rows=read(IMPACT);rows.push(r);if(write(IMPACT,rows)){e.target.reset();renderImpact();toast("Avaliação registrada. Confira a classificação da evidência.");}
+ });
+ $("impactExport")?.addEventListener("click",()=>{
+  const rows=read(IMPACT),cols=["name","action","beforeDate","afterDate","downBefore","downAfter","upBefore","upAfter","pingBefore","pingAfter","people","verified","evidence"];
+  const csv=[cols.join(";"),...rows.map(r=>cols.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(";"))].join("\n");
+  downloadFile("ils60-impacto.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
+ });
+ renderRemote();renderImpact();
+})();
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -799,7 +926,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 5.6.1</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.0</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo TLE CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -888,7 +1015,7 @@ loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol
 
 
 
-// ILS 5.6.1 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
+// ILS 6.0 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
 state.locMap=null;state.locMarkers=null;state.locUserMarker=null;
 function initLocatorMap(){
  if(state.locMap)return true;
@@ -938,7 +1065,7 @@ document.getElementById("locSearch")?.addEventListener("click",searchNearbyWifi)
 document.getElementById("locBrasilia")?.addEventListener("click",()=>{setLocatorCoords(-15.7939,-47.8828,"example");if(initLocatorMap())state.locMap.setView([-15.7939,-47.8828],12);document.getElementById("locStatus").textContent="Coordenadas de exemplo de Brasília preenchidas; não representam sua localização atual.";});
 
 
-// ILS 5.6.1 — registros locais de necessidades de conectividade.
+// ILS 6.0 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1011,7 +1138,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 5.6.1 — lawful public Wi-Fi discovery.
+/* ILS 6.0 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1103,7 +1230,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 5.6.1 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 6.0 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1115,7 +1242,7 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 5.6.1",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.0",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
 </script>
