@@ -78,9 +78,23 @@ $("#testNetworkQuality")?.addEventListener("click",testBasicLatency);
 function tick(){const d=new Date();$("#clock").textContent=d.toLocaleTimeString("pt-BR");}tick();setInterval(tick,1000);
 function parseTLE(txt){const lines=txt.trim().split(/\r?\n/);const out=[];for(let i=0;i<lines.length;){if(lines[i].startsWith("1 ")&&lines[i+1]?.startsWith("2 ")){out.push({name:"Objeto "+(out.length+1),l1:lines[i],l2:lines[i+1]});i+=2;continue;}if(i+2<lines.length&&lines[i+1].startsWith("1 ")&&lines[i+2].startsWith("2 ")){out.push({name:lines[i].trim(),l1:lines[i+1],l2:lines[i+2]});i+=3;continue;}i++;}return out;}
 async function loadSatellites(){const group=$("#satGroup")?.value||"stations";const btn=$("#loadSatBtn");if(btn){btn.disabled=true;btn.textContent="Consultando…"}try{const r=await fetch(groups[group],{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);const txt=await r.text();const parsed=parseTLE(txt);if(!parsed.length)throw Error("Resposta sem elementos TLE reconhecíveis");state.satellites=parsed;state.source=group;state.lastUpdate=new Date();renderSatellites();$("#metric-count").textContent=parsed.length.toLocaleString("pt-BR");$("#metric-source").textContent="CelesTrak · "+group;$("#last-updated").textContent="Atualizado em "+state.lastUpdate.toLocaleString("pt-BR");$("#status-orbit").textContent="Dados carregados";$("#status-orbit").className="ok";$("#metric-visible").textContent="Calcular";renderFeatured();toast(parsed.length+" registros carregados.");}catch(e){toast("Não foi possível consultar os dados: "+e.message);$("#status-orbit").textContent="Falha na consulta";$("#status-orbit").className="pending";}finally{if(btn){btn.disabled=false;btn.textContent="Carregar satélites"}}}
-function renderSatellites(){populateMapSelect();const q=($("#satSearch")?.value||"").toLowerCase();const filtered=state.satellites.filter(s=>s.name.toLowerCase().includes(q));$("#sat-count").textContent=filtered.length+" de "+state.satellites.length+" registros";$("#sat-table").innerHTML=filtered.slice(0,500).map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.l1.slice(2,7).trim())}</td><td>Órbita não classificada</td><td><span class="tag tag-green">TLE recebido</span></td></tr>`).join("")||'<tr><td colspan="4" class="empty">Nenhum resultado.</td></tr>';}
+function orbitalMeta(s){
+ const inc=Number(s.l2.slice(8,16).trim()),mean=Number(s.l2.slice(52,63).trim()),epochYear=Number(s.l1.slice(18,20)),epochDay=Number(s.l1.slice(20,32));
+ const year=epochYear<57?2000+epochYear:1900+epochYear;
+ const epoch=Number.isFinite(epochDay)?new Date(Date.UTC(year,0,1)+(epochDay-1)*86400000):null;
+ return {inclination:Number.isFinite(inc)?inc:null,period:Number.isFinite(mean)&&mean>0?1440/mean:null,epoch};
+}
+function renderSatellites(){
+ populateMapSelect();
+ const q=($("#satSearch")?.value||"").trim().toLowerCase();
+ const filtered=state.satellites.filter(s=>s.name.toLowerCase().includes(q));
+ $("#sat-count").textContent=filtered.length+" de "+state.satellites.length+" registros";
+ $("#sat-table").innerHTML=filtered.slice(0,500).map(s=>{const m=orbitalMeta(s);return `<tr><td>${esc(s.name)}</td><td>${esc(s.l1.slice(2,7).trim())}</td><td>${m.inclination===null?"—":m.inclination.toFixed(2)+"° inclinação"} · ${m.period===null?"—":m.period.toFixed(1)+" min"}</td><td><span class="tag tag-green">TLE recebido</span></td></tr>`}).join("")||'<tr><td colspan="4" class="empty">Nenhum resultado.</td></tr>';
+ $("#satellite-cards").innerHTML=filtered.slice(0,120).map((s)=>{const idx=state.satellites.indexOf(s),m=orbitalMeta(s),norad=esc(s.l1.slice(2,7).trim());return `<article class="satellite-card"><div class="satellite-card-art" aria-hidden="true">🛰️</div><div class="satellite-card-body"><span class="tag tag-green">TLE recebido</span><h3>${esc(s.name)}</h3><p>NORAD ${norad}</p><div class="satellite-facts"><span>Inclinação<strong>${m.inclination===null?"Não informada":m.inclination.toFixed(2)+"°"}</strong></span><span>Período orbital<strong>${m.period===null?"Não informado":m.period.toFixed(1)+" min"}</strong></span></div><button class="btn btn-primary" data-map-sat="${idx}">Ver trajetória no mapa →</button></div></article>`}).join("")||'<div class="empty">Nenhum satélite corresponde à pesquisa.</div>';
+}
 function renderFeatured(){$("#featured-list").innerHTML=state.satellites.slice(0,5).map(s=>`<div class="simple-row"><span>${esc(s.name)}</span><small>NORAD ${esc(s.l1.slice(2,7).trim())}</small></div>`).join("")||'<div class="empty">Nenhum dado disponível.</div>'}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.addEventListener("click",event=>{const b=event.target.closest("[data-map-sat]");if(!b)return;const index=Number(b.dataset.mapSat);setView("map");setTimeout(()=>{if($("#mapSatSelect")){$("#mapSatSelect").value=String(index);updateOrbitMap();}},250);});
 $("#loadSatBtn").addEventListener("click",loadSatellites);$("#refreshBtn").addEventListener("click",()=>{if($("#view-satellites").classList.contains("active"))loadSatellites();else toast("Abra o catálogo orbital para atualizar os dados.")});$("#satSearch").addEventListener("input",renderSatellites);$("#satGroup").addEventListener("change",loadSatellites);
 $("#useExample").addEventListener("click",()=>{$("#lat").value="-15.7939";$("#lon").value="-47.8828";$("#alt").value="1172";toast("Coordenadas de exemplo preenchidas.");});
 async function calculateVisibility(){
@@ -116,15 +130,41 @@ function populateMapSelect(){
  sel.innerHTML='<option value="">Todos os objetos carregados</option>'+state.satellites.map((s,i)=>`<option value="${i}">${esc(s.name)}</option>`).join("");
  if(prior&&Number(prior)<state.satellites.length)sel.value=prior;
 }
+function satelliteMarkerIcon(name){
+ return L.divIcon({className:"satellite-map-marker-wrap",html:`<div class="satellite-map-marker" title="${esc(name)}"><span>🛰️</span></div>`,iconSize:[42,42],iconAnchor:[21,21]});
+}
+function calculateGroundTrack(s,now){
+ const rec=satellite.twoline2satrec(s.l1,s.l2),coords=[];
+ for(let minute=0;minute<=90;minute+=5){
+  const when=new Date(now.getTime()+minute*60000),pv=satellite.propagate(rec,when);
+  if(!pv.position)continue;
+  const gd=satellite.eciToGeodetic(pv.position,satellite.gstime(when));
+  const lat=satellite.degreesLat(gd.latitude),lon=satellite.degreesLong(gd.longitude);
+  if(Number.isFinite(lat)&&Number.isFinite(lon))coords.push([lat,lon]);
+ }
+ return coords;
+}
 function updateOrbitMap(){
  if(!state.satellites.length){toast("Carregue dados TLE primeiro.");return;}
  if(!window.satellite){toast("Biblioteca orbital indisponível.");return;}
  if(!initOrbitMap()){toast("Biblioteca de mapas indisponível.");return;}
- const selected=$("#mapSatSelect").value,chosen=selected===""?state.satellites:[state.satellites[Number(selected)]].filter(Boolean),now=new Date(),points=[];
+ const selected=$("#mapSatSelect").value,chosen=selected===""?state.satellites:[state.satellites[Number(selected)]].filter(Boolean),now=new Date(),points=[],cards=[];
  state.mapLayer.clearLayers();
- chosen.forEach(s=>{try{const rec=satellite.twoline2satrec(s.l1,s.l2),pv=satellite.propagate(rec,now);if(!pv.position)return;const gd=satellite.eciToGeodetic(pv.position,satellite.gstime(now)),lat=satellite.degreesLat(gd.latitude),lon=satellite.degreesLong(gd.longitude),alt=gd.height;if(!Number.isFinite(lat)||!Number.isFinite(lon))return;points.push({lat,lon});L.circleMarker([lat,lon],{radius:5,color:"#1e72d8",weight:2,fillColor:"#58a9ff",fillOpacity:.85}).bindPopup(`<strong>${esc(s.name)}</strong><br>Latitude: ${lat.toFixed(2)}°<br>Longitude: ${lon.toFixed(2)}°<br>Altitude estimada: ${alt.toFixed(1)} km<br><small>Ponto subsatélite calculado</small>`).addTo(state.mapLayer);}catch(e){}});
+ chosen.forEach(s=>{try{
+  const rec=satellite.twoline2satrec(s.l1,s.l2),pv=satellite.propagate(rec,now);if(!pv.position)return;
+  const gd=satellite.eciToGeodetic(pv.position,satellite.gstime(now)),lat=satellite.degreesLat(gd.latitude),lon=satellite.degreesLong(gd.longitude),alt=gd.height;
+  if(!Number.isFinite(lat)||!Number.isFinite(lon))return;
+  points.push({lat,lon,name:s.name});
+  const meta=orbitalMeta(s),track=calculateGroundTrack(s,now);
+  // Evita traçar uma linha atravessando o mapa quando a longitude cruza a linha internacional de data.
+  let segment=[];track.forEach((p,i)=>{if(i&&Math.abs(p[1]-track[i-1][1])>180){if(segment.length>1)L.polyline(segment,{color:"#38a4ef",weight:2,opacity:.8,dashArray:"5 7"}).addTo(state.mapLayer);segment=[];}segment.push(p);});if(segment.length>1)L.polyline(segment,{color:"#38a4ef",weight:2.5,opacity:.8,dashArray:"5 7"}).addTo(state.mapLayer);
+  L.marker([lat,lon],{icon:satelliteMarkerIcon(s.name),title:s.name,keyboard:true}).bindPopup(`<div class="satellite-popup"><strong>🛰️ ${esc(s.name)}</strong><br>NORAD: ${esc(s.l1.slice(2,7).trim())}<br>Posição subsatélite: ${lat.toFixed(2)}°, ${lon.toFixed(2)}°<br>Altitude estimada: ${alt.toFixed(1)} km<br>Inclinação TLE: ${meta.inclination===null?"não informada":meta.inclination.toFixed(2)+"°"}<br>Período orbital estimado: ${meta.period===null?"não informado":meta.period.toFixed(1)+" min"}<br><small>Trajetória futura calculada em intervalos de 5 min, por 90 min.</small></div>`).addTo(state.mapLayer);
+  cards.push({name:s.name,norad:s.l1.slice(2,7).trim(),lat,lon,alt,inc:meta.inclination,period:meta.period});
+ }catch(e){}});
  if(points.length&&selected!=="")state.map.setView([points[0].lat,points[0].lon],3);
+ else if(points.length>1){const bounds=L.latLngBounds(points.map(p=>[p.lat,p.lon]));state.map.fitBounds(bounds.pad(.18),{maxZoom:4});}
  $("#mapTimestamp").textContent=`${points.length} posição(ões) calculada(s) · ${now.toLocaleString("pt-BR")}`;
+ $("#map-satellite-cards").innerHTML=cards.slice(0,60).map(c=>`<article class="map-satellite-card"><span class="map-satellite-emoji">🛰️</span><div><strong>${esc(c.name)}</strong><small>NORAD ${esc(c.norad)} · ${c.alt.toFixed(0)} km altitude</small><small>${c.lat.toFixed(2)}°, ${c.lon.toFixed(2)}° · período ${c.period===null?"—":c.period.toFixed(1)+" min"}</small></div></article>`).join("")||'<div class="empty">Nenhuma posição orbital pôde ser calculada. Confira TLE e biblioteca orbital.</div>';
 }
 $("#refreshMap")?.addEventListener("click",updateOrbitMap);
 $("#mapSatSelect")?.addEventListener("change",updateOrbitMap);
