@@ -130,3 +130,22 @@ button,a,[data-goto]{touch-action:manipulation}
 .map-satellite-card strong{font-size:12px}
 .map-satellite-card small{font-size:10px;color:var(--muted);margin-top:3px}
 @media(max-width:760px){.satellite-card-grid{grid-template-columns:1fr}.satellite-card{grid-template-columns:68px 1fr;padding:11px}.satellite-card-art{height:68px;font-size:36px}.orbit-map-legend{gap:8px}.map-satellite-cards{grid-template-columns:1fr}}
+
+/* ILS 5.5 — navegação por seção com posicionamento consistente em telas móveis */
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{overflow-x:hidden}
+.main{min-width:0}
+.topbar{scroll-margin-top:0}
+.view{scroll-margin-top:16px;min-height:40vh}
+.view.active{display:block;visibility:visible}
+button[data-goto],.nav-item{cursor:pointer;touch-action:manipulation}
+button[data-goto]:focus-visible,.nav-item:focus-visible{outline:3px solid #65aef5;outline-offset:3px}
+@media(max-width:760px){
+ .main{margin-left:0;padding:0 18px 26px;width:auto;max-width:none}
+ .topbar{min-height:92px;height:auto;padding:12px 0;gap:10px;align-items:center}
+ .topbar>div:nth-child(2){min-width:0;flex:1}
+ .topbar h1{font-size:22px;line-height:1.2}
+ .top-actions{gap:6px}
+ .top-actions .pill{display:none}
+ .view{scroll-margin-top:10px}
+}
