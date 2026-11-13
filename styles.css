@@ -87,3 +87,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #lawful-connectivity input,#lawful-connectivity select{width:100%;padding:.85rem;border:1px solid var(--line,#d9e1eb);border-radius:12px;background:var(--surface,#fff);color:inherit}
 #lawful-connectivity .results-list{display:grid;gap:1rem;margin-top:1rem}
 #lawful-connectivity .locator-result{border:1px solid var(--line,#d9e1eb);border-radius:14px;padding:1rem;background:var(--surface,#fff)}
+
+/* ILS 5.3 — navegação móvel e foco automático nas seções */
+.sidebar{overflow-y:auto;overscroll-behavior:contain}
+.sidebar nav{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.view{scroll-margin-top:14px}
+.nav-item{width:100%;display:flex;align-items:center;gap:2px;min-height:44px}
+.mobile-menu{cursor:pointer;touch-action:manipulation}
+button,a,[data-goto]{touch-action:manipulation}
+@media(max-width:760px){
+ .sidebar{width:min(88vw,320px);height:100dvh;max-height:100dvh;padding-top:18px;padding-bottom:14px;z-index:1000;box-shadow:16px 0 40px rgba(4,18,35,.25)}
+ .sidebar nav{flex:1;min-height:0;overflow-y:auto;padding-bottom:12px}
+ .sidebar-bottom{flex:none}
+ .view.active{scroll-margin-top:8px}
+}
