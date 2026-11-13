@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 5.5">
+<meta name="application-name" content="ILS 5.6">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 5.5 — Internet Livre Satelital</title>
+<title>ILS 5.6 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -93,7 +93,7 @@ footer a:hover{text-decoration:underline}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 5.5 accessibility and analyzer refinements */
+/* ILS 5.6 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
@@ -105,7 +105,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #lawful-connectivity .locator-result{border:1px solid var(--line,#d9e1eb);border-radius:14px;padding:1rem;background:var(--surface,#fff)}
 
 
-/* ILS 5.5 business workspace */
+/* ILS 5.6 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -136,7 +136,7 @@ img,svg,canvas{max-width:100%}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 5.5 — Internet Livre Satelital"></div>
+    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 5.6 — Internet Livre Satelital"></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -157,13 +157,13 @@ img,svg,canvas{max-width:100%}
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 5.5 · offline-first</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 5.6 · offline-first</small></div>
   </aside>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" aria-label="Abrir menu">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 5.5</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" aria-label="Abrir menu">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 5.6</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 5.5 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 5.6 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -399,7 +399,7 @@ img,svg,canvas{max-width:100%}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 5.5 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 5.6 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -440,7 +440,7 @@ img,svg,canvas{max-width:100%}
 </section>
 
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 5.5</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 5.6</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -469,7 +469,7 @@ img,svg,canvas{max-width:100%}
 </section>
 
 <footer>
-  <span>© 2026 Nailson Lima · ILS 5.5 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 5.6 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -546,10 +546,43 @@ function formatDistance(m){
 }
 
 function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
-function setView(name){$$(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name));$$(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===name));const labels={overview:"Visão geral",satellites:"Catálogo orbital",visibility:"Visibilidade",map:"Mapa orbital",signals:"Frequências e sinais",sdr:"Integração SDR",access:"Acesso gratuito",opportunities:"Oportunidades reais",locator:"Localizador Wi-Fi",intelligence:"Inteligência de conectividade",diagnostics:"Diagnóstico",about:"Sobre e fontes",legal:"Termos e privacidade",feasibility:"Viabilidade",roadmap:"Plano de implantação",report:"Relatórios",data:"Dados e backup",business:"Negócios e licenças"};$("#page-title").textContent=labels[name]||name;$("#sidebar").classList.remove("open");if(name==="data"){refreshDataSummary();}if(name==="business"){renderIlsLicenses();}if(name==="opportunities"){renderOpportunityCatalog();}if(name==="locator"){setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},120);}if(name==="intelligence"){renderCases();}if(name==="map"){setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},100);}}
-$$(".nav-item").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
-$$("[data-goto]").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.goto)));
-$("#menuBtn").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+function scrollToView(target){
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const header=document.querySelector(".topbar"),offset=(header?.getBoundingClientRect().height||0)+12;
+  const y=window.pageYOffset+target.getBoundingClientRect().top-offset;
+  window.scrollTo({top:Math.max(0,y),behavior:"smooth"});
+ }));
+}
+function setView(name){
+ const target=document.getElementById("view-"+name);
+ if(!target){toast("Esta seção não está disponível.");return;}
+ document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v===target));
+ document.querySelectorAll(".nav-item").forEach(b=>{const active=b.dataset.view===name;b.classList.toggle("active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+ const labels={overview:"Visão geral",satellites:"Catálogo orbital",visibility:"Visibilidade",map:"Mapa orbital",signals:"Frequências e sinais",sdr:"Integração SDR",access:"Acesso gratuito",opportunities:"Oportunidades reais",locator:"Localizador Wi-Fi",intelligence:"Inteligência de conectividade",diagnostics:"Diagnóstico",about:"Sobre e fontes",legal:"Termos e privacidade",feasibility:"Viabilidade",roadmap:"Plano de implantação",report:"Relatórios",data:"Dados e backup",business:"Negócios e licenças"};
+ document.getElementById("page-title").textContent=labels[name]||name;
+ const sidebar=document.getElementById("sidebar");sidebar.classList.remove("open");
+ document.getElementById("menuBtn").setAttribute("aria-expanded","false");
+ scrollToView(target);
+ if(name==="satellites"&&!state.satellites.length){document.getElementById("sat-count").textContent="Carregando dados orbitais…";loadSatellites();}
+ if(name==="data")refreshDataSummary();
+ if(name==="business")renderIlsLicenses();
+ if(name==="opportunities")renderOpportunityCatalog();
+ if(name==="locator")setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},250);
+ if(name==="intelligence")renderCases();
+ if(name==="map")setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},250);
+}
+document.addEventListener("click",event=>{
+ const nav=event.target.closest(".nav-item[data-view]");
+ if(nav){event.preventDefault();setView(nav.dataset.view);return;}
+ const goto=event.target.closest("[data-goto]");
+ if(goto){event.preventDefault();setView(goto.dataset.goto);}
+});
+document.getElementById("menuBtn").addEventListener("click",()=>{
+ const sidebar=document.getElementById("sidebar"),open=!sidebar.classList.contains("open");
+ sidebar.classList.toggle("open",open);
+ document.getElementById("menuBtn").setAttribute("aria-expanded",String(open));
+});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"){document.getElementById("sidebar").classList.remove("open");document.getElementById("menuBtn").setAttribute("aria-expanded","false");}});
 function updateNetwork(){const on=navigator.onLine;$("#network-label").textContent=on?"Conectado à rede":"Modo offline";$("#network-label").previousElementSibling.style.background=on?"#35c58b":"#d49a38"}
 window.addEventListener("online",updateNetwork);window.addEventListener("offline",updateNetwork);updateNetwork();
 
@@ -696,7 +729,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 5.5</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 5.6</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo TLE CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -781,15 +814,9 @@ function renderOpps(){$("#saved-opps").innerHTML=state.opportunities.map(o=>`<di
 $("#saveOpp").addEventListener("click",()=>{const name=$("#oppName").value.trim(),url=$("#oppUrl").value.trim(),notes=$("#oppNotes").value.trim();if(!name){toast("Informe o nome da oportunidade.");return;}if(url&&!/^https?:\/\//i.test(url)){toast("Informe uma URL iniciada por https:// ou http://");return;}state.opportunities.push({name,url,notes,date:new Date().toISOString()});localStorage.setItem("ils-opportunities",JSON.stringify(state.opportunities));$("#oppName").value=$("#oppUrl").value=$("#oppNotes").value="";renderOpps();toast("Oportunidade salva neste dispositivo.");});
 $("#checkAccess").addEventListener("click",()=>{toast("Consulte as fontes oficiais e confirme critérios, localidade e disponibilidade com o órgão responsável.")});
 $("#runDiag").addEventListener("click",async()=>{const box=$("#diag-results");box.innerHTML='<div class="empty">Executando verificações…</div>';const items=[["Aplicação carregada","ok","Interface executada neste navegador"],["Armazenamento local",(()=>{try{localStorage.setItem("ils-test","1");localStorage.removeItem("ils-test");return"ok"}catch{return"warn"}})(),"Armazenamento do navegador"],["Conexão de rede",navigator.onLine?"ok":"warn",navigator.onLine?"Navegador informa conexão disponível":"Navegador informa modo offline"],["Biblioteca orbital",window.satellite?"ok":"warn",window.satellite?"satellite.js disponível":"satellite.js indisponível; cálculos orbitais desativados"],["Dados TLE",state.satellites.length?"ok":"warn",state.satellites.length?state.satellites.length+" registros carregados":"Nenhum TLE carregado"],["Receptor SDR","warn","Nenhum receptor físico integrado"],["Internet via satélite","warn","Não testada; requer terminal e serviço autorizados"]];let reach="warn",detail="Não testado";try{const c=new AbortController(),t=setTimeout(()=>c.abort(),5000);const r=await fetch("https://www.google.com/generate_204",{mode:"no-cors",signal:c.signal,cache:"no-store"});clearTimeout(t);reach="ok";detail="Requisição de teste iniciada; resposta opaca do navegador";}catch{detail="Destino de teste inacessível ou bloqueado; isso não prova ausência total de Internet";}items.splice(2,0,["Acesso a destino HTTPS",reach,detail]);box.innerHTML=items.map(([n,s,d])=>`<div class="diag-item"><span><strong>${esc(n)}</strong><br><small class="muted">${esc(d)}</small></span><b class="${s==="warn"?"warn":""}">${s==="ok"?"Verificado":"Pendente"}</b></div>`).join("");});
-loadOpps();if("serviceWorker"in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+loadOpps();if("serviceWorker"in navigator&&location.protocol.startsWith("http")){navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"}).then(reg=>reg.update()).catch(()=>{});}
 
-document.addEventListener("click",e=>{
- const target=e.target.closest("[data-goto]");
- if(target){e.preventDefault();setView(target.dataset.goto);}
-});
-
-
-// ILS 5.5 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
+// ILS 5.6 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
 state.locMap=null;state.locMarkers=null;state.locUserMarker=null;
 function initLocatorMap(){
  if(state.locMap)return true;
@@ -839,7 +866,7 @@ document.getElementById("locSearch")?.addEventListener("click",searchNearbyWifi)
 document.getElementById("locBrasilia")?.addEventListener("click",()=>{setLocatorCoords(-15.7939,-47.8828,"example");if(initLocatorMap())state.locMap.setView([-15.7939,-47.8828],12);document.getElementById("locStatus").textContent="Coordenadas de exemplo de Brasília preenchidas; não representam sua localização atual.";});
 
 
-// ILS 5.5 — registros locais de necessidades de conectividade.
+// ILS 5.6 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -912,7 +939,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 5.5 — lawful public Wi-Fi discovery.
+/* ILS 5.6 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1006,7 +1033,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 5.5 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 5.6 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1018,7 +1045,7 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 5.5",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 5.6",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
 </script>
