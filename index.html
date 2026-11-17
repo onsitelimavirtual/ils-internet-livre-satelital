@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 5.7.0">
+<meta name="application-name" content="ILS 5.8.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 5.7.0 — Internet Livre Satelital</title>
+<title>ILS 5.8.0 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -110,6 +110,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
 
+
+.public-wifi-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.public-wifi-filters label{display:grid;gap:6px;font-size:11px;color:#687b91}
+.public-wifi-map{height:310px;min-height:250px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#eaf0f6;overflow:hidden}
+@media(max-width:760px){.public-wifi-filters{grid-template-columns:1fr}.public-wifi-map{height:280px}}
 </style>
 <style>
 /* ILS 1.2 hardening: ensure layout remains styled in local Android file previews */
@@ -531,7 +536,19 @@ html{scroll-behavior:auto}
    <button class="btn btn-primary" id="usePublicWifiLocation">Usar minha localização</button>
    <button class="btn btn-ghost" id="searchPublicWifi">Buscar Wi-Fi público mapeado</button>
   </div>
-  <div id="publicWifiStatus" class="result-box" role="status" aria-live="polite">Informe coordenadas ou use a localização do dispositivo.</div>
+  <div class="public-wifi-filters">
+   <label>Tipo de local
+    <select id="publicWifiType"><option value="all">Todos os tipos</option><option value="public">Órgãos e serviços públicos</option><option value="education">Educação e bibliotecas</option><option value="hospitality">Comércio e hospedagem</option><option value="community">Espaços comunitários</option></select>
+   </label>
+   <label>Condição de acesso
+    <select id="publicWifiAccess"><option value="all">Todas as condições</option><option value="free">Gratuito indicado no cadastro</option><option value="yes">Acesso indicado</option><option value="unknown">Não informado</option></select>
+   </label>
+   <label>Ordenar por
+    <select id="publicWifiSort"><option value="distance">Mais próximos</option><option value="name">Nome (A–Z)</option></select>
+   </label>
+  </div>
+  <div id="publicWifiSummary" class="micro" aria-live="polite"></div>
+  <div id="publicWifiMap" class="public-wifi-map" aria-label="Mapa dos pontos Wi-Fi encontrados"></div>
   <div id="publicWifiResults" class="results-list"></div>
  </div>
  <div class="panel">
@@ -1059,59 +1076,77 @@ function buildPublicWifiQuery(lat,lon,radius){
  // Inclui qualquer valor registrado em internet_access e evita presumir que seja gratuito.
  return `[out:json][timeout:18];(node(around:${radius},${lat},${lon})["internet_access"];way(around:${radius},${lat},${lon})["internet_access"];relation(around:${radius},${lat},${lon})["internet_access"];node(around:${radius},${lat},${lon})["wifi"];way(around:${radius},${lat},${lon})["wifi"];relation(around:${radius},${lat},${lon})["wifi"];);out center tags;`;
 }
+let publicWifiEntries=[];
+let publicWifiMap=null,publicWifiMarkers=null;
+function classifyWifiPlace(tags){
+ const t=tags||{},kind=[t.amenity,t.shop,t.tourism,t.leisure,t.office,t.building].filter(Boolean).join(' ').toLowerCase();
+ if(/school|university|college|library|kindergarten|education/.test(kind))return 'education';
+ if(/townhall|public|government|community_centre|social_facility|post_office|police|fire_station/.test(kind))return 'public';
+ if(/hotel|hostel|cafe|restaurant|bar|mall|market|shop|supermarket|guest_house/.test(kind))return 'hospitality';
+ if(/community|park|recreation|sports|place_of_worship/.test(kind))return 'community';
+ return 'other';
+}
+function wifiAccessState(tags){
+ const t=tags||{},access=String(t.internet_access||t.wifi||'').toLowerCase(),fee=String(t.internet_access_fee||'').toLowerCase();
+ if(/no|private/.test(access))return 'unknown';
+ if(/yes|wlan|wifi/.test(access)&&/no|free/.test(fee))return 'free';
+ if(/yes|wlan|wifi/.test(access))return 'yes';
+ return 'unknown';
+}
+function renderPublicWifiResults(){
+ const results=document.getElementById('publicWifiResults'),summary=document.getElementById('publicWifiSummary');
+ const type=document.getElementById('publicWifiType')?.value||'all',access=document.getElementById('publicWifiAccess')?.value||'all',sort=document.getElementById('publicWifiSort')?.value||'distance';
+ let items=publicWifiEntries.filter(el=>{
+  const t=el.tags||{},category=classifyWifiPlace(t),state=wifiAccessState(t);
+  const categoryOk=type==='all'||category===type;
+  const accessOk=access==='all'||(access==='free'&&state==='free')||(access==='yes'&&state!=='unknown')||(access==='unknown'&&state==='unknown');
+  return categoryOk&&accessOk;
+ });
+ items.sort((a,b)=>sort==='name'?String(a.tags?.name||'').localeCompare(String(b.tags?.name||''),'pt-BR'):a._distance-b._distance);
+ summary.textContent=items.length+' de '+publicWifiEntries.length+' ponto(s) exibido(s). Acesso e gratuidade são informações declaradas no mapa, não confirmação em campo.';
+ if(!items.length){results.innerHTML='<div class="empty">Nenhum ponto corresponde aos filtros. Altere os filtros ou amplie o raio de busca.</div>';}
+ else results.innerHTML=items.map(el=>{
+  const t=el.tags||{},name=t.name||t.operator||'Ponto de acesso sem nome informado';
+  const kind=t.amenity||t.shop||t.tourism||t.leisure||t.office||'Local cadastrado';
+  const accessText=t.internet_access||t.wifi||'não informado',fee=t.internet_access_fee||'não informado';
+  const addr=[t['addr:street'],t['addr:housenumber'],t['addr:suburb'],t['addr:city']].filter(Boolean).join(', ');
+  const mapUrl='https://www.openstreetmap.org/?mlat='+el._lat+'&mlon='+el._lon+'#map=18/'+el._lat+'/'+el._lon;
+  const directions='https://www.google.com/maps/dir/?api=1&destination='+el._lat+','+el._lon;
+  const label=wifiAccessState(t)==='free'?'Gratuidade indicada no cadastro':wifiAccessState(t)==='yes'?'Acesso indicado no cadastro':'Acesso não informado';
+  return '<article class="locator-result"><span class="tag '+(wifiAccessState(t)==='free'?'tag-green':'tag-warn')+'">'+esc(label)+' · não verificado em campo</span><h3>'+esc(name)+'</h3><p><strong>Distância:</strong> '+formatDistance(el._distance)+' · <strong>Tipo:</strong> '+esc(kind)+'</p><p><strong>Acesso:</strong> '+esc(accessText)+' · <strong>Custo:</strong> '+esc(fee)+'</p><p>'+esc(addr||'Endereço não informado')+'</p><p class="micro">Registro OpenStreetMap #'+esc(el.id)+'. Confirme se a rede está ativa e se o acesso é autorizado.</p><a href="'+mapUrl+'" target="_blank" rel="noopener noreferrer">Ver no mapa ↗</a> · <a href="'+directions+'" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></article>';
+ }).join('');
+ if(typeof L!=='undefined'&&document.getElementById('publicWifiMap')){
+  if(!publicWifiMap){publicWifiMap=L.map('publicWifiMap').setView([items[0]?items[0]._lat:0,items[0]?items[0]._lon:0],13);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(publicWifiMap);publicWifiMarkers=L.layerGroup().addTo(publicWifiMap);}
+  publicWifiMarkers.clearLayers();
+  items.forEach(el=>{const t=el.tags||{},name=t.name||t.operator||'Ponto sem nome';L.marker([el._lat,el._lon]).bindPopup('<strong>'+esc(name)+'</strong><br>'+formatDistance(el._distance)+'<br>'+esc(t.internet_access||t.wifi||'Acesso não informado')).addTo(publicWifiMarkers);});
+  if(items.length){const bounds=L.latLngBounds(items.map(el=>[el._lat,el._lon]));publicWifiMap.fitBounds(bounds,{padding:[20,20],maxZoom:16});}
+  setTimeout(()=>publicWifiMap.invalidateSize(),120);
+ }
+}
 async function searchLawfulPublicWifi(){
  const status=document.getElementById('publicWifiStatus'),results=document.getElementById('publicWifiResults'),btn=document.getElementById('searchPublicWifi');
- const lat=parseLocaleNumber(document.getElementById('publicWifiLat').value);
- const lon=parseLocaleNumber(document.getElementById('publicWifiLon').value);
- const radius=Number(document.getElementById('publicWifiRadius').value);
+ const lat=parseLocaleNumber(document.getElementById('publicWifiLat').value),lon=parseLocaleNumber(document.getElementById('publicWifiLon').value),radius=Number(document.getElementById('publicWifiRadius').value);
  if(!validLocatorCoords(lat,lon)){status.textContent='Informe coordenadas válidas (latitude entre -90 e 90; longitude entre -180 e 180).';return;}
  if(!navigator.onLine){status.textContent='Você está offline. Conecte-se à Internet para consultar os registros públicos.';return;}
  if(!Number.isFinite(radius)||radius<100||radius>50000){status.textContent='Selecione um raio de pesquisa válido.';return;}
- const oldLabel=btn?.textContent||'Buscar Wi-Fi público mapeado';
- if(btn){btn.disabled=true;btn.textContent='Pesquisando…'}
- status.textContent='Iniciando busca paralela em fontes públicas…';
- results.innerHTML='<div class="result-box">A consulta pode levar alguns segundos. Se uma fonte estiver indisponível, o ILS tentará outra automaticamente.</div>';
+ const oldLabel=btn?.textContent||'Buscar Wi-Fi público mapeado';if(btn){btn.disabled=true;btn.textContent='Pesquisando…'}
+ status.textContent='Buscando pontos mapeados e preparando os resultados…';results.innerHTML='<div class="result-box">A pesquisa está em andamento. Os dados serão organizados por proximidade.</div>';
  try{
-  const cacheKey='ils-public-wifi-v2:'+lat.toFixed(4)+':'+lon.toFixed(4)+':'+radius;
-  let cached=null;
+  const cacheKey='ils-public-wifi-v2:'+lat.toFixed(4)+':'+lon.toFixed(4)+':'+radius;let cached=null;
   try{cached=JSON.parse(localStorage.getItem(cacheKey)||'null')}catch{}
   let data,source,dataTimestamp;
-  if(cached&&cached.savedAt&&Date.now()-cached.savedAt<5*60*1000&&cached.data&&Array.isArray(cached.data.elements)){
-   data=cached.data;source=cached.source||'cache local';dataTimestamp=cached.savedAt;
-   status.textContent='Resultados recentes recuperados do cache. Atualizados em '+new Date(cached.savedAt).toLocaleTimeString('pt-BR')+'.';
-  }else{
-   const query=buildPublicWifiQuery(lat,lon,radius);
-   const fresh=await queryOverpassResilient(query,status);
-   data=fresh.data;source=fresh.source;dataTimestamp=Date.now();
-   try{localStorage.setItem(cacheKey,JSON.stringify({data,source,savedAt:Date.now()}))}catch{}
-  }
-  const entries=(data.elements||[]).map(el=>{
-   const tags=el.tags||{},la=el.lat??el.center?.lat,lo=el.lon??el.center?.lon;
-   if(!Number.isFinite(la)||!Number.isFinite(lo))return null;
-   return {...el,_lat:la,_lon:lo,_distance:haversineMeters(lat,lon,la,lo)};
-  }).filter(Boolean).sort((a,b)=>a._distance-b._distance);
-  if(!entries.length){
-   status.textContent='Consulta concluída: nenhum registro com a etiqueta internet_access foi encontrado neste raio. Isso não comprova ausência de Wi-Fi público.';
-   results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Experimente ampliar o raio ou consultar bibliotecas, órgãos públicos, universidades e estabelecimentos locais.</div>';
-   return;
-  }
+  if(cached&&cached.savedAt&&Date.now()-cached.savedAt<5*60*1000&&cached.data&&Array.isArray(cached.data.elements)){data=cached.data;source=cached.source||'cache local';dataTimestamp=cached.savedAt;}
+  else{const fresh=await queryOverpassResilient(buildPublicWifiQuery(lat,lon,radius),status);data=fresh.data;source=fresh.source;dataTimestamp=Date.now();try{localStorage.setItem(cacheKey,JSON.stringify({data,source,savedAt:dataTimestamp}))}catch{}}
+  publicWifiEntries=(data.elements||[]).map(el=>{const la=el.lat??el.center?.lat,lo=el.lon??el.center?.lon;if(!Number.isFinite(la)||!Number.isFinite(lo))return null;return {...el,_lat:la,_lon:lo,_distance:haversineMeters(lat,lon,la,lo)};}).filter(Boolean);
+  publicWifiEntries.sort((a,b)=>a._distance-b._distance);
+  if(!publicWifiEntries.length){status.textContent='Busca concluída: nenhum registro Wi-Fi encontrado neste raio. Isso não comprova ausência de redes públicas.';results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Amplie o raio ou tente outra localização.</div>';return;}
   const sourceLabel=source==='cache local'?'cache local':new URL(source).hostname;
-  status.textContent=`${entries.length} registro(s) encontrado(s), ordenados por proximidade. Fonte: OpenStreetMap/Overpass (${sourceLabel}). Dados consultados em ${new Date(dataTimestamp||Date.now()).toLocaleString('pt-BR')}. Disponibilidade não verificada.`;
-  results.innerHTML=entries.map(el=>{
-   const t=el.tags||{},name=t.name||t.operator||'Ponto de acesso sem nome informado';
-   const kind=t.amenity||t.shop||t.tourism||t.leisure||t.office||'Local cadastrado';
-   const access=t.internet_access||'não informado',fee=t.internet_access_fee||'não informado';
-   const addr=[t['addr:street'],t['addr:housenumber'],t['addr:suburb'],t['addr:city']].filter(Boolean).join(', ');
-   const map=`https://www.openstreetmap.org/?mlat=${el._lat}&mlon=${el._lon}#map=18/${el._lat}/${el._lon}`;
-   const directions=`https://www.google.com/maps/dir/?api=1&destination=${el._lat},${el._lon}`;
-   return `<article class="locator-result"><span class="tag tag-green">Registro público · não verificado em campo</span><h3>${esc(name)}</h3><p><strong>Distância em linha reta:</strong> ${formatDistance(el._distance)}</p><p><strong>Tipo:</strong> ${esc(kind)} · <strong>Acesso indicado:</strong> ${esc(access)} · <strong>Custo:</strong> ${esc(fee)}</p><p>${esc(addr||'Endereço não informado')}</p><p class="micro">Registro OpenStreetMap #${esc(el.id)}. Confirme com o responsável se a rede está ativa, se o acesso é público e se há cobrança.</p><a href="${map}" target="_blank" rel="noopener noreferrer">Ver no mapa ↗</a> · <a href="${directions}" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></article>`;
-  }).join('');
- }catch(err){
-  const detail=err.message||'Falha de comunicação';
-  status.textContent=`Não foi possível concluir a busca. ${detail}. Tente novamente ou aumente o intervalo antes de uma nova consulta.`;
-  results.innerHTML='<div class="empty">Os servidores de dados geográficos não responderam dentro do limite. Nenhum resultado foi inventado. Tente novamente mais tarde.</div>';
- }finally{if(btn){btn.disabled=false;btn.textContent=oldLabel}}
+  status.textContent=publicWifiEntries.length+' registro(s) encontrados. Fonte: '+sourceLabel+'. Dados consultados em '+new Date(dataTimestamp).toLocaleString('pt-BR')+'. Disponibilidade não verificada.';
+  renderPublicWifiResults();
+ }catch(err){status.textContent='Não foi possível concluir a busca. '+(err.message||'Falha de comunicação')+'.';results.innerHTML='<div class="empty">Os servidores de dados geográficos não responderam. Tente novamente mais tarde.</div>';}
+ finally{if(btn){btn.disabled=false;btn.textContent=oldLabel}}
 }
+['publicWifiType','publicWifiAccess','publicWifiSort'].forEach(id=>document.getElementById(id)?.addEventListener('change',renderPublicWifiResults));
 document.getElementById("searchPublicWifi")?.addEventListener("click",searchLawfulPublicWifi);
 document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
  const status=document.getElementById("publicWifiStatus");
