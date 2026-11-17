@@ -1075,14 +1075,14 @@ async function searchLawfulPublicWifi(){
   const cacheKey='ils-public-wifi-v2:'+lat.toFixed(4)+':'+lon.toFixed(4)+':'+radius;
   let cached=null;
   try{cached=JSON.parse(localStorage.getItem(cacheKey)||'null')}catch{}
-  let data,source;
+  let data,source,dataTimestamp;
   if(cached&&cached.savedAt&&Date.now()-cached.savedAt<5*60*1000&&cached.data&&Array.isArray(cached.data.elements)){
-   data=cached.data;source=cached.source||'cache local';
+   data=cached.data;source=cached.source||'cache local';dataTimestamp=cached.savedAt;
    status.textContent='Resultados recentes recuperados do cache. Atualizados em '+new Date(cached.savedAt).toLocaleTimeString('pt-BR')+'.';
   }else{
    const query=buildPublicWifiQuery(lat,lon,radius);
    const fresh=await queryOverpassResilient(query,status);
-   data=fresh.data;source=fresh.source;
+   data=fresh.data;source=fresh.source;dataTimestamp=Date.now();
    try{localStorage.setItem(cacheKey,JSON.stringify({data,source,savedAt:Date.now()}))}catch{}
   }
   const entries=(data.elements||[]).map(el=>{
@@ -1095,7 +1095,8 @@ async function searchLawfulPublicWifi(){
    results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Experimente ampliar o raio ou consultar bibliotecas, órgãos públicos, universidades e estabelecimentos locais.</div>';
    return;
   }
-  status.textContent=`${entries.length} registro(s) encontrado(s), ordenados por proximidade. Fonte: OpenStreetMap/Overpass (servidor: ${new URL(source).hostname}). Consulta realizada em ${new Date().toLocaleString('pt-BR')}. Disponibilidade não verificada.`;
+  const sourceLabel=source==='cache local'?'cache local':new URL(source).hostname;
+  status.textContent=`${entries.length} registro(s) encontrado(s), ordenados por proximidade. Fonte: OpenStreetMap/Overpass (${sourceLabel}). Dados consultados em ${new Date(dataTimestamp||Date.now()).toLocaleString('pt-BR')}. Disponibilidade não verificada.`;
   results.innerHTML=entries.map(el=>{
    const t=el.tags||{},name=t.name||t.operator||'Ponto de acesso sem nome informado';
    const kind=t.amenity||t.shop||t.tourism||t.leisure||t.office||'Local cadastrado';
