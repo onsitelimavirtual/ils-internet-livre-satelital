@@ -1023,30 +1023,37 @@ async function queryOverpassResilient(query, statusEl){
   'https://overpass.kumi.systems/api/interpreter',
   'https://overpass.private.coffee/api/interpreter'
  ];
- let lastError='Servidores públicos temporariamente indisponíveis.';
- for(let i=0;i<endpoints.length;i++){
-  statusEl.textContent=`Consultando fonte pública ${i+1} de ${endpoints.length}…`;
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),11000);
+ statusEl.textContent='Consultando servidores públicos simultaneamente…';
+ const controllers=endpoints.map(()=>new AbortController());
+ const timers=[];
+ const attempts=endpoints.map((url,index)=>(async()=>{
+  const timer=setTimeout(()=>controllers[index].abort(),8000);
+  timers[index]=timer;
   try{
-   const response=await fetch(endpoints[i],{
+   const response=await fetch(url,{
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','Accept':'application/json'},
     body:'data='+encodeURIComponent(query),
-    signal:controller.signal,
-    cache:'no-store'
+    signal:controllers[index].signal,
+    cache:'default'
    });
-   if(!response.ok)throw new Error(`HTTP ${response.status}`);
-   const text=await response.text();
-   let data;
-   try{data=JSON.parse(text)}catch{throw new Error('Resposta inválida do serviço de mapas')}
-   if(!data||!Array.isArray(data.elements))throw new Error('Formato de resposta não reconhecido');
-   return {data,source:endpoints[i]};
-  }catch(err){
-   lastError=err.name==='AbortError'?'Tempo limite de 11 segundos excedido':(err.message||'Falha de conexão');
+   if(!response.ok)throw new Error('HTTP '+response.status);
+   const data=await response.json();
+   if(!data||!Array.isArray(data.elements))throw new Error('Resposta inválida do serviço');
+   return {data,source:url};
   }finally{clearTimeout(timer)}
+ })());
+ try{
+  const winner=await Promise.any(attempts);
+  controllers.forEach((controller,index)=>{if(!attempts[index].settled)controller.abort()});
+  statusEl.textContent='Dados recebidos. Organizando os pontos encontrados…';
+  return winner;
+ }catch(error){
+  const messages=(error.errors||[]).map(e=>e?.name==='AbortError'?'tempo limite':(e?.message||'falha')).join('; ');
+  throw new Error('Nenhum servidor respondeu corretamente em até 8 segundos. '+messages);
+ }finally{
+  timers.forEach(timer=>clearTimeout(timer));
  }
- throw new Error(lastError);
 }
 function buildPublicWifiQuery(lat,lon,radius){
  // Inclui qualquer valor registrado em internet_access e evita presumir que seja gratuito.
@@ -1062,7 +1069,7 @@ async function searchLawfulPublicWifi(){
  if(!Number.isFinite(radius)||radius<100||radius>50000){status.textContent='Selecione um raio de pesquisa válido.';return;}
  const oldLabel=btn?.textContent||'Buscar Wi-Fi público mapeado';
  if(btn){btn.disabled=true;btn.textContent='Pesquisando…'}
- status.textContent='Iniciando consulta ao OpenStreetMap…';
+ status.textContent='Iniciando busca paralela em fontes públicas…';
  results.innerHTML='<div class="result-box">A consulta pode levar alguns segundos. Se uma fonte estiver indisponível, o ILS tentará outra automaticamente.</div>';
  try{
   const query=buildPublicWifiQuery(lat,lon,radius);
@@ -1077,7 +1084,7 @@ async function searchLawfulPublicWifi(){
    results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Experimente ampliar o raio ou consultar bibliotecas, órgãos públicos, universidades e estabelecimentos locais.</div>';
    return;
   }
-  status.textContent=`${entries.length} registro(s) encontrado(s), ordenados por proximidade. Fonte: OpenStreetMap/Overpass. Disponibilidade não verificada.`;
+  status.textContent=`${entries.length} registro(s) encontrado(s), ordenados por proximidade. Fonte: OpenStreetMap/Overpass (servidor: ${new URL(source).hostname}). Consulta realizada em ${new Date().toLocaleString('pt-BR')}. Disponibilidade não verificada.`;
   results.innerHTML=entries.map(el=>{
    const t=el.tags||{},name=t.name||t.operator||'Ponto de acesso sem nome informado';
    const kind=t.amenity||t.shop||t.tourism||t.leisure||t.office||'Local cadastrado';
