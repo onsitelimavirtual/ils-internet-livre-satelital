@@ -183,6 +183,7 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="report"><span>▤</span> Relatórios</button>
       <button class="nav-item" data-view="data"><span>⇅</span> Dados e backup</button>
       <button class="nav-item" data-view="diagnostics"><span>⌁</span> Diagnóstico</button>
+      <button class="nav-item" data-view="observatory"><span>◈</span> Observatório Inteligente</button>
       <button class="nav-item" data-view="about"><span>ⓘ</span> Sobre e fontes</button>
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
@@ -499,6 +500,7 @@ html{scroll-behavior:auto}
   </div>
 </section>
 
+<section class="view" id="view-observatory"><div class="section-head"><div><span class="eyebrow">ILS + NO NETWORK CAUSE 5.0</span><h2>Observatório Inteligente de Conectividade</h2><p class="muted">Painel integrado de indicadores e eventos técnicos recebidos pela API compartilhada.</p></div><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button></div><div class="notice"><strong>Privacidade e evidências</strong><span>O painel recebe somente resumos técnicos. Não publica coordenadas exatas, e-mail, operador ou payloads brutos. Latência é observação HTTP, não ping ICMP nem teste de velocidade.</span></div><div class="panel"><div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API…</div></div><div id="obsMetrics" class="metric-grid" style="margin-top:14px"><article class="metric"><span class="metric-label">Eventos recebidos</span><strong>—</strong></article></div><div class="section-head"><div><span class="eyebrow">EVENTOS SINCRONIZADOS</span><h2>Últimas observações</h2></div><span class="muted">Máximo de 100 linhas</span></div><div class="table-wrap"><table><thead><tr><th>Data/hora</th><th>Origem</th><th>Evento</th><th>Resultado</th><th>Latência (ms)</th><th>Localidade</th></tr></thead><tbody id="obsRows"><tr><td colspan="6">Carregando…</td></tr></tbody></table></div><div class="cards-grid"><article class="panel"><h3>Camada territorial — ILS</h3><p>Use o Localizador Wi-Fi, Oportunidades reais, Inteligência de conectividade e Viabilidade para registrar necessidades e alternativas de acesso.</p><button class="btn btn-ghost" data-goto="intelligence">Abrir inteligência de conectividade</button></article><article class="panel"><h3>Camada técnica — No Network Cause</h3><p>Execute diagnósticos e monitoramento no No Network Cause 5.0. Com sessão autenticada, novos eventos são enviados à API; sem sessão, permanecem no histórico local.</p><a href="https://lima-virtual-pro.github.io/No-Network-Cause/" target="_blank" rel="noopener">Abrir No Network Cause 5.0 ↗</a></article><article class="panel"><h3>Limites técnicos</h3><p>Os dados apoiam triagem e relatórios. Cobertura, causa-raiz, qualidade RF e disponibilidade satelital exigem fontes e medições próprias.</p></article></div></section>
 <footer>
   <span>© 2026 Nailson Lima · ILS 5.6.1 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
@@ -585,12 +587,13 @@ function setView(name){
   b.classList.toggle("active",active);
   if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");
  });
- const labels={overview:"Visão geral",satellites:"Catálogo orbital",visibility:"Visibilidade",map:"Mapa orbital",signals:"Frequências e sinais",sdr:"Integração SDR",access:"Acesso gratuito",opportunities:"Oportunidades reais",locator:"Localizador Wi-Fi",intelligence:"Inteligência de conectividade",diagnostics:"Diagnóstico",about:"Sobre e fontes",legal:"Termos e privacidade",feasibility:"Viabilidade",roadmap:"Plano de implantação",report:"Relatórios",data:"Dados e backup",business:"Negócios e licenças"};
+ const labels={overview:"Visão geral",satellites:"Catálogo orbital",visibility:"Visibilidade",map:"Mapa orbital",signals:"Frequências e sinais",sdr:"Integração SDR",access:"Acesso gratuito",opportunities:"Oportunidades reais",locator:"Localizador Wi-Fi",intelligence:"Inteligência de conectividade",diagnostics:"Diagnóstico",about:"Sobre e fontes",legal:"Termos e privacidade",feasibility:"Viabilidade",roadmap:"Plano de implantação",report:"Relatórios",data:"Dados e backup",business:"Negócios e licenças",observatory:"Observatório Inteligente de Conectividade"};
  document.getElementById("page-title").textContent=labels[name]||name;
  closeIlsMenu();
  window.scrollTo({top:0,left:0,behavior:"instant"});
  document.documentElement.scrollTop=0;document.body.scrollTop=0;
  if(name==="data")refreshDataSummary();
+ if(name==="observatory")window.ILSObservatory?.refresh();
  if(name==="business")renderIlsLicenses();
  if(name==="opportunities")renderOpportunityCatalog();
  if(name==="locator")setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},180);
@@ -1119,5 +1122,6 @@ document.getElementById("exportLicenses")?.addEventListener("click",()=>{const r
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
 </script>
+<script src="./observatory.js" defer></script>
 </body>
 </html>
