@@ -83,7 +83,7 @@ def spectrum(
                         if -250 <= power <= 100:
                             samples.append({
                                 "frequency_mhz": round((low_hz + index * step_hz) / 1_000_000, 6),
-                                "power_dbfs": round(power, 2),
+                                "power_db": round(power, 2),
                             })
             if len(samples) < 2:
                 raise HTTPException(502, "Não foi possível interpretar as amostras CSV do rtl_power.")
