@@ -27,7 +27,7 @@ def health():
     binary = shutil.which(RTL_POWER)
     return {
         "status": "ok" if binary else "degraded",
-        "device": "RTL-SDR via rtl_power" if binary else "rtl_power não encontrado",
+        "device": "rtl_power instalado; hardware ainda não testado" if binary else "rtl_power não encontrado",
         "mode": "receive-only",
         "version": APP_VERSION,
         "ready": bool(binary),
