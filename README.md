@@ -65,3 +65,13 @@ Consulte `ILS-SIGNAL-INTELLIGENCE.md`.
 - Não confirma disponibilidade real nem identifica redes Wi-Fi por varredura RF.
 
 A consulta depende de serviços públicos externos, conexão ativa e disponibilidade dos servidores. A ausência de resultados não comprova ausência de Wi-Fi.
+
+
+## ILS 5.7.0 — Observatório Inteligente de Conectividade
+- Novo painel de observatório com dados sanitizados recebidos do No Network Cause 5.0 pela API REST do Supabase.
+- Indicadores de eventos, testes alcançáveis/sem resposta, interrupções e latência HTTP observada.
+- Cache local para leitura offline; sincronização depende de conectividade.
+- Eventos do No Network Cause são enviados quando existe sessão autenticada; eventos locais antigos são reencaminhados em lotes limitados ao abrir a aplicação e periodicamente.
+- A API não transmite coordenadas exatas, operador, e-mail ou payload bruto para o painel público.
+- Latência HTTP não é ping ICMP; disponibilidade de serviço, cobertura satelital e causa-raiz não são presumidas.
+- Tabela compartilhada: public.connectivity_observatory_events, com RLS e permissões por coluna.
