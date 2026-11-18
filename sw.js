@@ -1,4 +1,4 @@
-const CACHE_NAME="ils-v6.1.0-release-candidate";
+const CACHE_NAME="ils-v6.1.2-wifi-recovery";
 const FILES=["./","./index.html","./manifest.webmanifest","./ils-logo.png","./icon-192.png","./icon-512.png","./favicon-64.png","./observatory.js"];
 self.addEventListener("install",event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE_NAME);await Promise.allSettled(FILES.map(async url=>{try{const r=await fetch(url,{cache:"reload"});if(r.ok)await cache.put(url,r)}catch{}}));await self.skipWaiting()})()));
 self.addEventListener("activate",event=>event.waitUntil((async()=>{/* Mantém caches de versões anteriores para permitir rollback e preservar dados offline; limpeza será feita em migração controlada. */await self.clients.claim()})()));
