@@ -708,6 +708,17 @@ function tleEpochDate(line1){
 async function loadSatellites(){
  const group=$("#satGroup")?.value||"stations",btn=$("#loadSatBtn"),cacheKey="ils-tle-v590:"+group;
  if(btn){btn.disabled=true;btn.textContent="Consultando…"}
+ let cached=null;try{cached=JSON.parse(localStorage.getItem(cacheKey)||"null")}catch{}
+ const ttl=2*60*60*1000,cacheAge=cached?.savedAt?Date.now()-cached.savedAt:Infinity;
+ if(cached?.data?.length&&cacheAge>=0&&cacheAge<ttl){
+  state.satellites=cached.data;state.source=group;state.lastUpdate=new Date(cached.savedAt);
+  renderSatellites();renderFeatured();$("#metric-count").textContent=cached.data.length.toLocaleString("pt-BR");
+  $("#metric-source").textContent="CelesTrak · cache de atualização";
+  $("#last-updated").textContent="Dados recebidos em "+new Date(cached.savedAt).toLocaleString("pt-BR")+" · cache respeita janela de 2 horas";
+  $("#status-orbit").textContent="Dados em cache recente";$("#status-orbit").className="ok";
+  $("#metric-visible").textContent="Calcular";if(btn){btn.disabled=false;btn.textContent="Carregar satélites"}
+  toast("Usando dados TLE em cache. Próxima consulta à fonte após a janela de 2 horas.");return;
+ }
  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),11000);
  try{
   const response=await fetch(groups[group],{cache:"no-store",signal:controller.signal});
@@ -728,7 +739,6 @@ async function loadSatellites(){
   $("#metric-visible").textContent="Calcular";renderFeatured();
   toast(valid.length+" elementos carregados · TLE "+(ageDays>14?"com mais de 14 dias":"validado"));
  }catch(error){
-  let cached=null;try{cached=JSON.parse(localStorage.getItem(cacheKey)||"null")}catch{}
   if(cached?.data?.length){
    state.satellites=cached.data;state.source=group;state.lastUpdate=new Date(cached.savedAt);
    renderSatellites();renderFeatured();$("#metric-count").textContent=cached.data.length.toLocaleString("pt-BR");
