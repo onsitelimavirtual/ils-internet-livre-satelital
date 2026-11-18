@@ -91,7 +91,7 @@ def spectrum(
                 "status": "ok",
                 "mode": "receive-only",
                 "device": "RTL-SDR / rtl_power",
-                "unit": "dBFS",
+                "unit": "dB relativo",
                 "start_mhz": start_mhz,
                 "stop_mhz": stop_mhz,
                 "step_khz": step_khz,
