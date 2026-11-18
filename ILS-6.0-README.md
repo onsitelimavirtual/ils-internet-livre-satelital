@@ -7,7 +7,7 @@ Evoluir o ILS e o No Network Cause para um fluxo de observação técnica e terr
 - Observatório 6.0: filtros por origem, tipo, resultado e período; indicadores derivados dos eventos recebidos; gráficos por dia e resultado; exportação CSV.
 - Supabase: reutiliza `public.connectivity_observatory_events`, que já possui RLS e política de leitura pública para dados sanitizados.
 - No Network Cause: branch de integração opcional permite ao usuário informar cidade e UF e autorizar explicitamente o compartilhamento desses dois campos.
-- ILS orbital: preserva consulta TLE, validação de época e cache offline da versão 5.9.
+- ILS orbital: preserva consulta TLE, validação de época e cache offline; as consultas à CelesTrak respeitam janela local de cache de duas horas.
 - ILS RF: preserva a ponte local RTL-SDR e o endpoint de leitura, sujeito a instalação e teste com hardware real.
 
 ## Privacidade
