@@ -93,7 +93,7 @@ footer a:hover{text-decoration:underline}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 5.9.0 accessibility and analyzer refinements */
+/* ILS 6.0.0 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
@@ -105,7 +105,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #lawful-connectivity .locator-result{border:1px solid var(--line,#d9e1eb);border-radius:14px;padding:1rem;background:var(--surface,#fff)}
 
 
-/* ILS 5.9.0 business workspace */
+/* ILS 6.0.0 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -137,7 +137,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 5.9.0: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 6.0.0: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -171,7 +171,7 @@ html{scroll-behavior:auto}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 5.9.0 — Internet Livre Satelital"></div>
+    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 6.0.0 — Internet Livre Satelital"></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -193,14 +193,14 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 5.9.0 · offline-first</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.0.0 · offline-first</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 5.9.0</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.0.0</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 5.9.0 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 6.0.0 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -436,7 +436,7 @@ html{scroll-behavior:auto}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 5.9.0 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 6.0.0 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -477,7 +477,7 @@ html{scroll-behavior:auto}
 </section>
 
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 5.9.0</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.0.0</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -505,9 +505,51 @@ html{scroll-behavior:auto}
   </div>
 </section>
 
-<section class="view" id="view-observatory"><div class="section-head"><div><span class="eyebrow">ILS + NO NETWORK CAUSE 5.0</span><h2>Observatório Inteligente de Conectividade</h2><p class="muted">Painel integrado de indicadores e eventos técnicos recebidos pela API compartilhada.</p></div><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button></div><div class="notice"><strong>Privacidade e evidências</strong><span>O painel recebe somente resumos técnicos. Não publica coordenadas exatas, e-mail, operador ou payloads brutos. Latência é observação HTTP, não ping ICMP nem teste de velocidade.</span></div><div class="panel"><div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API…</div></div><div id="obsMetrics" class="metric-grid" style="margin-top:14px"><article class="metric"><span class="metric-label">Eventos recebidos</span><strong>—</strong></article></div><div class="section-head"><div><span class="eyebrow">EVENTOS SINCRONIZADOS</span><h2>Últimas observações</h2></div><span class="muted">Máximo de 100 linhas</span></div><div class="table-wrap"><table><thead><tr><th>Data/hora</th><th>Origem</th><th>Evento</th><th>Resultado</th><th>Latência (ms)</th><th>Localidade</th></tr></thead><tbody id="obsRows"><tr><td colspan="6">Carregando…</td></tr></tbody></table></div><div class="cards-grid"><article class="panel"><h3>Camada territorial — ILS</h3><p>Use o Localizador Wi-Fi, Oportunidades reais, Inteligência de conectividade e Viabilidade para registrar necessidades e alternativas de acesso.</p><button class="btn btn-ghost" data-goto="intelligence">Abrir inteligência de conectividade</button></article><article class="panel"><h3>Camada técnica — No Network Cause</h3><p>Execute diagnósticos e monitoramento no No Network Cause 5.0. Com sessão autenticada, novos eventos são enviados à API; sem sessão, permanecem no histórico local.</p><a href="https://lima-virtual-pro.github.io/No-Network-Cause/" target="_blank" rel="noopener">Abrir No Network Cause 5.0 ↗</a></article><article class="panel"><h3>Limites técnicos</h3><p>Os dados apoiam triagem e relatórios. Cobertura, causa-raiz, qualidade RF e disponibilidade satelital exigem fontes e medições próprias.</p></article></div></section>
+<section class="view" id="view-observatory">
+<style>
+#view-observatory .ils6-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:16px 0}
+#view-observatory .ils6-kpi{border:1px solid var(--border,#dce3ec);border-radius:14px;padding:14px;background:var(--panel,#fff)}
+#view-observatory .ils6-kpi strong{display:block;font-size:1.7rem;margin-top:6px}
+#view-observatory .ils6-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+#view-observatory .ils6-chart{width:100%;height:230px;display:block}
+#view-observatory .ils6-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:14px 0}
+#view-observatory .ils6-controls label{display:grid;gap:5px;min-width:150px;flex:1}
+#view-observatory .ils6-controls input,#view-observatory .ils6-controls select{min-height:42px}
+#view-observatory .ils6-insight{border-left:4px solid #2b80c5;padding:12px 14px;background:var(--soft,#f4f7fb);border-radius:8px;margin:12px 0}
+#view-observatory .ils6-pill{display:inline-block;border-radius:20px;padding:4px 9px;font-size:.78rem;background:var(--soft,#eef3f8)}
+#view-observatory .ils6-muted{color:var(--muted,#64748b);font-size:.88rem}
+</style>
+<div class="section-head"><div><span class="eyebrow">ILS 6.0 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
+<div class="notice"><strong>Transparência dos dados</strong><span>Os indicadores refletem somente eventos sincronizados. Latência HTTP não equivale a ping ICMP ou teste de velocidade. Ausência de dados geográficos não será convertida em cobertura presumida. O painel não declara causa-raiz automaticamente.</span></div>
+<div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API compartilhada…</div>
+<div class="ils6-controls">
+<label>Origem<select id="obsFilterSource"><option value="">Todas as origens</option></select></label>
+<label>Tipo de evento<select id="obsFilterType"><option value="">Todos os eventos</option></select></label>
+<label>Resultado<select id="obsFilterResult"><option value="">Todos os resultados</option></select></label>
+<label>Período<select id="obsFilterPeriod"><option value="all">Todo o histórico recebido</option><option value="24">Últimas 24 horas</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></label>
+</div>
+<div id="obsMetrics" class="ils6-kpis">
+<div class="ils6-kpi"><span class="metric-label">Eventos recebidos</span><strong>—</strong><small class="ils6-muted">Aguardando dados</small></div>
+</div>
+<div id="obsInsight" class="ils6-insight" role="status">Aguardando análise dos eventos.</div>
+<div class="ils6-grid">
+<article class="panel"><h3>Histórico de observações</h3><p class="ils6-muted">Volume diário de eventos no período selecionado.</p><canvas id="obsTimeline" class="ils6-chart" height="230" aria-label="Gráfico de eventos por dia"></canvas></article>
+<article class="panel"><h3>Distribuição por resultado</h3><p class="ils6-muted">Classificação dos resultados efetivamente recebidos.</p><canvas id="obsResultsChart" class="ils6-chart" height="230" aria-label="Gráfico de resultados dos eventos"></canvas></article>
+</div>
+<div class="ils6-grid" style="margin-top:14px">
+<article class="panel"><h3>Cobertura territorial observada</h3><div id="obsTerritory" class="result-box">Aguardando dados territoriais.</div><p class="ils6-muted">Somente cidade e UF fornecidas e armazenadas na API serão contabilizadas. Coordenadas exatas não são exibidas.</p></article>
+<article class="panel"><h3>Qualidade e limites da evidência</h3><div id="obsQuality" class="result-box">Aguardando análise de qualidade.</div><p class="ils6-muted">O painel distingue dados ausentes de resultados negativos de conectividade.</p></article>
+</div>
+<div class="section-head" style="margin-top:22px"><div><span class="eyebrow">RASTREABILIDADE</span><h2>Eventos sincronizados</h2><p class="muted">Até 100 registros na tela; exportação considera todos os registros filtrados recebidos.</p></div><span id="obsRowCount" class="ils6-pill">0 registros</span></div>
+<div class="table-wrap"><table><thead><tr><th>Data/hora</th><th>Origem</th><th>Evento</th><th>Resultado</th><th>Latência (ms)</th><th>Rede</th><th>Localidade</th></tr></thead><tbody id="obsRows"><tr><td colspan="7">Carregando…</td></tr></tbody></table></div>
+<div class="cards-grid" style="margin-top:16px">
+<article class="panel"><h3>Camada técnica — No Network Cause</h3><p>Diagnósticos, monitoramento e eventos de disponibilidade sincronizados.</p><a href="https://lima-virtual-pro.github.io/No-Network-Cause/" target="_blank" rel="noopener">Abrir No Network Cause ↗</a></article>
+<article class="panel"><h3>Camada orbital e RF — ILS</h3><p>Dados orbitais e medições RF dependem de fontes TLE e de receptor SDR compatível instalado.</p><button class="btn btn-ghost" data-goto="satellites">Abrir catálogo orbital</button><button class="btn btn-ghost" data-goto="signals">Abrir análise de sinais</button></article>
+<article class="panel"><h3>Próxima expansão territorial</h3><p>O mapa nacional será habilitado progressivamente quando os eventos contiverem UF/cidade válidas e houver amostra suficiente por região.</p><span class="tag tag-warn">Cobertura territorial em coleta</span></article>
+</div>
+</section>
 <footer>
-  <span>© 2026 Nailson Lima · ILS 5.9.0 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 6.0.0 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -957,7 +999,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 5.9.0</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.0.0</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo TLE CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -1046,7 +1088,7 @@ loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol
 
 
 
-// ILS 5.9.0 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
+// ILS 6.0.0 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
 state.locMap=null;state.locMarkers=null;state.locUserMarker=null;
 function initLocatorMap(){
  if(state.locMap)return true;
@@ -1096,7 +1138,7 @@ document.getElementById("locSearch")?.addEventListener("click",searchNearbyWifi)
 document.getElementById("locBrasilia")?.addEventListener("click",()=>{setLocatorCoords(-15.7939,-47.8828,"example");if(initLocatorMap())state.locMap.setView([-15.7939,-47.8828],12);document.getElementById("locStatus").textContent="Coordenadas de exemplo de Brasília preenchidas; não representam sua localização atual.";});
 
 
-// ILS 5.9.0 — registros locais de necessidades de conectividade.
+// ILS 6.0.0 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1169,7 +1211,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 5.9.0 — lawful public Wi-Fi discovery.
+/* ILS 6.0.0 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1298,7 +1340,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 5.9.0 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 6.0.0 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1310,7 +1352,7 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 5.9.0",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.0.0",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
 </script>
