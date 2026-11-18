@@ -1,77 +1,46 @@
-# ILS 5.1 — Inteligência de Conectividade
+# ILS 5.9 — Ponte local RTL-SDR (somente recepção)
 
-**© 2026 Nailson Lima. Todos os direitos reservados.**  
-Contato: onsite.limavirtual@gmail.com
+Este serviço é um componente opcional para um computador que tenha um receptor RTL-SDR compatível e o utilitário `rtl_power` instalado. Ele não faz parte do site estático e não transforma o celular em receptor SDR.
 
-## Posicionamento
-Plataforma de inteligência territorial e conectividade. O ILS fornece mapas de registros públicos, diagnósticos preliminares, ferramentas de análise e organização de informações. Não fornece acesso à Internet, não gera sinal satelital e não garante disponibilidade de pontos Wi-Fi.
+## Requisitos
+- Python 3.10 ou superior.
+- RTL-SDR compatível, driver correto e `rtl_power` instalado.
+- Uso somente em frequências e condições autorizadas.
 
-## Novidades desta edição
-- Identidade ILS 5.0 e posicionamento institucional.
-- Área Negócios e Licenças com cadastro demonstrativo local de licenças de uso.
-- Resumo de registros, validade por data, valor nominal e exportação JSON.
-- Termos de uso e política de privacidade atualizados para licenciamento de uso.
-- Identificação inicial da operação por pessoa física e contato oficial.
-- Preservação dos módulos existentes de dados orbitais, localizador, diagnóstico, viabilidade, relatórios e backup.
+## Instalação
+1. Instale os drivers/utilitários do projeto RTL-SDR para seu sistema operacional.
+2. Entre nesta pasta.
+3. Crie um ambiente virtual e instale dependências:
 
-## Aviso crítico sobre o painel de licenças
-O registro de licenças desta versão é **local e demonstrativo**. Não autentica administradores, não valida pagamentos, não impede acesso ao código ou às funcionalidades, não sincroniza entre dispositivos e não constitui sistema de cobrança. Para comercialização real, implementar backend autenticado, banco central, autorização server-side, trilha de auditoria, integração de pagamentos e rotinas de cancelamento/renovação. Não inserir dados sensíveis ou dados reais de clientes neste protótipo.
+```bash
+python -m venv .venv
+# Windows:
+.venv\\Scripts\\activate
+# Linux/macOS:
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-## Operação inicial
-- Modelo pretendido: licença de uso, sem transferência da propriedade intelectual.
-- Titular indicado dos direitos autorais: Nailson Lima.
-- Operação inicial: pessoa física, sujeita à validação jurídica e tributária.
-- E-mail: onsite.limavirtual@gmail.com.
-- Os valores dos planos são hipóteses para validação comercial, não oferta final nem cobrança integrada.
+4. Inicie a ponte, vinculada somente ao loopback:
 
-## Instalação — GitHub Pages
-1. Extraia o ZIP.
-2. Envie o conteúdo da pasta para a raiz do repositório.
-3. Configure Pages para publicar a branch e pasta corretas.
-4. Aguarde HTTPS e teste em celular e computador.
+```bash
+uvicorn main:app --host 127.0.0.1 --port 8765
+```
 
-## Android / Pydroid 3
-1. Extraia todos os arquivos na mesma pasta.
-2. Execute `servidor_ils.py` no Pydroid 3.
-3. Abra o endereço local indicado pelo servidor.
+5. No ILS, mantenha a URL `http://127.0.0.1:8765`, teste a ponte e solicite uma análise de espectro.
 
-## Limitações técnicas e validação
-- Mantém dependências externas existentes (Leaflet, OpenStreetMap/Overpass, CelesTrak e satellite.js, conforme módulo).
-- Os pontos Wi-Fi são registros colaborativos, não prova de disponibilidade.
-- A leitura RSSI depende da Android Bridge nativa; navegador comum não fornece essa informação.
-- Não há integração real com terminal/modem satelital, SDR físico ou bases oficiais autenticadas.
-- Os dados de projetos e licenças demonstrativas ficam no armazenamento local do navegador.
-- Testes estáticos de sintaxe, estrutura e ZIP podem ser executados nesta entrega; testes reais em Android, iOS, GitHub Pages, serviços externos, segurança e acessibilidade permanecem pendentes.
+## Contrato da API
+- `GET /health` informa se `rtl_power` está disponível.
+- `GET /spectrum?start_mhz=88&stop_mhz=108&step_khz=50&gain=auto` executa uma leitura única e retorna amostras reais em dB relativo.
+- Faixa limitada a 24–1766 MHz, largura máxima de 100 MHz, passos 25/50/100/250 kHz e ganhos predefinidos.
+- Apenas uma leitura simultânea. O endpoint não transmite.
 
-## Documentos legais
-A seção Termos e Privacidade é uma minuta inicial. Antes de comercializar, preencher dados de identificação fiscal e endereço, mapear fornecedores e tratamentos reais, definir retenção e obter revisão jurídica. A operação remunerada por pessoa física deve ser analisada também sob os aspectos funcionais e tributários aplicáveis.
+## Segurança e limitações
+- O servidor escuta apenas em `127.0.0.1`; não o exponha à rede pública nem faça port-forward.
+- CORS é limitado por padrão aos domínios GitHub Pages indicados. Para outro domínio, defina `ILS_ALLOWED_ORIGINS` com a origem exata, separada por vírgulas.
+- O navegador pode bloquear a consulta por políticas de rede local, conteúdo misto ou CORS. Nesse caso, use um ambiente de navegador compatível e confira a origem permitida.
+- O serviço não autentica usuários locais: mantenha-o no computador confiável e não o vincule a `0.0.0.0`.
+- O gráfico representa potência relativa informada pelo `rtl_power`; não é medição calibrada em dBm calibrado, não identifica conteúdo de comunicações e não comprova conectividade satelital.
+- Sem hardware e utilitário instalados, o endpoint retorna erro; o ILS não simula amostras.
 
-
-## ILS Signal Intelligence 5.0
-- Wi-Fi Analyzer: leitura da conexão atual via Android Bridge nativa.
-- RF Spectrum Analyzer: integração inicial de recepção RTL-SDR via `sdr_bridge.py` + `rtl_power` em host Linux/PC.
-- A ponte SDR fica vinculada a localhost; não exponha a porta à Internet.
-- Potência RF é relativa dBFS, não dBm calibrado.
-- Integração SDR por USB diretamente no Android ainda depende de driver/host nativo específico e não está incluída como funcionalidade pronta.
-Consulte `ILS-SIGNAL-INTELLIGENCE.md`.
-
-
-## ILS 5.1 — GeoConnect resiliente
-
-- Busca pública OpenStreetMap/Overpass com três endpoints alternativos.
-- Timeout de 11 segundos por endpoint e mensagens claras de falha.
-- Consulta mais abrangente por registros com a etiqueta `internet_access`.
-- Resultados ordenados por distância, com links para mapa e rota.
-- Não confirma disponibilidade real nem identifica redes Wi-Fi por varredura RF.
-
-A consulta depende de serviços públicos externos, conexão ativa e disponibilidade dos servidores. A ausência de resultados não comprova ausência de Wi-Fi.
-
-
-## ILS 5.7.0 — Observatório Inteligente de Conectividade
-- Novo painel de observatório com dados sanitizados recebidos do No Network Cause 5.0 pela API REST do Supabase.
-- Indicadores de eventos, testes alcançáveis/sem resposta, interrupções e latência HTTP observada.
-- Cache local para leitura offline; sincronização depende de conectividade.
-- Eventos do No Network Cause são enviados quando existe sessão autenticada; eventos locais antigos são reencaminhados em lotes limitados ao abrir a aplicação e periodicamente.
-- A API não transmite coordenadas exatas, operador, e-mail ou payload bruto para o painel público.
-- Latência HTTP não é ping ICMP; disponibilidade de serviço, cobertura satelital e causa-raiz não são presumidas.
-- Tabela compartilhada: public.connectivity_observatory_events, com RLS e permissões por coluna.
+Consulte a regulamentação da Anatel e os manuais do fabricante do receptor antes de qualquer operação.

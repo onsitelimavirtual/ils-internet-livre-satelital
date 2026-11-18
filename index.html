@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 5.8.0">
+<meta name="application-name" content="ILS 6.0.0 — Consolidação">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 5.8.0 — Internet Livre Satelital</title>
+<title>ILS 6.0.0 — Consolidação | Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -86,14 +86,14 @@ footer a:hover{text-decoration:underline}
  .intelligence-panel{display:none!important}.case-card{break-inside:avoid;box-shadow:none}
 }
 
-.brand{display:flex;align-items:center;gap:12px;padding:0 8px 24px;min-height:78px}
-.brand-logo{display:block;width:100%;max-width:205px;height:68px;object-fit:contain;object-position:left center}
-@media(max-width:900px){.brand-logo{max-width:180px;height:58px}}
-@media(max-width:760px){.brand{padding:0 8px 16px}.brand-logo{max-width:190px;height:58px}}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px 24px;min-height:78px;min-width:0}
+.brand-symbol{width:48px;height:48px;flex:0 0 48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#28a8ff,#6159df);color:#fff;font:700 18px 'Space Grotesk',Arial,sans-serif;letter-spacing:-1px;box-shadow:0 5px 18px #258ee955}
+.brand-copy{min-width:0}.brand-copy strong{display:block;color:#f2f7ff;font:700 16px 'Space Grotesk',Arial,sans-serif;white-space:nowrap}.brand-copy small{display:block;color:#91a8c4;font-size:11px;margin-top:4px;line-height:1.3}
+@media(max-width:760px){.brand{padding:0 8px 18px;min-height:70px}.brand-symbol{width:44px;height:44px;flex-basis:44px}}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 5.9.0 accessibility and analyzer refinements */
+/* ILS 6.0.0 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
@@ -105,7 +105,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #lawful-connectivity .locator-result{border:1px solid var(--line,#d9e1eb);border-radius:14px;padding:1rem;background:var(--surface,#fff)}
 
 
-/* ILS 5.9.0 business workspace */
+/* ILS 6.0.0 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -115,6 +115,33 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .public-wifi-filters label{display:grid;gap:6px;font-size:11px;color:#687b91}
 .public-wifi-map{height:310px;min-height:250px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#eaf0f6;overflow:hidden}
 @media(max-width:760px){.public-wifi-filters{grid-template-columns:1fr}.public-wifi-map{height:280px}}
+/* ILS 6.0 — layout additions for Remote and Impact */
+.grid-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
+.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.stats-grid .stat{background:#f4f7fb;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.stats-grid .stat span{display:block;color:var(--muted);font-size:11px;line-height:1.4}
+.stats-grid .stat strong{display:block;font:600 22px 'Space Grotesk';margin-top:8px;overflow-wrap:anywhere}
+#view-remote .panel,#view-impact .panel{min-width:0}
+#view-remote .form-grid,#view-impact .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#view-remote .form-grid label,#view-impact .form-grid label{display:grid;gap:6px;color:#52657d;font-size:12px;font-weight:600}
+#view-remote .form-grid input,#view-remote .form-grid select,#view-remote .form-grid textarea,#view-impact .form-grid input,#view-impact .form-grid select,#view-impact .form-grid textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff;color:var(--ink);font:400 13px 'DM Sans'}
+#view-remote .form-grid .full,#view-impact .form-grid .full{grid-column:1/-1}
+#view-remote .saved-item,#view-impact .saved-item{padding:13px 0;border-bottom:1px solid var(--line);line-height:1.6}
+#view-remote .saved-item:last-child,#view-impact .saved-item:last-child{border-bottom:0}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){#view-remote .form-grid,#view-impact .form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
+
+
+/* ILS 6.0 consolidation — Wi-Fi locator integrated into the main navigation */
+#view-locator .section-heading{max-width:900px;margin:0 0 18px}
+#view-locator .section-heading h2{font:600 22px 'Space Grotesk';color:var(--ink);margin:6px 0}
+#view-locator .section-heading p{color:var(--muted);line-height:1.65;margin:6px 0}
+#view-locator .notice-warning{background:#fff8e9;border:1px solid #f4e6c5;border-radius:11px;padding:13px 16px;color:#7a6844;font-size:12px;line-height:1.6;margin:14px 0}
+#view-locator .public-wifi-map{height:270px;min-height:220px}
+#view-locator .public-wifi-map>.empty{padding:18px}
+#view-locator .public-wifi-filters label{display:grid;gap:6px;color:#687b91;font-size:11px;font-weight:600}
+#view-locator .results-list{max-height:none}
+@media(max-width:760px){#view-locator .public-wifi-map{height:235px;min-height:200px}}
 </style>
 <style>
 /* ILS 1.2 hardening: ensure layout remains styled in local Android file previews */
@@ -137,7 +164,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 5.9.0: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 6.0.0: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -156,9 +183,11 @@ html{scroll-behavior:auto}
 .map-satellite-card strong{display:block;color:var(--ink)}
 .sat-marker{font-size:25px;text-shadow:0 2px 5px #0b1c2e77}
 @media(max-width:760px){
- .sidebar{z-index:100;overflow-y:auto;padding-bottom:35px;visibility:hidden;pointer-events:none}
- .sidebar.open{visibility:visible;pointer-events:auto}
- .menu-backdrop.open{display:block;position:fixed;inset:0;background:rgba(5,16,30,.58);z-index:99}
+ .sidebar{width:min(310px,84vw);max-width:84vw;height:100vh;height:100dvh;inset:0 auto 0 0;z-index:100;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;padding:18px 14px calc(24px + env(safe-area-inset-bottom));visibility:hidden;pointer-events:none;transform:translateX(-105%);transition:transform .22s ease,visibility .22s ease}
+ .sidebar.open{visibility:visible;pointer-events:auto;transform:translateX(0)}
+ .sidebar nav{gap:5px}.nav-item{width:100%;min-height:46px;padding:11px 12px;font-size:14px}
+ .menu-backdrop.open{display:block;position:fixed;inset:0;background:rgba(5,16,30,.66);z-index:99;touch-action:manipulation}
+ body.ils-menu-open{overflow:hidden;overscroll-behavior:none}
  .mobile-menu{position:relative;z-index:3;cursor:pointer;min-width:42px;min-height:42px}
  .satellite-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
  .satellite-card{padding:11px}.satellite-illustration{min-height:80px;font-size:43px}
@@ -171,7 +200,7 @@ html{scroll-behavior:auto}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><img class="brand-logo" src="ils-logo.png" alt="ILS 5.9.0 — Internet Livre Satelital"></div>
+    <div class="brand"><span class="brand-symbol" aria-hidden="true">ILS</span><span class="brand-copy"><strong>ILS 6.0.0</strong><small>Internet Livre Satelital</small></span></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -191,16 +220,18 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="observatory"><span>◈</span> Observatório Inteligente</button>
       <button class="nav-item" data-view="about"><span>ⓘ</span> Sobre e fontes</button>
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
+      <button class="nav-item" data-view="remote"><span>⌁</span> ILS Remote</button>
+      <button class="nav-item" data-view="impact"><span>▥</span> ILS Impact</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 5.9.0 · offline-first</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.0.0 · offline-first</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 5.9.0</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.0.0</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 5.9.0 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 6.0.0 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -223,15 +254,15 @@ html{scroll-behavior:auto}
       <p class="micro">A consulta depende de conexão e disponibilidade do CelesTrak. A lista exibida é uma amostra de catálogo, não um inventário completo.</p>
     </section>
     <section class="view" id="view-visibility">
-      <div class="section-head"><div><span class="eyebrow">ESTIMATIVA GEOGRÁFICA</span><h2>Visibilidade do satélite</h2><p class="muted">Informe coordenadas para calcular a elevação aproximada de satélites com TLE carregado.</p></div></div>
-      <div class="panel form-panel"><div class="form-grid"><label>Latitude (graus)<input type="text" id="lat" inputmode="decimal" autocomplete="off" value="-15.7939" placeholder="-15.7939"></label><label>Longitude (graus)<input type="text" id="lon" inputmode="decimal" autocomplete="off" value="-47.8828" placeholder="-47.8828"></label><label>Altitude (metros)<input type="number" id="alt" min="-500" max="9000" value="1000"></label><label>Elevação mínima<select id="minElev"><option value="0">0° — horizonte matemático</option><option value="10" selected>10°</option><option value="20">20°</option><option value="30">30°</option></select></label></div><div class="form-actions"><button class="btn btn-primary" id="calcVisibility">Calcular visibilidade</button><button class="btn btn-ghost" id="useExample">Usar coordenadas de Brasília (exemplo)</button></div><div id="visibility-result" class="result-box">Carregue dados TLE no catálogo e informe coordenadas para executar a estimativa.</div></div>
-      <p class="micro">Esta versão aceita coordenadas com ponto ou vírgula decimal e tenta carregar os dados orbitais automaticamente quando necessário. Cálculo requer biblioteca satellite.js e elementos TLE válidos. Resultado é uma estimativa geométrica, não garante recepção de rádio, cobertura de serviço ou acesso à Internet.</p>
+      <div class="section-head"><div><span class="eyebrow">ESTIMATIVA GEOGRÁFICA</span><h2>Visibilidade do satélite</h2><p class="muted">Informe coordenadas para calcular a elevação aproximada de satélites com dados OMM carregados.</p></div></div>
+      <div class="panel form-panel"><div class="form-grid"><label>Latitude (graus)<input type="text" id="lat" inputmode="decimal" autocomplete="off" value="-15.7939" placeholder="-15.7939"></label><label>Longitude (graus)<input type="text" id="lon" inputmode="decimal" autocomplete="off" value="-47.8828" placeholder="-47.8828"></label><label>Altitude (metros)<input type="number" id="alt" min="-500" max="9000" value="1000"></label><label>Elevação mínima<select id="minElev"><option value="0">0° — horizonte matemático</option><option value="10" selected>10°</option><option value="20">20°</option><option value="30">30°</option></select></label></div><div class="form-actions"><button class="btn btn-primary" id="calcVisibility">Calcular visibilidade</button><button class="btn btn-ghost" id="useExample">Usar coordenadas de Brasília (exemplo)</button></div><div id="visibility-result" class="result-box">Carregue dados OMM no catálogo e informe coordenadas para executar a estimativa.</div></div>
+      <p class="micro">Esta versão aceita coordenadas com ponto ou vírgula decimal e tenta carregar os dados orbitais automaticamente quando necessário. Cálculo requer biblioteca satellite.js e elementos OMM válidos. Resultado é uma estimativa geométrica, não garante recepção de rádio, cobertura de serviço ou acesso à Internet.</p>
     </section>
     <section class="view" id="view-map">
 <div class="section-head"><div><span class="eyebrow">POSIÇÃO SUBSATELITAL</span><h2>Mapa orbital interativo</h2><p class="muted">Posições estimadas a partir dos elementos orbitais carregados.</p></div><button class="btn btn-primary" id="refreshMap">Atualizar mapa</button></div>
 <div class="map-toolbar"><label>Objeto<select id="mapSatSelect"><option value="">Todos os objetos carregados</option></select></label><label>Atualização<select id="mapRate"><option value="0">Manual</option><option value="30">A cada 30 segundos</option><option value="60">A cada 60 segundos</option></select></label><span id="mapTimestamp" class="muted">Aguardando dados orbitais</span></div>
 <div class="orbit-map-legend"><span>🛰️ Satélites (posições estimadas)</span><span>Trajetórias indicativas: 60 minutos</span></div><div id="orbit-map" role="region" aria-label="Mapa mundial com posições estimadas de satélites"><div class="empty">Carregue satélites no catálogo para exibir posições estimadas.</div></div><div id="map-satellite-cards" class="map-satellite-cards" aria-live="polite"><div class="empty">Selecione ou atualize os satélites para visualizar os detalhes.</div></div>
-<p class="micro">O marcador representa o ponto subsatélite calculado, não o feixe de cobertura, footprint de Internet ou disponibilidade de serviço. A precisão depende da qualidade e atualidade do TLE.</p></section>
+<p class="micro">O marcador representa o ponto subsatélite calculado, não o feixe de cobertura, footprint de Internet ou disponibilidade de serviço. A precisão depende da qualidade e atualidade dos elementos OMM.</p></section>
 <section class="view" id="view-signals">
       <div class="section-head"><div><span class="eyebrow">RADIOFREQUÊNCIA</span><h2>Frequências e sinais</h2><p class="muted">Referência educativa para organizar informações técnicas; não realiza varredura de RF neste navegador.</p></div></div>
       <div class="notice"><strong>Limite desta versão</strong><span>O navegador não acessa diretamente um receptor SDR conectado por USB. A medição física exige equipamento compatível e um serviço local ou backend autorizado.</span></div>
@@ -316,23 +347,55 @@ html{scroll-behavior:auto}
 </section>
 
 <section class="view" id="view-locator">
- <div class="section-head"><div><span class="eyebrow">LOCALIZAÇÃO DE ACESSO PÚBLICO</span><h2>Localizador de Wi-Fi público</h2><p class="muted">Pesquise pontos mapeados pela comunidade OpenStreetMap perto de uma coordenada escolhida.</p></div><span class="tag tag-green">Pesquisa geográfica</span></div>
- <div class="notice"><strong>Transparência</strong><span>Os resultados vêm de dados colaborativos do OpenStreetMap e podem estar incompletos, desatualizados ou não representar Wi-Fi gratuito em funcionamento. Confirme com o estabelecimento. Este mapa não é um cadastro oficial de pontos GESAC.</span></div>
- <div class="panel form-panel locator-panel">
-  <div class="form-grid">
-   <label>Latitude<input id="locLat" type="text" inputmode="decimal" placeholder="Ex.: -15.7939"></label>
-   <label>Longitude<input id="locLon" type="text" inputmode="decimal" placeholder="Ex.: -47.8828"></label>
-   <label>Raio de pesquisa<select id="locRadius"><option value="1000">1 km</option><option value="3000" selected>3 km</option><option value="5000">5 km</option><option value="10000">10 km</option></select></label>
-   <label>Origem das coordenadas<select id="locOrigin"><option value="manual">Informadas manualmente</option><option value="device">Localização do dispositivo</option><option value="example">Exemplo de Brasília</option></select></label>
-  </div>
-  <div class="form-actions"><button class="btn btn-primary" id="locUseGps">Usar minha localização</button><button class="btn btn-ghost" id="locSearch">Pesquisar pontos próximos</button><button class="btn btn-ghost" id="locBrasilia">Exemplo Brasília</button></div>
-  <p class="micro">A localização só é solicitada após tocar no botão. As coordenadas não são enviadas para armazenamento pelo ILS; são usadas na consulta geográfica solicitada.</p>
-  <div id="locStatus" class="result-box" role="status" aria-live="polite">Informe coordenadas ou permita o acesso à localização para começar.</div>
+ <div class="section-heading">
+  <p class="eyebrow">CONECTIVIDADE LEGÍTIMA</p>
+  <h2>Encontrar Wi-Fi público autorizado</h2>
+  <p>Localize pontos publicados como Wi-Fi público ou comunitário. O ILS não tenta acessar redes privadas, contornar senhas ou ultrapassar portais de autenticação.</p>
  </div>
- <div class="locator-map-wrap"><div id="locator-map" role="region" aria-label="Mapa de pontos públicos de Wi-Fi"><div class="empty">O mapa será carregado quando a pesquisa for iniciada.</div></div></div>
- <div class="section-head"><div><span class="eyebrow">RESULTADOS MAPEADOS</span><h2 id="locResultTitle">Pontos encontrados</h2></div><span class="muted" id="locCount">Nenhuma pesquisa realizada</span></div>
- <div id="locResults" class="opportunity-grid" aria-live="polite"><div class="empty">Os resultados aparecerão aqui.</div></div>
- <p class="micro">Distâncias são calculadas em linha reta entre as coordenadas, não representam distância por estrada. Fonte cartográfica: © OpenStreetMap contributors. Consulta pública Overpass API. A disponibilidade real, preço, senha, horário e acessibilidade devem ser confirmados no local. A ausência de resultados não prova ausência de Wi-Fi.</p>
+ <div class="notice notice-warning">
+  <strong>Uso responsável:</strong> a presença de uma rede no mapa não comprova que ela esteja ativa, gratuita ou aberta. Confirme as condições no local e utilize somente redes cujo responsável autorize seu acesso.
+ </div>
+ <div class="panel form-panel">
+  <label for="publicWifiLat">Latitude</label>
+  <input id="publicWifiLat" type="text" inputmode="decimal" placeholder="-15,7939">
+  <label for="publicWifiLon">Longitude</label>
+  <input id="publicWifiLon" type="text" inputmode="decimal" placeholder="-47,8828">
+  <label for="publicWifiRadius">Raio de busca</label>
+  <select id="publicWifiRadius">
+   <option value="500">500 metros</option>
+   <option value="1000" selected>1 km</option>
+   <option value="3000">3 km</option>
+   <option value="5000">5 km</option>
+  </select>
+  <div class="form-actions">
+   <button class="btn btn-primary" id="usePublicWifiLocation">Usar minha localização</button>
+   <button class="btn btn-ghost" id="searchPublicWifi">Buscar Wi-Fi público mapeado</button>
+  </div>
+  <div id="publicWifiStatus" class="result-box" role="status" aria-live="polite">Informe uma localização ou use a localização do dispositivo para iniciar a busca.</div>
+  <div class="public-wifi-filters">
+   <label>Tipo de local
+    <select id="publicWifiType"><option value="all">Todos os tipos</option><option value="public">Órgãos e serviços públicos</option><option value="education">Educação e bibliotecas</option><option value="hospitality">Comércio e hospedagem</option><option value="community">Espaços comunitários</option></select>
+   </label>
+   <label>Condição de acesso
+    <select id="publicWifiAccess"><option value="all">Todas as condições</option><option value="free">Gratuito indicado no cadastro</option><option value="yes">Acesso indicado</option><option value="unknown">Não informado</option></select>
+   </label>
+   <label>Ordenar por
+    <select id="publicWifiSort"><option value="distance">Mais próximos</option><option value="name">Nome (A–Z)</option></select>
+   </label>
+  </div>
+  <div id="publicWifiSummary" class="micro" aria-live="polite"></div>
+  <div id="publicWifiMap" class="public-wifi-map" role="region" aria-label="Mapa dos pontos Wi-Fi encontrados"><div class="empty">O mapa será exibido após a primeira pesquisa.</div></div>
+  <div id="publicWifiResults" class="results-list"></div>
+ </div>
+ <div class="panel">
+  <h3>Outras formas legais de obter acesso</h3>
+  <ul>
+   <li>Wi-Fi público de órgãos públicos, bibliotecas, universidades e espaços comunitários.</li>
+   <li>Hotspots de estabelecimentos que anunciam acesso gratuito e autorizam usuários.</li>
+   <li>Programas de inclusão digital e conectividade elegível, conforme regras do programa.</li>
+   <li>Compartilhamento voluntário de conexão por proprietário ou administrador, com autorização expressa.</li>
+  </ul>
+ </div>
 </section>
 
 
@@ -432,11 +495,11 @@ html{scroll-behavior:auto}
 
 <section class="view" id="view-about">
       <div class="section-head"><div><span class="eyebrow">DOCUMENTAÇÃO</span><h2>Sobre o ILS</h2></div></div>
-      <div class="panel prose"><h3>Objetivo original</h3><blockquote>“Desenvolver um gerador de Internet gratuita, através de sinal livre de satélite.”</blockquote><p>O ILS investiga a viabilidade dessa ideia por meio de dados orbitais, documentação de radiofrequência e identificação de alternativas de conectividade gratuita e autorizada. O software não gera sinal de satélite nem desbloqueia redes privadas.</p><h3>Fontes técnicas</h3><ul><li><a href="https://celestrak.org/" target="_blank" rel="noopener">CelesTrak — dados orbitais</a></li><li><a href="https://www.gov.br/anatel/pt-br" target="_blank" rel="noopener">Anatel — regulamentação e satélites</a></li><li><a href="https://www.gov.br/mcom/pt-br" target="_blank" rel="noopener">Ministério das Comunicações — programas de conectividade</a></li><li><a href="https://www.n2yo.com/" target="_blank" rel="noopener">N2YO — referência complementar de rastreamento</a></li></ul><h3>Privacidade e armazenamento</h3><p>Coordenadas e oportunidades salvas ficam no armazenamento local deste navegador. Esta versão não envia coordenadas para um servidor próprio. Consultas a fontes externas podem revelar ao respectivo serviço o endereço IP do usuário.</p><h3>Limitações conhecidas</h3><ul><li>Dados TLE são elementos orbitais e não informam se um satélite oferece serviço de Internet.</li><li>Estimativa de visibilidade não é medição de sinal RF.</li><li>Não há integração física SDR nesta versão.</li><li>Não há autenticação, terminal ou serviço satelital integrado.</li><li>O acesso gratuito depende de política e infraestrutura de terceiros.</li></ul></div>
+      <div class="panel prose"><h3>Objetivo original</h3><blockquote>“Desenvolver um gerador de Internet gratuita, através de sinal livre de satélite.”</blockquote><p>O ILS investiga a viabilidade dessa ideia por meio de dados orbitais, documentação de radiofrequência e identificação de alternativas de conectividade gratuita e autorizada. O software não gera sinal de satélite nem desbloqueia redes privadas.</p><h3>Fontes técnicas</h3><ul><li><a href="https://celestrak.org/" target="_blank" rel="noopener">CelesTrak — dados orbitais</a></li><li><a href="https://www.gov.br/anatel/pt-br" target="_blank" rel="noopener">Anatel — regulamentação e satélites</a></li><li><a href="https://www.gov.br/mcom/pt-br" target="_blank" rel="noopener">Ministério das Comunicações — programas de conectividade</a></li><li><a href="https://www.n2yo.com/" target="_blank" rel="noopener">N2YO — referência complementar de rastreamento</a></li></ul><h3>Privacidade e armazenamento</h3><p>Coordenadas e oportunidades salvas ficam no armazenamento local deste navegador. Esta versão não envia coordenadas para um servidor próprio. Consultas a fontes externas podem revelar ao respectivo serviço o endereço IP do usuário.</p><h3>Limitações conhecidas</h3><ul><li>Dados OMM são elementos orbitais e não informam se um satélite oferece serviço de Internet.</li><li>Estimativa de visibilidade não é medição de sinal RF.</li><li>Não há integração física SDR nesta versão.</li><li>Não há autenticação, terminal ou serviço satelital integrado.</li><li>O acesso gratuito depende de política e infraestrutura de terceiros.</li></ul></div>
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 5.9.0 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 6.0.0 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -476,8 +539,80 @@ html{scroll-behavior:auto}
   <p class="micro">A data de validade é uma informação cadastral. A ativação comercial real exige backend, autenticação, registro de pagamento, trilha de auditoria e mecanismo de validação no servidor.</p>
 </section>
 
+<section class="view" id="view-remote">
+  <div class="section-head"><div><span class="eyebrow">DIAGNÓSTICO TERRITORIAL · V6.0</span><h2>ILS Remote — conectividade em áreas remotas</h2><p class="muted">Registre condições observadas e compare alternativas. O resultado é uma triagem técnica preliminar, não um projeto executivo nem garantia de cobertura.</p></div></div>
+  <div class="grid-2">
+    <div class="panel">
+      <h3>Caracterização da localidade</h3>
+      <form id="remoteForm" class="form-grid">
+        <label>Localidade / comunidade<input id="remoteName" required maxlength="100" placeholder="Ex.: comunidade rural piloto"></label>
+        <label>Município / UF<input id="remotePlace" required maxlength="100" placeholder="Ex.: Planaltina, DF"></label>
+        <label>Latitude<input id="remoteLat" type="number" step="any" min="-90" max="90" placeholder="-15.6"></label>
+        <label>Longitude<input id="remoteLon" type="number" step="any" min="-180" max="180" placeholder="-47.7"></label>
+        <label>Condição atual<select id="remoteCurrent"><option value="none">Sem conexão conhecida</option><option value="weak">Sinal fraco ou instável</option><option value="mobile">Rede móvel disponível</option><option value="fixed">Banda larga fixa disponível</option><option value="sat">Conexão satelital disponível</option></select></label>
+        <label>Energia elétrica<select id="remotePower"><option value="stable">Estável</option><option value="unstable">Instável</option><option value="none">Indisponível</option></select></label>
+        <label>Distância aproximada da infraestrutura (km)<input id="remoteDistance" type="number" min="0" step="0.1" value="10"></label>
+        <label>Usuários potenciais<input id="remoteUsers" type="number" min="1" max="100000" value="50"></label>
+        <label>Obstáculos / relevo<select id="remoteTerrain"><option value="open">Área aberta / pouca obstrução</option><option value="mixed">Relevo ou vegetação moderados</option><option value="hard">Relevo difícil / vegetação densa</option></select></label>
+        <label>Orçamento mensal estimado (R$)<input id="remoteBudget" type="number" min="0" step="0.01" value="1000"></label>
+        <label class="full">Observações de campo<textarea id="remoteNotes" rows="3" maxlength="1000" placeholder="Fonte da informação, data da observação, medições e limitações…"></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">Gerar diagnóstico preliminar</button></div>
+      </form>
+    </div>
+    <div class="panel">
+      <h3>Resultado e alternativas</h3>
+      <div id="remoteResult" class="empty">Preencha os dados da localidade e gere um diagnóstico.</div>
+      <div class="micro">As alternativas (fibra, rádio, rede móvel, satélite e ponto comunitário) precisam de validação de linha de visada, capacidade, licenciamento, disponibilidade comercial, energia, custo e visita técnica. Não há recomendação automática de equipamento ou operadora.</div>
+    </div>
+  </div>
+  <div class="section-head"><div><h3>Diagnósticos salvos neste dispositivo</h3><p class="muted">Armazenamento local do navegador; não sincroniza com outros usuários.</p></div><button class="btn btn-ghost" id="remoteExport">Exportar JSON</button></div>
+  <div id="remoteHistory" class="panel"><div class="empty">Nenhum diagnóstico registrado.</div></div>
+  <div class="panel prose">
+    <h3>Fontes de referência</h3>
+    <p><a href="https://informacoes.anatel.gov.br/paineis/infraestrutura/cobertura-movel" target="_blank" rel="noopener">Anatel — cobertura móvel</a> · <a href="https://sistemas.anatel.gov.br/se/public/cmap.php" target="_blank" rel="noopener">Anatel — estimativa de nível de sinal</a> · <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html" target="_blank" rel="noopener">IBGE — Censo e malhas territoriais</a>.</p>
+    <p class="micro">Mapas de cobertura e intensidade de sinal são estimativas teóricas e podem divergir da experiência real. Sempre registrar fonte, data, escala e método de validação.</p>
+  </div>
+</section>
+
+<section class="view" id="view-impact">
+  <div class="section-head"><div><span class="eyebrow">RESULTADOS E INCLUSÃO DIGITAL · V6.0</span><h2>ILS Impact — mensuração de melhorias</h2><p class="muted">Compare indicadores antes e depois de uma intervenção. Não confunda ponto cadastrado, ponto verificado e pessoa efetivamente beneficiada.</p></div></div>
+  <div class="grid-2">
+    <div class="panel">
+      <h3>Registrar avaliação de impacto</h3>
+      <form id="impactForm" class="form-grid">
+        <label>Localidade<input id="impactName" required maxlength="100" placeholder="Nome da comunidade"></label>
+        <label>Intervenção<input id="impactAction" required maxlength="140" placeholder="Ex.: instalação de enlace autorizado"></label>
+        <label>Data da medição inicial<input id="impactBeforeDate" type="date" required></label>
+        <label>Data da medição posterior<input id="impactAfterDate" type="date" required></label>
+        <label>Download antes (Mbps)<input id="impactDownBefore" type="number" min="0" step="0.01" required></label>
+        <label>Download depois (Mbps)<input id="impactDownAfter" type="number" min="0" step="0.01" required></label>
+        <label>Upload antes (Mbps)<input id="impactUpBefore" type="number" min="0" step="0.01" required></label>
+        <label>Upload depois (Mbps)<input id="impactUpAfter" type="number" min="0" step="0.01" required></label>
+        <label>Latência antes (ms)<input id="impactPingBefore" type="number" min="0" step="1" required></label>
+        <label>Latência depois (ms)<input id="impactPingAfter" type="number" min="0" step="1" required></label>
+        <label>Usuários efetivamente beneficiados<input id="impactPeople" type="number" min="0" step="1" value="0" required></label>
+        <label>Verificação<select id="impactVerified"><option value="no">Ainda não verificado em campo</option><option value="yes">Verificado em campo, com evidências</option></select></label>
+        <label class="full">Método e evidências<textarea id="impactEvidence" rows="3" maxlength="1200" placeholder="Ferramenta, equipamento, horários, número de testes, comprovantes e responsável…"></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">Calcular e registrar impacto</button></div>
+      </form>
+    </div>
+    <div class="panel">
+      <h3>Indicadores consolidados</h3>
+      <div class="stats-grid">
+        <div class="stat"><span>Registros</span><strong id="impactCount">0</strong></div>
+        <div class="stat"><span>Verificados em campo</span><strong id="impactVerifiedCount">0</strong></div>
+        <div class="stat"><span>Pessoas informadas como beneficiadas</span><strong id="impactPeopleTotal">0</strong></div>
+      </div>
+      <div id="impactSummary" class="empty">Ainda não há avaliações registradas.</div>
+    </div>
+  </div>
+  <div class="section-head"><div><h3>Histórico de impacto</h3><p class="muted">Registros locais, exportáveis para auditoria e relatórios.</p></div><button class="btn btn-ghost" id="impactExport">Exportar CSV</button></div>
+  <div id="impactHistory" class="panel"><div class="empty">Nenhuma avaliação registrada.</div></div>
+  <div class="panel prose"><h3>Critério de evidência</h3><p>Resultados só devem ser divulgados como impacto comprovado quando houver medições comparáveis, método documentado, datas, fonte, evidências e verificação adequada. Valores declarados sem comprovação permanecem identificados como informados.</p></div>
+</section>
+
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 5.9.0</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.0.0</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -505,75 +640,69 @@ html{scroll-behavior:auto}
   </div>
 </section>
 
-<section class="view" id="view-observatory"><div class="section-head"><div><span class="eyebrow">ILS + NO NETWORK CAUSE 5.0</span><h2>Observatório Inteligente de Conectividade</h2><p class="muted">Painel integrado de indicadores e eventos técnicos recebidos pela API compartilhada.</p></div><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button></div><div class="notice"><strong>Privacidade e evidências</strong><span>O painel recebe somente resumos técnicos. Não publica coordenadas exatas, e-mail, operador ou payloads brutos. Latência é observação HTTP, não ping ICMP nem teste de velocidade.</span></div><div class="panel"><div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API…</div></div><div id="obsMetrics" class="metric-grid" style="margin-top:14px"><article class="metric"><span class="metric-label">Eventos recebidos</span><strong>—</strong></article></div><div class="section-head"><div><span class="eyebrow">EVENTOS SINCRONIZADOS</span><h2>Últimas observações</h2></div><span class="muted">Máximo de 100 linhas</span></div><div class="table-wrap"><table><thead><tr><th>Data/hora</th><th>Origem</th><th>Evento</th><th>Resultado</th><th>Latência (ms)</th><th>Localidade</th></tr></thead><tbody id="obsRows"><tr><td colspan="6">Carregando…</td></tr></tbody></table></div><div class="cards-grid"><article class="panel"><h3>Camada territorial — ILS</h3><p>Use o Localizador Wi-Fi, Oportunidades reais, Inteligência de conectividade e Viabilidade para registrar necessidades e alternativas de acesso.</p><button class="btn btn-ghost" data-goto="intelligence">Abrir inteligência de conectividade</button></article><article class="panel"><h3>Camada técnica — No Network Cause</h3><p>Execute diagnósticos e monitoramento no No Network Cause 5.0. Com sessão autenticada, novos eventos são enviados à API; sem sessão, permanecem no histórico local.</p><a href="https://lima-virtual-pro.github.io/No-Network-Cause/" target="_blank" rel="noopener">Abrir No Network Cause 5.0 ↗</a></article><article class="panel"><h3>Limites técnicos</h3><p>Os dados apoiam triagem e relatórios. Cobertura, causa-raiz, qualidade RF e disponibilidade satelital exigem fontes e medições próprias.</p></article></div></section>
+<section class="view" id="view-observatory">
+<style>
+#view-observatory .ils6-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:16px 0}
+#view-observatory .ils6-kpi{border:1px solid var(--border,#dce3ec);border-radius:14px;padding:14px;background:var(--panel,#fff)}
+#view-observatory .ils6-kpi strong{display:block;font-size:1.7rem;margin-top:6px}
+#view-observatory .ils6-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+#view-observatory .ils6-chart{width:100%;height:230px;display:block}
+#view-observatory .ils6-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:14px 0}
+#view-observatory .ils6-controls label{display:grid;gap:5px;min-width:150px;flex:1}
+#view-observatory .ils6-controls input,#view-observatory .ils6-controls select{min-height:42px}
+#view-observatory .ils6-insight{border-left:4px solid #2b80c5;padding:12px 14px;background:var(--soft,#f4f7fb);border-radius:8px;margin:12px 0}
+#view-observatory .ils6-pill{display:inline-block;border-radius:20px;padding:4px 9px;font-size:.78rem;background:var(--soft,#eef3f8)}
+#view-observatory .ils6-muted{color:var(--muted,#64748b);font-size:.88rem}
+</style>
+<div class="section-head"><div><span class="eyebrow">ILS 6.0 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
+<div class="notice"><strong>Transparência dos dados</strong><span>Os indicadores refletem somente eventos sincronizados. Latência HTTP não equivale a ping ICMP ou teste de velocidade. Ausência de dados geográficos não será convertida em cobertura presumida. O painel não declara causa-raiz automaticamente.</span></div>
+<div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API compartilhada…</div>
+<div class="ils6-controls">
+<label>Origem<select id="obsFilterSource"><option value="">Todas as origens</option></select></label>
+<label>Tipo de evento<select id="obsFilterType"><option value="">Todos os eventos</option></select></label>
+<label>Resultado<select id="obsFilterResult"><option value="">Todos os resultados</option></select></label>
+<label>Período<select id="obsFilterPeriod"><option value="all">Todo o histórico recebido</option><option value="24">Últimas 24 horas</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></label>
+</div>
+<div id="obsMetrics" class="ils6-kpis">
+<div class="ils6-kpi"><span class="metric-label">Eventos recebidos</span><strong>—</strong><small class="ils6-muted">Aguardando dados</small></div>
+</div>
+<div id="obsInsight" class="ils6-insight" role="status">Aguardando análise dos eventos.</div>
+<div class="ils6-grid">
+<article class="panel"><h3>Histórico de observações</h3><p class="ils6-muted">Volume diário de eventos no período selecionado.</p><canvas id="obsTimeline" class="ils6-chart" height="230" aria-label="Gráfico de eventos por dia"></canvas></article>
+<article class="panel"><h3>Distribuição por resultado</h3><p class="ils6-muted">Classificação dos resultados efetivamente recebidos.</p><canvas id="obsResultsChart" class="ils6-chart" height="230" aria-label="Gráfico de resultados dos eventos"></canvas></article>
+</div>
+<div class="ils6-grid" style="margin-top:14px">
+<article class="panel"><h3>Cobertura territorial observada</h3><div id="obsTerritory" class="result-box">Aguardando dados territoriais.</div><p class="ils6-muted">Somente cidade e UF fornecidas e armazenadas na API serão contabilizadas. Coordenadas exatas não são exibidas.</p></article>
+<article class="panel"><h3>Qualidade e limites da evidência</h3><div id="obsQuality" class="result-box">Aguardando análise de qualidade.</div><p class="ils6-muted">O painel distingue dados ausentes de resultados negativos de conectividade.</p></article>
+</div>
+<div class="panel" style="margin-top:14px"><h3>Mapa territorial agregado</h3><p class="ils6-muted">A visualização utiliza apenas células geográficas aproximadas com pelo menos cinco participantes distintos. Coordenadas individuais não são disponibilizadas no painel.</p><div id="obsGeoMap" class="result-box">Aguardando agrupamentos geográficos protegidos.</div></div>
+<div class="section-head" style="margin-top:22px"><div><span class="eyebrow">RASTREABILIDADE</span><h2>Eventos sincronizados</h2><p class="muted">Até 100 registros na tela; exportação considera todos os registros filtrados recebidos.</p></div><span id="obsRowCount" class="ils6-pill">0 registros</span></div>
+<div class="table-wrap"><table><thead><tr><th>Data/hora</th><th>Origem</th><th>Evento</th><th>Resultado</th><th>Latência (ms)</th><th>Rede</th><th>Localidade</th></tr></thead><tbody id="obsRows"><tr><td colspan="7">Carregando…</td></tr></tbody></table></div>
+<div class="cards-grid" style="margin-top:16px">
+<article class="panel"><h3>Camada técnica — No Network Cause</h3><p>Diagnósticos, monitoramento e eventos de disponibilidade sincronizados.</p><a href="https://lima-virtual-pro.github.io/No-Network-Cause/" target="_blank" rel="noopener">Abrir No Network Cause ↗</a></article>
+<article class="panel"><h3>Camada orbital e RF — ILS</h3><p>Dados orbitais OMM/JSON e medições RF dependem de fonte orbital e receptor SDR compatível instalado.</p><button class="btn btn-ghost" data-goto="satellites">Abrir catálogo orbital</button><button class="btn btn-ghost" data-goto="signals">Abrir análise de sinais</button></article>
+<article class="panel"><h3>Próxima expansão territorial</h3><p>O mapa nacional será habilitado progressivamente quando os eventos contiverem UF/cidade válidas e houver amostra suficiente por região.</p><span class="tag tag-warn">Cobertura territorial em coleta</span></article>
+</div>
+</section>
 <footer>
-  <span>© 2026 Nailson Lima · ILS 5.9.0 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 6.0.0 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
-<section class="section" id="lawful-connectivity">
- <div class="section-heading">
-  <p class="eyebrow">CONECTIVIDADE LEGÍTIMA</p>
-  <h2>Encontrar Wi-Fi público autorizado</h2>
-  <p>Localize pontos publicados como Wi-Fi público ou comunitário. O ILS não tenta acessar redes privadas, contornar senhas ou ultrapassar portais de autenticação.</p>
- </div>
- <div class="notice notice-warning">
-  <strong>Uso responsável:</strong> a presença de uma rede no mapa não comprova que ela esteja ativa, gratuita ou aberta. Confirme as condições no local e utilize somente redes cujo responsável autorize seu acesso.
- </div>
- <div class="panel form-panel">
-  <label for="publicWifiLat">Latitude</label>
-  <input id="publicWifiLat" type="text" inputmode="decimal" placeholder="-15,7939">
-  <label for="publicWifiLon">Longitude</label>
-  <input id="publicWifiLon" type="text" inputmode="decimal" placeholder="-47,8828">
-  <label for="publicWifiRadius">Raio de busca</label>
-  <select id="publicWifiRadius">
-   <option value="500">500 metros</option>
-   <option value="1000" selected>1 km</option>
-   <option value="3000">3 km</option>
-   <option value="5000">5 km</option>
-  </select>
-  <div class="form-actions">
-   <button class="btn btn-primary" id="usePublicWifiLocation">Usar minha localização</button>
-   <button class="btn btn-ghost" id="searchPublicWifi">Buscar Wi-Fi público mapeado</button>
-  </div>
-  <div class="public-wifi-filters">
-   <label>Tipo de local
-    <select id="publicWifiType"><option value="all">Todos os tipos</option><option value="public">Órgãos e serviços públicos</option><option value="education">Educação e bibliotecas</option><option value="hospitality">Comércio e hospedagem</option><option value="community">Espaços comunitários</option></select>
-   </label>
-   <label>Condição de acesso
-    <select id="publicWifiAccess"><option value="all">Todas as condições</option><option value="free">Gratuito indicado no cadastro</option><option value="yes">Acesso indicado</option><option value="unknown">Não informado</option></select>
-   </label>
-   <label>Ordenar por
-    <select id="publicWifiSort"><option value="distance">Mais próximos</option><option value="name">Nome (A–Z)</option></select>
-   </label>
-  </div>
-  <div id="publicWifiSummary" class="micro" aria-live="polite"></div>
-  <div id="publicWifiMap" class="public-wifi-map" aria-label="Mapa dos pontos Wi-Fi encontrados"></div>
-  <div id="publicWifiResults" class="results-list"></div>
- </div>
- <div class="panel">
-  <h3>Outras formas legais de obter acesso</h3>
-  <ul>
-   <li>Wi-Fi público de órgãos públicos, bibliotecas, universidades e espaços comunitários.</li>
-   <li>Hotspots de estabelecimentos que anunciam acesso gratuito e autorizam usuários.</li>
-   <li>Programas de inclusão digital e conectividade elegível, conforme regras do programa.</li>
-   <li>Compartilhamento voluntário de conexão por proprietário ou administrador, com autorização expressa.</li>
-  </ul>
- </div>
-</section>
+
 
 </main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/satellite.js@7.2.0/dist/satellite.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const state={satellites:[],source:null,lastUpdate:null,opportunities:[],map:null,mapLayer:null,mapTimer:null};
+const state={satellites:[],source:null,lastUpdate:null,dataFormat:"OMM-JSON",opportunities:[],map:null,mapLayer:null,mapTimer:null};
 const groups={
- stations:"https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle",
- active:"https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle",
- weather:"https://celestrak.org/NORAD/elements/gp.php?GROUP=weather&FORMAT=tle"
+ stations:"https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=JSON",
+ active:"https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=JSON",
+ weather:"https://celestrak.org/NORAD/elements/gp.php?GROUP=weather&FORMAT=JSON"
 };
 
 function parseLocaleNumber(value){
@@ -613,12 +742,12 @@ function setView(name){
  if(name==="observatory")window.ILSObservatory?.refresh();
  if(name==="business")renderIlsLicenses();
  if(name==="opportunities")renderOpportunityCatalog();
- if(name==="locator")setTimeout(()=>{if(initLocatorMap()&&state.locMap)state.locMap.invalidateSize();},180);
+ if(name==="locator")setTimeout(()=>{if(typeof publicWifiMap!=="undefined"&&publicWifiMap)publicWifiMap.invalidateSize();},180);
  if(name==="intelligence")renderCases();
  if(name==="map")setTimeout(()=>{if(initOrbitMap()){state.map.invalidateSize();if(state.satellites.length)updateOrbitMap();}},180);
 }
-function closeIlsMenu(){document.getElementById("sidebar").classList.remove("open");document.getElementById("menuBackdrop").classList.remove("open");document.getElementById("menuBtn").setAttribute("aria-expanded","false");}
-function toggleIlsMenu(){const open=!document.getElementById("sidebar").classList.contains("open");document.getElementById("sidebar").classList.toggle("open",open);document.getElementById("menuBackdrop").classList.toggle("open",open);document.getElementById("menuBtn").setAttribute("aria-expanded",String(open));}
+function closeIlsMenu(){document.getElementById("sidebar").classList.remove("open");document.getElementById("menuBackdrop").classList.remove("open");document.body.classList.remove("ils-menu-open");document.getElementById("menuBackdrop").setAttribute("aria-hidden","true");document.getElementById("menuBtn").setAttribute("aria-expanded","false");document.getElementById("menuBtn").setAttribute("aria-label","Abrir menu");}
+function toggleIlsMenu(){const open=!document.getElementById("sidebar").classList.contains("open");document.getElementById("sidebar").classList.toggle("open",open);document.getElementById("menuBackdrop").classList.toggle("open",open);document.body.classList.toggle("ils-menu-open",open);document.getElementById("menuBackdrop").setAttribute("aria-hidden",String(!open));document.getElementById("menuBtn").setAttribute("aria-expanded",String(open));document.getElementById("menuBtn").setAttribute("aria-label",open?"Fechar menu":"Abrir menu");}
 document.addEventListener("click",e=>{
  const nav=e.target.closest(".nav-item[data-view]");
  if(nav){e.preventDefault();setView(nav.dataset.view);return;}
@@ -656,97 +785,95 @@ $("#readWifiSignal")?.addEventListener("click",readNativeWifi);
 $("#testNetworkQuality")?.addEventListener("click",testBasicLatency);
 
 function tick(){const d=new Date();$("#clock").textContent=d.toLocaleTimeString("pt-BR");}tick();setInterval(tick,1000);
-function parseTLE(txt){const lines=txt.trim().split(/\r?\n/);const out=[];for(let i=0;i<lines.length;){if(lines[i].startsWith("1 ")&&lines[i+1]?.startsWith("2 ")){out.push({name:"Objeto "+(out.length+1),l1:lines[i],l2:lines[i+1]});i+=2;continue;}if(i+2<lines.length&&lines[i+1].startsWith("1 ")&&lines[i+2].startsWith("2 ")){out.push({name:lines[i].trim(),l1:lines[i+1],l2:lines[i+2]});i+=3;continue;}i++;}return out;}
-function tleEpochDate(line1){
- const yy=Number(line1.slice(18,20)),day=Number(line1.slice(20,32));
- if(!Number.isFinite(yy)||!Number.isFinite(day)||day<1||day>367)return null;
- const year=yy<57?2000+yy:1900+yy;
- return new Date(Date.UTC(year,0,1)+(day-1)*86400000);
+function ommEpochDate(o){const d=new Date(o?.EPOCH||o?.epoch||"");return Number.isFinite(d.getTime())?d:null;}
+function ommNorad(o){return String(o?.NORAD_CAT_ID??o?.NORAD_CAT_ID??o?.OBJECT_ID??o?.objectId??"").trim();}
+function normalizeOMM(rows){
+ if(!Array.isArray(rows))throw Error("A fonte não retornou uma lista OMM JSON.");
+ if(!window.satellite||typeof satellite.json2satrec!=="function")throw Error("satellite.js 7.2.0 ou json2satrec indisponível.");
+ const out=[];
+ for(const raw of rows){
+  try{
+   const epoch=ommEpochDate(raw),norad=ommNorad(raw),name=String(raw.OBJECT_NAME||raw.object_name||raw.name||("Objeto "+(out.length+1)));
+   if(!epoch||!norad||!Number.isFinite(Number(raw.MEAN_MOTION)))continue;
+   const satrec=satellite.json2satrec(raw);
+   if(!satrec||satrec.error)continue;
+   out.push({name,norad,epoch:epoch.toISOString(),satrec,omm:raw,format:"OMM"});
+  }catch(e){}
+ }
+ return out;
 }
-async function loadSatellites(){
- const group=$("#satGroup")?.value||"stations",btn=$("#loadSatBtn"),cacheKey="ils-tle-v590:"+group;
- if(btn){btn.disabled=true;btn.textContent="Consultando…"}
- const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),11000);
+function satId(s){return String(s.norad??s.satrec?.satnum??"—");}
+function satEpoch(s){const d=new Date(s.epoch||s.omm?.EPOCH||"");return Number.isFinite(d.getTime())?d:null;}
+function satRecord(s){if(s.satrec)return s.satrec;if(s.omm&&window.satellite?.json2satrec)return s.satrec=satellite.json2satrec(s.omm);return null;}
+async function loadSatellites(force=false){
+ const group=$("#satGroup")?.value||"stations",btn=$("#loadSatBtn"),cacheKey="ils-omm-v720:"+group;
+ if(btn){btn.disabled=true;btn.textContent="Consultando OMM…"}
+ let cached=null;try{cached=JSON.parse(localStorage.getItem(cacheKey)||"null")}catch{}
+ const ttl=2*60*60*1000,cacheAge=cached?.savedAt?Date.now()-cached.savedAt:Infinity;
+ if(!force&&cached?.data?.length&&cacheAge>=0&&cacheAge<ttl){
+  try{state.satellites=normalizeOMM(cached.data);if(!state.satellites.length)throw Error("Cache OMM sem registros válidos");state.source=group;state.lastUpdate=new Date(cached.savedAt);renderSatellites();renderFeatured();$("#metric-count").textContent=state.satellites.length.toLocaleString("pt-BR");$("#metric-source").textContent="CelesTrak · OMM JSON em cache";$("#last-updated").textContent="Recebido em "+state.lastUpdate.toLocaleString("pt-BR")+" · cache respeita janela de 2 horas";$("#status-orbit").textContent="OMM em cache recente";$("#status-orbit").className="ok";$("#metric-visible").textContent="Calcular";toast("Usando OMM JSON em cache; respeitada a janela de atualização de 2 horas.");if(btn){btn.disabled=false;btn.textContent="Carregar satélites"}return;}catch(e){try{localStorage.removeItem(cacheKey)}catch{}}
+ }
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
  try{
-  const response=await fetch(groups[group],{cache:"no-store",signal:controller.signal});
-  if(!response.ok)throw Error("CelesTrak respondeu HTTP "+response.status);
-  const txt=await response.text(),parsed=parseTLE(txt);
-  if(!parsed.length)throw Error("A fonte respondeu sem elementos TLE reconhecíveis");
-  const now=Date.now(),valid=parsed.filter(x=>tleEpochDate(x.l1)&&tleEpochDate(x.l1).getTime()<=now+86400000);
-  if(!valid.length)throw Error("Os elementos recebidos não passaram na validação de época orbital");
-  state.satellites=valid;state.source=group;state.lastUpdate=new Date();
-  try{localStorage.setItem(cacheKey,JSON.stringify({savedAt:now,source:"CelesTrak",data:valid}))}catch{}
-  const newest=Math.max(...valid.map(x=>tleEpochDate(x.l1).getTime()));
-  const ageDays=Math.max(0,(now-newest)/86400000);
-  renderSatellites();$("#metric-count").textContent=valid.length.toLocaleString("pt-BR");
-  $("#metric-source").textContent="CelesTrak · "+group;
-  $("#last-updated").textContent="Recebido "+state.lastUpdate.toLocaleString("pt-BR")+" · época TLE mais recente: "+new Date(newest).toLocaleDateString("pt-BR");
-  $("#status-orbit").textContent=ageDays>14?"TLE antigo — use com cautela":"Dados orbitais recebidos";
-  $("#status-orbit").className=ageDays>14?"pending":"ok";
-  $("#metric-visible").textContent="Calcular";renderFeatured();
-  toast(valid.length+" elementos carregados · TLE "+(ageDays>14?"com mais de 14 dias":"validado"));
+  const response=await fetch(groups[group],{cache:"no-store",signal:controller.signal,headers:{Accept:"application/json"}});
+  if(!response.ok)throw Error("CelesTrak respondeu HTTP "+response.status+(response.status===403?" — limite/política de consulta; aguarde o próximo ciclo.":""));
+  const raw=await response.json(),valid=normalizeOMM(raw),now=Date.now();
+  if(!valid.length)throw Error("A resposta OMM não contém elementos orbitais válidos para SGP4.");
+  const latest=Math.max(...valid.map(x=>satEpoch(x)?.getTime()||0));
+  if(!latest)throw Error("Não foi possível validar a época dos dados OMM.");
+  state.satellites=valid;state.source=group;state.lastUpdate=new Date(now);
+  try{localStorage.setItem(cacheKey,JSON.stringify({savedAt:now,source:"CelesTrak",format:"OMM-JSON",data:raw}))}catch{}
+  const ageDays=Math.max(0,(now-latest)/86400000);
+  renderSatellites();$("#metric-count").textContent=valid.length.toLocaleString("pt-BR");$("#metric-source").textContent="CelesTrak · OMM JSON · "+group;
+  $("#last-updated").textContent="Recebido "+state.lastUpdate.toLocaleString("pt-BR")+" · época OMM mais recente: "+new Date(latest).toLocaleString("pt-BR");
+  $("#status-orbit").textContent=ageDays>14?"OMM antigo — use com cautela":"Dados OMM recebidos e convertidos";$("#status-orbit").className=ageDays>14?"pending":"ok";$("#metric-visible").textContent="Calcular";renderFeatured();
+  toast(valid.length+" elementos OMM carregados · época mais recente há "+ageDays.toFixed(1)+" dia(s)");
  }catch(error){
-  let cached=null;try{cached=JSON.parse(localStorage.getItem(cacheKey)||"null")}catch{}
-  if(cached?.data?.length){
-   state.satellites=cached.data;state.source=group;state.lastUpdate=new Date(cached.savedAt);
-   renderSatellites();renderFeatured();$("#metric-count").textContent=cached.data.length.toLocaleString("pt-BR");
-   $("#metric-source").textContent="Cache local · último CelesTrak";
-   $("#last-updated").textContent="Cache recebido em "+new Date(cached.savedAt).toLocaleString("pt-BR");
-   $("#status-orbit").textContent="Modo offline — TLE pode estar desatualizado";$("#status-orbit").className="pending";
-   toast("Fonte indisponível. Exibindo último TLE salvo; confirme a época antes de usar.");
-  }else{
-   toast((error.name==="AbortError"?"Tempo limite ao consultar CelesTrak. ":"Falha ao consultar CelesTrak. ")+error.message);
-   $("#status-orbit").textContent="Sem dados orbitais";$("#status-orbit").className="pending";
-  }
+  if(cached?.data?.length){try{state.satellites=normalizeOMM(cached.data);state.source=group;state.lastUpdate=new Date(cached.savedAt);renderSatellites();renderFeatured();$("#metric-count").textContent=state.satellites.length.toLocaleString("pt-BR");$("#metric-source").textContent="Cache local · CelesTrak OMM";$("#last-updated").textContent="Cache recebido em "+state.lastUpdate.toLocaleString("pt-BR");$("#status-orbit").textContent="Offline — OMM em cache; confirme a época";$("#status-orbit").className="pending";toast("Fonte indisponível. Exibindo OMM salvo localmente.");}catch(cacheError){toast("Falha no OMM e no cache: "+cacheError.message);}}
+  else{$("#status-orbit").textContent="Sem dados OMM";$("#status-orbit").className="pending";toast((error.name==="AbortError"?"Tempo limite ao consultar CelesTrak. ":"Falha ao consultar CelesTrak. ")+error.message);}
  }finally{clearTimeout(timer);if(btn){btn.disabled=false;btn.textContent="Carregar satélites"}}
 }
-function orbitalMeta(s){
- const inc=Number(s.l2.slice(8,16).trim()),rev=Number(s.l2.slice(52,63).trim());
- const epochYear=Number(s.l1.slice(18,20)),epochDay=Number(s.l1.slice(20,32));
- const year=epochYear<57?2000+epochYear:1900+epochYear;
- const epoch=Number.isFinite(epochDay)?new Date(Date.UTC(year,0,1)+(epochDay-1)*86400000):null;
- return {inclination:Number.isFinite(inc)?inc:null,period:Number.isFinite(rev)&&rev>0?1440/rev:null,epoch};
-}
+function orbitalMeta(s){const o=s.omm||{},inc=Number(o.INCLINATION),motion=Number(o.MEAN_MOTION),epoch=satEpoch(s);return {inclination:Number.isFinite(inc)?inc:null,period:Number.isFinite(motion)&&motion>0?1440/motion:null,epoch};}
 function renderSatellites(){
  populateMapSelect();
  const q=(document.getElementById("satSearch")?.value||"").trim().toLowerCase();
  const filtered=state.satellites.filter(s=>s.name.toLowerCase().includes(q));
  document.getElementById("sat-count").textContent=filtered.length+" de "+state.satellites.length+" registros";
- document.getElementById("sat-table").innerHTML=filtered.slice(0,500).map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.l1.slice(2,7).trim())}</td><td>Órbita não classificada</td><td><span class="tag tag-green">TLE recebido</span></td></tr>`).join("")||'<tr><td colspan="4" class="empty">Nenhum resultado.</td></tr>';
+ document.getElementById("sat-table").innerHTML=filtered.slice(0,500).map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(satId(s))}</td><td>Órbita não classificada</td><td><span class="tag tag-green">OMM recebido</span></td></tr>`).join("")||'<tr><td colspan="4" class="empty">Nenhum resultado.</td></tr>';
  const cards=document.getElementById("satellite-cards");
  if(cards)cards.innerHTML=filtered.slice(0,60).map(s=>{
-  const meta=orbitalMeta(s),norad=s.l1.slice(2,7).trim();
+  const meta=orbitalMeta(s),norad=satId(s);
   const epoch=meta.epoch&&!isNaN(meta.epoch)?meta.epoch.toLocaleDateString("pt-BR"):"Não informada";
-  return `<article class="satellite-card"><div class="satellite-illustration" aria-hidden="true"><span>🛰️</span></div><h3>${esc(s.name)}</h3><span class="tag tag-green">NORAD ${esc(norad)}</span><p>Inclinação: ${meta.inclination?.toFixed(1)??"—"}° · Período: ${meta.period?.toFixed(1)??"—"} min</p><p>Época do TLE: ${epoch}</p><p>Representação ilustrativa; dados orbitais não confirmam acesso à Internet.</p><button class="btn btn-ghost" type="button" data-sat-map="${esc(norad)}">Visualizar no mapa</button></article>`;
+  return `<article class="satellite-card"><div class="satellite-illustration" aria-hidden="true"><span>🛰️</span></div><h3>${esc(s.name)}</h3><span class="tag tag-green">NORAD ${esc(norad)}</span><p>Inclinação: ${meta.inclination?.toFixed(1)??"—"}° · Período: ${meta.period?.toFixed(1)??"—"} min</p><p>Época OMM: ${epoch}</p><p>Representação ilustrativa; dados orbitais não confirmam acesso à Internet.</p><button class="btn btn-ghost" type="button" data-sat-map="${esc(norad)}">Visualizar no mapa</button></article>`;
  }).join("")||'<div class="empty">Nenhum satélite disponível. Carregue o catálogo ou altere a pesquisa.</div>';
 }
 document.addEventListener("click",e=>{
  const b=e.target.closest("[data-sat-map]");if(!b)return;
- const index=state.satellites.findIndex(s=>s.l1.slice(2,7).trim()===b.dataset.satMap);
+ const index=state.satellites.findIndex(s=>satId(s)===b.dataset.satMap);
  if(index<0)return;
  setView("map");document.getElementById("mapSatSelect").value=String(index);
  setTimeout(()=>updateOrbitMap(),250);
 });
-function renderFeatured(){$("#featured-list").innerHTML=state.satellites.slice(0,5).map(s=>`<div class="simple-row"><span>${esc(s.name)}</span><small>NORAD ${esc(s.l1.slice(2,7).trim())}</small></div>`).join("")||'<div class="empty">Nenhum dado disponível.</div>'}
+function renderFeatured(){$("#featured-list").innerHTML=state.satellites.slice(0,5).map(s=>`<div class="simple-row"><span>${esc(s.name)}</span><small>NORAD ${esc(satId(s))}</small></div>`).join("")||'<div class="empty">Nenhum dado disponível.</div>'}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 $("#loadSatBtn").addEventListener("click",loadSatellites);$("#refreshBtn").addEventListener("click",()=>{if($("#view-satellites").classList.contains("active"))loadSatellites();else toast("Abra o catálogo orbital para atualizar os dados.")});$("#satSearch").addEventListener("input",renderSatellites);$("#satGroup").addEventListener("change",loadSatellites);
 
 async function calculateVisibility(){
  const lat=parseLocaleNumber($("#lat").value),lon=parseLocaleNumber($("#lon").value),alt=parseLocaleNumber($("#alt").value),min=parseLocaleNumber($("#minElev").value);
  if(!Number.isFinite(lat)||lat < -90||lat > 90||!Number.isFinite(lon)||lon < -180||lon > 180||!Number.isFinite(alt)||alt < -500||alt > 9000||!Number.isFinite(min)||min < 0||min > 90){$("#visibility-result").textContent="Dados inválidos. Latitude: −90 a 90; longitude: −180 a 180; altitude: −500 a 9.000 m; elevação mínima: 0° a 90°. Use ponto ou vírgula decimal.";toast("Revise latitude, longitude, altitude e elevação mínima.");return;}
- if(!state.satellites.length){$("#visibility-result").textContent="Carregando dados orbitais automaticamente…";await loadSatellites();if(!state.satellites.length){$("#visibility-result").textContent="Não foi possível carregar TLE. Verifique a conexão e tente novamente no Catálogo orbital.";return;}}
+ if(!state.satellites.length){$("#visibility-result").textContent="Carregando dados orbitais OMM automaticamente…";await loadSatellites();if(!state.satellites.length){$("#visibility-result").textContent="Não foi possível carregar OMM. Verifique a conexão e tente novamente no Catálogo orbital.";return;}}
  if(!window.satellite){$("#visibility-result").textContent="Biblioteca orbital não carregada. Verifique a conexão e recarregue a página.";return;}
  const now=new Date(),obs={longitude:satellite.degreesToRadians(lon),latitude:satellite.degreesToRadians(lat),height:alt/1000},visible=[];
  for(const s of state.satellites){try{
-  const rec=satellite.twoline2satrec(s.l1,s.l2),pv=satellite.propagate(rec,now);if(!pv.position)continue;
+  const rec=satRecord(s),pv=satellite.propagate(rec,now);if(!pv.position)continue;
   const ecf=satellite.eciToEcf(pv.position,satellite.gstime(now)),look=satellite.ecfToLookAngles(obs,ecf);
   const elevation=satellite.radiansToDegrees(look.elevation);
-  if(Number.isFinite(elevation)&&elevation>=min)visible.push({name:s.name,norad:s.l1.slice(2,7).trim(),elevation,azimuth:(satellite.radiansToDegrees(look.azimuth)+360)%360,range:look.range});
+  if(Number.isFinite(elevation)&&elevation>=min)visible.push({name:s.name,norad:satId(s),elevation,azimuth:(satellite.radiansToDegrees(look.azimuth)+360)%360,range:look.range});
  }catch(e){}}
  visible.sort((a,b)=>b.elevation-a.elevation);$("#metric-visible").textContent=visible.length;
  $("#visibility-result").innerHTML=`<strong>${visible.length} objeto(s) acima de ${min}°</strong><br><span>Local: ${lat.toFixed(4)}°, ${lon.toFixed(4)}° · ${now.toLocaleString("pt-BR")}</span><br><br>`+
  (visible.slice(0,20).map(v=>`<div class="simple-row"><span>${esc(v.name)} <small>NORAD ${esc(v.norad)}</small></span><small>Elevação ${v.elevation.toFixed(1)}° · Azimute ${v.azimuth.toFixed(1)}° · Distância oblíqua ${v.range.toFixed(0)} km</small></div>`).join("")||"Nenhum objeto da amostra atende ao limite informado.")+
- `<p class="micro">Estimativa geométrica calculada com TLE recebido. Distância oblíqua entre observador e satélite; não é distância ao ponto subsatélite. Não confirma cobertura, sinal RF ou acesso à Internet.</p>`;
+ `<p class="micro">Estimativa geométrica calculada com OMM recebido. Distância oblíqua entre observador e satélite; não é distância ao ponto subsatélite. Não confirma cobertura, sinal RF ou acesso à Internet.</p>`;
 }
 $("#calcVisibility").addEventListener("click",calculateVisibility);
 async function testLocalSdrBridge(){
@@ -869,7 +996,7 @@ function updateOrbitMap(){
  const now=new Date(),points=[],details=[];
  state.mapLayer.clearLayers();
  chosen.forEach(s=>{try{
-  const rec=satellite.twoline2satrec(s.l1,s.l2);
+  const rec=satRecord(s);
   const calc=(when)=>{
    const pv=satellite.propagate(rec,when);if(!pv.position)return null;
    const gd=satellite.eciToGeodetic(pv.position,satellite.gstime(when));
@@ -879,11 +1006,11 @@ function updateOrbitMap(){
   const here=calc(now);if(!here)return;
   points.push(here);
   const marker=L.divIcon({className:"",html:'<span class="sat-marker" aria-hidden="true">🛰️</span>',iconSize:[30,30],iconAnchor:[15,15]});
-  L.marker([here.lat,here.lon],{icon:marker}).bindPopup(`<strong>${esc(s.name)}</strong><br>Latitude: ${here.lat.toFixed(2)}°<br>Longitude: ${here.lon.toFixed(2)}°<br>Altitude orbital: ${here.alt.toFixed(0)} km<br><small>Estimativa a partir de TLE</small>`).addTo(state.mapLayer);
+  L.marker([here.lat,here.lon],{icon:marker}).bindPopup(`<strong>${esc(s.name)}</strong><br>Latitude: ${here.lat.toFixed(2)}°<br>Longitude: ${here.lon.toFixed(2)}°<br>Altitude orbital: ${here.alt.toFixed(0)} km<br><small>Estimativa a partir de OMM</small>`).addTo(state.mapLayer);
   const trajectory=[];
   for(let k=0;k<=12;k++){const p=calc(new Date(now.getTime()+k*5*60000));if(p)trajectory.push([p.lat,p.lon]);}
   if(trajectory.length>1)L.polyline(trajectory,{color:'#2c8ee9',weight:2,opacity:.7,dashArray:'5,6'}).addTo(state.mapLayer);
-  details.push(`<div class="map-satellite-card"><strong>🛰️ ${esc(s.name)}</strong>NORAD ${esc(s.l1.slice(2,7).trim())}<br>Lat ${here.lat.toFixed(2)}° · Lon ${here.lon.toFixed(2)}°<br>Altitude estimada ${here.alt.toFixed(0)} km</div>`);
+  details.push(`<div class="map-satellite-card"><strong>🛰️ ${esc(s.name)}</strong>NORAD ${esc(satId(s))}<br>Lat ${here.lat.toFixed(2)}° · Lon ${here.lon.toFixed(2)}°<br>Altitude estimada ${here.alt.toFixed(0)} km</div>`);
  }catch(e){}});
  if(points.length&&selected!=="")state.map.setView([points[0].lat,points[0].lon],4);
  document.getElementById("mapTimestamp").textContent=`${points.length} satélite(s) estimado(s) · ${now.toLocaleString("pt-BR")}`;
@@ -957,9 +1084,9 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 5.9.0</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.0.0</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
- <tr><td>Catálogo TLE CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
+ <tr><td>Catálogo OMM JSON CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
  <tr><td>Motor de triagem de viabilidade</td><td>Executável localmente com dados informados</td></tr>
  <tr><td>Plano de implantação</td><td>Gerado a partir das pendências</td></tr>
@@ -1041,12 +1168,12 @@ function loadOpps(){try{state.opportunities=JSON.parse(localStorage.getItem("ils
 function renderOpps(){$("#saved-opps").innerHTML=state.opportunities.map(o=>`<div class="saved-item"><strong>${esc(o.name)}</strong> — ${esc(o.notes||"Sem observações")} ${o.url?`<a href="${esc(o.url)}" target="_blank" rel="noopener">Abrir ↗</a>`:""}</div>`).join("")}
 $("#saveOpp").addEventListener("click",()=>{const name=$("#oppName").value.trim(),url=$("#oppUrl").value.trim(),notes=$("#oppNotes").value.trim();if(!name){toast("Informe o nome da oportunidade.");return;}if(url&&!/^https?:\/\//i.test(url)){toast("Informe uma URL iniciada por https:// ou http://");return;}state.opportunities.push({name,url,notes,date:new Date().toISOString()});localStorage.setItem("ils-opportunities",JSON.stringify(state.opportunities));$("#oppName").value=$("#oppUrl").value=$("#oppNotes").value="";renderOpps();toast("Oportunidade salva neste dispositivo.");});
 $("#checkAccess").addEventListener("click",()=>{toast("Consulte as fontes oficiais e confirme critérios, localidade e disponibilidade com o órgão responsável.")});
-$("#runDiag").addEventListener("click",async()=>{const box=$("#diag-results");box.innerHTML='<div class="empty">Executando verificações…</div>';const items=[["Aplicação carregada","ok","Interface executada neste navegador"],["Armazenamento local",(()=>{try{localStorage.setItem("ils-test","1");localStorage.removeItem("ils-test");return"ok"}catch{return"warn"}})(),"Armazenamento do navegador"],["Conexão de rede",navigator.onLine?"ok":"warn",navigator.onLine?"Navegador informa conexão disponível":"Navegador informa modo offline"],["Biblioteca orbital",window.satellite?"ok":"warn",window.satellite?"satellite.js disponível":"satellite.js indisponível; cálculos orbitais desativados"],["Dados TLE",state.satellites.length?"ok":"warn",state.satellites.length?state.satellites.length+" registros carregados":"Nenhum TLE carregado"],["Receptor SDR","warn","Nenhum receptor físico integrado"],["Internet via satélite","warn","Não testada; requer terminal e serviço autorizados"]];let reach="warn",detail="Não testado";try{const c=new AbortController(),t=setTimeout(()=>c.abort(),5000);const r=await fetch("https://www.google.com/generate_204",{mode:"no-cors",signal:c.signal,cache:"no-store"});clearTimeout(t);reach="ok";detail="Requisição de teste iniciada; resposta opaca do navegador";}catch{detail="Destino de teste inacessível ou bloqueado; isso não prova ausência total de Internet";}items.splice(2,0,["Acesso a destino HTTPS",reach,detail]);box.innerHTML=items.map(([n,s,d])=>`<div class="diag-item"><span><strong>${esc(n)}</strong><br><small class="muted">${esc(d)}</small></span><b class="${s==="warn"?"warn":""}">${s==="ok"?"Verificado":"Pendente"}</b></div>`).join("");});
+$("#runDiag").addEventListener("click",async()=>{const box=$("#diag-results");box.innerHTML='<div class="empty">Executando verificações…</div>';const items=[["Aplicação carregada","ok","Interface executada neste navegador"],["Armazenamento local",(()=>{try{localStorage.setItem("ils-test","1");localStorage.removeItem("ils-test");return"ok"}catch{return"warn"}})(),"Armazenamento do navegador"],["Conexão de rede",navigator.onLine?"ok":"warn",navigator.onLine?"Navegador informa conexão disponível":"Navegador informa modo offline"],["Biblioteca orbital",window.satellite?"ok":"warn",window.satellite?"satellite.js 7.2.0 disponível":"satellite.js indisponível; cálculos orbitais desativados"],["Dados OMM",state.satellites.length?"ok":"warn",state.satellites.length?state.satellites.length+" registros OMM convertidos para SGP4":"Nenhum OMM carregado; abra o catálogo e consulte CelesTrak"],["Receptor SDR","warn","Nenhum receptor físico integrado"],["Internet via satélite","warn","Não testada; requer terminal e serviço autorizados"]];let reach="warn",detail="Não testado";try{const c=new AbortController(),t=setTimeout(()=>c.abort(),5000);const r=await fetch("https://www.google.com/generate_204",{mode:"no-cors",signal:c.signal,cache:"no-store"});clearTimeout(t);reach="ok";detail="Requisição de teste iniciada; resposta opaca do navegador";}catch{detail="Destino de teste inacessível ou bloqueado; isso não prova ausência total de Internet";}items.splice(2,0,["Acesso a destino HTTPS",reach,detail]);box.innerHTML=items.map(([n,s,d])=>`<div class="diag-item"><span><strong>${esc(n)}</strong><br><small class="muted">${esc(d)}</small></span><b class="${s==="warn"?"warn":""}">${s==="ok"?"Verificado":"Pendente"}</b></div>`).join("");});
 loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"}).then(reg=>reg.update()).catch(()=>{});
 
 
 
-// ILS 5.9.0 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
+// ILS 6.0.0 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
 state.locMap=null;state.locMarkers=null;state.locUserMarker=null;
 function initLocatorMap(){
  if(state.locMap)return true;
@@ -1096,7 +1223,7 @@ document.getElementById("locSearch")?.addEventListener("click",searchNearbyWifi)
 document.getElementById("locBrasilia")?.addEventListener("click",()=>{setLocatorCoords(-15.7939,-47.8828,"example");if(initLocatorMap())state.locMap.setView([-15.7939,-47.8828],12);document.getElementById("locStatus").textContent="Coordenadas de exemplo de Brasília preenchidas; não representam sua localização atual.";});
 
 
-// ILS 5.9.0 — registros locais de necessidades de conectividade.
+// ILS 6.0.0 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1169,7 +1296,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 5.9.0 — lawful public Wi-Fi discovery.
+/* ILS 6.0.0 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1298,7 +1425,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 5.9.0 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 6.0.0 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1310,9 +1437,61 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 5.9.0",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.0.0",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
+/* ILS 6.0 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
+(()=>{
+ const $=id=>document.getElementById(id);
+ const read=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
+ const write=(key,rows)=>{try{localStorage.setItem(key,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar: armazenamento local indisponível.");return false}};
+ const safe=v=>typeof esc==="function"?esc(String(v??"")):String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const REMOTE="ils60-remote-records", IMPACT="ils60-impact-records";
+ function renderRemote(){
+  const rows=read(REMOTE),box=$("remoteHistory"); if(!box)return;
+  box.innerHTML=rows.length?rows.slice().reverse().map(r=>'<article class="saved-item"><strong>'+safe(r.name)+'</strong> · '+safe(r.place)+'<br><small>'+safe(r.createdAt)+' · '+safe(r.level)+'</small><p>'+safe(r.recommendations.join(" | "))+'</p></article>').join(""):'<div class="empty">Nenhum diagnóstico registrado.</div>';
+ }
+ $("remoteForm")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const r={id:"rem-"+Date.now(),name:$("remoteName").value.trim(),place:$("remotePlace").value.trim(),lat:$("remoteLat").value,lon:$("remoteLon").value,current:$("remoteCurrent").value,power:$("remotePower").value,distance:Number($("remoteDistance").value),users:Number($("remoteUsers").value),terrain:$("remoteTerrain").value,budget:Number($("remoteBudget").value),notes:$("remoteNotes").value.trim(),createdAt:new Date().toISOString()};
+  const rec=[];
+  if(r.current==="none"||r.current==="weak")rec.push("Diagnosticar alternativa de transporte: rádio, fibra ou satélite conforme viabilidade local.");
+  if(r.distance>15)rec.push("Estudar backhaul de maior alcance; validar rota, linha de visada, capacidade e custo.");
+  else rec.push("Avaliar extensão de rede existente e enlace local, conforme disponibilidade.");
+  if(r.terrain==="hard")rec.push("Executar estudo de perfil do terreno e obstáculos antes de dimensionar enlaces.");
+  if(r.power!=="stable")rec.push("Dimensionar solução de energia e autonomia, incluindo proteção e manutenção.");
+  if(r.users>100)rec.push("Dimensionar capacidade e compartilhamento para demanda simultânea; não usar apenas a quantidade total de moradores.");
+  if(r.current==="sat")rec.push("Comparar custo total, franquia, latência, disponibilidade e condições de instalação do serviço satelital.");
+  if(r.current==="mobile")rec.push("Realizar medições em diferentes horários e pontos; mapa teórico não substitui teste de campo.");
+  if(r.current==="fixed")rec.push("Verificar capacidade, estabilidade, custo e possibilidade de extensão da rede fixa.");
+  r.recommendations=rec;r.level=(r.current==="none"||r.current==="weak")?"Prioridade de diagnóstico": "Avaliação de qualidade e capacidade";
+  $("remoteResult").innerHTML='<h4>'+safe(r.level)+'</h4><ul>'+rec.map(x=>'<li>'+safe(x)+'</li>').join("")+'</ul><p><strong>Próxima etapa:</strong> visita técnica, medições georreferenciadas, confirmação de fornecedores e estimativa de custo.</p><p class="micro">Resultado preliminar baseado nos dados informados; não é previsão de cobertura nem projeto executivo.</p>';
+  const rows=read(REMOTE);rows.push(r);if(write(REMOTE,rows)){renderRemote();toast("Diagnóstico salvo neste dispositivo.");}
+ });
+ $("remoteExport")?.addEventListener("click",()=>downloadFile("ils60-diagnosticos-remotos.json",JSON.stringify({exportedAt:new Date().toISOString(),records:read(REMOTE)},null,2),"application/json"));
+ function renderImpact(){
+  const rows=read(IMPACT),verified=rows.filter(r=>r.verified==="yes"),people=verified.reduce((a,r)=>a+r.people,0);
+  if($("impactCount"))$("impactCount").textContent=rows.length;
+  if($("impactVerifiedCount"))$("impactVerifiedCount").textContent=verified.length;
+  if($("impactPeopleTotal"))$("impactPeopleTotal").textContent=people;
+  if($("impactSummary"))$("impactSummary").textContent=rows.length?("Medições registradas: "+rows.length+". Pessoas contabilizadas apenas nos registros verificados: "+people+"."): "Ainda não há avaliações registradas.";
+  if($("impactHistory"))$("impactHistory").innerHTML=rows.length?rows.slice().reverse().map(r=>'<article class="saved-item"><strong>'+safe(r.name)+'</strong> · '+safe(r.action)+'<br><small>'+safe(r.beforeDate)+' → '+safe(r.afterDate)+' · '+(r.verified==="yes"?"Verificado em campo":"Não verificado")+'</small><p>Download: '+r.downBefore+' → '+r.downAfter+' Mbps; upload: '+r.upBefore+' → '+r.upAfter+' Mbps; latência: '+r.pingBefore+' → '+r.pingAfter+' ms.</p><p>'+safe(r.evidence)+'</p></article>').join(""):'<div class="empty">Nenhuma avaliação registrada.</div>';
+ }
+ $("impactForm")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const n=id=>Number($(id).value);
+  const r={id:"imp-"+Date.now(),name:$("impactName").value.trim(),action:$("impactAction").value.trim(),beforeDate:$("impactBeforeDate").value,afterDate:$("impactAfterDate").value,downBefore:n("impactDownBefore"),downAfter:n("impactDownAfter"),upBefore:n("impactUpBefore"),upAfter:n("impactUpAfter"),pingBefore:n("impactPingBefore"),pingAfter:n("impactPingAfter"),people:n("impactPeople"),verified:$("impactVerified").value,evidence:$("impactEvidence").value.trim(),createdAt:new Date().toISOString()};
+  if(r.afterDate<r.beforeDate){toast("A data posterior não pode ser anterior à medição inicial.");return;}
+  if(r.verified==="yes"&&!r.evidence){toast("Descreva o método e as evidências da verificação em campo.");return;}
+  const rows=read(IMPACT);rows.push(r);if(write(IMPACT,rows)){e.target.reset();renderImpact();toast("Avaliação registrada. Confira a classificação da evidência.");}
+ });
+ $("impactExport")?.addEventListener("click",()=>{
+  const rows=read(IMPACT),cols=["name","action","beforeDate","afterDate","downBefore","downAfter","upBefore","upAfter","pingBefore","pingAfter","people","verified","evidence"];
+  const csv=[cols.join(";"),...rows.map(r=>cols.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(";"))].join("\n");
+  downloadFile("ils60-impacto.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
+ });
+ renderRemote();renderImpact();
+})();
 </script>
 <script src="./observatory.js" defer></script>
 </body>
