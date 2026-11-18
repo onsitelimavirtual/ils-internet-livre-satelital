@@ -256,7 +256,7 @@ html{scroll-behavior:auto}
  </div>
  <div class="form-actions"><button class="btn btn-primary" id="rfCheck">Verificar receptor</button><button class="btn btn-ghost" id="rfScan">Analisar espectro</button><button class="btn btn-ghost" id="rfStopScan">Parar</button></div>
  <div id="rfSummary" class="result-box" role="status" aria-live="polite">Aguardando conexão com a ponte SDR local. O analisador não inventa valores: sem hardware e serviço compatíveis, não haverá espectro medido.</div>
- <div class="panel" style="margin-top:14px"><canvas id="rfSpectrum" height="220" style="width:100%;max-width:100%" aria-label="Gráfico do espectro recebido"></canvas><div class="micro" id="rfChartCaption">Sem amostras. O eixo vertical será potência relativa dBFS reportada pelo receptor.</div></div>
+ <div class="panel" style="margin-top:14px"><canvas id="rfSpectrum" height="220" style="width:100%;max-width:100%" aria-label="Gráfico do espectro recebido"></canvas><div class="micro" id="rfChartCaption">Sem amostras. O eixo vertical será potência relativa dB relativo reportada pelo receptor.</div></div>
  <p class="micro">A implementação inicial utiliza o utilitário <code>rtl_power</code> do projeto RTL-SDR. A potência é apresentada em dB relativo (relativa), não em dBm calibrado. Não transmite, não decodifica conteúdo privado e não substitui instrumento certificado. Respeite a legislação e as regras de uso do espectro.</p>
 </div>
 <div class="cards-grid">
@@ -798,8 +798,8 @@ function normalizeRfPayload(data){
  let samples=Array.isArray(data.samples)?data.samples:null;
  if(!samples&&Array.isArray(data.frequencies_mhz)&&Array.isArray(data.power_db)&&data.frequencies_mhz.length===data.power_db.length)samples=data.frequencies_mhz.map((f,i)=>({frequency_mhz:f,power_db:data.power_db[i]}));
  if(!samples||samples.length<2)throw Error("Resposta sem amostras suficientes. Contrato esperado: samples[{frequency_mhz,power_db}] ou arrays equivalentes.");
- const clean=samples.map(x=>({f:Number(x.frequency_mhz??x.frequency),p:Number(x.power_db??x.dbfs)})).filter(x=>Number.isFinite(x.f)&&Number.isFinite(x.p));
- if(clean.length<2)throw Error("Amostras recebidas não contêm frequência e potência dBFS válidas.");
+ const clean=samples.map(x=>({f:Number(x.frequency_mhz??x.frequency),p:Number(x.power_db??x.db)})).filter(x=>Number.isFinite(x.f)&&Number.isFinite(x.p));
+ if(clean.length<2)throw Error("Amostras recebidas não contêm frequência e potência dB relativo válidas.");
  return clean;
 }
 async function checkRfBridge(){
