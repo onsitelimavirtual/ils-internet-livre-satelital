@@ -31,7 +31,7 @@ uvicorn main:app --host 127.0.0.1 --port 8765
 
 ## Contrato da API
 - `GET /health` informa se `rtl_power` está disponível.
-- `GET /spectrum?start_mhz=88&stop_mhz=108&step_khz=50&gain=auto` executa uma leitura única e retorna amostras reais em dBFS.
+- `GET /spectrum?start_mhz=88&stop_mhz=108&step_khz=50&gain=auto` executa uma leitura única e retorna amostras reais em dB relativo.
 - Faixa limitada a 24–1766 MHz, largura máxima de 100 MHz, passos 25/50/100/250 kHz e ganhos predefinidos.
 - Apenas uma leitura simultânea. O endpoint não transmite.
 
@@ -40,7 +40,7 @@ uvicorn main:app --host 127.0.0.1 --port 8765
 - CORS é limitado por padrão aos domínios GitHub Pages indicados. Para outro domínio, defina `ILS_ALLOWED_ORIGINS` com a origem exata, separada por vírgulas.
 - O navegador pode bloquear a consulta por políticas de rede local, conteúdo misto ou CORS. Nesse caso, use um ambiente de navegador compatível e confira a origem permitida.
 - O serviço não autentica usuários locais: mantenha-o no computador confiável e não o vincule a `0.0.0.0`.
-- O gráfico representa potência relativa informada pelo `rtl_power`; não é medição calibrada em dBm, não identifica conteúdo de comunicações e não comprova conectividade satelital.
+- O gráfico representa potência relativa informada pelo `rtl_power`; não é medição calibrada em dBm calibrado, não identifica conteúdo de comunicações e não comprova conectividade satelital.
 - Sem hardware e utilitário instalados, o endpoint retorna erro; o ILS não simula amostras.
 
 Consulte a regulamentação da Anatel e os manuais do fabricante do receptor antes de qualquer operação.
