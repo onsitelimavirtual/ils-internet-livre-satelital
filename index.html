@@ -764,6 +764,7 @@ async function testLocalSdrBridge(){
   const data=await response.json();
   if(!data||typeof data!=="object")throw new Error("A resposta não contém um objeto JSON válido.");
   const mode=String(data.mode||"").toLowerCase();
+  if(data.ready===false||String(data.status||"").toLowerCase()!=="ok")throw new Error(data.device||"A ponte respondeu, mas o utilitário SDR não está pronto.");
   result.innerHTML="<strong>Conexão com a ponte estabelecida.</strong><br>Estado: "+esc(data.status||"não informado")+"<br>Dispositivo: "+esc(data.device||"não identificado")+"<br>Modo: "+esc(data.mode||"não informado")+"<br><span class='micro'>A ponte respondeu. Isso não confirma recepção RF nem conexão à Internet.</span>";
   if(mode&&mode!=="receive-only")result.innerHTML+="<p class='micro'>Atenção: o modo informado não é receive-only. Verifique a configuração antes de continuar.</p>";
   toast("Ponte local respondeu.");
@@ -808,8 +809,9 @@ async function checkRfBridge(){
   const u=localBridgeUrl($("#sdrHealthPath").value.trim()||"/health"),r=await fetch(u.href,{cache:"no-store",signal:AbortSignal.timeout(4500)});
   if(!r.ok)throw Error("HTTP "+r.status);
   const data=await r.json();if(!data||typeof data!=="object")throw Error("JSON inválido");
-  tag.textContent="Ponte respondeu";tag.className="tag tag-green";
-  status.textContent="Ponte local ativa. Dispositivo: "+(data.device||"não identificado")+" · modo: "+(data.mode||"não informado")+". A disponibilidade do receptor deve ser confirmada pelo serviço.";
+  if(data.ready===false||String(data.status||"").toLowerCase()!=="ok")throw Error(data.device||"A ponte respondeu, mas rtl_power não está instalado.");
+  tag.textContent="Serviço SDR pronto";tag.className="tag tag-green";
+  status.textContent="Serviço local respondeu. "+(data.device||"RTL-SDR")+". O hardware físico será confirmado somente quando uma varredura real for executada.";
   toast("Ponte SDR respondeu ao teste.");
  }catch(e){tag.textContent="SDR não verificado";tag.className="tag tag-warn";status.textContent=(e.name==="TimeoutError"?"Tempo limite. ":"Falha no teste da ponte. ")+e.message+" Confirme se o serviço está instalado, ativo e com CORS permitido para o site.";toast("Não foi possível validar a ponte SDR.");}
  finally{btn.disabled=false;btn.textContent="Verificar receptor"}
