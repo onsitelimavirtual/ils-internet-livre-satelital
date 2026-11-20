@@ -5,18 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 6.0.0 — Consolidação">
+<meta name="application-name" content="ILS 6.2 — Internet Livre Satelital">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 6.0.0 — Consolidação | Internet Livre Satelital</title>
+<title>ILS 6.2 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root{--bg:#f3f6fb;--ink:#17263a;--muted:#718096;--nav:#071525;--blue:#2476df;--line:#e5ebf3;--panel:#fff;--green:#159b70;--shadow:0 12px 32px rgba(22,44,77,.06)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;font-size:14px}.app-shell{min-height:100vh}.sidebar{width:250px;background:var(--nav);color:#dce7f5;position:fixed;inset:0 auto 0 0;padding:26px 17px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:12px;padding:0 10px 34px}.brand-mark{width:43px;height:43px;border-radius:13px;background:linear-gradient(135deg,#3ba4ff,#655ce8);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;color:white;letter-spacing:-1px}.brand strong{display:block;font-size:15px}.brand small{display:block;color:#8196b1;margin-top:3px;font-size:11px}.sidebar nav{display:grid;gap:7px}.nav-item{border:0;background:transparent;color:#91a5bf;text-align:left;padding:12px 13px;border-radius:10px;font:500 13px 'DM Sans';cursor:pointer}.nav-item span{display:inline-block;width:27px;color:#9db6d4;font-size:17px}.nav-item:hover,.nav-item.active{background:#142b46;color:#fff}.nav-item.active{box-shadow:inset 3px 0 #45a4ff}.sidebar-bottom{margin-top:auto;padding:15px 10px;color:#9eb1c9;font-size:11px;display:grid;grid-template-columns:10px 1fr;gap:5px 8px}.sidebar-bottom small{grid-column:2;color:#7189a6}.status-dot{width:8px;height:8px;background:#35c58b;border-radius:50%;margin-top:3px}.main{margin-left:250px;padding:0 38px 28px;max-width:1600px}.topbar{height:102px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:27px}.eyebrow{font-size:9px;letter-spacing:1.5px;font-weight:700;color:#8b9bb0}.topbar h1{font:600 25px 'Space Grotesk';margin:5px 0 0}.top-actions{display:flex;align-items:center;gap:12px}.pill,.tag{border-radius:30px;background:#edf3fb;color:#52708f;padding:7px 11px;font-size:11px;font-weight:600}.btn{border:0;border-radius:9px;padding:11px 15px;font:600 12px 'DM Sans';cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--blue);color:white;box-shadow:0 5px 14px #2476df33}.btn-ghost{background:#fff;color:#52657d;border:1px solid var(--line)}.btn-outline{background:transparent;border:1px solid #9cb9db;color:white}.mobile-menu{display:none}.view{display:none}.view.active{display:block}.hero{min-height:275px;background:radial-gradient(circle at 75% 50%,#244c7b 0,#112b4a 33%,#0b1b30 70%);border-radius:18px;padding:35px 42px;color:#fff;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.hero>div:first-child{max-width:540px;z-index:1}.eyebrow.light{color:#8dbce9}.hero h2{font:600 34px/1.1 'Space Grotesk';margin:13px 0}.hero h2 em{font-style:normal;color:#6db9ff}.hero p{color:#b5c9df;line-height:1.7;max-width:520px}.hero-actions{display:flex;gap:10px;margin-top:23px}.orbit-art{width:270px;height:220px;position:relative;flex:none;margin-right:50px}.planet{position:absolute;inset:65px 75px;display:grid;place-items:center;font-size:76px;filter:drop-shadow(0 0 24px #47aaff66)}.orbit{position:absolute;border:1px solid #6aa9e477;border-radius:50%;width:260px;height:105px;top:55px;left:0;transform:rotate(-28deg)}.orbit-b{transform:rotate(54deg);width:230px;left:15px;border-color:#86a9df66}.sat{position:absolute;color:#7cc8ff;font-size:20px;text-shadow:0 0 12px #7cc8ff}.sat-a{top:30px;right:30px}.sat-b{bottom:35px;left:18px}.notice{display:flex;gap:13px;align-items:flex-start;background:#fff8e9;border:1px solid #f4e6c5;border-radius:11px;padding:13px 16px;margin:18px 0 27px;color:#7a6844;font-size:12px;line-height:1.55}.notice strong{white-space:nowrap;color:#8c6a23}.section-head{display:flex;justify-content:space-between;align-items:center;margin:27px 0 16px}.section-head h2{font:600 21px 'Space Grotesk';margin:5px 0}.section-head p{margin:5px 0}.muted{color:var(--muted);font-size:11px}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:var(--shadow)}.metric{display:grid;gap:7px}.metric-icon{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;font-size:18px}.blue{background:#e8f2ff;color:#287be2}.violet{background:#f0edff;color:#7764d9}.green{background:#e6f8f1;color:#159b70}.amber{background:#fff4df;color:#d18a19}.metric-label{font-size:11px;color:#7b8ba0}.metric strong{font:600 21px 'Space Grotesk'}.metric small{font-size:10px;color:#99a6b6}.two-col{display:grid;grid-template-columns:1.2fr 1fr;gap:15px;margin-top:16px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.panel h3,.panel-head h3{font:600 15px 'Space Grotesk';margin:5px 0}.text-btn{border:0;background:none;color:var(--blue);font:600 11px 'DM Sans';cursor:pointer}.simple-list{display:grid}.simple-row{display:flex;justify-content:space-between;border-top:1px solid #eef1f6;padding:11px 0;font-size:12px}.simple-row small{color:#8797aa}.status-list>div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eef1f6;font-size:12px}.ok{color:#159b70}.pending{color:#b17b24}.micro{font-size:10px;color:#91a0b1;line-height:1.6}.empty{text-align:center;padding:25px;color:#9aa8b8;font-size:12px}.toolbar{display:flex;gap:10px;align-items:center;margin:18px 0}.toolbar input{max-width:340px}.toolbar .muted{margin-left:auto}input,select,textarea{width:100%;border:1px solid #dfe6ef;border-radius:8px;padding:11px 12px;font:12px 'DM Sans';color:var(--ink);background:white;outline:none}input:focus,select:focus,textarea:focus{border-color:#69a8ed;box-shadow:0 0 0 3px #2476df16}.toolbar select{width:210px}.table-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{background:#f8fafd;color:#8090a4;font-size:10px;text-transform:uppercase;letter-spacing:.7px}td,th{padding:14px 16px;border-bottom:1px solid #edf1f6}td:first-child{font-weight:600}.tag{display:inline-block;padding:5px 8px;font-size:9px}.tag-green{background:#e6f8f1;color:#16845f}.tag-warn{background:#fff4df;color:#a97821}.form-panel{max-width:850px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.form-grid label{display:grid;gap:7px;color:#64768c;font-size:11px;font-weight:600}.form-grid .wide{grid-column:1/-1}.form-actions{display:flex;gap:10px;margin:18px 0}.result-box{background:#f6f9fd;border:1px dashed #cfdae8;border-radius:10px;padding:15px;color:#687d95;font-size:12px;line-height:1.6}.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.cards-grid .panel p{font-size:12px;color:#75869a;line-height:1.6}.cards-grid .panel a,.opportunity a,.prose a{color:#2676d8;font-size:11px;text-decoration:none;font-weight:600}.opportunity-list{display:grid;gap:12px;margin:17px 0}.opportunity{display:flex;gap:17px;padding:19px;background:white;border:1px solid var(--line);border-radius:13px}.opp-icon{width:42px;height:42px;background:#eef4fb;border-radius:12px;display:grid;place-items:center;font-size:21px;flex:none}.opp-body{flex:1}.opp-title{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.opp-title h3{font:600 15px 'Space Grotesk';margin:0}.opp-body p{font-size:12px;color:#74859a;line-height:1.6}.opp-meta{font-size:10px;color:#9aa7b6;margin-bottom:10px}.saved-list{margin-top:12px}.saved-item{border-top:1px solid var(--line);padding:10px 0;font-size:12px}.diag-list{display:grid;gap:9px;margin:18px 0}.diag-item{display:flex;justify-content:space-between;background:#fff;border:1px solid var(--line);padding:14px;border-radius:10px;font-size:12px}.diag-item b{color:#159b70}.diag-item .warn{color:#b17b24}.prose{max-width:900px;line-height:1.7;color:#66788d;font-size:13px}.prose h3{color:var(--ink);margin-top:24px}.prose blockquote{margin:10px 0;padding:12px 16px;border-left:3px solid #398de7;background:#f5f9ff;color:#425d7c}footer{border-top:1px solid var(--line);margin-top:38px;padding:17px 0;color:#96a4b5;font-size:10px;display:flex;justify-content:space-between}.toast{position:fixed;bottom:22px;right:22px;background:#10243c;color:#fff;padding:12px 16px;border-radius:9px;box-shadow:var(--shadow);font-size:12px;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translateY(0)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;font-size:14px}.app-shell{min-height:100vh}.sidebar{width:250px;background:var(--nav);color:#dce7f5;position:fixed;inset:0 auto 0 0;padding:26px 17px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:9px;padding:0 6px 28px}.brand-logo{width:82px;height:58px;object-fit:contain;flex:0 0 82px;border-radius:7px}.brand-mark{width:43px;height:43px;border-radius:13px;background:linear-gradient(135deg,#3ba4ff,#655ce8);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;color:white;letter-spacing:-1px}.brand strong{display:block;font-size:15px}.brand small{display:block;color:#8196b1;margin-top:3px;font-size:11px}.sidebar nav{display:grid;gap:7px}.nav-item{border:0;background:transparent;color:#91a5bf;text-align:left;padding:12px 13px;border-radius:10px;font:500 13px 'DM Sans';cursor:pointer}.nav-item span{display:inline-block;width:27px;color:#9db6d4;font-size:17px}.nav-item:hover,.nav-item.active{background:#142b46;color:#fff}.nav-item.active{box-shadow:inset 3px 0 #45a4ff}.sidebar-bottom{margin-top:auto;padding:15px 10px;color:#9eb1c9;font-size:11px;display:grid;grid-template-columns:10px 1fr;gap:5px 8px}.sidebar-bottom small{grid-column:2;color:#7189a6}.status-dot{width:8px;height:8px;background:#35c58b;border-radius:50%;margin-top:3px}.main{margin-left:250px;padding:0 38px 28px;max-width:1600px}.topbar{height:102px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:27px}.eyebrow{font-size:9px;letter-spacing:1.5px;font-weight:700;color:#8b9bb0}.topbar h1{font:600 25px 'Space Grotesk';margin:5px 0 0}.top-actions{display:flex;align-items:center;gap:12px}.pill,.tag{border-radius:30px;background:#edf3fb;color:#52708f;padding:7px 11px;font-size:11px;font-weight:600}.btn{border:0;border-radius:9px;padding:11px 15px;font:600 12px 'DM Sans';cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--blue);color:white;box-shadow:0 5px 14px #2476df33}.btn-ghost{background:#fff;color:#52657d;border:1px solid var(--line)}.btn-outline{background:transparent;border:1px solid #9cb9db;color:white}.mobile-menu{display:none}.view{display:none}.view.active{display:block}.hero{min-height:275px;background:radial-gradient(circle at 75% 50%,#244c7b 0,#112b4a 33%,#0b1b30 70%);border-radius:18px;padding:35px 42px;color:#fff;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.hero>div:first-child{max-width:540px;z-index:1}.eyebrow.light{color:#8dbce9}.hero h2{font:600 34px/1.1 'Space Grotesk';margin:13px 0}.hero h2 em{font-style:normal;color:#6db9ff}.hero p{color:#b5c9df;line-height:1.7;max-width:520px}.hero-actions{display:flex;gap:10px;margin-top:23px}.orbit-art{width:270px;height:220px;position:relative;flex:none;margin-right:50px}.planet{position:absolute;inset:65px 75px;display:grid;place-items:center;font-size:76px;filter:drop-shadow(0 0 24px #47aaff66)}.orbit{position:absolute;border:1px solid #6aa9e477;border-radius:50%;width:260px;height:105px;top:55px;left:0;transform:rotate(-28deg)}.orbit-b{transform:rotate(54deg);width:230px;left:15px;border-color:#86a9df66}.sat{position:absolute;color:#7cc8ff;font-size:20px;text-shadow:0 0 12px #7cc8ff}.sat-a{top:30px;right:30px}.sat-b{bottom:35px;left:18px}.notice{display:flex;gap:13px;align-items:flex-start;background:#fff8e9;border:1px solid #f4e6c5;border-radius:11px;padding:13px 16px;margin:18px 0 27px;color:#7a6844;font-size:12px;line-height:1.55}.notice strong{white-space:nowrap;color:#8c6a23}.section-head{display:flex;justify-content:space-between;align-items:center;margin:27px 0 16px}.section-head h2{font:600 21px 'Space Grotesk';margin:5px 0}.section-head p{margin:5px 0}.muted{color:var(--muted);font-size:11px}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric,.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:var(--shadow)}.metric{display:grid;gap:7px}.metric-icon{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;font-size:18px}.blue{background:#e8f2ff;color:#287be2}.violet{background:#f0edff;color:#7764d9}.green{background:#e6f8f1;color:#159b70}.amber{background:#fff4df;color:#d18a19}.metric-label{font-size:11px;color:#7b8ba0}.metric strong{font:600 21px 'Space Grotesk'}.metric small{font-size:10px;color:#99a6b6}.two-col{display:grid;grid-template-columns:1.2fr 1fr;gap:15px;margin-top:16px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.panel h3,.panel-head h3{font:600 15px 'Space Grotesk';margin:5px 0}.text-btn{border:0;background:none;color:var(--blue);font:600 11px 'DM Sans';cursor:pointer}.simple-list{display:grid}.simple-row{display:flex;justify-content:space-between;border-top:1px solid #eef1f6;padding:11px 0;font-size:12px}.simple-row small{color:#8797aa}.status-list>div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eef1f6;font-size:12px}.ok{color:#159b70}.pending{color:#b17b24}.micro{font-size:10px;color:#91a0b1;line-height:1.6}.empty{text-align:center;padding:25px;color:#9aa8b8;font-size:12px}.toolbar{display:flex;gap:10px;align-items:center;margin:18px 0}.toolbar input{max-width:340px}.toolbar .muted{margin-left:auto}input,select,textarea{width:100%;border:1px solid #dfe6ef;border-radius:8px;padding:11px 12px;font:12px 'DM Sans';color:var(--ink);background:white;outline:none}input:focus,select:focus,textarea:focus{border-color:#69a8ed;box-shadow:0 0 0 3px #2476df16}.toolbar select{width:210px}.table-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{background:#f8fafd;color:#8090a4;font-size:10px;text-transform:uppercase;letter-spacing:.7px}td,th{padding:14px 16px;border-bottom:1px solid #edf1f6}td:first-child{font-weight:600}.tag{display:inline-block;padding:5px 8px;font-size:9px}.tag-green{background:#e6f8f1;color:#16845f}.tag-warn{background:#fff4df;color:#a97821}.form-panel{max-width:850px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.form-grid label{display:grid;gap:7px;color:#64768c;font-size:11px;font-weight:600}.form-grid .wide{grid-column:1/-1}.form-actions{display:flex;gap:10px;margin:18px 0}.result-box{background:#f6f9fd;border:1px dashed #cfdae8;border-radius:10px;padding:15px;color:#687d95;font-size:12px;line-height:1.6}.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.cards-grid .panel p{font-size:12px;color:#75869a;line-height:1.6}.cards-grid .panel a,.opportunity a,.prose a{color:#2676d8;font-size:11px;text-decoration:none;font-weight:600}.opportunity-list{display:grid;gap:12px;margin:17px 0}.opportunity{display:flex;gap:17px;padding:19px;background:white;border:1px solid var(--line);border-radius:13px}.opp-icon{width:42px;height:42px;background:#eef4fb;border-radius:12px;display:grid;place-items:center;font-size:21px;flex:none}.opp-body{flex:1}.opp-title{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.opp-title h3{font:600 15px 'Space Grotesk';margin:0}.opp-body p{font-size:12px;color:#74859a;line-height:1.6}.opp-meta{font-size:10px;color:#9aa7b6;margin-bottom:10px}.saved-list{margin-top:12px}.saved-item{border-top:1px solid var(--line);padding:10px 0;font-size:12px}.diag-list{display:grid;gap:9px;margin:18px 0}.diag-item{display:flex;justify-content:space-between;background:#fff;border:1px solid var(--line);padding:14px;border-radius:10px;font-size:12px}.diag-item b{color:#159b70}.diag-item .warn{color:#b17b24}.prose{max-width:900px;line-height:1.7;color:#66788d;font-size:13px}.prose h3{color:var(--ink);margin-top:24px}.prose blockquote{margin:10px 0;padding:12px 16px;border-left:3px solid #398de7;background:#f5f9ff;color:#425d7c}footer{border-top:1px solid var(--line);margin-top:38px;padding:17px 0;color:#96a4b5;font-size:10px;display:flex;justify-content:space-between}.toast{position:fixed;bottom:22px;right:22px;background:#10243c;color:#fff;padding:12px 16px;border-radius:9px;box-shadow:var(--shadow);font-size:12px;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translateY(0)}
 @media(max-width:1050px){.main{padding:0 24px 25px}.metric-grid{grid-template-columns:repeat(2,1fr)}.orbit-art{margin-right:0;transform:scale(.8)}}@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.2s}.sidebar.open{transform:translateX(0)}.main{margin:0;padding:0 15px 20px}.topbar{height:82px;gap:10px}.topbar h1{font-size:20px}.mobile-menu{display:block;border:0;background:#fff;border-radius:8px;padding:9px}.top-actions .pill{display:none}.top-actions .btn{padding:9px;font-size:10px}.hero{padding:25px;min-height:290px}.hero h2{font-size:28px}.orbit-art{position:absolute;right:-105px;opacity:.4}.hero>div:first-child{max-width:100%}.hero-actions{flex-wrap:wrap}.section-head{align-items:flex-start;gap:10px}.metric-grid{gap:9px}.metric{padding:13px}.metric strong{font-size:17px}.two-col,.cards-grid{grid-template-columns:1fr}.toolbar{flex-wrap:wrap}.toolbar input,.toolbar select{max-width:none;width:100%}.toolbar .muted{margin-left:0}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.form-actions{flex-wrap:wrap}.opportunity{padding:14px}footer{display:grid;gap:5px}.notice{display:block}.notice strong{display:block;margin-bottom:4px}}
 
 #orbit-map{height:470px;min-height:320px;background:#e8eef5;border:1px solid var(--line);border-radius:13px;overflow:hidden;z-index:1}.map-toolbar{display:flex;align-items:end;gap:14px;margin:15px 0}.map-toolbar label{display:grid;gap:6px;min-width:220px;font-size:11px;color:#687b91}.map-toolbar .muted{margin-left:auto;padding-bottom:10px}.frequency-panel{margin-top:16px}.json-sample{background:#f4f7fb;padding:15px;border-radius:8px;font:11px/1.6 monospace;overflow:auto;color:#36506e}@media(max-width:760px){#orbit-map{height:390px}.map-toolbar{display:grid}.map-toolbar label{min-width:0}.map-toolbar .muted{margin-left:0}}
@@ -58,14 +59,12 @@ footer a:hover{text-decoration:underline}
 .opportunity-check li{font-size:12px;line-height:1.7;margin:7px 0;color:var(--muted)}
 @media(max-width:760px){.opportunity-grid{grid-template-columns:1fr}}
 
-.locator-map-wrap{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:8px;box-shadow:var(--shadow)}
-#locator-map{height:390px;min-height:300px;border-radius:9px;overflow:hidden;background:#eaf0f6}
 .locator-result{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .locator-result h3{font:600 14px 'Space Grotesk';margin:0;color:var(--ink)}
 .locator-result p{font-size:11px;line-height:1.55;color:var(--muted);margin:0}
 .locator-result a{font-size:11px;color:var(--blue);font-weight:700;text-decoration:none;margin-top:auto}
 .locator-result .tag{align-self:flex-start}
-@media(max-width:760px){#locator-map{height:330px}.locator-panel .form-actions{flex-wrap:wrap}}
+
 
 .intelligence-panel{max-width:1000px}
 .case-list{display:grid;gap:12px;margin-top:12px}
@@ -87,25 +86,20 @@ footer a:hover{text-decoration:underline}
 }
 
 .brand{display:flex;align-items:center;gap:12px;padding:0 8px 24px;min-height:78px;min-width:0}
-.brand-symbol{width:48px;height:48px;flex:0 0 48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#28a8ff,#6159df);color:#fff;font:700 18px 'Space Grotesk',Arial,sans-serif;letter-spacing:-1px;box-shadow:0 5px 18px #258ee955}
+.brand-symbol{display:none}
 .brand-copy{min-width:0}.brand-copy strong{display:block;color:#f2f7ff;font:700 16px 'Space Grotesk',Arial,sans-serif;white-space:nowrap}.brand-copy small{display:block;color:#91a8c4;font-size:11px;margin-top:4px;line-height:1.3}
 @media(max-width:760px){.brand{padding:0 8px 18px;min-height:70px}.brand-symbol{width:44px;height:44px;flex-basis:44px}}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 6.0.0 accessibility and analyzer refinements */
+/* ILS 6.2 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
 
-#lawful-connectivity .notice{margin:1rem 0}
-#lawful-connectivity .form-panel{display:grid;gap:.7rem}
-#lawful-connectivity input,#lawful-connectivity select{width:100%;padding:.85rem;border:1px solid var(--line,#d9e1eb);border-radius:12px;background:var(--surface,#fff);color:inherit}
-#lawful-connectivity .results-list{display:grid;gap:1rem;margin-top:1rem}
-#lawful-connectivity .locator-result{border:1px solid var(--line,#d9e1eb);border-radius:14px;padding:1rem;background:var(--surface,#fff)}
 
 
-/* ILS 6.0.0 business workspace */
+/* ILS 6.2 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -115,7 +109,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .public-wifi-filters label{display:grid;gap:6px;font-size:11px;color:#687b91}
 .public-wifi-map{height:310px;min-height:250px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#eaf0f6;overflow:hidden}
 @media(max-width:760px){.public-wifi-filters{grid-template-columns:1fr}.public-wifi-map{height:280px}}
-/* ILS 6.0 — layout additions for Remote and Impact */
+/* ILS 6.2 — layout additions for Remote and Impact */
 .grid-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
 .stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
 .stats-grid .stat{background:#f4f7fb;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
@@ -132,7 +126,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:560px){#view-remote .form-grid,#view-impact .form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
 
 
-/* ILS 6.0 consolidation — Wi-Fi locator integrated into the main navigation */
+/* ILS 6.2 consolidation — Wi-Fi locator integrated into the main navigation */
 #view-locator .section-heading{max-width:900px;margin:0 0 18px}
 #view-locator .section-heading h2{font:600 22px 'Space Grotesk';color:var(--ink);margin:6px 0}
 #view-locator .section-heading p{color:var(--muted);line-height:1.65;margin:6px 0}
@@ -142,6 +136,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #view-locator .public-wifi-filters label{display:grid;gap:6px;color:#687b91;font-size:11px;font-weight:600}
 #view-locator .results-list{max-height:none}
 @media(max-width:760px){#view-locator .public-wifi-map{height:235px;min-height:200px}}
+
+/* ILS 6.2 SD-WAN module */
+#view-sdwan .metric{display:block;font:700 25px 'Space Grotesk',Arial,sans-serif;margin:8px 0;color:var(--ink,#17324d)}
+#view-sdwan .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+#view-sdwan .form-grid label,#view-sdwan>div>label{display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--ink,#17324d)}
+#view-sdwan input,#view-sdwan select{width:100%;min-width:0;padding:10px;border:1px solid var(--line,#dbe4ef);border-radius:8px;background:#fff;color:#17324d}
+#view-sdwan .form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+#view-sdwan .sdwan-row{border:1px solid var(--line,#dbe4ef);border-radius:10px;padding:12px;margin:9px 0;background:#fff}
+#view-sdwan .sdwan-row h4{margin:0 0 8px}
+#view-sdwan .sdwan-tags{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0}
+#view-sdwan .sdwan-tag{font-size:11px;padding:4px 8px;border-radius:20px;background:#edf3fa;color:#31516f}
+#view-sdwan .sdwan-actions{display:flex;gap:8px;margin-top:8px}
+#view-sdwan .sdwan-actions button{border:1px solid var(--line,#dbe4ef);border-radius:7px;padding:6px 9px;background:#f7f9fc;color:#31516f}
+@media(max-width:700px){#view-sdwan .form-grid{grid-template-columns:1fr}#view-sdwan .form-actions>*{flex:1 1 100%}}
+
 </style>
 <style>
 /* ILS 1.2 hardening: ensure layout remains styled in local Android file previews */
@@ -164,7 +173,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 6.0.0: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 6.2: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -200,7 +209,7 @@ html{scroll-behavior:auto}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><span class="brand-symbol" aria-hidden="true">ILS</span><span class="brand-copy"><strong>ILS 6.0.0</strong><small>Internet Livre Satelital</small></span></div>
+    <div class="brand"><img class="brand-logo" src="./ils-logo.png" alt="ILS 6.2 — Internet Livre Satelital"><span class="brand-copy"><strong>ILS 6.2</strong><small>Internet Livre Satelital</small></span></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -222,16 +231,17 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
       <button class="nav-item" data-view="remote"><span>⌁</span> ILS Remote</button>
       <button class="nav-item" data-view="impact"><span>▥</span> ILS Impact</button>
+      <button class="nav-item" data-view="sdwan"><span>⇄</span> ILS SD-WAN Intelligence</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.0.0 · offline-first</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.2 · connectivity intelligence</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.0.0</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.2</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 6.0.0 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 6.2 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -251,7 +261,7 @@ html{scroll-behavior:auto}
       <div class="section-head"><div><span class="eyebrow">CATÁLOGO PÚBLICO</span><h2>Catálogo orbital</h2><p class="muted">Elementos orbitais fornecidos pelo CelesTrak. A posição orbital exige cálculo e época atualizados.</p></div><button class="btn btn-primary" id="loadSatBtn">Carregar satélites</button></div>
       <div class="toolbar"><input id="satSearch" type="search" placeholder="Pesquisar por nome…" aria-label="Pesquisar satélites"><select id="satGroup" aria-label="Grupo de satélites"><option value="stations">Estações espaciais (amostra)</option><option value="active">Satélites ativos (amostra)</option><option value="weather">Meteorológicos</option></select><span class="muted" id="sat-count">Nenhum dado carregado</span></div>
       <div id="satellite-cards" class="satellite-card-grid" aria-live="polite"><div class="empty">Carregue os dados orbitais para visualizar os satélites.</div></div><details class="panel satellite-raw"><summary>Exibir tabela técnica de satélites</summary><div class="table-wrap"><table><thead><tr><th>Nome</th><th>Identificador</th><th>Órbita / fonte</th><th>Dados</th></tr></thead><tbody id="sat-table"><tr><td colspan="4" class="empty">Clique em “Carregar satélites”.</td></tr></tbody></table></div></details>
-      <p class="micro">A consulta depende de conexão e disponibilidade do CelesTrak. A lista exibida é uma amostra de catálogo, não um inventário completo.</p>
+      <p id="orbital-load-diagnostic" class="micro" role="status" aria-live="polite">Diagnóstico da biblioteca orbital: aguardando solicitação.</p>\n  <p class="micro">A consulta depende de conexão e disponibilidade do CelesTrak. A lista exibida é uma amostra de catálogo, não um inventário completo.</p>
     </section>
     <section class="view" id="view-visibility">
       <div class="section-head"><div><span class="eyebrow">ESTIMATIVA GEOGRÁFICA</span><h2>Visibilidade do satélite</h2><p class="muted">Informe coordenadas para calcular a elevação aproximada de satélites com dados OMM carregados.</p></div></div>
@@ -377,7 +387,7 @@ html{scroll-behavior:auto}
     <select id="publicWifiType"><option value="all">Todos os tipos</option><option value="public">Órgãos e serviços públicos</option><option value="education">Educação e bibliotecas</option><option value="hospitality">Comércio e hospedagem</option><option value="community">Espaços comunitários</option></select>
    </label>
    <label>Condição de acesso
-    <select id="publicWifiAccess"><option value="all">Todas as condições</option><option value="free">Gratuito indicado no cadastro</option><option value="yes">Acesso indicado</option><option value="unknown">Não informado</option></select>
+    <select id="publicWifiAccess"><option value="all">Todas as condições</option><option value="free">Gratuito indicado no cadastro</option><option value="yes">Acesso indicado</option><option value="paid">Pago indicado no cadastro</option><option value="restricted">Restrito a clientes/usuários</option><option value="unknown">Não informado</option></select>
    </label>
    <label>Ordenar por
     <select id="publicWifiSort"><option value="distance">Mais próximos</option><option value="name">Nome (A–Z)</option></select>
@@ -403,7 +413,7 @@ html{scroll-behavior:auto}
  <div class="section-head">
   <div><span class="eyebrow">PLANEJAMENTO E INCLUSÃO DIGITAL</span><h2>Inteligência de conectividade</h2>
    <p class="muted">Registre uma necessidade de conectividade, organize evidências e gere um relatório preliminar para encaminhamento.</p>
-  </div><span class="tag tag-green">Módulo 4.2</span>
+  </div><span class="tag tag-green">Planejamento e inclusão digital</span>
  </div>
  <div class="notice"><strong>Escopo responsável</strong><span>Este módulo organiza informações fornecidas pelo usuário. Não confirma cobertura, elegibilidade, disponibilidade de satélite, gratuidade ou aprovação de programa público. A análise é preliminar e precisa de validação pela entidade ou provedor responsável.</span></div>
  <div class="panel form-panel intelligence-panel">
@@ -499,7 +509,7 @@ html{scroll-behavior:auto}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 6.0.0 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 6.2 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -611,8 +621,74 @@ html{scroll-behavior:auto}
   <div class="panel prose"><h3>Critério de evidência</h3><p>Resultados só devem ser divulgados como impacto comprovado quando houver medições comparáveis, método documentado, datas, fonte, evidências e verificação adequada. Valores declarados sem comprovação permanecem identificados como informados.</p></div>
 </section>
 
+
+<section class="view" id="view-sdwan">
+ <div class="section-head"><div><span class="eyebrow">CONECTIVIDADE ADAPTATIVA</span><h2>ILS SD-WAN Intelligence</h2><p>Monitoramento multi-WAN, análise de qualidade e recomendações explicáveis.</p></div></div>
+ <div class="notice"><strong>Modo seguro:</strong> esta versão monitora dados informados ou coletados pelo navegador e gera recomendações. Não altera rotas nem configura roteadores. Failover automático exige agente de borda e gateway compatível, ainda não homologados.</div>
+ <div class="cards-grid">
+  <article class="panel"><span class="metric-icon blue">⇄</span><h3>Links cadastrados</h3><strong class="metric" id="sdwanLinkCount">0</strong><p>Registros locais de caminhos de conexão.</p></article>
+  <article class="panel"><span class="metric-icon green">✓</span><h3>Links avaliados</h3><strong class="metric" id="sdwanEvaluatedCount">0</strong><p>Links com métricas suficientes para análise.</p></article>
+  <article class="panel"><span class="metric-icon purple">◎</span><h3>Melhor caminho estimado</h3><strong class="metric" id="sdwanBestPath">—</strong><p>Recomendação baseada nas métricas cadastradas.</p></article>
+ </div>
+ <div class="panel">
+  <h3>Cadastrar ou atualizar um link</h3>
+  <p class="muted">Informe medições reais do link. Se ainda não houver medição, deixe os campos em branco; o sistema não inventará valores.</p>
+  <div class="form-grid">
+   <label>Identificação do link<input id="sdwanName" maxlength="60" placeholder="Ex.: Fibra principal"></label>
+   <label>Tecnologia<select id="sdwanType"><option value="Fibra">Fibra</option><option value="4G/5G">4G/5G</option><option value="Rádio">Rádio</option><option value="Satélite">Satélite</option><option value="Wi-Fi">Wi-Fi</option><option value="Outra">Outra</option></select></label>
+   <label>Latência (ms)<input id="sdwanLatency" type="number" min="0" max="60000" step="1" placeholder="Ex.: 45"></label>
+   <label>Jitter (ms)<input id="sdwanJitter" type="number" min="0" max="60000" step="1" placeholder="Ex.: 8"></label>
+   <label>Perda de pacotes (%)<input id="sdwanLoss" type="number" min="0" max="100" step="0.1" placeholder="Ex.: 0.5"></label>
+   <label>Disponibilidade observada (%)<input id="sdwanAvailability" type="number" min="0" max="100" step="0.1" placeholder="Ex.: 99"></label>
+   <label>Custo relativo (1–5)<select id="sdwanCost"><option value="">Não informado</option><option value="1">1 — Muito baixo</option><option value="2">2 — Baixo</option><option value="3">3 — Médio</option><option value="4">4 — Alto</option><option value="5">5 — Muito alto</option></select></label>
+   <label>Prioridade<input id="sdwanPriority" type="number" min="1" max="10" value="5"></label>
+  </div>
+  <div class="form-actions"><button class="btn primary" id="sdwanSave" type="button">Salvar link</button><button class="btn" id="sdwanReset" type="button">Limpar formulário</button><button class="btn" id="sdwanExport" type="button">Exportar dados JSON</button></div>
+  <p id="sdwanStatus" class="micro" aria-live="polite">Os dados serão armazenados neste navegador.</p>
+ </div>
+ <div class="panel" id="sdwanTermuxPanel">
+  <h3>ILS Edge Monitor — importar telemetria do Termux</h3>
+  <p class="muted">Selecione o arquivo <code>data/telemetry.jsonl</code> produzido pelo ILS Termux Edge Agent. A leitura ocorre localmente neste navegador; nenhum dado é enviado para servidor.</p>
+  <div class="form-actions">
+   <input id="sdwanTermuxFile" type="file" accept=".jsonl,.json,.txt,application/json,text/plain" aria-label="Selecionar arquivo de telemetria do Termux">
+   <button class="btn primary" id="sdwanTermuxImport" type="button">Importar telemetria</button>
+   <button class="btn" id="sdwanTermuxClear" type="button">Limpar telemetria importada</button>
+  </div>
+  <p id="sdwanTermuxStatus" class="micro" aria-live="polite">Nenhum arquivo de telemetria importado nesta sessão.</p>
+  <div class="cards-grid" style="margin-top:12px">
+   <article class="panel"><h4>Último estado</h4><strong class="metric" id="sdwanTermuxState">—</strong><p id="sdwanTermuxWhen" class="micro">Sem coleta importada.</p></article>
+   <article class="panel"><h4>Latência média</h4><strong class="metric" id="sdwanTermuxLatency">—</strong><p class="micro">Média das sondagens TCP/HTTPS bem-sucedidas.</p></article>
+   <article class="panel"><h4>Sondas bem-sucedidas</h4><strong class="metric" id="sdwanTermuxSuccess">—</strong><p id="sdwanTermuxCount" class="micro">Sem amostras.</p></article>
+  </div>
+  <div id="sdwanTermuxHistory" class="case-list"><div class="empty">Importe o arquivo JSONL do Termux para visualizar o histórico.</div></div>
+  <p class="micro">Limites: mede somente o caminho utilizado pelo Android durante cada coleta. Não identifica de forma confiável se o acesso final é fibra ou móvel, não compara duas WANs simultaneamente e não controla roteadores.</p>
+ </div>
+ <div class="panel">
+  <div class="section-head"><div><h3>Comparação e recomendação</h3><p class="muted">Pontuação heurística transparente; não substitui SLA, medição contínua ou política de engenharia.</p></div><button class="btn" id="sdwanRefresh" type="button">Atualizar análise</button></div>
+  <div id="sdwanAnalysis" class="case-list"><div class="empty">Cadastre métricas para gerar a análise.</div></div>
+ </div>
+ <div class="panel">
+  <h3>Política de conectividade (simulação)</h3>
+  <p>Selecione o perfil para visualizar como a recomendação muda. Nenhuma rota será alterada.</p>
+  <label>Perfil de uso<select id="sdwanProfile"><option value="balanced">Equilíbrio geral</option><option value="latency">Baixa latência (voz/vídeo)</option><option value="continuity">Continuidade</option><option value="economy">Economia</option></select></label>
+  <div id="sdwanPolicyResult" class="notice">Aguardando links cadastrados.</div>
+ </div>
+ <div class="panel">
+  <h3>Roadmap de integração física</h3>
+  <ol>
+   <li>Agente Linux autenticado para coleta de métricas de interfaces.</li>
+   <li>API de telemetria e armazenamento central com isolamento por organização.</li>
+   <li>Adaptador para gateway multi-WAN compatível, inicialmente em modo somente leitura.</li>
+   <li>Laboratório com dois links independentes e testes de falha controlada.</li>
+   <li>Controle autorizado de failover, com trilha de auditoria e rollback.</li>
+   <li>Edge AI experimental após coleta e rotulagem de dados reais.</li>
+  </ol>
+  <p class="micro">Estado desta entrega: interface e motor de recomendação local implementados; integração física, Supabase e execução automática ainda não implementadas.</p>
+ </div>
+</section>
+
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.0.0</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.2</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -654,7 +730,7 @@ html{scroll-behavior:auto}
 #view-observatory .ils6-pill{display:inline-block;border-radius:20px;padding:4px 9px;font-size:.78rem;background:var(--soft,#eef3f8)}
 #view-observatory .ils6-muted{color:var(--muted,#64748b);font-size:.88rem}
 </style>
-<div class="section-head"><div><span class="eyebrow">ILS 6.0 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
+<div class="section-head"><div><span class="eyebrow">ILS 6.2 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
 <div class="notice"><strong>Transparência dos dados</strong><span>Os indicadores refletem somente eventos sincronizados. Latência HTTP não equivale a ping ICMP ou teste de velocidade. Ausência de dados geográficos não será convertida em cobertura presumida. O painel não declara causa-raiz automaticamente.</span></div>
 <div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API compartilhada…</div>
 <div class="ils6-controls">
@@ -685,7 +761,7 @@ html{scroll-behavior:auto}
 </div>
 </section>
 <footer>
-  <span>© 2026 Nailson Lima · ILS 6.0.0 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 6.2 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -694,9 +770,47 @@ html{scroll-behavior:auto}
 </main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/satellite.js@7.2.0/dist/satellite.min.js"></script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
+const satelliteLibraryReady = (async () => {
+  const candidates = [
+    "https://cdn.jsdelivr.net/npm/satellite.js@7.2.0/+esm",
+    "https://esm.sh/satellite.js@7.2.0",
+    "https://unpkg.com/satellite.js@7.2.0/dist/index.js"
+  ];
+  const failures = [];
+  for (const url of candidates) {
+    try {
+      const mod = await import(url);
+      if (typeof mod.json2satrec !== "function" ||
+          typeof mod.propagate !== "function" ||
+          typeof mod.eciToGeodetic !== "function") {
+        throw new Error("Módulo carregado, mas faltam exports obrigatórios (json2satrec/propagate/eciToGeodetic).");
+      }
+      window.satellite = mod;
+      window.ILS_ORBITAL_DIAGNOSTIC = {
+        status: "ready", version: "7.2.0", provider: url,
+        loadedAt: new Date().toISOString()
+      };
+      return mod;
+    } catch (error) {
+      failures.push(url + " — " + (error?.message || String(error)));
+    }
+  }
+  const isLocal = location.protocol === "file:" ||
+                  location.protocol === "content:" ||
+                  location.origin === "null";
+  const message = isLocal
+    ? "A página foi aberta como arquivo local (file/content://). O navegador pode bloquear módulos ESM externos. Publique/abra o ILS por HTTPS (GitHub Pages) ou localhost e tente novamente."
+    : "Não foi possível carregar satellite.js 7.2.0 pelos provedores disponíveis. Verifique rede, DNS, bloqueador de conteúdo e política CORS.";
+  window.ILS_ORBITAL_DIAGNOSTIC = {
+    status: "error", version: "7.2.0", protocol: location.protocol,
+    origin: location.origin, message, failures, checkedAt: new Date().toISOString()
+  };
+  console.error("Diagnóstico de carregamento orbital:", window.ILS_ORBITAL_DIAGNOSTIC);
+  throw new Error(message + " Detalhes: " + failures.join(" | "));
+})();
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const state={satellites:[],source:null,lastUpdate:null,dataFormat:"OMM-JSON",opportunities:[],map:null,mapLayer:null,mapTimer:null};
 const groups={
@@ -808,6 +922,17 @@ function satRecord(s){if(s.satrec)return s.satrec;if(s.omm&&window.satellite?.js
 async function loadSatellites(force=false){
  const group=$("#satGroup")?.value||"stations",btn=$("#loadSatBtn"),cacheKey="ils-omm-v720:"+group;
  if(btn){btn.disabled=true;btn.textContent="Consultando OMM…"}
+ try { await satelliteLibraryReady; }
+ catch(error) {
+   if(btn){btn.disabled=false;btn.textContent="Carregar satélites";}
+   const detail = window.ILS_ORBITAL_DIAGNOSTIC?.message || error?.message || "Falha desconhecida.";
+   const status = $("#status-orbit");
+   if(status){status.textContent="Biblioteca orbital indisponível";status.className="pending";}
+   toast(detail);
+   const diag = $("#orbital-load-diagnostic");
+   if(diag) diag.textContent = detail;
+   return;
+ }
  let cached=null;try{cached=JSON.parse(localStorage.getItem(cacheKey)||"null")}catch{}
  const ttl=2*60*60*1000,cacheAge=cached?.savedAt?Date.now()-cached.savedAt:Infinity;
  if(!force&&cached?.data?.length&&cacheAge>=0&&cacheAge<ttl){
@@ -1084,7 +1209,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.0.0</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.2</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo OMM JSON CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -1168,62 +1293,47 @@ function loadOpps(){try{state.opportunities=JSON.parse(localStorage.getItem("ils
 function renderOpps(){$("#saved-opps").innerHTML=state.opportunities.map(o=>`<div class="saved-item"><strong>${esc(o.name)}</strong> — ${esc(o.notes||"Sem observações")} ${o.url?`<a href="${esc(o.url)}" target="_blank" rel="noopener">Abrir ↗</a>`:""}</div>`).join("")}
 $("#saveOpp").addEventListener("click",()=>{const name=$("#oppName").value.trim(),url=$("#oppUrl").value.trim(),notes=$("#oppNotes").value.trim();if(!name){toast("Informe o nome da oportunidade.");return;}if(url&&!/^https?:\/\//i.test(url)){toast("Informe uma URL iniciada por https:// ou http://");return;}state.opportunities.push({name,url,notes,date:new Date().toISOString()});localStorage.setItem("ils-opportunities",JSON.stringify(state.opportunities));$("#oppName").value=$("#oppUrl").value=$("#oppNotes").value="";renderOpps();toast("Oportunidade salva neste dispositivo.");});
 $("#checkAccess").addEventListener("click",()=>{toast("Consulte as fontes oficiais e confirme critérios, localidade e disponibilidade com o órgão responsável.")});
-$("#runDiag").addEventListener("click",async()=>{const box=$("#diag-results");box.innerHTML='<div class="empty">Executando verificações…</div>';const items=[["Aplicação carregada","ok","Interface executada neste navegador"],["Armazenamento local",(()=>{try{localStorage.setItem("ils-test","1");localStorage.removeItem("ils-test");return"ok"}catch{return"warn"}})(),"Armazenamento do navegador"],["Conexão de rede",navigator.onLine?"ok":"warn",navigator.onLine?"Navegador informa conexão disponível":"Navegador informa modo offline"],["Biblioteca orbital",window.satellite?"ok":"warn",window.satellite?"satellite.js 7.2.0 disponível":"satellite.js indisponível; cálculos orbitais desativados"],["Dados OMM",state.satellites.length?"ok":"warn",state.satellites.length?state.satellites.length+" registros OMM convertidos para SGP4":"Nenhum OMM carregado; abra o catálogo e consulte CelesTrak"],["Receptor SDR","warn","Nenhum receptor físico integrado"],["Internet via satélite","warn","Não testada; requer terminal e serviço autorizados"]];let reach="warn",detail="Não testado";try{const c=new AbortController(),t=setTimeout(()=>c.abort(),5000);const r=await fetch("https://www.google.com/generate_204",{mode:"no-cors",signal:c.signal,cache:"no-store"});clearTimeout(t);reach="ok";detail="Requisição de teste iniciada; resposta opaca do navegador";}catch{detail="Destino de teste inacessível ou bloqueado; isso não prova ausência total de Internet";}items.splice(2,0,["Acesso a destino HTTPS",reach,detail]);box.innerHTML=items.map(([n,s,d])=>`<div class="diag-item"><span><strong>${esc(n)}</strong><br><small class="muted">${esc(d)}</small></span><b class="${s==="warn"?"warn":""}">${s==="ok"?"Verificado":"Pendente"}</b></div>`).join("");});
+$("#runDiag").addEventListener("click",async()=>{
+ const box=$("#diag-results");
+ box.innerHTML='<div class="empty">Executando verificações…</div>';
+ let orbitalLibrary="warn",libraryDetail="satellite.js ainda não está disponível";
+ try{await satelliteLibraryReady;orbitalLibrary="ok";libraryDetail="satellite.js 7.2.0 carregada; json2satrec e propagação SGP4 disponíveis";}
+ catch(e){libraryDetail=window.ILS_ORBITAL_DIAGNOSTIC?.message||e.message||libraryDetail;}
+ let reach="warn",detail="Não testado";
+ try{const c=new AbortController(),t=setTimeout(()=>c.abort(),5000);await fetch("https://www.google.com/generate_204",{mode:"no-cors",signal:c.signal,cache:"no-store"});clearTimeout(t);reach="ok";detail="Requisição de teste iniciada; resposta opaca do navegador";}
+ catch{detail="Destino de teste inacessível ou bloqueado; isso não prova ausência total de Internet";}
+ const loaded=Array.isArray(state.satellites)?state.satellites.length:0;
+ const epochDates=loaded?state.satellites.map(s=>satEpoch(s)).filter(Boolean):[];
+ const newest=epochDates.length?new Date(Math.max(...epochDates.map(d=>d.getTime()))):null;
+ const ageDays=newest?(Date.now()-newest.getTime())/86400000:null;
+ const dataStatus=loaded?"ok":"warn";
+ const dataDetail=loaded
+  ? `${loaded} registros GP recebidos em OMM JSON e convertidos para SGP4. Fonte: CelesTrak (${state.source||"grupo não identificado"}). Época mais recente: ${newest?newest.toLocaleString("pt-BR"):"não identificada"}.`
+  : "Nenhum elemento orbital carregado. Acesse Catálogo orbital > Carregar satélites. A integração atual consulta OMM JSON; não baixa TLE clássico de duas linhas.";
+ const freshness=loaded?(ageDays<=14?"ok":"warn"):"warn";
+ const freshnessDetail=loaded?(ageDays<=14?`Época dos elementos: ${ageDays.toFixed(1)} dia(s); dentro do limite de atenção de 14 dias.`:`Época dos elementos: ${ageDays.toFixed(1)} dias; dados antigos, atualize no CelesTrak.`):"Indisponível até receber dados orbitais.";
+ const items=[
+  ["Aplicação carregada","ok","Interface executada neste navegador"],
+  ["Armazenamento local",(()=>{try{localStorage.setItem("ils-test","1");localStorage.removeItem("ils-test");return"ok"}catch{return"warn"}})(),"Armazenamento do navegador"],
+  ["Conexão de rede",navigator.onLine?"ok":"warn",navigator.onLine?"Navegador informa conexão disponível":"Navegador informa modo offline"],
+  ["Acesso a destino HTTPS",reach,detail],
+  ["Biblioteca orbital",orbitalLibrary,libraryDetail],
+  ["Dados orbitais TLE / OMM",dataStatus,dataDetail],
+  ["Época e atualização orbital",freshness,freshnessDetail],
+  ["Conversão SGP4",loaded&&loaded===state.satellites.filter(s=>s.satrec&&!s.satrec.error).length?"ok":"warn",loaded?`${state.satellites.filter(s=>s.satrec&&!s.satrec.error).length} de ${loaded} registros possuem satrec válido para propagação.`:"Sem registros para validar conversão."],
+  ["Formato dos dados","ok","A fonte atualmente integrada é GP em OMM JSON. TLE clássico (linhas 1 e 2) não é consultado nesta versão."],
+  ["Receptor SDR","warn","Nenhum receptor físico integrado"],
+  ["Internet via satélite","warn","Não testada; requer terminal e serviço autorizados"]
+ ];
+ box.innerHTML=items.map(([n,s,d])=>`<div class="diag-item"><span><strong>${esc(n)}</strong><br><small class="muted">${esc(d)}</small></span><b class="${s==="warn"?"warn":""}">${s==="ok"?"Verificado":"Pendente"}</b></div>`).join("");
+});
 loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"}).then(reg=>reg.update()).catch(()=>{});
 
 
 
-// ILS 6.0.0 — localizador de pontos de Wi-Fi mapeados no OpenStreetMap.
-state.locMap=null;state.locMarkers=null;state.locUserMarker=null;
-function initLocatorMap(){
- if(state.locMap)return true;
- const el=document.getElementById("locator-map");
- if(!el||!window.L){const s=document.getElementById("locStatus");if(s)s.textContent="Biblioteca de mapas indisponível. Verifique a conexão e recarregue a página.";return false;}
- state.locMap=L.map(el,{scrollWheelZoom:false}).setView([-14.2,-51.9],4);
- L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'}).addTo(state.locMap);
- state.locMarkers=L.layerGroup().addTo(state.locMap);
- setTimeout(()=>state.locMap.invalidateSize(),150);return true;
-}
-function validLocatorCoords(lat,lon){lat=parseLocaleNumber(lat);lon=parseLocaleNumber(lon);return Number.isFinite(lat)&&lat>=-90&&lat<=90&&Number.isFinite(lon)&&lon>=-180&&lon<=180;}
-function setLocatorCoords(lat,lon,origin){document.getElementById("locLat").value=Number(lat).toFixed(6);document.getElementById("locLon").value=Number(lon).toFixed(6);document.getElementById("locOrigin").value=origin||"manual";}
-function useDeviceLocation(){const status=document.getElementById("locStatus");if(!navigator.geolocation){status.textContent="Este navegador não disponibiliza geolocalização.";return;}status.textContent="Solicitando permissão de localização ao dispositivo…";navigator.geolocation.getCurrentPosition(pos=>{setLocatorCoords(pos.coords.latitude,pos.coords.longitude,"device");status.textContent=`Localização recebida (precisão informada pelo dispositivo: ${Math.round(pos.coords.accuracy)} m). Toque em Pesquisar pontos próximos para consultar o mapa.`;if(initLocatorMap()){state.locMap.setView([pos.coords.latitude,pos.coords.longitude],14);}},err=>{const msg={1:"Permissão de localização negada. Você pode informar coordenadas manualmente.",2:"Não foi possível determinar a localização. Tente novamente ou informe coordenadas.",3:"A solicitação de localização expirou. Tente novamente."};status.textContent=msg[err.code]||"Falha ao obter localização.";},{enableHighAccuracy:false,timeout:12000,maximumAge:60000});}
-function renderLocatorResults(elements,lat,lon){
- const box=document.getElementById("locResults");
- if(!elements.length){box.innerHTML='<div class="empty">Nenhum ponto com Wi-Fi explicitamente mapeado foi encontrado neste raio. Isso não significa que não existam pontos; tente ampliar o raio ou consultar fontes locais.</div>';return;}
- const ranked=elements.map(el=>{
-  const t=el.tags||{},la=el.lat??el.center?.lat,lo=el.lon??el.center?.lon;
-  return {...el,_distance:haversineMeters(lat,lon,la,lo)};
- }).sort((a,b)=>a._distance-b._distance);
- box.innerHTML=ranked.map(el=>{
-  const t=el.tags||{},name=t.name||t.operator||"Ponto de Wi-Fi sem nome informado",kind=t.amenity||t.shop||t.tourism||t.leisure||"Local de acesso",access=t.internet_access||"wifi (tag mapeada)",la=el.lat??el.center?.lat,lo=el.lon??el.center?.lon,addr=[t["addr:street"],t["addr:housenumber"],t["addr:suburb"],t["addr:city"]].filter(Boolean).join(", "),maps=`https://www.openstreetmap.org/?mlat=${la}&mlon=${lo}#map=18/${la}/${lo}`,route=`https://www.google.com/maps/dir/?api=1&destination=${la},${lo}`;
-  return `<article class="locator-result"><span class="tag tag-green">Wi-Fi mapeado · não verificado em campo</span><h3>${esc(name)}</h3><p><strong>Distância em linha reta:</strong> ${formatDistance(el._distance)}</p><p><strong>Tipo:</strong> ${esc(kind)} · <strong>Tag:</strong> ${esc(access)}</p><p>${esc(addr||"Endereço não informado no mapa")}</p><p class="micro">Registro OpenStreetMap #${esc(el.id)} · Coordenadas ${Number(la).toFixed(5)}, ${Number(lo).toFixed(5)}</p><a href="${maps}" target="_blank" rel="noopener noreferrer">Ver no OpenStreetMap ↗</a> · <a href="${route}" target="_blank" rel="noopener noreferrer">Rotas ↗</a></article>`;
- }).join("");
-}
-async function searchNearbyWifi(){
- const lat=parseLocaleNumber(document.getElementById("locLat").value),lon=parseLocaleNumber(document.getElementById("locLon").value),radius=Number(document.getElementById("locRadius").value),status=document.getElementById("locStatus"),btn=document.getElementById("locSearch");
- if(!validLocatorCoords(lat,lon)){status.textContent="Informe latitude entre -90 e 90 e longitude entre -180 e 180, ou use a localização do dispositivo.";return;}
- if(!navigator.onLine){status.textContent="Pesquisa online indisponível no modo offline. As coordenadas permanecem no formulário; conecte-se à Internet para consultar o mapa.";return;}
- if(!initLocatorMap())return;
- btn.disabled=true;btn.textContent="Pesquisando…";status.textContent="Consultando registros públicos do OpenStreetMap. Aguarde…";
- const query=`[out:json][timeout:25];(node(around:${radius},${lat},${lon})["internet_access"~"^(wlan|wifi|yes)$",i];way(around:${radius},${lat},${lon})["internet_access"~"^(wlan|wifi|yes)$",i];relation(around:${radius},${lat},${lon})["internet_access"~"^(wlan|wifi|yes)$",i];);out center tags;`;
- const endpoints=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter"];
- let data=null,lastError="Serviço de mapas indisponível.";
- try{for(const endpoint of endpoints){try{const response=await fetch(endpoint+"?data="+encodeURIComponent(query),{signal:AbortSignal.timeout(30000),headers:{Accept:"application/json"}});if(!response.ok)throw new Error("HTTP "+response.status);data=await response.json();break;}catch(e){lastError=e.message||lastError;}}if(!data)throw new Error(lastError);
- const elements=(data.elements||[]).filter(el=>Number.isFinite(el.lat??el.center?.lat)&&Number.isFinite(el.lon??el.center?.lon));
- state.locMarkers.clearLayers();if(state.locUserMarker)state.locMap.removeLayer(state.locUserMarker);state.locUserMarker=L.marker([lat,lon]).addTo(state.locMap).bindPopup("Local de pesquisa");
- elements.forEach(el=>{const la=el.lat??el.center.lat,lo=el.lon??el.center.lon,t=el.tags||{},title=t.name||t.operator||"Wi-Fi mapeado";L.marker([la,lo]).addTo(state.locMarkers).bindPopup(`<strong>${esc(title)}</strong><br>Wi-Fi registrado no OpenStreetMap<br><small>Confirme funcionamento no local.</small>`);});
- state.locMap.setView([lat,lon],Math.max(10,Math.min(15,Math.round(15-Math.log2(radius/1000)))));if(elements.length){const group=L.featureGroup([state.locUserMarker,...state.locMarkers.getLayers()]);state.locMap.fitBounds(group.getBounds().pad(.18),{maxZoom:15});}
- document.getElementById("locCount").textContent=elements.length+" registro(s)";document.getElementById("locResultTitle").textContent="Pontos encontrados no raio de "+(radius/1000)+" km";renderLocatorResults(elements,lat,lon);
- status.textContent=elements.length?"Pesquisa concluída. Os registros são colaborativos e precisam de confirmação local.":"Consulta concluída sem registros de Wi-Fi explícitos neste raio.";
- }catch(e){status.textContent="Não foi possível concluir a consulta: "+(e.message||"erro de rede")+". Tente novamente mais tarde ou use o OpenStreetMap diretamente.";document.getElementById("locResults").innerHTML='<div class="empty">Falha na consulta online. Nenhum resultado foi inventado ou presumido.</div>';}
- finally{btn.disabled=false;btn.textContent="Pesquisar pontos próximos";}
-}
-document.getElementById("locUseGps")?.addEventListener("click",useDeviceLocation);
-document.getElementById("locSearch")?.addEventListener("click",searchNearbyWifi);
-document.getElementById("locBrasilia")?.addEventListener("click",()=>{setLocatorCoords(-15.7939,-47.8828,"example");if(initLocatorMap())state.locMap.setView([-15.7939,-47.8828],12);document.getElementById("locStatus").textContent="Coordenadas de exemplo de Brasília preenchidas; não representam sua localização atual.";});
+// O localizador público oficial desta versão é o módulo OSM/Overpass abaixo.
 
-
-// ILS 6.0.0 — registros locais de necessidades de conectividade.
+// ILS 6.2 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1296,49 +1406,43 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 6.0.0 — lawful public Wi-Fi discovery.
+/* ILS 6.2 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
+ // Fallback sequencial: reduz carga nos servidores e preserva a estratégia da versão anterior.
  const endpoints=[
   'https://overpass-api.de/api/interpreter',
   'https://overpass.kumi.systems/api/interpreter',
   'https://overpass.private.coffee/api/interpreter'
  ];
- statusEl.textContent='Consultando servidores públicos simultaneamente…';
- const controllers=endpoints.map(()=>new AbortController());
- const timers=[];
- const attempts=endpoints.map((url,index)=>(async()=>{
-  const timer=setTimeout(()=>controllers[index].abort(),8000);
-  timers[index]=timer;
+ const failures=[];
+ for(let i=0;i<endpoints.length;i++){
+  const endpoint=endpoints[i];
+  statusEl.textContent=`Consultando OpenStreetMap: fonte ${i+1} de ${endpoints.length}…`;
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),15000);
   try{
-   const response=await fetch(url,{
+   const response=await fetch(endpoint,{
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','Accept':'application/json'},
     body:'data='+encodeURIComponent(query),
-    signal:controllers[index].signal,
-    cache:'default'
+    signal:controller.signal,
+    cache:'no-store'
    });
-   if(!response.ok)throw new Error('HTTP '+response.status);
-   const data=await response.json();
-   if(!data||!Array.isArray(data.elements))throw new Error('Resposta inválida do serviço');
-   return {data,source:url};
+   if(!response.ok)throw new Error(`HTTP ${response.status}`);
+   const raw=await response.text();
+   let data;try{data=JSON.parse(raw)}catch{throw new Error('Resposta não é JSON válido')}
+   if(!data||!Array.isArray(data.elements))throw new Error('Resposta sem lista de elementos do OpenStreetMap');
+   return {data,source:endpoint};
+  }catch(error){
+   failures.push(`${new URL(endpoint).hostname}: ${error.name==='AbortError'?'tempo limite de 15 s':(error.message||'falha de rede')}`);
   }finally{clearTimeout(timer)}
- })());
- try{
-  const winner=await Promise.any(attempts);
-  controllers.forEach((controller,index)=>{if(!attempts[index].settled)controller.abort()});
-  statusEl.textContent='Dados recebidos. Organizando os pontos encontrados…';
-  return winner;
- }catch(error){
-  const messages=(error.errors||[]).map(e=>e?.name==='AbortError'?'tempo limite':(e?.message||'falha')).join('; ');
-  throw new Error('Nenhum servidor respondeu corretamente em até 8 segundos. '+messages);
- }finally{
-  timers.forEach(timer=>clearTimeout(timer));
  }
+ throw new Error('As três fontes Overpass falharam. '+failures.join(' | '));
 }
 function buildPublicWifiQuery(lat,lon,radius){
- // Inclui qualquer valor registrado em internet_access e evita presumir que seja gratuito.
+ // Recupera pontos com internet_access ou wifi, incluindo nós, vias e relações.
  return `[out:json][timeout:18];(node(around:${radius},${lat},${lon})["internet_access"];way(around:${radius},${lat},${lon})["internet_access"];relation(around:${radius},${lat},${lon})["internet_access"];node(around:${radius},${lat},${lon})["wifi"];way(around:${radius},${lat},${lon})["wifi"];relation(around:${radius},${lat},${lon})["wifi"];);out center tags;`;
 }
 let publicWifiEntries=[];
@@ -1346,17 +1450,32 @@ let publicWifiMap=null,publicWifiMarkers=null;
 function classifyWifiPlace(tags){
  const t=tags||{},kind=[t.amenity,t.shop,t.tourism,t.leisure,t.office,t.building].filter(Boolean).join(' ').toLowerCase();
  if(/school|university|college|library|kindergarten|education/.test(kind))return 'education';
- if(/townhall|public|government|community_centre|social_facility|post_office|police|fire_station/.test(kind))return 'public';
+ if(/townhall|public|government|community_centre|social_facility|post_office|police|fire_station|clinic|hospital/.test(kind))return 'public';
  if(/hotel|hostel|cafe|restaurant|bar|mall|market|shop|supermarket|guest_house/.test(kind))return 'hospitality';
  if(/community|park|recreation|sports|place_of_worship/.test(kind))return 'community';
  return 'other';
 }
 function wifiAccessState(tags){
- const t=tags||{},access=String(t.internet_access||t.wifi||'').toLowerCase(),fee=String(t.internet_access_fee||'').toLowerCase();
- if(/no|private/.test(access))return 'unknown';
- if(/yes|wlan|wifi/.test(access)&&/no|free/.test(fee))return 'free';
- if(/yes|wlan|wifi/.test(access))return 'yes';
+ const t=tags||{};
+ const access=String(t.internet_access||t.wifi||'').trim().toLowerCase();
+ const fee=String(t['internet_access:fee']??t.internet_access_fee??t.fee??'').trim().toLowerCase();
+ if(/^(no|none|false)$/.test(access))return 'none';
+ if(/^(private|customers|customer|members)$/.test(access))return 'restricted';
+ if(/^(paid|yes)$/.test(fee)||access==='paid')return 'paid';
+ if(access==='free'||/^(no|free|false|0)$/.test(fee))return 'free';
+ if(/^(yes|wlan|wifi|public)$/.test(access))return 'yes';
  return 'unknown';
+}
+function ensurePublicWifiMap(lat,lon){
+ const el=document.getElementById('publicWifiMap');
+ if(!el||typeof L==='undefined')return false;
+ if(!publicWifiMap){
+  el.innerHTML='';
+  publicWifiMap=L.map(el,{scrollWheelZoom:false}).setView([lat,lon],13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(publicWifiMap);
+  publicWifiMarkers=L.layerGroup().addTo(publicWifiMap);
+ }
+ return true;
 }
 function renderPublicWifiResults(){
  const results=document.getElementById('publicWifiResults'),summary=document.getElementById('publicWifiSummary');
@@ -1364,28 +1483,31 @@ function renderPublicWifiResults(){
  let items=publicWifiEntries.filter(el=>{
   const t=el.tags||{},category=classifyWifiPlace(t),state=wifiAccessState(t);
   const categoryOk=type==='all'||category===type;
-  const accessOk=access==='all'||(access==='free'&&state==='free')||(access==='yes'&&state!=='unknown')||(access==='unknown'&&state==='unknown');
+  const accessOk=access==='all'||access===state;
   return categoryOk&&accessOk;
  });
- items.sort((a,b)=>sort==='name'?String(a.tags?.name||'').localeCompare(String(b.tags?.name||''),'pt-BR'):a._distance-b._distance);
- summary.textContent=items.length+' de '+publicWifiEntries.length+' ponto(s) exibido(s). Acesso e gratuidade são informações declaradas no mapa, não confirmação em campo.';
+ items.sort((a,b)=>sort==='name'?String(a.tags?.name||a.tags?.operator||'').localeCompare(String(b.tags?.name||b.tags?.operator||''),'pt-BR'):a._distance-b._distance);
+ summary.textContent=items.length+' de '+publicWifiEntries.length+' ponto(s) exibido(s). Gratuidade, restrição e cobrança são informações declaradas no mapa, não confirmação em campo.';
  if(!items.length){results.innerHTML='<div class="empty">Nenhum ponto corresponde aos filtros. Altere os filtros ou amplie o raio de busca.</div>';}
  else results.innerHTML=items.map(el=>{
   const t=el.tags||{},name=t.name||t.operator||'Ponto de acesso sem nome informado';
   const kind=t.amenity||t.shop||t.tourism||t.leisure||t.office||'Local cadastrado';
-  const accessText=t.internet_access||t.wifi||'não informado',fee=t.internet_access_fee||'não informado';
-  const addr=[t['addr:street'],t['addr:housenumber'],t['addr:suburb'],t['addr:city']].filter(Boolean).join(', ');
+  const accessText=t.internet_access||t.wifi||'não informado',fee=t['internet_access:fee']??t.internet_access_fee??t.fee??'não informado';
   const mapUrl='https://www.openstreetmap.org/?mlat='+el._lat+'&mlon='+el._lon+'#map=18/'+el._lat+'/'+el._lon;
   const directions='https://www.google.com/maps/dir/?api=1&destination='+el._lat+','+el._lon;
-  const label=wifiAccessState(t)==='free'?'Gratuidade indicada no cadastro':wifiAccessState(t)==='yes'?'Acesso indicado no cadastro':'Acesso não informado';
-  return '<article class="locator-result"><span class="tag '+(wifiAccessState(t)==='free'?'tag-green':'tag-warn')+'">'+esc(label)+' · não verificado em campo</span><h3>'+esc(name)+'</h3><p><strong>Distância:</strong> '+formatDistance(el._distance)+' · <strong>Tipo:</strong> '+esc(kind)+'</p><p><strong>Acesso:</strong> '+esc(accessText)+' · <strong>Custo:</strong> '+esc(fee)+'</p><p>'+esc(addr||'Endereço não informado')+'</p><p class="micro">Registro OpenStreetMap #'+esc(el.id)+'. Confirme se a rede está ativa e se o acesso é autorizado.</p><a href="'+mapUrl+'" target="_blank" rel="noopener noreferrer">Ver no mapa ↗</a> · <a href="'+directions+'" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></article>';
+  const state=wifiAccessState(t);
+  const labels={free:'Gratuidade indicada no cadastro',paid:'Cobrança indicada no cadastro',restricted:'Acesso restrito indicado',yes:'Acesso indicado no cadastro',unknown:'Condição de acesso não informada'};
+  const cls=state==='free'?'tag-green':'tag-warn';
+  const address=[t['addr:street'],t['addr:housenumber'],t['addr:suburb'],t['addr:city']].filter(Boolean).join(', ');
+  return '<article class="locator-result"><span class="tag '+cls+'">'+esc(labels[state])+' · não verificado em campo</span><h3>'+esc(name)+'</h3><p><strong>Distância:</strong> '+formatDistance(el._distance)+' · <strong>Tipo:</strong> '+esc(kind)+'</p><p><strong>Acesso:</strong> '+esc(accessText)+' · <strong>Custo:</strong> '+esc(String(fee))+'</p><p>'+esc(address||'Endereço não informado')+'</p><p class="micro">Registro OpenStreetMap #'+esc(el.id)+'. Confirme se a rede está ativa, gratuita e autorizada pelo estabelecimento.</p><a href="'+mapUrl+'" target="_blank" rel="noopener noreferrer">Ver no mapa ↗</a> · <a href="'+directions+'" target="_blank" rel="noopener noreferrer">Como chegar ↗</a></article>';
  }).join('');
- if(typeof L!=='undefined'&&document.getElementById('publicWifiMap')){
-  if(!publicWifiMap){publicWifiMap=L.map('publicWifiMap').setView([items[0]?items[0]._lat:0,items[0]?items[0]._lon:0],13);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(publicWifiMap);publicWifiMarkers=L.layerGroup().addTo(publicWifiMap);}
+ if(publicWifiEntries.length&&ensurePublicWifiMap(publicWifiEntries[0]._lat,publicWifiEntries[0]._lon)){
   publicWifiMarkers.clearLayers();
   items.forEach(el=>{const t=el.tags||{},name=t.name||t.operator||'Ponto sem nome';L.marker([el._lat,el._lon]).bindPopup('<strong>'+esc(name)+'</strong><br>'+formatDistance(el._distance)+'<br>'+esc(t.internet_access||t.wifi||'Acesso não informado')).addTo(publicWifiMarkers);});
-  if(items.length){const bounds=L.latLngBounds(items.map(el=>[el._lat,el._lon]));publicWifiMap.fitBounds(bounds,{padding:[20,20],maxZoom:16});}
-  setTimeout(()=>publicWifiMap.invalidateSize(),120);
+  const bounds=L.latLngBounds(publicWifiEntries.map(el=>[el._lat,el._lon]));
+  if(items.length)publicWifiMap.fitBounds(L.latLngBounds(items.map(el=>[el._lat,el._lon])).pad(.15),{maxZoom:16});
+  else publicWifiMap.fitBounds(bounds.pad(.15),{maxZoom:14});
+  setTimeout(()=>publicWifiMap.invalidateSize(),150);
  }
 }
 async function searchLawfulPublicWifi(){
@@ -1395,37 +1517,48 @@ async function searchLawfulPublicWifi(){
  if(!navigator.onLine){status.textContent='Você está offline. Conecte-se à Internet para consultar os registros públicos.';return;}
  if(!Number.isFinite(radius)||radius<100||radius>50000){status.textContent='Selecione um raio de pesquisa válido.';return;}
  const oldLabel=btn?.textContent||'Buscar Wi-Fi público mapeado';if(btn){btn.disabled=true;btn.textContent='Pesquisando…'}
- status.textContent='Buscando pontos mapeados e preparando os resultados…';results.innerHTML='<div class="result-box">A pesquisa está em andamento. Os dados serão organizados por proximidade.</div>';
+ status.textContent='Preparando consulta geográfica…';results.innerHTML='<div class="result-box">O ILS consultará fontes públicas em sequência e ordenará os registros pela distância.</div>';
  try{
-  const cacheKey='ils-public-wifi-v2:'+lat.toFixed(4)+':'+lon.toFixed(4)+':'+radius;let cached=null;
+  const cacheKey='ils-public-wifi-v3:'+lat.toFixed(4)+':'+lon.toFixed(4)+':'+radius;let cached=null;
   try{cached=JSON.parse(localStorage.getItem(cacheKey)||'null')}catch{}
   let data,source,dataTimestamp;
-  if(cached&&cached.savedAt&&Date.now()-cached.savedAt<5*60*1000&&cached.data&&Array.isArray(cached.data.elements)){data=cached.data;source=cached.source||'cache local';dataTimestamp=cached.savedAt;}
-  else{const fresh=await queryOverpassResilient(buildPublicWifiQuery(lat,lon,radius),status);data=fresh.data;source=fresh.source;dataTimestamp=Date.now();try{localStorage.setItem(cacheKey,JSON.stringify({data,source,savedAt:dataTimestamp}))}catch{}}
-  publicWifiEntries=(data.elements||[]).map(el=>{const la=el.lat??el.center?.lat,lo=el.lon??el.center?.lon;if(!Number.isFinite(la)||!Number.isFinite(lo))return null;return {...el,_lat:la,_lon:lo,_distance:haversineMeters(lat,lon,la,lo)};}).filter(Boolean);
-  publicWifiEntries.sort((a,b)=>a._distance-b._distance);
-  if(!publicWifiEntries.length){status.textContent='Busca concluída: nenhum registro Wi-Fi encontrado neste raio. Isso não comprova ausência de redes públicas.';results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Amplie o raio ou tente outra localização.</div>';return;}
+  if(cached&&cached.savedAt&&Date.now()-cached.savedAt<5*60*1000&&cached.data&&Array.isArray(cached.data.elements)){
+   data=cached.data;source=cached.source||'cache local';dataTimestamp=cached.savedAt;
+  }else{
+   const fresh=await queryOverpassResilient(buildPublicWifiQuery(lat,lon,radius),status);
+   data=fresh.data;source=fresh.source;dataTimestamp=Date.now();
+   try{localStorage.setItem(cacheKey,JSON.stringify({data,source,savedAt:dataTimestamp}))}catch{}
+  }
+  publicWifiEntries=(data.elements||[]).map(el=>{
+   const la=el.lat??el.center?.lat,lo=el.lon??el.center?.lon;
+   if(!Number.isFinite(la)||!Number.isFinite(lo))return null;
+   return {...el,_lat:la,_lon:lo,_distance:haversineMeters(lat,lon,la,lo)};
+  }).filter(el=>el&&wifiAccessState(el.tags)!=='none').sort((a,b)=>a._distance-b._distance);
+  if(!publicWifiEntries.length){status.textContent='Busca concluída: nenhum registro com as etiquetas internet_access ou wifi foi encontrado neste raio. Isso não comprova ausência de redes públicas.';results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Amplie o raio ou tente outro local. Estabelecimentos podem oferecer Wi-Fi sem cadastrá-lo no OpenStreetMap.</div>';if(publicWifiMap){publicWifiMarkers.clearLayers();}return;}
   const sourceLabel=source==='cache local'?'cache local':new URL(source).hostname;
-  status.textContent=publicWifiEntries.length+' registro(s) encontrados. Fonte: '+sourceLabel+'. Dados consultados em '+new Date(dataTimestamp).toLocaleString('pt-BR')+'. Disponibilidade não verificada.';
+  status.textContent=publicWifiEntries.length+' registro(s) encontrados, ordenados por proximidade. Fonte: '+sourceLabel+'. Consulta: '+new Date(dataTimestamp).toLocaleString('pt-BR')+'. Disponibilidade não verificada em campo.';
   renderPublicWifiResults();
- }catch(err){status.textContent='Não foi possível concluir a busca. '+(err.message||'Falha de comunicação')+'.';results.innerHTML='<div class="empty">Os servidores de dados geográficos não responderam. Tente novamente mais tarde.</div>';}
- finally{if(btn){btn.disabled=false;btn.textContent=oldLabel}}
+ }catch(err){
+  status.textContent='Não foi possível concluir a busca. '+(err.message||'Falha de comunicação')+'.';
+  results.innerHTML='<div class="empty">As fontes públicas de mapas não responderam. Verifique a conexão e tente novamente. Nenhum resultado foi presumido.</div>';
+ }finally{if(btn){btn.disabled=false;btn.textContent=oldLabel}}
 }
 ['publicWifiType','publicWifiAccess','publicWifiSort'].forEach(id=>document.getElementById(id)?.addEventListener('change',renderPublicWifiResults));
 document.getElementById("searchPublicWifi")?.addEventListener("click",searchLawfulPublicWifi);
 document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
  const status=document.getElementById("publicWifiStatus");
- if(!navigator.geolocation){status.textContent="Geolocalização não suportada neste navegador.";return;}
- status.textContent="Solicitando localização…";
+ if(!navigator.geolocation){status.textContent="Geolocalização não suportada neste navegador. Informe as coordenadas manualmente.";return;}
+ status.textContent="Solicitando autorização de localização ao dispositivo…";
  navigator.geolocation.getCurrentPosition(pos=>{
   document.getElementById("publicWifiLat").value=pos.coords.latitude.toFixed(6);
   document.getElementById("publicWifiLon").value=pos.coords.longitude.toFixed(6);
-  status.textContent=`Localização recebida. Precisão aproximada: ${Math.round(pos.coords.accuracy)} m. Toque em Buscar Wi-Fi público mapeado.`;
- },err=>{status.textContent="Não foi possível obter localização: "+err.message;},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
+  status.textContent=`Localização recebida (precisão aproximada: ${Math.round(pos.coords.accuracy)} m). Iniciando busca de pontos mapeados…`;
+  searchLawfulPublicWifi();
+ },err=>{const messages={1:"Permissão de localização negada. Você pode informar latitude e longitude manualmente.",2:"O dispositivo não conseguiu determinar sua localização. Tente novamente ou informe as coordenadas.",3:"A solicitação de localização expirou. Tente novamente."};status.textContent=messages[err.code]||("Não foi possível obter localização: "+err.message);},{enableHighAccuracy:true,timeout:20000,maximumAge:60000});
 });
 
 
-/* ILS 6.0.0 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 6.2 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1437,10 +1570,10 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.0.0",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.2",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
-/* ILS 6.0 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
+/* ILS 6.2 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
 (()=>{
  const $=id=>document.getElementById(id);
  const read=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
@@ -1493,6 +1626,99 @@ document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIl
  renderRemote();renderImpact();
 })();
 </script>
-<script src="./observatory.js" defer></script>
+<script src="./observatory.js" defer>
+/* ILS 6.2 — SD-WAN Intelligence.
+   Local assessment only. No router control, failover or live probing is claimed. */
+(()=>{
+ const KEY="ils62-sdwan-links-v1";
+ const $=id=>document.getElementById(id);
+ const read=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||"[]");return Array.isArray(x)?x:[]}catch{return[]}};
+ const write=x=>{try{localStorage.setItem(KEY,JSON.stringify(x));return true}catch(e){$("sdwanStatus").textContent="Falha ao persistir: "+e.message;return false}};
+ const num=id=>{const s=$(id).value.trim();if(s==="")return null;const n=Number(s);return Number.isFinite(n)?n:null};
+ const fmt=(v,s="")=>v===null||v===undefined?"Não informado":v+s;
+ const escv=v=>typeof esc==="function"?esc(String(v??"")):String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ function score(link,profile){
+  const fields=[link.latency,link.jitter,link.loss,link.availability];
+  if(fields.every(v=>v===null))return null;
+  let s=50;
+  if(link.latency!==null)s+=Math.max(-25,20-link.latency/10);
+  if(link.jitter!==null)s+=Math.max(-15,15-link.jitter/3);
+  if(link.loss!==null)s+=Math.max(-25,15-link.loss*5);
+  if(link.availability!==null)s+=Math.max(-20,(link.availability-95)*2);
+  if(link.cost!==null)s+=(3-link.cost)*2;
+  if(profile==="latency"&&link.latency!==null)s+=Math.max(-15,15-link.latency/5);
+  if(profile==="continuity"&&link.availability!==null)s+=Math.max(-15,(link.availability-97)*3);
+  if(profile==="economy"&&link.cost!==null)s+=(3-link.cost)*5;
+  return Math.max(0,Math.min(100,Math.round(s)));
+ }
+ function analyze(){
+  const links=read(),profile=$("sdwanProfile")?.value||"balanced";
+  const ranked=links.map(l=>({...l,score:score(l,profile)})).sort((a,b)=>(b.score??-1)-(a.score??-1));
+  const evaluated=ranked.filter(x=>x.score!==null);
+  $("sdwanLinkCount").textContent=links.length;
+  $("sdwanEvaluatedCount").textContent=evaluated.length;
+  $("sdwanBestPath").textContent=evaluated[0]?.name||"Sem dados";
+  $("sdwanAnalysis").innerHTML=ranked.length?ranked.map(l=>`<article class="sdwan-row"><h4>${escv(l.name)} — ${escv(l.type)}</h4><div class="sdwan-tags"><span class="sdwan-tag">Pontuação: ${l.score===null?"Insuficiente":l.score+"/100"}</span><span class="sdwan-tag">Latência: ${fmt(l.latency," ms")}</span><span class="sdwan-tag">Jitter: ${fmt(l.jitter," ms")}</span><span class="sdwan-tag">Perda: ${fmt(l.loss,"%")}</span><span class="sdwan-tag">Disponibilidade: ${fmt(l.availability,"%")}</span></div><small>${l.score===null?"Sem métricas para classificar.":l.score>=70?"Indicadores informados sugerem caminho relativamente favorável.":l.score>=45?"Caminho requer acompanhamento e comparação.":"Indicadores informados sugerem degradação relativa."} A pontuação é heurística, baseada apenas nos valores cadastrados.</small><div class="sdwan-actions"><button type="button" data-sdwan-edit="${escv(l.id)}">Editar</button><button type="button" data-sdwan-delete="${escv(l.id)}">Excluir registro</button></div></article>`).join(""):'<div class="empty">Nenhum link cadastrado.</div>';
+  $("sdwanPolicyResult").textContent=evaluated.length?`Perfil "${profile}" — recomendação: priorizar ${evaluated[0].name}. Alternativa seguinte: ${evaluated[1]?.name||"não disponível"}. Isto é somente recomendação; nenhuma rota foi alterada.`:"Cadastre métricas reais em pelo menos um link para gerar recomendação.";
+ }
+ function reset(){["sdwanName","sdwanLatency","sdwanJitter","sdwanLoss","sdwanAvailability"].forEach(id=>$(id).value="");$("sdwanType").value="Fibra";$("sdwanCost").value="";$("sdwanPriority").value="5";delete $("sdwanSave").dataset.edit;}
+ $("sdwanSave")?.addEventListener("click",()=>{
+  const name=$("sdwanName").value.trim();if(!name){$("sdwanStatus").textContent="Informe a identificação do link.";return;}
+  const vals={latency:num("sdwanLatency"),jitter:num("sdwanJitter"),loss:num("sdwanLoss"),availability:num("sdwanAvailability"),cost:num("sdwanCost"),priority:num("sdwanPriority")};
+  for(const [k,v] of Object.entries(vals)){if(v!==null&&v<0){$("sdwanStatus").textContent="Valores não podem ser negativos.";return;}}
+  if(vals.loss!==null&&vals.loss>100||vals.availability!==null&&vals.availability>100||vals.cost!==null&&(vals.cost<1||vals.cost>5)||vals.priority===null||vals.priority<1||vals.priority>10){$("sdwanStatus").textContent="Confira perda, disponibilidade, custo e prioridade.";return;}
+  const rows=read(),id=$("sdwanSave").dataset.edit;
+  const rec={id:id||"link-"+Date.now()+"-"+Math.random().toString(36).slice(2,7),name,type:$("sdwanType").value,...vals,updatedAt:new Date().toISOString(),source:"manual-entry",status:"informado-nao-verificado"};
+  const idx=rows.findIndex(x=>x.id===id);if(idx>=0)rows[idx]=rec;else rows.push(rec);
+  if(write(rows)){$("sdwanStatus").textContent="Registro salvo localmente. As métricas são informadas pelo usuário e não foram verificadas automaticamente.";reset();analyze();}
+ });
+ $("sdwanReset")?.addEventListener("click",reset);
+ $("sdwanRefresh")?.addEventListener("click",analyze);
+ $("sdwanProfile")?.addEventListener("change",analyze);
+ $("sdwanAnalysis")?.addEventListener("click",e=>{
+  const edit=e.target.closest("[data-sdwan-edit]"),del=e.target.closest("[data-sdwan-delete]");if(!edit&&!del)return;
+  const rows=read(),id=(edit||del).dataset[edit?"sdwanEdit":"sdwanDelete"],idx=rows.findIndex(x=>x.id===id);if(idx<0)return;
+  if(del){if(confirm("Excluir apenas este registro SD-WAN local?")){rows.splice(idx,1);write(rows);analyze();}return;}
+  const x=rows[idx];$("sdwanName").value=x.name;$("sdwanType").value=x.type;
+  for(const [k,id2] of [["latency","sdwanLatency"],["jitter","sdwanJitter"],["loss","sdwanLoss"],["availability","sdwanAvailability"],["cost","sdwanCost"],["priority","sdwanPriority"]])$(id2).value=x[k]??"";
+  $("sdwanSave").dataset.edit=x.id;$("sdwanName").focus();
+ });
+ $("sdwanExport")?.addEventListener("click",()=>{
+  const payload={application:"ILS",module:"SD-WAN Intelligence",schemaVersion:1,exportedAt:new Date().toISOString(),mode:"local-assessment-only",records:read(),termuxTelemetry:termuxRead(),limitations:["Métricas informadas manualmente não foram verificadas automaticamente.","Pontuação é heurística e não representa SLA.","Nenhum roteador foi controlado e nenhum failover foi executado.","Não há integração Supabase ou agente de borda nesta entrega."]};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ils-sdwan-intelligence.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+ // Importação local do JSONL gerado pelo ILS Termux Edge Agent.
+ const TERMUX_KEY="ils62-termux-telemetry-v1";
+ const termuxRead=()=>{try{const v=JSON.parse(localStorage.getItem(TERMUX_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
+ const termuxEsc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ function renderTermux(){
+  const rows=termuxRead().sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp)));
+  const el=id=>$("sdwanTermux"+id);
+  if(!rows.length){el("State").textContent="—";el("When").textContent="Sem coleta importada.";el("Latency").textContent="—";el("Success").textContent="—";el("Count").textContent="Sem amostras.";el("History").innerHTML='<div class="empty">Importe o arquivo JSONL do Termux para visualizar o histórico.</div>';return;}
+  const last=rows[rows.length-1],all=[];let good=0,total=0;
+  rows.forEach(r=>{(r.tcp_probes||[]).forEach(x=>{total++;if(x.status==="reachable"){good++;if(Number.isFinite(x.latency_ms))all.push(x.latency_ms);}});(r.https_probes||[]).forEach(x=>{total++;if(x.status==="up"){good++;if(Number.isFinite(x.latency_ms))all.push(x.latency_ms);}});});
+  const avg=all.length?all.reduce((a,b)=>a+b,0)/all.length:null;
+  el("State").textContent=last.path?.status==="up"?"CONECTADO":"SEM RESPOSTA";
+  el("When").textContent="Última coleta: "+new Date(last.timestamp).toLocaleString("pt-BR")+" · Interface: "+(last.path?.interface||"não identificada");
+  el("Latency").textContent=avg===null?"—":avg.toFixed(1)+" ms";
+  el("Success").textContent=total?((good/total)*100).toFixed(1)+"%":"—";
+  el("Count").textContent=rows.length+" coletas · "+good+"/"+total+" sondas positivas";
+  el("History").innerHTML=rows.slice(-12).reverse().map(r=>{const n=(r.tcp_probes||[]).concat(r.https_probes||[]),ok=n.filter(x=>x.status==="reachable"||x.status==="up").length;return `<article class="sdwan-row"><h4>${new Date(r.timestamp).toLocaleString("pt-BR")} — ${r.path?.status==="up"?"Conectado":"Sem resposta"}</h4><div class="sdwan-tags"><span class="sdwan-tag">Interface: ${termuxEsc(r.path?.interface||"—")}</span><span class="sdwan-tag">Sondas: ${ok}/${n.length}</span><span class="sdwan-tag">Plataforma: Android Termux</span></div></article>`}).join("");
+ }
+ $("sdwanTermuxImport")?.addEventListener("click",async()=>{
+  const file=$("sdwanTermuxFile")?.files?.[0];if(!file){$("sdwanTermuxStatus").textContent="Selecione primeiro o arquivo telemetry.jsonl.";return;}
+  try{const raw=await file.text();let parsed=[];try{const j=JSON.parse(raw);parsed=Array.isArray(j)?j:(Array.isArray(j.records)?j.records:[j]);}catch{parsed=raw.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));}
+   const valid=parsed.filter(r=>r&&r.schema==="ils.edge.termux.telemetry.v1"&&r.timestamp&&r.path&&Array.isArray(r.tcp_probes)&&Array.isArray(r.https_probes));
+   if(!valid.length)throw new Error("Nenhum registro compatível com o esquema ILS Termux foi encontrado.");
+   const merged=termuxRead().concat(valid).sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp))).slice(-2000);
+   localStorage.setItem(TERMUX_KEY,JSON.stringify(merged));renderTermux();$("sdwanTermuxStatus").textContent=`Importação concluída: ${valid.length} registros válidos de ${file.name}. Dados mantidos localmente neste navegador.`;
+  }catch(e){$("sdwanTermuxStatus").textContent="Não foi possível importar: "+e.message;}
+ });
+ $("sdwanTermuxClear")?.addEventListener("click",()=>{if(confirm("Limpar somente a telemetria Termux importada neste navegador?")){localStorage.removeItem(TERMUX_KEY);renderTermux();$("sdwanTermuxStatus").textContent="Telemetria importada removida deste navegador. O arquivo original no celular não foi alterado.";}});
+ renderTermux();
+ analyze();
+})();
+
+</script>
 </body>
 </html>

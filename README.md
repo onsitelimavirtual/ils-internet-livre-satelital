@@ -1,46 +1,30 @@
-# ILS 5.9 — Ponte local RTL-SDR (somente recepção)
+# ILS 6.2 — Connectivity Intelligence
 
-Este serviço é um componente opcional para um computador que tenha um receptor RTL-SDR compatível e o utilitário `rtl_power` instalado. Ele não faz parte do site estático e não transforma o celular em receptor SDR.
+Pacote incremental baseado no código-fonte recuperado da ILS 6.1.2.
 
-## Requisitos
-- Python 3.10 ou superior.
-- RTL-SDR compatível, driver correto e `rtl_power` instalado.
-- Uso somente em frequências e condições autorizadas.
+## Conteúdo
+- `index.html`: aplicação original com novo módulo ILS SD-WAN Intelligence.
+- `sw.js`: cache versionado independente.
+- `manifest.webmanifest`: identificação 6.2.
+- `ils-logo.png`, ícones e `observatory.js`: recursos originais quando disponíveis.
+- `ARQUITETURA_E_PLANO_PDI.md`: arquitetura, P&D e estratégia de participação.
+- `VALIDACAO_ILS_6.2.md`: testes e limitações.
 
-## Instalação
-1. Instale os drivers/utilitários do projeto RTL-SDR para seu sistema operacional.
-2. Entre nesta pasta.
-3. Crie um ambiente virtual e instale dependências:
+## Módulo implementado
+Cadastro manual de links, métricas opcionais, pontuação heurística por perfil, comparação, edição, exclusão individual e exportação JSON. Os registros são persistidos em `localStorage` sob a chave `ils62-sdwan-links-v1`.
 
-```bash
-python -m venv .venv
-# Windows:
-.venv\\Scripts\\activate
-# Linux/macOS:
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## Limitações
+Não há monitoramento ativo de links, agente Linux, telemetria SNMP/API, Supabase, controle de gateway, failover automático ou Edge AI. O painel não altera roteadores. O controle real requer agente autenticado, gateway compatível, dois links e testes em laboratório.
 
-4. Inicie a ponte, vinculada somente ao loopback:
+## Executar
+Servir a pasta por HTTP/HTTPS (não abrir por `file://` ou `content://`). Exemplo: `python -m http.server 8000`, depois abrir `http://localhost:8000`.
 
-```bash
-uvicorn main:app --host 127.0.0.1 --port 8765
-```
+A base anterior foi preservada no diretório de origem e não foi modificada por este pacote.
 
-5. No ILS, mantenha a URL `http://127.0.0.1:8765`, teste a ponte e solicite uma análise de espectro.
+Documentos de P&D: `PROJETO_PDI_ILS_6.2.pdf` e `PROJETO_PDI_ILS_6.2.docx`.
 
-## Contrato da API
-- `GET /health` informa se `rtl_power` está disponível.
-- `GET /spectrum?start_mhz=88&stop_mhz=108&step_khz=50&gain=auto` executa uma leitura única e retorna amostras reais em dB relativo.
-- Faixa limitada a 24–1766 MHz, largura máxima de 100 MHz, passos 25/50/100/250 kHz e ganhos predefinidos.
-- Apenas uma leitura simultânea. O endpoint não transmite.
+## Agente Linux — dois links
+A pasta `linux-agent/` contém o agente de telemetria dual-WAN, configuração de exemplo, serviço systemd e instalador para Debian/Ubuntu. Consulte `linux-agent/README.md`. O agente é somente leitura e grava dados localmente; não faz failover nem altera rotas.
 
-## Segurança e limitações
-- O servidor escuta apenas em `127.0.0.1`; não o exponha à rede pública nem faça port-forward.
-- CORS é limitado por padrão aos domínios GitHub Pages indicados. Para outro domínio, defina `ILS_ALLOWED_ORIGINS` com a origem exata, separada por vírgulas.
-- O navegador pode bloquear a consulta por políticas de rede local, conteúdo misto ou CORS. Nesse caso, use um ambiente de navegador compatível e confira a origem permitida.
-- O serviço não autentica usuários locais: mantenha-o no computador confiável e não o vincule a `0.0.0.0`.
-- O gráfico representa potência relativa informada pelo `rtl_power`; não é medição calibrada em dBm calibrado, não identifica conteúdo de comunicações e não comprova conectividade satelital.
-- Sem hardware e utilitário instalados, o endpoint retorna erro; o ILS não simula amostras.
-
-Consulte a regulamentação da Anatel e os manuais do fabricante do receptor antes de qualquer operação.
+## ILS Edge Monitor — integração Termux
+A edição integrada inclui `termux-agent/` e um importador local no módulo **ILS SD-WAN Intelligence**. No Android, execute o agente Termux e importe `data/telemetry.jsonl` pelo seletor de arquivos do painel. A integração é manual por arquivo, sem API/Supabase e sem envio automático. Consulte `termux-agent/INTEGRACAO_COM_ILS_6.2.md`.
