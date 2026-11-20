@@ -1,33 +1,30 @@
-# ILS 6.1.2 — Internet Livre Satelital
+# ILS 6.2 — Connectivity Intelligence
 
-Pacote independente do GitHub, preparado a partir dos arquivos fornecidos nesta conversa.
+Pacote incremental baseado no código-fonte recuperado da ILS 6.1.2.
 
 ## Conteúdo
-- `index.html` — aplicação principal.
-- `ils-logo.png` — logomarca completa ILS 6.1.2.
-- `icon-192.png`, `icon-512.png`, `favicon-64.png` — ícones PWA e favicon.
-- `manifest.webmanifest` — identidade de instalação.
-- `sw.js` — service worker com cache versionado.
-- `observatory.js` — módulo Observatório.
-- `documentacao/` — documentação técnica e notas das linhas 6.0/6.1.
-- `VALIDACAO-6.1.2.md` — escopo dos testes e limitações.
+- `index.html`: aplicação original com novo módulo ILS SD-WAN Intelligence.
+- `sw.js`: cache versionado independente.
+- `manifest.webmanifest`: identificação 6.2.
+- `ils-logo.png`, ícones e `observatory.js`: recursos originais quando disponíveis.
+- `ARQUITETURA_E_PLANO_PDI.md`: arquitetura, P&D e estratégia de participação.
+- `VALIDACAO_ILS_6.2.md`: testes e limitações.
 
-## Executar localmente
-Não abra o HTML diretamente pelo gerenciador de arquivos (`file://` ou `content://`), pois módulos externos e recursos PWA podem ser bloqueados. Sirva a pasta por HTTPS ou por um servidor local HTTP e abra `index.html`.
+## Módulo implementado
+Cadastro manual de links, métricas opcionais, pontuação heurística por perfil, comparação, edição, exclusão individual e exportação JSON. Os registros são persistidos em `localStorage` sob a chave `ils62-sdwan-links-v1`.
 
-Exemplo Python:
-```bash
-python -m http.server 8000
-```
-Depois acesse `http://localhost:8000`.
+## Limitações
+Não há monitoramento ativo de links, agente Linux, telemetria SNMP/API, Supabase, controle de gateway, failover automático ou Edge AI. O painel não altera roteadores. O controle real requer agente autenticado, gateway compatível, dois links e testes em laboratório.
 
-## Persistência e backup
-Parte dos registros usa `localStorage` no navegador e o Observatório mantém cache local. Isso não equivale a sincronização central nem backup em nuvem. Antes de limpar dados do site, trocar de navegador ou reinstalar, exporte os dados disponíveis pelo módulo de backup. A sincronização do Observatório depende da API Supabase configurada no módulo.
+## Executar
+Servir a pasta por HTTP/HTTPS (não abrir por `file://` ou `content://`). Exemplo: `python -m http.server 8000`, depois abrir `http://localhost:8000`.
 
-## Limites de homologação
-Consulte `VALIDACAO-6.1.2.md`. Os testes estáticos de sintaxe e estrutura foram executados; serviços externos, autenticação, SDR físico, Android real, offline e persistência após reinício ainda exigem validação em ambiente real.
+A base anterior foi preservada no diretório de origem e não foi modificada por este pacote.
 
-© 2026 Nailson Lima. Todos os direitos reservados.
+Documentos de P&D: `PROJETO_PDI_ILS_6.2.pdf` e `PROJETO_PDI_ILS_6.2.docx`.
 
+## Agente Linux — dois links
+A pasta `linux-agent/` contém o agente de telemetria dual-WAN, configuração de exemplo, serviço systemd e instalador para Debian/Ubuntu. Consulte `linux-agent/README.md`. O agente é somente leitura e grava dados localmente; não faz failover nem altera rotas.
 
-Correção 6.1.2: recuperação do localizador Wi-Fi com fallback sequencial Overpass, classificação correta de gratuidade/restrição e busca automática após GPS. Consulte `documentacao/ILS-6.1.2-RECUPERACAO-LOCALIZADOR.md` e `VALIDACAO-6.1.2.md`.
+## ILS Edge Monitor — integração Termux
+A edição integrada inclui `termux-agent/` e um importador local no módulo **ILS SD-WAN Intelligence**. No Android, execute o agente Termux e importe `data/telemetry.jsonl` pelo seletor de arquivos do painel. A integração é manual por arquivo, sem API/Supabase e sem envio automático. Consulte `termux-agent/INTEGRACAO_COM_ILS_6.2.md`.
