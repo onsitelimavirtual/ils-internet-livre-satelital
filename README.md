@@ -1,30 +1,18 @@
-# ILS 6.2 — Connectivity Intelligence
+# ILS Termux Edge Agent 1.1.0 — Android Bridge
 
-Pacote incremental baseado no código-fonte recuperado da ILS 6.1.2.
+Agente Android/Termux de monitoramento somente leitura. Registra sondas TCP/HTTPS e, quando disponível, informações da rede Wi-Fi conectada via Termux:API (SSID, BSSID, RSSI e velocidade do link).
 
-## Conteúdo
-- `index.html`: aplicação original com novo módulo ILS SD-WAN Intelligence.
-- `sw.js`: cache versionado independente.
-- `manifest.webmanifest`: identificação 6.2.
-- `ils-logo.png`, ícones e `observatory.js`: recursos originais quando disponíveis.
-- `ARQUITETURA_E_PLANO_PDI.md`: arquitetura, P&D e estratégia de participação.
-- `VALIDACAO_ILS_6.2.md`: testes e limitações.
+## Instalar/atualizar
 
-## Módulo implementado
-Cadastro manual de links, métricas opcionais, pontuação heurística por perfil, comparação, edição, exclusão individual e exportação JSON. Os registros são persistidos em `localStorage` sob a chave `ils62-sdwan-links-v1`.
+No diretório `ILS_Termux_DualWAN`, execute `bash instalar-termux.sh`. O instalador instala Python e o pacote `termux-api`. Também é necessário instalar separadamente o aplicativo complementar Termux:API, compatível com a origem/assinatura do Termux instalado.
 
-## Limitações
-Não há monitoramento ativo de links, agente Linux, telemetria SNMP/API, Supabase, controle de gateway, failover automático ou Edge AI. O painel não altera roteadores. O controle real requer agente autenticado, gateway compatível, dois links e testes em laboratório.
+## Comandos
 
-## Executar
-Servir a pasta por HTTP/HTTPS (não abrir por `file://` ou `content://`). Exemplo: `python -m http.server 8000`, depois abrir `http://localhost:8000`.
+- Diagnóstico: `python bin/ils_termux_agent.py --check`
+- Uma coleta: `python bin/ils_termux_agent.py --once`
+- Contínuo: `python bin/ils_termux_agent.py` (Ctrl+C para parar)
+- Versão: `python bin/ils_termux_agent.py --version`
 
-A base anterior foi preservada no diretório de origem e não foi modificada por este pacote.
+Arquivo: `data/telemetry.jsonl`. Para importar no ILS, copie para Downloads com `cp data/telemetry.jsonl ~/storage/downloads/telemetry.jsonl`, selecione no ILS 6.2.2 e toque em Importar.
 
-Documentos de P&D: `PROJETO_PDI_ILS_6.2.pdf` e `PROJETO_PDI_ILS_6.2.docx`.
-
-## Agente Linux — dois links
-A pasta `linux-agent/` contém o agente de telemetria dual-WAN, configuração de exemplo, serviço systemd e instalador para Debian/Ubuntu. Consulte `linux-agent/README.md`. O agente é somente leitura e grava dados localmente; não faz failover nem altera rotas.
-
-## ILS Edge Monitor — integração Termux
-A edição integrada inclui `termux-agent/` e um importador local no módulo **ILS SD-WAN Intelligence**. No Android, execute o agente Termux e importe `data/telemetry.jsonl` pelo seletor de arquivos do painel. A integração é manual por arquivo, sem API/Supabase e sem envio automático. Consulte `termux-agent/INTEGRACAO_COM_ILS_6.2.md`.
+**Limite:** a ponte é via Termux:API + arquivo local, não é APK nativo próprio nem sincronização automática com o navegador. O Android pode ocultar SSID/RSSI. Não faz failover, não altera rotas e não mede duas WANs simultaneamente.

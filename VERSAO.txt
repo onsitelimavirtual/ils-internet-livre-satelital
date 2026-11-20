@@ -1,0 +1,3 @@
+ILS Termux Edge Agent 1.1.0
+Integração Android Bridge por Termux:API + importação local JSONL no ILS 6.2.2.
+Somente leitura. Não altera rotas, DNS, VPN, firewall, hotspot ou rádio.
