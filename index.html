@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 6.1.2 — Internet Livre Satelital">
+<meta name="application-name" content="ILS 6.2 — Internet Livre Satelital">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 6.1.2 — Internet Livre Satelital</title>
+<title>ILS 6.2 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -92,14 +92,14 @@ footer a:hover{text-decoration:underline}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 6.1 accessibility and analyzer refinements */
+/* ILS 6.2 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
 
 
 
-/* ILS 6.1 business workspace */
+/* ILS 6.2 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -109,7 +109,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .public-wifi-filters label{display:grid;gap:6px;font-size:11px;color:#687b91}
 .public-wifi-map{height:310px;min-height:250px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#eaf0f6;overflow:hidden}
 @media(max-width:760px){.public-wifi-filters{grid-template-columns:1fr}.public-wifi-map{height:280px}}
-/* ILS 6.1 — layout additions for Remote and Impact */
+/* ILS 6.2 — layout additions for Remote and Impact */
 .grid-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
 .stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
 .stats-grid .stat{background:#f4f7fb;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
@@ -126,7 +126,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:560px){#view-remote .form-grid,#view-impact .form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
 
 
-/* ILS 6.1 consolidation — Wi-Fi locator integrated into the main navigation */
+/* ILS 6.2 consolidation — Wi-Fi locator integrated into the main navigation */
 #view-locator .section-heading{max-width:900px;margin:0 0 18px}
 #view-locator .section-heading h2{font:600 22px 'Space Grotesk';color:var(--ink);margin:6px 0}
 #view-locator .section-heading p{color:var(--muted);line-height:1.65;margin:6px 0}
@@ -136,6 +136,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #view-locator .public-wifi-filters label{display:grid;gap:6px;color:#687b91;font-size:11px;font-weight:600}
 #view-locator .results-list{max-height:none}
 @media(max-width:760px){#view-locator .public-wifi-map{height:235px;min-height:200px}}
+
+/* ILS 6.2 SD-WAN module */
+#view-sdwan .metric{display:block;font:700 25px 'Space Grotesk',Arial,sans-serif;margin:8px 0;color:var(--ink,#17324d)}
+#view-sdwan .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+#view-sdwan .form-grid label,#view-sdwan>div>label{display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--ink,#17324d)}
+#view-sdwan input,#view-sdwan select{width:100%;min-width:0;padding:10px;border:1px solid var(--line,#dbe4ef);border-radius:8px;background:#fff;color:#17324d}
+#view-sdwan .form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+#view-sdwan .sdwan-row{border:1px solid var(--line,#dbe4ef);border-radius:10px;padding:12px;margin:9px 0;background:#fff}
+#view-sdwan .sdwan-row h4{margin:0 0 8px}
+#view-sdwan .sdwan-tags{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0}
+#view-sdwan .sdwan-tag{font-size:11px;padding:4px 8px;border-radius:20px;background:#edf3fa;color:#31516f}
+#view-sdwan .sdwan-actions{display:flex;gap:8px;margin-top:8px}
+#view-sdwan .sdwan-actions button{border:1px solid var(--line,#dbe4ef);border-radius:7px;padding:6px 9px;background:#f7f9fc;color:#31516f}
+@media(max-width:700px){#view-sdwan .form-grid{grid-template-columns:1fr}#view-sdwan .form-actions>*{flex:1 1 100%}}
+
 </style>
 <style>
 /* ILS 1.2 hardening: ensure layout remains styled in local Android file previews */
@@ -158,7 +173,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 6.1: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 6.2: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -194,7 +209,7 @@ html{scroll-behavior:auto}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><img class="brand-logo" src="./ils-logo.png" alt="ILS 6.1.2 — Internet Livre Satelital"><span class="brand-copy"><strong>ILS 6.1.2</strong><small>Internet Livre Satelital</small></span></div>
+    <div class="brand"><img class="brand-logo" src="./ils-logo.png" alt="ILS 6.2 — Internet Livre Satelital"><span class="brand-copy"><strong>ILS 6.2</strong><small>Internet Livre Satelital</small></span></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -216,16 +231,17 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="business"><span>▣</span> Negócios e licenças</button>
       <button class="nav-item" data-view="remote"><span>⌁</span> ILS Remote</button>
       <button class="nav-item" data-view="impact"><span>▥</span> ILS Impact</button>
+      <button class="nav-item" data-view="sdwan"><span>⇄</span> ILS SD-WAN Intelligence</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.1 · offline-first</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.2 · connectivity intelligence</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.1</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.2</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 6.1 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 6.2 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -493,7 +509,7 @@ html{scroll-behavior:auto}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 6.1 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 6.2 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -605,8 +621,74 @@ html{scroll-behavior:auto}
   <div class="panel prose"><h3>Critério de evidência</h3><p>Resultados só devem ser divulgados como impacto comprovado quando houver medições comparáveis, método documentado, datas, fonte, evidências e verificação adequada. Valores declarados sem comprovação permanecem identificados como informados.</p></div>
 </section>
 
+
+<section class="view" id="view-sdwan">
+ <div class="section-head"><div><span class="eyebrow">CONECTIVIDADE ADAPTATIVA</span><h2>ILS SD-WAN Intelligence</h2><p>Monitoramento multi-WAN, análise de qualidade e recomendações explicáveis.</p></div></div>
+ <div class="notice"><strong>Modo seguro:</strong> esta versão monitora dados informados ou coletados pelo navegador e gera recomendações. Não altera rotas nem configura roteadores. Failover automático exige agente de borda e gateway compatível, ainda não homologados.</div>
+ <div class="cards-grid">
+  <article class="panel"><span class="metric-icon blue">⇄</span><h3>Links cadastrados</h3><strong class="metric" id="sdwanLinkCount">0</strong><p>Registros locais de caminhos de conexão.</p></article>
+  <article class="panel"><span class="metric-icon green">✓</span><h3>Links avaliados</h3><strong class="metric" id="sdwanEvaluatedCount">0</strong><p>Links com métricas suficientes para análise.</p></article>
+  <article class="panel"><span class="metric-icon purple">◎</span><h3>Melhor caminho estimado</h3><strong class="metric" id="sdwanBestPath">—</strong><p>Recomendação baseada nas métricas cadastradas.</p></article>
+ </div>
+ <div class="panel">
+  <h3>Cadastrar ou atualizar um link</h3>
+  <p class="muted">Informe medições reais do link. Se ainda não houver medição, deixe os campos em branco; o sistema não inventará valores.</p>
+  <div class="form-grid">
+   <label>Identificação do link<input id="sdwanName" maxlength="60" placeholder="Ex.: Fibra principal"></label>
+   <label>Tecnologia<select id="sdwanType"><option value="Fibra">Fibra</option><option value="4G/5G">4G/5G</option><option value="Rádio">Rádio</option><option value="Satélite">Satélite</option><option value="Wi-Fi">Wi-Fi</option><option value="Outra">Outra</option></select></label>
+   <label>Latência (ms)<input id="sdwanLatency" type="number" min="0" max="60000" step="1" placeholder="Ex.: 45"></label>
+   <label>Jitter (ms)<input id="sdwanJitter" type="number" min="0" max="60000" step="1" placeholder="Ex.: 8"></label>
+   <label>Perda de pacotes (%)<input id="sdwanLoss" type="number" min="0" max="100" step="0.1" placeholder="Ex.: 0.5"></label>
+   <label>Disponibilidade observada (%)<input id="sdwanAvailability" type="number" min="0" max="100" step="0.1" placeholder="Ex.: 99"></label>
+   <label>Custo relativo (1–5)<select id="sdwanCost"><option value="">Não informado</option><option value="1">1 — Muito baixo</option><option value="2">2 — Baixo</option><option value="3">3 — Médio</option><option value="4">4 — Alto</option><option value="5">5 — Muito alto</option></select></label>
+   <label>Prioridade<input id="sdwanPriority" type="number" min="1" max="10" value="5"></label>
+  </div>
+  <div class="form-actions"><button class="btn primary" id="sdwanSave" type="button">Salvar link</button><button class="btn" id="sdwanReset" type="button">Limpar formulário</button><button class="btn" id="sdwanExport" type="button">Exportar dados JSON</button></div>
+  <p id="sdwanStatus" class="micro" aria-live="polite">Os dados serão armazenados neste navegador.</p>
+ </div>
+ <div class="panel" id="sdwanTermuxPanel">
+  <h3>ILS Edge Monitor — importar telemetria do Termux</h3>
+  <p class="muted">Selecione o arquivo <code>data/telemetry.jsonl</code> produzido pelo ILS Termux Edge Agent. A leitura ocorre localmente neste navegador; nenhum dado é enviado para servidor.</p>
+  <div class="form-actions">
+   <input id="sdwanTermuxFile" type="file" accept=".jsonl,.json,.txt,application/json,text/plain" aria-label="Selecionar arquivo de telemetria do Termux">
+   <button class="btn primary" id="sdwanTermuxImport" type="button">Importar telemetria</button>
+   <button class="btn" id="sdwanTermuxClear" type="button">Limpar telemetria importada</button>
+  </div>
+  <p id="sdwanTermuxStatus" class="micro" aria-live="polite">Nenhum arquivo de telemetria importado nesta sessão.</p>
+  <div class="cards-grid" style="margin-top:12px">
+   <article class="panel"><h4>Último estado</h4><strong class="metric" id="sdwanTermuxState">—</strong><p id="sdwanTermuxWhen" class="micro">Sem coleta importada.</p></article>
+   <article class="panel"><h4>Latência média</h4><strong class="metric" id="sdwanTermuxLatency">—</strong><p class="micro">Média das sondagens TCP/HTTPS bem-sucedidas.</p></article>
+   <article class="panel"><h4>Sondas bem-sucedidas</h4><strong class="metric" id="sdwanTermuxSuccess">—</strong><p id="sdwanTermuxCount" class="micro">Sem amostras.</p></article>
+  </div>
+  <div id="sdwanTermuxHistory" class="case-list"><div class="empty">Importe o arquivo JSONL do Termux para visualizar o histórico.</div></div>
+  <p class="micro">Limites: mede somente o caminho utilizado pelo Android durante cada coleta. Não identifica de forma confiável se o acesso final é fibra ou móvel, não compara duas WANs simultaneamente e não controla roteadores.</p>
+ </div>
+ <div class="panel">
+  <div class="section-head"><div><h3>Comparação e recomendação</h3><p class="muted">Pontuação heurística transparente; não substitui SLA, medição contínua ou política de engenharia.</p></div><button class="btn" id="sdwanRefresh" type="button">Atualizar análise</button></div>
+  <div id="sdwanAnalysis" class="case-list"><div class="empty">Cadastre métricas para gerar a análise.</div></div>
+ </div>
+ <div class="panel">
+  <h3>Política de conectividade (simulação)</h3>
+  <p>Selecione o perfil para visualizar como a recomendação muda. Nenhuma rota será alterada.</p>
+  <label>Perfil de uso<select id="sdwanProfile"><option value="balanced">Equilíbrio geral</option><option value="latency">Baixa latência (voz/vídeo)</option><option value="continuity">Continuidade</option><option value="economy">Economia</option></select></label>
+  <div id="sdwanPolicyResult" class="notice">Aguardando links cadastrados.</div>
+ </div>
+ <div class="panel">
+  <h3>Roadmap de integração física</h3>
+  <ol>
+   <li>Agente Linux autenticado para coleta de métricas de interfaces.</li>
+   <li>API de telemetria e armazenamento central com isolamento por organização.</li>
+   <li>Adaptador para gateway multi-WAN compatível, inicialmente em modo somente leitura.</li>
+   <li>Laboratório com dois links independentes e testes de falha controlada.</li>
+   <li>Controle autorizado de failover, com trilha de auditoria e rollback.</li>
+   <li>Edge AI experimental após coleta e rotulagem de dados reais.</li>
+  </ol>
+  <p class="micro">Estado desta entrega: interface e motor de recomendação local implementados; integração física, Supabase e execução automática ainda não implementadas.</p>
+ </div>
+</section>
+
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.1</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.2</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -648,7 +730,7 @@ html{scroll-behavior:auto}
 #view-observatory .ils6-pill{display:inline-block;border-radius:20px;padding:4px 9px;font-size:.78rem;background:var(--soft,#eef3f8)}
 #view-observatory .ils6-muted{color:var(--muted,#64748b);font-size:.88rem}
 </style>
-<div class="section-head"><div><span class="eyebrow">ILS 6.1 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
+<div class="section-head"><div><span class="eyebrow">ILS 6.2 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
 <div class="notice"><strong>Transparência dos dados</strong><span>Os indicadores refletem somente eventos sincronizados. Latência HTTP não equivale a ping ICMP ou teste de velocidade. Ausência de dados geográficos não será convertida em cobertura presumida. O painel não declara causa-raiz automaticamente.</span></div>
 <div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API compartilhada…</div>
 <div class="ils6-controls">
@@ -679,7 +761,7 @@ html{scroll-behavior:auto}
 </div>
 </section>
 <footer>
-  <span>© 2026 Nailson Lima · ILS 6.1 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 6.2 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -1127,7 +1209,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.1</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.2</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo OMM JSON CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -1251,7 +1333,7 @@ loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol
 
 // O localizador público oficial desta versão é o módulo OSM/Overpass abaixo.
 
-// ILS 6.1 — registros locais de necessidades de conectividade.
+// ILS 6.2 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1324,7 +1406,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 6.1 — lawful public Wi-Fi discovery.
+/* ILS 6.2 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1476,7 +1558,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 6.1 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 6.2 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1488,10 +1570,10 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.1",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.2",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
-/* ILS 6.1 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
+/* ILS 6.2 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
 (()=>{
  const $=id=>document.getElementById(id);
  const read=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
@@ -1544,6 +1626,99 @@ document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIl
  renderRemote();renderImpact();
 })();
 </script>
-<script src="./observatory.js" defer></script>
+<script src="./observatory.js" defer>
+/* ILS 6.2 — SD-WAN Intelligence.
+   Local assessment only. No router control, failover or live probing is claimed. */
+(()=>{
+ const KEY="ils62-sdwan-links-v1";
+ const $=id=>document.getElementById(id);
+ const read=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||"[]");return Array.isArray(x)?x:[]}catch{return[]}};
+ const write=x=>{try{localStorage.setItem(KEY,JSON.stringify(x));return true}catch(e){$("sdwanStatus").textContent="Falha ao persistir: "+e.message;return false}};
+ const num=id=>{const s=$(id).value.trim();if(s==="")return null;const n=Number(s);return Number.isFinite(n)?n:null};
+ const fmt=(v,s="")=>v===null||v===undefined?"Não informado":v+s;
+ const escv=v=>typeof esc==="function"?esc(String(v??"")):String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ function score(link,profile){
+  const fields=[link.latency,link.jitter,link.loss,link.availability];
+  if(fields.every(v=>v===null))return null;
+  let s=50;
+  if(link.latency!==null)s+=Math.max(-25,20-link.latency/10);
+  if(link.jitter!==null)s+=Math.max(-15,15-link.jitter/3);
+  if(link.loss!==null)s+=Math.max(-25,15-link.loss*5);
+  if(link.availability!==null)s+=Math.max(-20,(link.availability-95)*2);
+  if(link.cost!==null)s+=(3-link.cost)*2;
+  if(profile==="latency"&&link.latency!==null)s+=Math.max(-15,15-link.latency/5);
+  if(profile==="continuity"&&link.availability!==null)s+=Math.max(-15,(link.availability-97)*3);
+  if(profile==="economy"&&link.cost!==null)s+=(3-link.cost)*5;
+  return Math.max(0,Math.min(100,Math.round(s)));
+ }
+ function analyze(){
+  const links=read(),profile=$("sdwanProfile")?.value||"balanced";
+  const ranked=links.map(l=>({...l,score:score(l,profile)})).sort((a,b)=>(b.score??-1)-(a.score??-1));
+  const evaluated=ranked.filter(x=>x.score!==null);
+  $("sdwanLinkCount").textContent=links.length;
+  $("sdwanEvaluatedCount").textContent=evaluated.length;
+  $("sdwanBestPath").textContent=evaluated[0]?.name||"Sem dados";
+  $("sdwanAnalysis").innerHTML=ranked.length?ranked.map(l=>`<article class="sdwan-row"><h4>${escv(l.name)} — ${escv(l.type)}</h4><div class="sdwan-tags"><span class="sdwan-tag">Pontuação: ${l.score===null?"Insuficiente":l.score+"/100"}</span><span class="sdwan-tag">Latência: ${fmt(l.latency," ms")}</span><span class="sdwan-tag">Jitter: ${fmt(l.jitter," ms")}</span><span class="sdwan-tag">Perda: ${fmt(l.loss,"%")}</span><span class="sdwan-tag">Disponibilidade: ${fmt(l.availability,"%")}</span></div><small>${l.score===null?"Sem métricas para classificar.":l.score>=70?"Indicadores informados sugerem caminho relativamente favorável.":l.score>=45?"Caminho requer acompanhamento e comparação.":"Indicadores informados sugerem degradação relativa."} A pontuação é heurística, baseada apenas nos valores cadastrados.</small><div class="sdwan-actions"><button type="button" data-sdwan-edit="${escv(l.id)}">Editar</button><button type="button" data-sdwan-delete="${escv(l.id)}">Excluir registro</button></div></article>`).join(""):'<div class="empty">Nenhum link cadastrado.</div>';
+  $("sdwanPolicyResult").textContent=evaluated.length?`Perfil "${profile}" — recomendação: priorizar ${evaluated[0].name}. Alternativa seguinte: ${evaluated[1]?.name||"não disponível"}. Isto é somente recomendação; nenhuma rota foi alterada.`:"Cadastre métricas reais em pelo menos um link para gerar recomendação.";
+ }
+ function reset(){["sdwanName","sdwanLatency","sdwanJitter","sdwanLoss","sdwanAvailability"].forEach(id=>$(id).value="");$("sdwanType").value="Fibra";$("sdwanCost").value="";$("sdwanPriority").value="5";delete $("sdwanSave").dataset.edit;}
+ $("sdwanSave")?.addEventListener("click",()=>{
+  const name=$("sdwanName").value.trim();if(!name){$("sdwanStatus").textContent="Informe a identificação do link.";return;}
+  const vals={latency:num("sdwanLatency"),jitter:num("sdwanJitter"),loss:num("sdwanLoss"),availability:num("sdwanAvailability"),cost:num("sdwanCost"),priority:num("sdwanPriority")};
+  for(const [k,v] of Object.entries(vals)){if(v!==null&&v<0){$("sdwanStatus").textContent="Valores não podem ser negativos.";return;}}
+  if(vals.loss!==null&&vals.loss>100||vals.availability!==null&&vals.availability>100||vals.cost!==null&&(vals.cost<1||vals.cost>5)||vals.priority===null||vals.priority<1||vals.priority>10){$("sdwanStatus").textContent="Confira perda, disponibilidade, custo e prioridade.";return;}
+  const rows=read(),id=$("sdwanSave").dataset.edit;
+  const rec={id:id||"link-"+Date.now()+"-"+Math.random().toString(36).slice(2,7),name,type:$("sdwanType").value,...vals,updatedAt:new Date().toISOString(),source:"manual-entry",status:"informado-nao-verificado"};
+  const idx=rows.findIndex(x=>x.id===id);if(idx>=0)rows[idx]=rec;else rows.push(rec);
+  if(write(rows)){$("sdwanStatus").textContent="Registro salvo localmente. As métricas são informadas pelo usuário e não foram verificadas automaticamente.";reset();analyze();}
+ });
+ $("sdwanReset")?.addEventListener("click",reset);
+ $("sdwanRefresh")?.addEventListener("click",analyze);
+ $("sdwanProfile")?.addEventListener("change",analyze);
+ $("sdwanAnalysis")?.addEventListener("click",e=>{
+  const edit=e.target.closest("[data-sdwan-edit]"),del=e.target.closest("[data-sdwan-delete]");if(!edit&&!del)return;
+  const rows=read(),id=(edit||del).dataset[edit?"sdwanEdit":"sdwanDelete"],idx=rows.findIndex(x=>x.id===id);if(idx<0)return;
+  if(del){if(confirm("Excluir apenas este registro SD-WAN local?")){rows.splice(idx,1);write(rows);analyze();}return;}
+  const x=rows[idx];$("sdwanName").value=x.name;$("sdwanType").value=x.type;
+  for(const [k,id2] of [["latency","sdwanLatency"],["jitter","sdwanJitter"],["loss","sdwanLoss"],["availability","sdwanAvailability"],["cost","sdwanCost"],["priority","sdwanPriority"]])$(id2).value=x[k]??"";
+  $("sdwanSave").dataset.edit=x.id;$("sdwanName").focus();
+ });
+ $("sdwanExport")?.addEventListener("click",()=>{
+  const payload={application:"ILS",module:"SD-WAN Intelligence",schemaVersion:1,exportedAt:new Date().toISOString(),mode:"local-assessment-only",records:read(),termuxTelemetry:termuxRead(),limitations:["Métricas informadas manualmente não foram verificadas automaticamente.","Pontuação é heurística e não representa SLA.","Nenhum roteador foi controlado e nenhum failover foi executado.","Não há integração Supabase ou agente de borda nesta entrega."]};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ils-sdwan-intelligence.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+ // Importação local do JSONL gerado pelo ILS Termux Edge Agent.
+ const TERMUX_KEY="ils62-termux-telemetry-v1";
+ const termuxRead=()=>{try{const v=JSON.parse(localStorage.getItem(TERMUX_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
+ const termuxEsc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ function renderTermux(){
+  const rows=termuxRead().sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp)));
+  const el=id=>$("sdwanTermux"+id);
+  if(!rows.length){el("State").textContent="—";el("When").textContent="Sem coleta importada.";el("Latency").textContent="—";el("Success").textContent="—";el("Count").textContent="Sem amostras.";el("History").innerHTML='<div class="empty">Importe o arquivo JSONL do Termux para visualizar o histórico.</div>';return;}
+  const last=rows[rows.length-1],all=[];let good=0,total=0;
+  rows.forEach(r=>{(r.tcp_probes||[]).forEach(x=>{total++;if(x.status==="reachable"){good++;if(Number.isFinite(x.latency_ms))all.push(x.latency_ms);}});(r.https_probes||[]).forEach(x=>{total++;if(x.status==="up"){good++;if(Number.isFinite(x.latency_ms))all.push(x.latency_ms);}});});
+  const avg=all.length?all.reduce((a,b)=>a+b,0)/all.length:null;
+  el("State").textContent=last.path?.status==="up"?"CONECTADO":"SEM RESPOSTA";
+  el("When").textContent="Última coleta: "+new Date(last.timestamp).toLocaleString("pt-BR")+" · Interface: "+(last.path?.interface||"não identificada");
+  el("Latency").textContent=avg===null?"—":avg.toFixed(1)+" ms";
+  el("Success").textContent=total?((good/total)*100).toFixed(1)+"%":"—";
+  el("Count").textContent=rows.length+" coletas · "+good+"/"+total+" sondas positivas";
+  el("History").innerHTML=rows.slice(-12).reverse().map(r=>{const n=(r.tcp_probes||[]).concat(r.https_probes||[]),ok=n.filter(x=>x.status==="reachable"||x.status==="up").length;return `<article class="sdwan-row"><h4>${new Date(r.timestamp).toLocaleString("pt-BR")} — ${r.path?.status==="up"?"Conectado":"Sem resposta"}</h4><div class="sdwan-tags"><span class="sdwan-tag">Interface: ${termuxEsc(r.path?.interface||"—")}</span><span class="sdwan-tag">Sondas: ${ok}/${n.length}</span><span class="sdwan-tag">Plataforma: Android Termux</span></div></article>`}).join("");
+ }
+ $("sdwanTermuxImport")?.addEventListener("click",async()=>{
+  const file=$("sdwanTermuxFile")?.files?.[0];if(!file){$("sdwanTermuxStatus").textContent="Selecione primeiro o arquivo telemetry.jsonl.";return;}
+  try{const raw=await file.text();let parsed=[];try{const j=JSON.parse(raw);parsed=Array.isArray(j)?j:(Array.isArray(j.records)?j.records:[j]);}catch{parsed=raw.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));}
+   const valid=parsed.filter(r=>r&&r.schema==="ils.edge.termux.telemetry.v1"&&r.timestamp&&r.path&&Array.isArray(r.tcp_probes)&&Array.isArray(r.https_probes));
+   if(!valid.length)throw new Error("Nenhum registro compatível com o esquema ILS Termux foi encontrado.");
+   const merged=termuxRead().concat(valid).sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp))).slice(-2000);
+   localStorage.setItem(TERMUX_KEY,JSON.stringify(merged));renderTermux();$("sdwanTermuxStatus").textContent=`Importação concluída: ${valid.length} registros válidos de ${file.name}. Dados mantidos localmente neste navegador.`;
+  }catch(e){$("sdwanTermuxStatus").textContent="Não foi possível importar: "+e.message;}
+ });
+ $("sdwanTermuxClear")?.addEventListener("click",()=>{if(confirm("Limpar somente a telemetria Termux importada neste navegador?")){localStorage.removeItem(TERMUX_KEY);renderTermux();$("sdwanTermuxStatus").textContent="Telemetria importada removida deste navegador. O arquivo original no celular não foi alterado.";}});
+ renderTermux();
+ analyze();
+})();
+
+</script>
 </body>
 </html>
