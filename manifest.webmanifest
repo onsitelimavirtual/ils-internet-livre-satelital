@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "ILS 6.3.7 — Internet Livre Satelital",
-  "short_name": "ILS 6.3.7",
+  "name": "ILS 6.3.9 — Internet Livre Satelital",
+  "short_name": "ILS 6.3.9",
   "description": "Inteligência de conectividade, diagnóstico de capacidade do dispositivo e análise satelital.",
   "start_url": "./index.html",
   "scope": "./",
