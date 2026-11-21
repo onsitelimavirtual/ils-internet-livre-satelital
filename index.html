@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 6.2 — Internet Livre Satelital">
+<meta name="application-name" content="ILS 6.3.7 — Internet Livre Satelital">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 6.2 — Internet Livre Satelital</title>
+<title>ILS 6.3.7 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -92,14 +92,14 @@ footer a:hover{text-decoration:underline}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 6.2 accessibility and analyzer refinements */
+/* ILS 6.3.7 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
 
 
 
-/* ILS 6.2 business workspace */
+/* ILS 6.3.7 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -109,7 +109,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .public-wifi-filters label{display:grid;gap:6px;font-size:11px;color:#687b91}
 .public-wifi-map{height:310px;min-height:250px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#eaf0f6;overflow:hidden}
 @media(max-width:760px){.public-wifi-filters{grid-template-columns:1fr}.public-wifi-map{height:280px}}
-/* ILS 6.2 — layout additions for Remote and Impact */
+/* ILS 6.3.7 — layout additions for Remote and Impact */
 .grid-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
 .stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
 .stats-grid .stat{background:#f4f7fb;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
@@ -126,7 +126,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:560px){#view-remote .form-grid,#view-impact .form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
 
 
-/* ILS 6.2 consolidation — Wi-Fi locator integrated into the main navigation */
+/* ILS 6.3.7 consolidation — Wi-Fi locator integrated into the main navigation */
 #view-locator .section-heading{max-width:900px;margin:0 0 18px}
 #view-locator .section-heading h2{font:600 22px 'Space Grotesk';color:var(--ink);margin:6px 0}
 #view-locator .section-heading p{color:var(--muted);line-height:1.65;margin:6px 0}
@@ -137,7 +137,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #view-locator .results-list{max-height:none}
 @media(max-width:760px){#view-locator .public-wifi-map{height:235px;min-height:200px}}
 
-/* ILS 6.2 SD-WAN module */
+/* ILS 6.3.7 SD-WAN module */
 #view-sdwan .metric{display:block;font:700 25px 'Space Grotesk',Arial,sans-serif;margin:8px 0;color:var(--ink,#17324d)}
 #view-sdwan .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
 #view-sdwan .form-grid label,#view-sdwan>div>label{display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--ink,#17324d)}
@@ -150,6 +150,24 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #view-sdwan .sdwan-actions{display:flex;gap:8px;margin-top:8px}
 #view-sdwan .sdwan-actions button{border:1px solid var(--line,#dbe4ef);border-radius:7px;padding:6px 9px;background:#f7f9fc;color:#31516f}
 @media(max-width:700px){#view-sdwan .form-grid{grid-template-columns:1fr}#view-sdwan .form-actions>*{flex:1 1 100%}}
+
+
+#iqcPanel .iqc-row{display:grid;grid-template-columns:minmax(105px,1fr) 3fr 48px;gap:10px;align-items:center;margin:10px 0;font-size:12px}
+#iqcPanel .iqc-track{height:13px;border-radius:20px;background:#e9eff6;overflow:hidden}
+#iqcPanel .iqc-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#e0a33a,#38a78a)}
+#iqcPanel .iqc-value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+@media(max-width:520px){#iqcPanel .iqc-row{grid-template-columns:90px 1fr 42px;gap:7px}}
+
+#iqcPanel .iqc-history{display:flex;align-items:end;gap:8px;height:142px;padding:12px 8px 4px;border-bottom:1px solid #dfe7f0;overflow-x:auto}
+#iqcPanel .iqc-history-item{min-width:34px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;gap:5px;height:100%}
+#iqcPanel .iqc-history-bar{width:100%;max-width:38px;min-height:3px;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,#35ae91,#438de0)}
+#iqcPanel .iqc-history-item small{font-size:9px;color:#8292a6;white-space:nowrap}
+#iqcPanel .iqc-history-item b{font-size:10px;color:#344b66}
+#iqcPanel .iqc-scoreline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#iqcPanel .iqc-scoreline .iqc-grade{font-size:12px;font-weight:700;padding:6px 10px;border-radius:20px;background:#e8f5ef;color:#16815e}
+#iqcPanel .iqc-scoreline .iqc-grade.warn{background:#fff3df;color:#9b6a1e}
+@media(max-width:520px){#iqcPanel .iqc-row{grid-template-columns:90px 1fr 42px;gap:7px}#iqcPanel .iqc-history{height:125px}}
+
 
 </style>
 <style>
@@ -173,7 +191,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 6.2: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 6.3.7: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -209,10 +227,11 @@ html{scroll-behavior:auto}
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><img class="brand-logo" src="./ils-logo.png" alt="ILS 6.2 — Internet Livre Satelital"><span class="brand-copy"><strong>ILS 6.2</strong><small>Internet Livre Satelital</small></span></div>
+    <div class="brand"><span class="brand-mark" aria-hidden="true">ILS</span><span class="brand-copy"><strong>ILS 6.3.7</strong><small>Internet Livre Satelital</small></span></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
+      <button class="nav-item" data-view="satintel"><span>✦</span> Satellite Intelligence</button>
       <button class="nav-item" data-view="visibility"><span>◎</span> Visibilidade</button>
       <button class="nav-item" data-view="map"><span>⌖</span> Mapa orbital</button>
       <button class="nav-item" data-view="signals"><span>⌁</span> Frequências e sinais</button>
@@ -234,14 +253,14 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="sdwan"><span>⇄</span> ILS SD-WAN Intelligence</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.2 · connectivity intelligence</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.3.7 · connectivity intelligence</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.2</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.3.7</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 6.2 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 6.3.7 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -261,8 +280,53 @@ html{scroll-behavior:auto}
       <div class="section-head"><div><span class="eyebrow">CATÁLOGO PÚBLICO</span><h2>Catálogo orbital</h2><p class="muted">Elementos orbitais fornecidos pelo CelesTrak. A posição orbital exige cálculo e época atualizados.</p></div><button class="btn btn-primary" id="loadSatBtn">Carregar satélites</button></div>
       <div class="toolbar"><input id="satSearch" type="search" placeholder="Pesquisar por nome…" aria-label="Pesquisar satélites"><select id="satGroup" aria-label="Grupo de satélites"><option value="stations">Estações espaciais (amostra)</option><option value="active">Satélites ativos (amostra)</option><option value="weather">Meteorológicos</option></select><span class="muted" id="sat-count">Nenhum dado carregado</span></div>
       <div id="satellite-cards" class="satellite-card-grid" aria-live="polite"><div class="empty">Carregue os dados orbitais para visualizar os satélites.</div></div><details class="panel satellite-raw"><summary>Exibir tabela técnica de satélites</summary><div class="table-wrap"><table><thead><tr><th>Nome</th><th>Identificador</th><th>Órbita / fonte</th><th>Dados</th></tr></thead><tbody id="sat-table"><tr><td colspan="4" class="empty">Clique em “Carregar satélites”.</td></tr></tbody></table></div></details>
-      <p id="orbital-load-diagnostic" class="micro" role="status" aria-live="polite">Diagnóstico da biblioteca orbital: aguardando solicitação.</p>\n  <p class="micro">A consulta depende de conexão e disponibilidade do CelesTrak. A lista exibida é uma amostra de catálogo, não um inventário completo.</p>
+      <p id="orbital-load-diagnostic" class="micro" role="status" aria-live="polite">Diagnóstico da biblioteca orbital: aguardando solicitação.</p>
+  <p class="micro">A consulta depende de conexão e disponibilidade do CelesTrak. A lista exibida é uma amostra de catálogo, não um inventário completo.</p>
     </section>
+    <section class="view" id="view-satintel">
+      <div class="section-head"><div><span class="eyebrow">INTELIGÊNCIA TERRITORIAL E SATELITAL</span><h2>ILS Satellite Intelligence</h2><p class="muted">Triagem de oportunidades para conectividade por satélite e comparação com alternativas terrestres.</p></div><span class="tag tag-green">Análise local</span></div>
+      <div class="notice"><strong>Transparência</strong><span>Este módulo não comprova cobertura comercial nem disponibilidade de serviço. Visibilidade orbital, autorização regulatória, cobertura declarada e acesso real são evidências diferentes. A decisão final depende do operador, terminal, instalação e teste de campo.</span></div>
+      <div class="cards-grid">
+        <article class="panel"><h3>LEO</h3><p>Órbita baixa. Pode oferecer menor latência, mas depende de terminal, plano, cobertura e visada adequados.</p><span class="tag">Ex.: Starlink</span></article>
+        <article class="panel"><h3>GEO</h3><p>Órbita geoestacionária. Ampla área de cobertura, geralmente com latência maior.</p><span class="tag">Ex.: Hughes / Viasat</span></article>
+        <article class="panel"><h3>D2D</h3><p>Conexão direta satélite-celular. Recursos, aparelhos, bandas e operadoras compatíveis variam.</p><span class="tag">Não é banda larga residencial</span></article>
+      </div>
+      <div class="panel form-panel" style="margin-top:16px;max-width:none">
+        <h3>Avaliar oportunidade territorial</h3>
+        <div class="form-grid">
+          <label>Localidade / referência<input id="si-place" maxlength="160" placeholder="Comunidade, escola, unidade de saúde…"></label>
+          <label>Município / UF<input id="si-city" maxlength="120" placeholder="Município - UF"></label>
+          <label>Tipo de local<select id="si-type"><option>Escola pública</option><option>Unidade de saúde</option><option>Comunidade rural</option><option>Comunidade tradicional</option><option>Residência rural</option><option>Empresa / organização</option><option>Outro</option></select></label>
+          <label>Tecnologia satelital em análise<select id="si-tech"><option value="LEO">LEO — órbita baixa</option><option value="GEO">GEO — geoestacionário</option><option value="D2D">D2D — direto ao celular</option><option value="Não definida">Ainda não definida</option></select></label>
+          <label>Conectividade terrestre atual<select id="si-terrestrial"><option value="none">Sem acesso conhecido</option><option value="weak">Instável / insuficiente</option><option value="mobile">Somente rede móvel</option><option value="fixed">Fibra / rádio disponível</option><option value="unknown">Não avaliada</option></select></label>
+          <label>Energia no ponto de instalação<select id="si-power"><option value="unknown">Não verificada</option><option value="yes">Disponível</option><option value="no">Não disponível</option></select></label>
+          <label>Visibilidade do céu<select id="si-sky"><option value="unknown">Não verificada</option><option value="clear">Aparentemente desobstruída</option><option value="blocked">Obstruções relevantes</option></select></label>
+          <label>Terminal / aparelho compatível<select id="si-terminal"><option value="unknown">Não confirmado</option><option value="yes">Compatibilidade confirmada</option><option value="no">Não disponível / incompatível</option></select></label>
+          <label>Operador / programa<select id="si-provider"><option value="unknown">Ainda não consultado</option><option value="commercial">Operador comercial consultado</option><option value="public">Programa público consultado</option><option value="confirmed">Serviço confirmado pelo responsável</option></select></label>
+          <label>Mensalidade estimada (R$)<input id="si-cost" type="number" min="0" step="0.01" placeholder="Opcional"></label>
+          <label>Quantidade estimada de usuários<input id="si-users" type="number" min="1" max="100000" value="1"></label>
+          <label class="wide">Evidências / observações<textarea id="si-evidence" rows="3" maxlength="1200" placeholder="Fonte consultada, data, obstruções, alternativa terrestre, confirmação do operador…"></textarea></label>
+        </div>
+        <div class="form-actions"><button class="btn btn-primary" id="si-analyze">Analisar oportunidade</button><button class="btn btn-ghost" id="si-save">Salvar avaliação local</button><button class="btn btn-ghost" id="si-export">Exportar avaliações JSON</button></div>
+        <div id="si-result" class="result-box" aria-live="polite">Informe os dados disponíveis. Campos desconhecidos serão tratados como pendências, nunca como evidência positiva.</div>
+      </div>
+      <div class="section-head"><div><span class="eyebrow">COMPARAÇÃO</span><h2>Alternativas de conectividade</h2></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Tecnologia</th><th>Vantagem potencial</th><th>Limitação / validação</th></tr></thead><tbody>
+      <tr><td>Fibra</td><td>Alta capacidade e baixa latência, quando disponível</td><td>Disponibilidade e custo de implantação local</td></tr>
+      <tr><td>4G / 5G</td><td>Implantação rápida onde há cobertura</td><td>Sinal, capacidade, franquia e congestionamento</td></tr>
+      <tr><td>Rádio</td><td>Alternativa em enlaces com visada</td><td>Projeto RF, licenciamento quando aplicável e interferência</td></tr>
+      <tr><td>Satélite LEO</td><td>Alternativa em locais sem rede terrestre adequada</td><td>Terminal, plano, visada, energia, cobertura e custo</td></tr>
+      <tr><td>Satélite GEO</td><td>Ampla área de atendimento potencial</td><td>Latência, franquia/capacidade, terminal e plano</td></tr>
+      </tbody></table></div>
+      <div class="panel prose" style="margin-top:16px"><h3>Fontes para validação</h3><p>Consulte fontes oficiais e o operador antes de classificar uma oportunidade como disponível:</p><ul>
+      <li><a href="https://www.gov.br/anatel/pt-br" target="_blank" rel="noopener">Anatel — autorizações e regulação</a></li>
+      <li><a href="https://www.gov.br/mcom/pt-br" target="_blank" rel="noopener">Ministério das Comunicações — programas públicos</a></li>
+      <li><a href="https://www.gov.br/mcom/pt-br/acesso-a-informacao/acoes-e-programas/gesac" target="_blank" rel="noopener">GESAC / Wi-Fi Brasil — informações do programa</a></li>
+      <li><a href="https://www.celestrak.com/" target="_blank" rel="noopener">CelesTrak — elementos orbitais</a></li></ul>
+      <p class="micro">Dados orbitais do CelesTrak permitem calcular posição e passagens; não demonstram feixe de cobertura de Internet nem elegibilidade comercial. O ILS não é provedor de Internet.</p></div>
+      <p class="micro">As avaliações são armazenadas somente neste dispositivo. Não há consulta automática de cobertura de operadoras, preços ou elegibilidade nesta entrega. A pontuação é uma triagem de prontidão, não probabilidade de conexão nem laudo de engenharia.</p>
+    </section>
+
     <section class="view" id="view-visibility">
       <div class="section-head"><div><span class="eyebrow">ESTIMATIVA GEOGRÁFICA</span><h2>Visibilidade do satélite</h2><p class="muted">Informe coordenadas para calcular a elevação aproximada de satélites com dados OMM carregados.</p></div></div>
       <div class="panel form-panel"><div class="form-grid"><label>Latitude (graus)<input type="text" id="lat" inputmode="decimal" autocomplete="off" value="-15.7939" placeholder="-15.7939"></label><label>Longitude (graus)<input type="text" id="lon" inputmode="decimal" autocomplete="off" value="-47.8828" placeholder="-47.8828"></label><label>Altitude (metros)<input type="number" id="alt" min="-500" max="9000" value="1000"></label><label>Elevação mínima<select id="minElev"><option value="0">0° — horizonte matemático</option><option value="10" selected>10°</option><option value="20">20°</option><option value="30">30°</option></select></label></div><div class="form-actions"><button class="btn btn-primary" id="calcVisibility">Calcular visibilidade</button><button class="btn btn-ghost" id="useExample">Usar coordenadas de Brasília (exemplo)</button></div><div id="visibility-result" class="result-box">Carregue dados OMM no catálogo e informe coordenadas para executar a estimativa.</div></div>
@@ -279,7 +343,7 @@ html{scroll-behavior:auto}
 
 <div class="panel form-panel" id="ils-wifi-analyzer">
  <h3>ILS Signal Analyzer · Wi-Fi conectado</h3>
- <p class="muted">Leia os dados da rede Wi-Fi atualmente conectada. A leitura real de RSSI/dBm exige a versão Android com ponte nativa instalada.</p>
+ <p class="muted">Leia os dados da rede Wi-Fi atualmente conectada. No Android com o aplicativo ILS Android Intelligence instalado, consulte dados nativos permitidos pelo sistema. No navegador comum, algumas métricas do rádio não ficam disponíveis.</p>
  <div class="form-actions">
   <button class="btn btn-primary" id="readWifiSignal">Ler sinal Wi-Fi</button>
   <button class="btn btn-ghost" id="testNetworkQuality">Testar latência básica</button>
@@ -452,6 +516,17 @@ html{scroll-behavior:auto}
       <div class="section-head"><div><span class="eyebrow">VERIFICAÇÃO</span><h2>Diagnóstico de conectividade</h2><p class="muted">Testes básicos de rede disponíveis no navegador e checklist técnico do projeto.</p></div><button class="btn btn-primary" id="runDiag">Executar diagnóstico</button></div>
       <div id="diag-results" class="diag-list"><div class="empty">Execute o diagnóstico para verificar os itens disponíveis.</div></div>
       <div class="notice"><strong>Interpretação</strong><span>O teste de acesso a um endereço HTTPS confirma apenas que o navegador alcançou aquele destino. Não identifica a tecnologia de acesso nem comprova que a Internet veio de satélite.</span></div>
+      <div class="section-head"><div><span class="eyebrow">COMPATIBILIDADE DO DISPOSITIVO</span><h2>ILS — Diagnóstico de capacidade</h2><p class="muted">Identifica o ambiente de execução e os recursos realmente disponíveis, sem presumir que instalar o PWA conceda permissões nativas.</p></div><button class="btn btn-primary" id="refreshCapabilities" type="button">↻ Verificar novamente</button></div>
+      <div class="panel form-panel" style="max-width:none" id="ils-capability-panel">
+       <div class="feasibility-summary">
+        <div class="feasibility-chip"><span class="muted">Ambiente detectado</span><strong id="cap-environment">Verificando…</strong></div>
+        <div class="feasibility-chip"><span class="muted">Ponte Android</span><strong id="cap-bridge">Verificando…</strong></div>
+        <div class="feasibility-chip"><span class="muted">Modo de instalação</span><strong id="cap-install">Verificando…</strong></div>
+       </div>
+       <div id="capability-list" class="diag-list" aria-live="polite"><div class="empty">Verificando recursos deste dispositivo…</div></div>
+       <div class="result-box" id="capability-guidance">A análise separa recursos web, recursos nativos e recursos que dependem de hardware externo.</div>
+       <p class="micro">A identificação do ambiente é indicativa, baseada em sinais do navegador e na presença da ponte JavaScript ILS. A presença de uma ponte não comprova, por si só, que todas as permissões ou sensores estejam disponíveis. Faça uma leitura nativa para validar RSSI/SSID.</p>
+      </div>
     </section>
     
 <section class="view" id="view-feasibility">
@@ -509,7 +584,7 @@ html{scroll-behavior:auto}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 6.2 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 6.3.7 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -646,22 +721,47 @@ html{scroll-behavior:auto}
   <div class="form-actions"><button class="btn primary" id="sdwanSave" type="button">Salvar link</button><button class="btn" id="sdwanReset" type="button">Limpar formulário</button><button class="btn" id="sdwanExport" type="button">Exportar dados JSON</button></div>
   <p id="sdwanStatus" class="micro" aria-live="polite">Os dados serão armazenados neste navegador.</p>
  </div>
- <div class="panel" id="sdwanTermuxPanel">
-  <h3>ILS Edge Monitor — importar telemetria do Termux</h3>
-  <p class="muted">Selecione o arquivo <code>data/telemetry.jsonl</code> produzido pelo ILS Termux Edge Agent. A leitura ocorre localmente neste navegador; nenhum dado é enviado para servidor.</p>
+ <div class="panel" id="sdwanNativePanel">
+  <h3>ILS Android Intelligence — coleta nativa</h3>
+  <p class="muted">Substitui o coletor Termux por um aplicativo Android nativo em Java. O painel consulta a ponte local quando aberto dentro do aplicativo. No navegador comum, use importação de telemetria ou os testes HTTPS disponíveis.</p>
   <div class="form-actions">
-   <input id="sdwanTermuxFile" type="file" accept=".jsonl,.json,.txt,application/json,text/plain" aria-label="Selecionar arquivo de telemetria do Termux">
-   <button class="btn primary" id="sdwanTermuxImport" type="button">Importar telemetria</button>
-   <button class="btn" id="sdwanTermuxClear" type="button">Limpar telemetria importada</button>
+   <button class="btn primary" id="sdwanNativeRefresh" type="button">Ler estado do Android</button>
+   <button class="btn" id="sdwanNativePermissions" type="button">Solicitar permissões</button>
+   <button class="btn" id="sdwanNativeProbe" type="button">Executar sondas HTTPS</button>
+   <button class="btn" id="sdwanNativeExport" type="button">Exportar relatório CSV</button>
+   <input id="sdwanTermuxFile" type="file" accept=".jsonl,.json,.txt,application/json,text/plain" aria-label="Importar histórico legado JSONL">
+   <button class="btn" id="sdwanTermuxImport" type="button">Importar histórico anterior</button>
   </div>
-  <p id="sdwanTermuxStatus" class="micro" aria-live="polite">Nenhum arquivo de telemetria importado nesta sessão.</p>
+  <div id="sdwanTermuxStatus" class="result-box" role="status" aria-live="polite">Verificando disponibilidade da ponte Android…</div>
+  <div class="panel" style="margin-top:12px">
+   <h4>Tecnologia de acesso identificada</h4>
+   <strong class="metric" id="sdwanAccessTech">Não identificada</strong>
+   <p id="sdwanAccessEvidence" class="micro">Aguardando leitura. O navegador não informa a tecnologia em todos os aparelhos.</p>
+   <label>Confirmar tecnologia (quando a detecção automática não estiver disponível)
+    <select id="sdwanAccessManual"><option value="auto">Tentar detecção automática</option><option value="wifi">Wi-Fi</option><option value="mobile">Dados móveis (3G/4G/5G)</option><option value="ethernet">Ethernet / fibra via roteador</option><option value="vpn">VPN (túnel; transporte físico não identificado)</option><option value="satellite">Satélite (confirmado pelo usuário)</option><option value="radio">Rádio (confirmado pelo usuário)</option><option value="unknown">Não sei / não identificado</option></select>
+   </label>
+   <p class="micro">A confirmação manual será identificada como informada pelo usuário. “Conectado” não significa que o tipo de acesso foi detectado.</p>
+  </div>
   <div class="cards-grid" style="margin-top:12px">
-   <article class="panel"><h4>Último estado</h4><strong class="metric" id="sdwanTermuxState">—</strong><p id="sdwanTermuxWhen" class="micro">Sem coleta importada.</p></article>
-   <article class="panel"><h4>Latência média</h4><strong class="metric" id="sdwanTermuxLatency">—</strong><p class="micro">Média das sondagens TCP/HTTPS bem-sucedidas.</p></article>
-   <article class="panel"><h4>Sondas bem-sucedidas</h4><strong class="metric" id="sdwanTermuxSuccess">—</strong><p id="sdwanTermuxCount" class="micro">Sem amostras.</p></article>
+   <article class="panel"><h4>Conexão atual</h4><strong class="metric" id="sdwanTermuxWifi">Aguardando leitura</strong><p id="sdwanTermuxWifiDetail" class="micro">SSID/RSSI aparecem somente quando o Android autoriza.</p></article>
+   <article class="panel"><h4>Último estado</h4><strong class="metric" id="sdwanTermuxState">—</strong><p id="sdwanTermuxWhen" class="micro">Sem coleta nesta sessão.</p></article>
+   <article class="panel"><h4>Latência média</h4><strong class="metric" id="sdwanTermuxLatency">—</strong><p class="micro">Tempo de resposta TCP/HTTPS observado; não é ping ICMP.</p></article>
+   <article class="panel"><h4>Sondas positivas</h4><strong class="metric" id="sdwanTermuxSuccess">—</strong><p id="sdwanTermuxCount" class="micro">Sem amostras.</p></article>
   </div>
-  <div id="sdwanTermuxHistory" class="case-list"><div class="empty">Importe o arquivo JSONL do Termux para visualizar o histórico.</div></div>
-  <p class="micro">Limites: mede somente o caminho utilizado pelo Android durante cada coleta. Não identifica de forma confiável se o acesso final é fibra ou móvel, não compara duas WANs simultaneamente e não controla roteadores.</p>
+  <div id="sdwanTermuxHistory" class="case-list"><div class="empty">Nenhuma coleta registrada.</div></div>
+  <section class="panel" id="iqcPanel" style="margin-top:14px">
+   <div class="section-head"><div><span class="eyebrow">ÍNDICE DE QUALIDADE DE CONECTIVIDADE</span><h3>IQC-ILS</h3><p class="muted">Índice experimental de experiência de conectividade, calculado com as sondas registradas neste navegador/dispositivo.</p></div><span class="sdwan-tag" id="iqcConfidence">Aguardando amostras</span></div>
+   <div class="cards-grid">
+    <article class="panel"><h4>Qualidade geral</h4><strong class="metric" id="iqcScore">—</strong><p id="iqcClass" class="micro">Execute sondas HTTPS para iniciar.</p></article>
+    <article class="panel"><h4>Disponibilidade observada</h4><strong class="metric" id="iqcAvailability">—</strong><p class="micro">Sondas concluídas ÷ tentativas</p></article>
+    <article class="panel"><h4>Latência média</h4><strong class="metric" id="iqcLatency">—</strong><p class="micro">Tempo de resposta do navegador (DNS/TLS incluídos)</p></article>
+   </div>
+   <h4 style="margin:16px 0 8px">Gráfico dos componentes</h4>
+   <div id="iqcChart" role="img" aria-label="Gráfico de barras dos componentes do IQC-ILS"><div class="empty">Sem dados suficientes para desenhar o gráfico.</div></div>
+   <h4 style="margin:22px 0 8px">Evolução do IQC-ILS</h4><div id="iqcHistory" class="iqc-history" role="img" aria-label="Histórico das últimas avaliações do IQC-ILS"><div class="empty">O histórico será formado após novas coletas.</div></div><p id="iqcHistoryNote" class="micro">Cada barra representa uma avaliação salva neste dispositivo.</p>
+   <p id="iqcMethod" class="micro">O índice não mede RSSI em dBm, jitter IP padronizado nem velocidade de download/upload. Esses dados não serão presumidos.</p>
+  </section>
+  <p class="micro">Compatibilidade: o APK Android é necessário para métricas nativas. RSSI/SSID dependem das permissões e da versão Android. A coleta não mede simultaneamente duas WANs independentes e não controla roteadores. O histórico antigo permanece importável.</p>
  </div>
  <div class="panel">
   <div class="section-head"><div><h3>Comparação e recomendação</h3><p class="muted">Pontuação heurística transparente; não substitui SLA, medição contínua ou política de engenharia.</p></div><button class="btn" id="sdwanRefresh" type="button">Atualizar análise</button></div>
@@ -688,7 +788,7 @@ html{scroll-behavior:auto}
 </section>
 
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.2</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.3.7</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -730,7 +830,7 @@ html{scroll-behavior:auto}
 #view-observatory .ils6-pill{display:inline-block;border-radius:20px;padding:4px 9px;font-size:.78rem;background:var(--soft,#eef3f8)}
 #view-observatory .ils6-muted{color:var(--muted,#64748b);font-size:.88rem}
 </style>
-<div class="section-head"><div><span class="eyebrow">ILS 6.2 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
+<div class="section-head"><div><span class="eyebrow">ILS 6.3.7 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Painel de evidências, tendências e cobertura territorial a partir dos eventos efetivamente recebidos.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport">Exportar CSV</button></div></div>
 <div class="notice"><strong>Transparência dos dados</strong><span>Os indicadores refletem somente eventos sincronizados. Latência HTTP não equivale a ping ICMP ou teste de velocidade. Ausência de dados geográficos não será convertida em cobertura presumida. O painel não declara causa-raiz automaticamente.</span></div>
 <div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta à API compartilhada…</div>
 <div class="ils6-controls">
@@ -761,7 +861,7 @@ html{scroll-behavior:auto}
 </div>
 </section>
 <footer>
-  <span>© 2026 Nailson Lima · ILS 6.2 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 6.3.7 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -877,15 +977,14 @@ window.addEventListener("online",updateNetwork);window.addEventListener("offline
 function readNativeWifi(){
  const box=$("#wifiSignalResult");
  try{
-  if(!window.IlsAndroid||typeof window.IlsAndroid.getWifiInfo!=="function"){
-   box.innerHTML="<strong>Ponte Android não detectada.</strong><br>Abra o ILS pelo aplicativo Android Bridge instalado para obter RSSI real. No navegador comum, a leitura de dBm não está disponível.";
-   return;
+  if(!window.IlsAndroid||typeof window.IlsAndroid.getSnapshot!=="function"){
+   box.innerHTML="<strong>Aplicativo Android não detectado.</strong><br>Abra o ILS pelo APK Android Intelligence para consultar RSSI/dBm. No navegador comum, o Android não disponibiliza esses dados de rádio.";return;
   }
-  const raw=window.IlsAndroid.getWifiInfo(),data=JSON.parse(raw);
-  if(!data.available){if(data.code==="permission_required"&&typeof window.IlsAndroid.requestWifiPermission==="function"){window.IlsAndroid.requestWifiPermission();}box.textContent=data.message||"Leitura Wi-Fi indisponível. Verifique permissões e conexão Wi-Fi.";return;}
+  const data=JSON.parse(window.IlsAndroid.getSnapshot());
+  if(!data.wifiAvailable){box.textContent=data.wifiNote||"Leitura Wi-Fi indisponível. Verifique permissões e conexão.";return;}
   const rssi=Number(data.rssiDbm),quality=Number.isFinite(rssi)?(rssi>=-50?"Muito forte":rssi>=-60?"Forte":rssi>=-67?"Boa":rssi>=-75?"Regular":"Fraca"):"Não informado";
-  box.innerHTML=`<strong>Leitura do Android · ${new Date().toLocaleString("pt-BR")}</strong><div class="analysis-grid"><div class="analysis-chip">RSSI<strong>${Number.isFinite(rssi)?rssi+" dBm":"Indisponível"}</strong></div><div class="analysis-chip">Qualidade indicativa<strong>${quality}</strong></div><div class="analysis-chip">Frequência<strong>${data.frequencyMhz?data.frequencyMhz+" MHz":"Indisponível"}</strong></div><div class="analysis-chip">Link speed<strong>${data.linkSpeedMbps?data.linkSpeedMbps+" Mbps":"Indisponível"}</strong></div></div><p><strong>SSID:</strong> ${esc(data.ssid||"Oculto pelo Android")} · <strong>BSSID:</strong> ${esc(data.bssid||"Oculto")}</p><p class="micro">RSSI é a intensidade recebida pela interface Wi-Fi do dispositivo. Não representa velocidade da Internet nem qualidade garantida do serviço.</p>`;
- }catch(e){box.textContent="Falha ao consultar a ponte Android: "+(e.message||e);}
+  box.innerHTML=`<strong>Leitura Android · ${new Date().toLocaleString("pt-BR")}</strong><div class="analysis-grid"><div class="analysis-chip">RSSI<strong>${Number.isFinite(rssi)?rssi+" dBm":"Indisponível"}</strong></div><div class="analysis-chip">Qualidade indicativa<strong>${quality}</strong></div><div class="analysis-chip">Frequência<strong>${data.frequencyMhz?data.frequencyMhz+" MHz":"Indisponível"}</strong></div><div class="analysis-chip">Link speed<strong>${data.linkSpeedMbps?data.linkSpeedMbps+" Mbps":"Indisponível"}</strong></div></div><p><strong>SSID:</strong> ${esc(data.ssid||"Oculto pelo Android")}</p><p class="micro">RSSI representa sinal recebido pelo dispositivo, não velocidade nem SLA da Internet.</p>`;
+ }catch(e){box.textContent="Falha na ponte Android: "+(e.message||e);}
 }
 async function testBasicLatency(){
  const box=$("#wifiSignalResult");box.textContent="Testando resposta HTTPS…";
@@ -1209,7 +1308,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.2</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.3.7</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo OMM JSON CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -1333,7 +1432,7 @@ loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol
 
 // O localizador público oficial desta versão é o módulo OSM/Overpass abaixo.
 
-// ILS 6.2 — registros locais de necessidades de conectividade.
+// ILS 6.3.7 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1406,7 +1505,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 6.2 — lawful public Wi-Fi discovery.
+/* ILS 6.3.7 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1558,7 +1657,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 6.2 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 6.3.7 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1570,10 +1669,10 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.2",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.3.7",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
-/* ILS 6.2 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
+/* ILS 6.3.7 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
 (()=>{
  const $=id=>document.getElementById(id);
  const read=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
@@ -1626,8 +1725,8 @@ document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIl
  renderRemote();renderImpact();
 })();
 </script>
-<script src="./observatory.js" defer>
-/* ILS 6.2 — SD-WAN Intelligence.
+<script>
+/* ILS 6.3.7 — SD-WAN Intelligence.
    Local assessment only. No router control, failover or live probing is claimed. */
 (()=>{
  const KEY="ils62-sdwan-links-v1";
@@ -1684,38 +1783,157 @@ document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIl
   $("sdwanSave").dataset.edit=x.id;$("sdwanName").focus();
  });
  $("sdwanExport")?.addEventListener("click",()=>{
-  const payload={application:"ILS",module:"SD-WAN Intelligence",schemaVersion:1,exportedAt:new Date().toISOString(),mode:"local-assessment-only",records:read(),termuxTelemetry:termuxRead(),limitations:["Métricas informadas manualmente não foram verificadas automaticamente.","Pontuação é heurística e não representa SLA.","Nenhum roteador foi controlado e nenhum failover foi executado.","Não há integração Supabase ou agente de borda nesta entrega."]};
+  const payload={application:"ILS",module:"SD-WAN Intelligence",schemaVersion:1,exportedAt:new Date().toISOString(),mode:"local-assessment-only",records:read(),telemetry:termuxRead(),iqc:{algorithm:"IQC-ILS-v1",weights:{availability:0.40,latency:0.35,stability:0.25},classification:"experimental-application-level",scoreElement:"recalculated-on-import"},limitations:["Métricas informadas manualmente não foram verificadas automaticamente.","Pontuação é heurística e não representa SLA.","Nenhum roteador foi controlado e nenhum failover foi executado.","Não há integração Supabase ou agente de borda nesta entrega."]};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ils-sdwan-intelligence.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  });
- // Importação local do JSONL gerado pelo ILS Termux Edge Agent.
- const TERMUX_KEY="ils62-termux-telemetry-v1";
- const termuxRead=()=>{try{const v=JSON.parse(localStorage.getItem(TERMUX_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
+ // ILS 6.3 — telemetria unificada; mantém importação de JSONL legado.
+ const TERMUX_KEY="ils62-termux-telemetry-v1", NATIVE_KEY="ils63-android-telemetry-v1";
+ const ACCESS_KEY="ils631-access-tech-v1";
+ const accessLabels={wifi:"Wi-Fi",mobile:"Dados móveis",ethernet:"Ethernet / fibra via roteador",satellite:"Satélite (informado)",radio:"Rádio (informado)",unknown:"Não identificada",vpn:"VPN (túnel)"};
+ function browserTransport(){try{const c=navigator.connection||navigator.mozConnection||navigator.webkitConnection;const t=String(c?.type||'').toLowerCase();if(t==='wifi')return {value:'wifi',evidence:'API de rede do navegador',confidence:'indicativa'};if(t==='cellular')return {value:'mobile',evidence:'API de rede do navegador',confidence:'indicativa'};if(t==='ethernet')return {value:'ethernet',evidence:'API de rede do navegador',confidence:'indicativa'};}catch(e){}return null;}
+ function getAccess(){const manual=localStorage.getItem(ACCESS_KEY)||'auto';if(manual!=='auto')return {value:manual,evidence:'Confirmação manual do usuário',confidence:'manual'};return browserTransport()||{value:'unknown',evidence:'O navegador não expõe o tipo de transporte neste aparelho',confidence:'indisponível'};}
+ function renderAccess(native){let d;if(native?.transport){const t=String(native.transport).toLowerCase();d={value:t.includes('wi-fi')||t==='wifi'?'wifi':(t.includes('móvel')||t.includes('mobile')||t.includes('cellular')?'mobile':(t.includes('ethernet')?'ethernet':(t.includes('vpn')?'vpn':'unknown'))),evidence:'Leitura nativa do Android',confidence:'nativa'};}else d=getAccess();const a=$('sdwanAccessTech'),b=$('sdwanAccessEvidence'),sel=$('sdwanAccessManual');if(a)a.textContent=accessLabels[d.value]||accessLabels.unknown;if(b)b.textContent='Fonte: '+d.evidence+' · Confiança: '+d.confidence+'.';if(sel&&sel.value!==(localStorage.getItem(ACCESS_KEY)||'auto'))sel.value=localStorage.getItem(ACCESS_KEY)||'auto';return d;}
+ $('sdwanAccessManual')?.addEventListener('change',e=>{localStorage.setItem(ACCESS_KEY,e.target.value);renderAccess();});
+ const termuxRead=()=>{try{const a=JSON.parse(localStorage.getItem(TERMUX_KEY)||"[]"),b=JSON.parse(localStorage.getItem(NATIVE_KEY)||"[]");return [...(Array.isArray(a)?a:[]),...(Array.isArray(b)?b:[])].sort((x,y)=>String(x.timestamp).localeCompare(String(y.timestamp)));}catch{return[]}};
  const termuxEsc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  function renderTermux(){
-  const rows=termuxRead().sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp)));
-  const el=id=>$("sdwanTermux"+id);
-  if(!rows.length){el("State").textContent="—";el("When").textContent="Sem coleta importada.";el("Latency").textContent="—";el("Success").textContent="—";el("Count").textContent="Sem amostras.";el("History").innerHTML='<div class="empty">Importe o arquivo JSONL do Termux para visualizar o histórico.</div>';return;}
-  const last=rows[rows.length-1],all=[];let good=0,total=0;
-  rows.forEach(r=>{(r.tcp_probes||[]).forEach(x=>{total++;if(x.status==="reachable"){good++;if(Number.isFinite(x.latency_ms))all.push(x.latency_ms);}});(r.https_probes||[]).forEach(x=>{total++;if(x.status==="up"){good++;if(Number.isFinite(x.latency_ms))all.push(x.latency_ms);}});});
-  const avg=all.length?all.reduce((a,b)=>a+b,0)/all.length:null;
-  el("State").textContent=last.path?.status==="up"?"CONECTADO":"SEM RESPOSTA";
-  el("When").textContent="Última coleta: "+new Date(last.timestamp).toLocaleString("pt-BR")+" · Interface: "+(last.path?.interface||"não identificada");
-  el("Latency").textContent=avg===null?"—":avg.toFixed(1)+" ms";
-  el("Success").textContent=total?((good/total)*100).toFixed(1)+"%":"—";
-  el("Count").textContent=rows.length+" coletas · "+good+"/"+total+" sondas positivas";
-  el("History").innerHTML=rows.slice(-12).reverse().map(r=>{const n=(r.tcp_probes||[]).concat(r.https_probes||[]),ok=n.filter(x=>x.status==="reachable"||x.status==="up").length;return `<article class="sdwan-row"><h4>${new Date(r.timestamp).toLocaleString("pt-BR")} — ${r.path?.status==="up"?"Conectado":"Sem resposta"}</h4><div class="sdwan-tags"><span class="sdwan-tag">Interface: ${termuxEsc(r.path?.interface||"—")}</span><span class="sdwan-tag">Sondas: ${ok}/${n.length}</span><span class="sdwan-tag">Plataforma: Android Termux</span></div></article>`}).join("");
+  const rows=termuxRead(),el=id=>$("sdwanTermux"+id);
+  if(!rows.length){el("State").textContent="—";el("When").textContent="Sem coleta registrada.";el("Latency").textContent="—";el("Success").textContent="—";el("Count").textContent="Sem amostras.";el("History").innerHTML='<div class="empty">Nenhuma coleta. Abra no APK Android ou execute sondas HTTPS.</div>';el("Wifi").textContent="Aguardando leitura";el("WifiDetail").textContent="As informações do rádio dependem das permissões Android.";return;}
+  const last=rows[rows.length-1],all=[];let good=0,total=0;renderAccess(last.platform==="android-native"?{transport:last.network?.transport}:null);
+  rows.forEach(r=>{const probes=[...(r.tcp_probes||[]),...(r.https_probes||[]),...(r.probes||[])];probes.forEach(x=>{total++;if(["reachable","up","ok","request_completed_opaque"].includes(String(x.status||"").toLowerCase())){good++;const n=Number(x.latency_ms??x.latencyMs);if(Number.isFinite(n))all.push(n);}});});
+  const lastProbes=[...(last.tcp_probes||[]),...(last.https_probes||[]),...(last.probes||[])];const lastGood=lastProbes.filter(x=>["reachable","up","ok","request_completed_opaque"].includes(String(x.status||"").toLowerCase())).length;const state=classifyIlsConnectivity(last);el("State").textContent=state.label;
+  el("When").textContent="Última coleta: "+new Date(last.timestamp).toLocaleString("pt-BR")+" · "+state.detail+" · Origem: "+(last.agent?.name||last.source||last.platform||"Android");
+  const currentLatency=lastProbes.filter(x=>["reachable","up","ok","request_completed_opaque"].includes(String(x.status||"").toLowerCase())).map(x=>Number(x.latency_ms??x.latencyMs)).filter(x=>Number.isFinite(x)&&x>=0);const currentAvg=currentLatency.length?currentLatency.reduce((a,b)=>a+b,0)/currentLatency.length:null;
+  el("Latency").textContent=currentAvg===null?"Indisponível nesta coleta":currentAvg.toFixed(1)+" ms";el("Success").textContent=total?((good/total)*100).toFixed(1)+"%":"—";el("Count").textContent=rows.length+" coletas · "+good+"/"+total+" requisições concluídas (histórico)";
+  const wi=last.path?.wifi||last.wifi||{},hasWifi=wi.available===true||!!(wi.ssid||wi.rssiDbm!==undefined);
+  el("Wifi").textContent=hasWifi?(wi.ssid||"Wi-Fi conectado"):(last.network?.transport||"Não identificado");
+  el("WifiDetail").textContent=hasWifi?((wi.rssiDbm!==undefined?"RSSI: "+wi.rssiDbm+" dBm":"RSSI não informado")+(wi.frequencyMhz?" · "+wi.frequencyMhz+" MHz":"")+(wi.linkSpeedMbps?" · "+wi.linkSpeedMbps+" Mbps":"")):(wi.note||"O Android não forneceu dados de rádio nesta coleta.");
+  el("History").innerHTML=rows.slice(-12).reverse().map(r=>{const n=[...(r.tcp_probes||[]),...(r.https_probes||[]),...(r.probes||[])],st=classifyIlsConnectivity(r),tech=r.network?.accessTechnology||r.network?.transport||r.path?.interface||"—";return `<article class="sdwan-row"><h4>${new Date(r.timestamp).toLocaleString("pt-BR")} — ${termuxEsc(st.label)}</h4><div class="sdwan-tags"><span class="sdwan-tag">Origem: ${termuxEsc(r.agent?.name||r.source||r.platform||"Android")}</span><span class="sdwan-tag">Sondas: ${st.completed}/${st.total}</span><span class="sdwan-tag">Interface: ${termuxEsc(tech)}</span></div><p class="micro">${termuxEsc(st.detail)}</p></article>`}).join("");
+  renderIQC();
  }
- $("sdwanTermuxImport")?.addEventListener("click",async()=>{
-  const file=$("sdwanTermuxFile")?.files?.[0];if(!file){$("sdwanTermuxStatus").textContent="Selecione primeiro o arquivo telemetry.jsonl.";return;}
-  try{const raw=await file.text();let parsed=[];try{const j=JSON.parse(raw);parsed=Array.isArray(j)?j:(Array.isArray(j.records)?j.records:[j]);}catch{parsed=raw.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));}
-   const valid=parsed.filter(r=>r&&r.schema==="ils.edge.termux.telemetry.v1"&&r.timestamp&&r.path&&Array.isArray(r.tcp_probes)&&Array.isArray(r.https_probes));
-   if(!valid.length)throw new Error("Nenhum registro compatível com o esquema ILS Termux foi encontrado.");
-   const merged=termuxRead().concat(valid).sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp))).slice(-2000);
-   localStorage.setItem(TERMUX_KEY,JSON.stringify(merged));renderTermux();$("sdwanTermuxStatus").textContent=`Importação concluída: ${valid.length} registros válidos de ${file.name}. Dados mantidos localmente neste navegador.`;
-  }catch(e){$("sdwanTermuxStatus").textContent="Não foi possível importar: "+e.message;}
- });
- $("sdwanTermuxClear")?.addEventListener("click",()=>{if(confirm("Limpar somente a telemetria Termux importada neste navegador?")){localStorage.removeItem(TERMUX_KEY);renderTermux();$("sdwanTermuxStatus").textContent="Telemetria importada removida deste navegador. O arquivo original no celular não foi alterado.";}});
- renderTermux();
+ function renderIQC(){
+  const rows=termuxRead().filter(r=>Array.isArray(r.probes)||Array.isArray(r.https_probes)||Array.isArray(r.tcp_probes));
+  const probes=rows.flatMap(r=>[...(r.tcp_probes||[]),...(r.https_probes||[]),...(r.probes||[])]);
+  const good=probes.filter(x=>["reachable","up","ok","request_completed_opaque"].includes(String(x.status||"").toLowerCase()));
+  const latencies=good.map(x=>Number(x.latency_ms??x.latencyMs)).filter(x=>Number.isFinite(x)&&x>=0);
+  const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
+  const historyKey="ils635-iqc-history-v1";
+  const readHistory=()=>{try{const h=JSON.parse(localStorage.getItem(historyKey)||"[]");return Array.isArray(h)?h:[]}catch{return[]}};
+  const drawHistory=(history)=>{const el=$("iqcHistory");if(!el)return;if(!history.length){el.innerHTML='<div class="empty">O histórico será formado após novas coletas.</div>';return;}el.innerHTML=history.slice(-12).map((h,i)=>'<div class="iqc-history-item" title="'+new Date(h.at).toLocaleString("pt-BR")+' · IQC '+h.score+'"><b>'+h.score+'</b><div class="iqc-history-bar" style="height:'+Math.max(3,h.score)+'%"></div><small>'+new Date(h.at).toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"})+'</small></div>').join("");const note=$("iqcHistoryNote");if(note)note.textContent="Últimas "+history.length+" avaliações salvas neste dispositivo. O histórico não é sincronizado entre aparelhos.";};
+  if(!probes.length){set("iqcScore","—");set("iqcClass","Aguardando sondas HTTPS");set("iqcAvailability","—");set("iqcLatency","—");set("iqcConfidence","Sem amostras");$("iqcChart").innerHTML='<div class="empty">Execute “Executar sondas HTTPS” para calcular o índice.</div>';drawHistory(readHistory());return;}
+  const availability=100*good.length/probes.length;
+  const avg=latencies.length?latencies.reduce((a,b)=>a+b,0)/latencies.length:null;
+  const latencyScore=avg===null?null:avg<=50?100:avg<=100?100-(avg-50)*0.4:avg<=200?80-(avg-100)*0.4:avg<=400?40-(avg-200)*0.2:0;
+  let stability=null;if(latencies.length>=2){const sorted=[...latencies].sort((a,b)=>a-b),med=sorted[Math.floor((sorted.length-1)/2)],dev=sorted.map(x=>Math.abs(x-med)).sort((a,b)=>a-b),mad=dev[Math.floor((dev.length-1)/2)];stability=Math.max(0,Math.min(100,100-(mad/Math.max(med,1))*200));}
+  const parts=[{label:"Disponibilidade",value:availability,weight:0.40},{label:"Latência",value:latencyScore,weight:0.35},{label:"Estabilidade",value:stability,weight:0.25}].filter(x=>x.value!==null);
+  const weight=parts.reduce((a,x)=>a+x.weight,0),score=weight?Math.round(parts.reduce((a,x)=>a+x.value*x.weight,0)/weight):null;
+  const cls=score===null?"Sem dados":score>=90?"Excelente":score>=75?"Muito boa":score>=60?"Boa":score>=40?"Regular":score>=20?"Fraca":"Crítica";
+  const confidence=probes.length>=30&&latencies.length>=10?"Alta":probes.length>=9&&latencies.length>=3?"Média":"Baixa";
+  set("iqcScore",score===null?"—":score+"/100");set("iqcClass",cls);set("iqcAvailability",availability.toFixed(1)+"%");set("iqcLatency",avg===null?"—":avg.toFixed(1)+" ms");set("iqcConfidence","Confiança "+confidence+" · "+probes.length+" sondas");
+  $("iqcChart").innerHTML=parts.map(x=>'<div class="iqc-row"><span>'+x.label+'</span><div class="iqc-track"><div class="iqc-fill" style="width:'+Math.max(0,Math.min(100,x.value)).toFixed(1)+'%"></div></div><span class="iqc-value">'+Math.round(x.value)+'</span></div>').join("");
+  const history=readHistory(),latestAt=rows.length?String(rows[rows.length-1].timestamp||""):"";
+  if(score!==null&&latestAt&&!history.some(h=>h.sourceTimestamp===latestAt)){history.push({at:new Date().toISOString(),sourceTimestamp:latestAt,score,availability:Math.round(availability),latency:avg===null?null:Math.round(avg),confidence});try{localStorage.setItem(historyKey,JSON.stringify(history.slice(-100)));}catch{}}
+  drawHistory(readHistory());
+  $("iqcMethod").textContent="Cálculo experimental: disponibilidade observada (40%), latência do navegador (35%) e estabilidade por desvio absoluto mediano (25%). Pesos redistribuídos quando um componente não tem amostras válidas. Amostras: "+probes.length+"; requisições concluídas: "+good.length+"; latências válidas: "+latencies.length+". Confiança "+confidence.toLowerCase()+". Não é certificação ITU, SLA nem medição IP. Sondas no-cors não validam status/conteúdo HTTP. Falhas não são perda de pacotes.";
+ }
+
+ function nativeSnapshot(){try{if(!window.IlsAndroid||typeof window.IlsAndroid.getSnapshot!=="function"){$("sdwanTermuxStatus").textContent="Ponte nativa não detectada. Este HTML está em modo navegador. Instale/abra o ILS Android Intelligence para habilitar a coleta sem Termux.";return null;}const d=JSON.parse(window.IlsAndroid.getSnapshot());$("sdwanTermuxStatus").textContent=d.available?"Ponte Android conectada · leitura local ativa.":(d.message||"Ponte disponível, mas sem dados suficientes.");return d;}catch(e){$("sdwanTermuxStatus").textContent="Falha na ponte Android: "+e.message;return null;}}
+ function saveNativeRecord(d){const access=renderAccess(d);const row={schema:"ils.edge.android.telemetry.v1",timestamp:d.timestamp||new Date().toISOString(),source:"ILS Android Intelligence",platform:"android-native",network:{connected:!!d.connected,transport:d.transport||"unknown",accessTechnology:access.value,accessEvidence:access.evidence,accessConfidence:access.confidence,metered:!!d.metered},path:{status:d.connected?"up":"down",interface:d.transport||"unknown",wifi:{available:!!d.wifiAvailable,ssid:d.ssid||null,rssiDbm:(d.rssiDbm!==null&&d.rssiDbm!==undefined&&Number.isFinite(Number(d.rssiDbm)))?Number(d.rssiDbm):null,frequencyMhz:d.frequencyMhz||null,linkSpeedMbps:d.linkSpeedMbps||null,note:d.wifiNote||null}},probes:[]};const old=JSON.parse(localStorage.getItem(NATIVE_KEY)||"[]");old.push(row);localStorage.setItem(NATIVE_KEY,JSON.stringify(old.slice(-2000)));renderTermux();}
+ $("sdwanNativeRefresh")?.addEventListener("click",()=>{const d=nativeSnapshot();if(d){saveNativeRecord(d);readNativeWifi();}});
+ $("sdwanNativePermissions")?.addEventListener("click",()=>{if(window.IlsAndroid&&typeof window.IlsAndroid.requestPermissions==="function"){window.IlsAndroid.requestPermissions();$("sdwanTermuxStatus").textContent="Solicitação de permissões enviada ao Android. Após autorizar, toque em Ler estado do Android.";}else{$("sdwanTermuxStatus").textContent="A solicitação de permissões está disponível somente no APK Android Intelligence.";}});
+ async function fetchProbe(url,timeoutMs=7000){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);const t=performance.now();try{await fetch(url,{mode:"no-cors",cache:"no-store",signal:controller.signal});return {url,status:"request_completed_opaque",latency_ms:Math.round(performance.now()-t),measurement:"browser-fetch-opaque",http_status_verified:false};}catch(e){return {url,status:"failed_or_blocked",latency_ms:null,error:String(e.message||e),measurement:"browser-fetch"};}finally{clearTimeout(timer);}}
+ $("sdwanNativeProbe")?.addEventListener("click",async()=>{const btn=$("sdwanNativeProbe"),status=$("sdwanTermuxStatus");btn.disabled=true;status.textContent="Executando sondas HTTPS...";try{const urls=["https://www.google.com/generate_204","https://www.cloudflare.com/cdn-cgi/trace","https://connectivitycheck.gstatic.com/generate_204"],probes=[];for(const url of urls)probes.push(await fetchProbe(url));const access=renderAccess();const good=probes.filter(x=>["reachable","up","ok","request_completed_opaque"].includes(String(x.status||"").toLowerCase())).length;const row={schema:"ils.edge.android.telemetry.v1",timestamp:new Date().toISOString(),source:"ILS Web HTTPS probes",platform:"browser",network:{connected:navigator.onLine,transport:access.value,accessTechnology:access.value,accessEvidence:access.evidence,accessConfidence:access.confidence},path:{status:navigator.onLine?"interface_available":"unknown",interface:access.value},probes,limitations:["navigator.onLine não comprova acesso à Internet.","Fetch no-cors não expõe status HTTP; sucesso indica apenas que a requisição foi concluída.","Latência inclui DNS/TLS e não é ping ICMP."]};const old=JSON.parse(localStorage.getItem(NATIVE_KEY)||"[]");old.push(row);localStorage.setItem(NATIVE_KEY,JSON.stringify(old.slice(-2000)));renderTermux();renderIQC();status.textContent="Coleta concluída: "+good+"/"+probes.length+" requisições HTTPS concluídas (resposta HTTP não validada pelo navegador). Tecnologia: "+(accessLabels[access.value]||accessLabels.unknown)+" ("+access.confidence+").";}catch(e){status.textContent="Não foi possível concluir a coleta: "+(e.message||e);}finally{btn.disabled=false;}});
+ $("sdwanNativeExport")?.addEventListener("click",()=>{const rows=termuxRead();const cols=["timestamp","source","accessTechnology","accessEvidence","transport","connected","ssid","rssiDbm","frequencyMhz","linkSpeedMbps"];const escCsv=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const lines=[cols.join(";"),...rows.map(r=>{const w=r.path?.wifi||r.wifi||{};return [r.timestamp,r.source||r.agent?.name||r.platform,r.network?.accessTechnology||r.network?.transport,r.network?.accessEvidence,r.network?.transport||r.path?.interface,r.network?.connected??r.path?.status,w.ssid,w.rssiDbm,w.frequencyMhz,w.linkSpeedMbps].map(escCsv).join(";");})];const blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ils-android-intelligence.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+ $("sdwanTermuxFile")?.addEventListener("change",()=>{const f=$("sdwanTermuxFile")?.files?.[0];if(f)$("sdwanTermuxStatus").textContent="Histórico legado selecionado: "+f.name+". Importe para preservar os registros anteriores.";});
+ $("sdwanTermuxImport")?.addEventListener("click",async()=>{const file=$("sdwanTermuxFile")?.files?.[0];if(!file){$("sdwanTermuxStatus").textContent="Selecione o JSONL anterior.";return;}try{const raw=await file.text();let parsed;try{const j=JSON.parse(raw);parsed=Array.isArray(j)?j:(Array.isArray(j.records)?j.records:[j]);}catch{parsed=raw.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));}const valid=parsed.filter(r=>r&&r.timestamp&&(r.path||r.network)&&((Array.isArray(r.tcp_probes)&&Array.isArray(r.https_probes))||Array.isArray(r.probes)||r.path?.wifi));if(!valid.length)throw new Error("Nenhum registro de telemetria reconhecido.");const old=JSON.parse(localStorage.getItem(TERMUX_KEY)||"[]"),map=new Map(old.concat(valid).map(r=>[String(r.timestamp),r]));localStorage.setItem(TERMUX_KEY,JSON.stringify([...map.values()].sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp))).slice(-2000)));renderTermux();renderIQC();$("sdwanTermuxStatus").textContent="Importação concluída: "+valid.length+" registros. Histórico preservado localmente.";}catch(e){$("sdwanTermuxStatus").textContent="Falha na importação: "+e.message;}});
+ const initial=nativeSnapshot();if(initial?.available)saveNativeRecord(initial);else {renderAccess();renderTermux();renderIQC();}
+
+// ILS 6.3.7 — classificação de conectividade baseada em evidências disponíveis.
+function classifyIlsConnectivity(record){
+ const probes=[...(record.tcp_probes||[]),...(record.https_probes||[]),...(record.probes||[])];
+ const completed=probes.filter(p=>["reachable","up","ok","request_completed_opaque"].includes(String(p.status||"").toLowerCase())).length;
+ const online=record.network?.connected;
+ const tech=record.network?.accessTechnology||record.network?.transport||record.path?.interface||"unknown";
+ if(record.platform==="browser"||String(record.source||"").includes("Web HTTPS")){
+   if(online===false)return {code:"offline",label:"SEM CONECTIVIDADE DETECTÁVEL",detail:"O navegador informou modo offline nesta coleta.",completed,total:probes.length};
+   if(!probes.length)return {code:"insufficient",label:"DIAGNÓSTICO INCOMPLETO",detail:"A coleta não contém sondas suficientes.",completed,total:0};
+   if(completed===0)return {code:online===true?"notconfirmed":"indeterminate",label:online===true?"INTERNET NÃO CONFIRMADA":"ESTADO NÃO DETERMINADO",detail:online===true?"O navegador indica uma interface disponível, mas nenhum destino de teste teve requisição concluída. A falha pode decorrer da rede, destino, bloqueio ou política do navegador.":"Não há evidência suficiente para separar ausência de rede de falha dos destinos.",completed,total:probes.length};
+   if(completed<probes.length)return {code:"partial",label:"CONECTIVIDADE PARCIAL",detail:"Parte das requisições de teste foi concluída. Repita a coleta e verifique destinos e rede.",completed,total:probes.length};
+   return {code:"opaque",label:"SONDAS CONCLUÍDAS — HTTP NÃO VALIDADO",detail:"As requisições foram concluídas, mas o modo no-cors não permite confirmar status HTTP ou conteúdo dos destinos.",completed,total:probes.length};
+ }
+ if(record.network?.connected===false||record.path?.status==="down")return {code:"offline",label:"SEM CONECTIVIDADE DETECTÁVEL",detail:"A leitura nativa informou interface sem conexão.",completed,total:probes.length};
+ if(probes.length&&completed===0)return {code:"notconfirmed",label:"INTERNET NÃO CONFIRMADA",detail:"Nenhuma sonda teve sucesso; a interface pode estar ativa sem acesso funcional aos destinos.",completed,total:probes.length};
+ if(probes.length&&completed<probes.length)return {code:"partial",label:"CONECTIVIDADE PARCIAL",detail:"Somente parte das sondas respondeu.",completed,total:probes.length};
+ if(probes.length&&completed===probes.length)return {code:"confirmed",label:"SONDAS CONCLUÍDAS",detail:"As sondas registradas foram concluídas. Isso não equivale a teste completo de velocidade ou SLA.",completed,total:probes.length};
+ return {code:"indeterminate",label:"ESTADO NÃO DETERMINADO",detail:"A coleta não contém evidências suficientes para classificar o acesso à Internet.",completed,total:probes.length};
+}
+// Satellite Intelligence: triagem local, explicável e sem alegação de cobertura automática.
+const SI_KEY="ils636-satellite-opportunities-v1";
+function siVal(id){return (document.getElementById(id)?.value||"").trim();}
+function siCollect(){return {place:siVal("si-place"),city:siVal("si-city"),type:siVal("si-type"),technology:siVal("si-tech"),terrestrial:siVal("si-terrestrial"),power:siVal("si-power"),sky:siVal("si-sky"),terminal:siVal("si-terminal"),provider:siVal("si-provider"),cost:siVal("si-cost")===""?null:Number(siVal("si-cost")),users:Number(siVal("si-users")||1),evidence:siVal("si-evidence"),createdAt:new Date().toISOString()};}
+function siAssess(c){
+ const pending=[]; if(!c.place)pending.push("Identificar o local ou unidade.");if(!c.city)pending.push("Informar município/UF para pesquisa territorial.");if(c.terrestrial==="unknown")pending.push("Levantar alternativas terrestres e qualidade observada.");if(c.power==="unknown")pending.push("Verificar energia no ponto de instalação.");if(c.power==="no")pending.push("Projetar solução de energia antes da instalação.");if(c.sky==="unknown")pending.push("Realizar vistoria de visibilidade do céu.");if(c.sky==="blocked")pending.push("Avaliar ponto alternativo e obstruções com vistoria.");if(c.terminal==="unknown")pending.push("Confirmar compatibilidade e disponibilidade do terminal.");if(c.terminal==="no")pending.push("Identificar terminal compatível e custo de aquisição.");if(c.provider==="unknown")pending.push("Consultar operador ou programa público e registrar a resposta.");if(c.provider==="commercial")pending.push("Obter confirmação escrita de cobertura, preço, franquia e condições.");if(c.provider==="public")pending.push("Confirmar critérios de elegibilidade, seleção e disponibilidade do programa.");
+ const accessGap=["none","weak"].includes(c.terrestrial);let readiness="OPORTUNIDADE A INVESTIGAR",color="tag-warn";if(c.provider==="confirmed"&&c.power==="yes"&&c.sky==="clear"&&c.terminal==="yes"&&pending.length===0){readiness="PRONTA PARA PLANEJAR PILOTO";color="tag-green";}else if(accessGap&&pending.length<=3){readiness="PRIORIDADE DE AVALIAÇÃO";color="tag-green";}else if(c.terrestrial==="fixed"){readiness="COMPARAR CUSTO-BENEFÍCIO";}
+ const strengths=[];if(accessGap)strengths.push("Há indicação informada de lacuna de conectividade terrestre.");if(c.technology==="LEO")strengths.push("LEO pode ser alternativa onde não há rede terrestre adequada; exige terminal e visada.");if(c.technology==="GEO")strengths.push("GEO pode atender locais remotos; considerar maior latência e condições do plano.");if(c.technology==="D2D")strengths.push("D2D depende de aparelho, banda, operadora e serviço compatíveis; não equivale a banda larga fixa.");if(c.terrestrial==="fixed")strengths.push("Existe alternativa terrestre informada; comparar custo, capacidade e redundância antes de recomendar satélite.");
+ return {readiness,color,pending,strengths,score:null,disclaimer:"Triagem qualitativa local. Não é probabilidade de cobertura, confirmação comercial, laudo de engenharia nem garantia de instalação.",record:c};
+}
+function siRender(){const el=document.getElementById("si-result");if(!el)return;const c=siCollect(),a=siAssess(c);el.innerHTML='<strong>'+a.readiness+'</strong><p>'+a.disclaimer+'</p>'+(a.strengths.length?'<strong>Indícios favoráveis / contexto</strong><ul>'+a.strengths.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'')+(a.pending.length?'<strong>Pendências para avançar</strong><ul>'+a.pending.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'<p>Os requisitos informados estão preenchidos. Ainda é necessária validação documental e teste de campo.</p>')+'<p><strong>Tecnologia:</strong> '+c.technology+' · <strong>Usuários:</strong> '+c.users+' · <strong>Mensalidade informada:</strong> '+(c.cost===null?'não informada':'R$ '+c.cost.toFixed(2).replace('.',','))+'</p>';
+ return a;}
+function siRead(){try{const x=JSON.parse(localStorage.getItem(SI_KEY)||"[]");return Array.isArray(x)?x:[];}catch{return[];}}
+document.getElementById("si-analyze")?.addEventListener("click",siRender);
+document.getElementById("si-save")?.addEventListener("click",()=>{const a=siRender();if(!a)return;const rows=siRead();rows.push(a);try{localStorage.setItem(SI_KEY,JSON.stringify(rows.slice(-500)));toast("Avaliação satelital salva neste dispositivo.");}catch(e){toast("Não foi possível salvar: armazenamento cheio.");}});
+document.getElementById("si-export")?.addEventListener("click",()=>{const rows=siRead();const blob=new Blob([JSON.stringify({application:"ILS",module:"Satellite Intelligence",version:"6.3.7",exportedAt:new Date().toISOString(),records:rows},null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="ils-satellite-intelligence.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);});
+
+// ILS 6.3.7 — detecção transparente do ambiente e das capacidades reais.
+function ilsCapabilitySnapshot(){
+ const ua=navigator.userAgent||"";
+ const isAndroid=/Android/i.test(ua), isIOS=/iPhone|iPad|iPod/i.test(ua);
+ const standalone=!!(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true;
+ const isNativeBridge=!!(window.IlsAndroid&&typeof window.IlsAndroid.getSnapshot==="function");
+ let native=null, nativeError="";
+ if(isNativeBridge){try{native=JSON.parse(window.IlsAndroid.getSnapshot());}catch(e){nativeError=String(e.message||e);}}
+ const webview=/; wv\)|\bwv\b/i.test(ua)||(/Android/i.test(ua)&&/Version\//i.test(ua)&&!/Chrome\//i.test(ua));
+ let environment="Navegador web";
+ if(isNativeBridge)environment="ILS Android Intelligence (ponte nativa detectada)";
+ else if(standalone)environment="PWA instalado";
+ else if(webview)environment="WebView / aplicativo hospedeiro (sem ponte ILS)";
+ else if(isAndroid)environment="Navegador Android";
+ else if(isIOS)environment="Navegador iOS";
+ else if(/Windows/i.test(ua))environment="Navegador Windows";
+ else if(/Macintosh|Mac OS/i.test(ua))environment="Navegador macOS";
+ else if(/Linux/i.test(ua))environment="Navegador Linux";
+ const connection=navigator.connection||navigator.mozConnection||navigator.webkitConnection||null;
+ const rows=[
+  ["Sondas HTTPS e latência do navegador",true,"Disponível no ambiente web; resultado não equivale a ping ICMP."],
+  ["IQC-ILS e gráficos locais",typeof localStorage!=="undefined","Calculados no navegador com amostras válidas."],
+  ["Armazenamento local",typeof indexedDB!=="undefined"||typeof localStorage!=="undefined","Os dados permanecem neste perfil/dispositivo; faça backup."],
+  ["PWA / Service Worker",("serviceWorker" in navigator),"Service Worker exige contexto seguro (HTTPS ou localhost) e suporte do navegador."],
+  ["Identificação de tipo de rede via API web",!!connection,"Quando disponível, informa estimativas como effectiveType; não fornece RSSI em dBm."],
+  ["Ponte nativa ILS Android",isNativeBridge,"Acesso nativo depende do aplicativo ILS Android Intelligence e de suas permissões."],
+  ["RSSI / dBm e dados Wi-Fi nativos",!!(native&&native.wifiAvailable&&native.rssiDbm!==null&&native.rssiDbm!==undefined&&Number.isFinite(Number(native.rssiDbm))),native&&native.wifiAvailable?"Leitura RSSI recebida da ponte nativa.":"Não disponível nesta sessão; o navegador/PWA comum não expõe RSSI."],
+  ["SSID / frequência Wi-Fi nativos",!!(native&&native.wifiAvailable&&(native.ssid||native.frequencyMhz)),"Pode ser ocultado pelo Android ou depender de permissão."],
+  ["Integração física SDR",false,"Exige receptor compatível e ponte local/backend; a presença do PWA não dá acesso USB direto."],
+  ["Controle de roteador / failover",false,"Exige gateway compatível, autenticação e integração autorizada; não é recurso do navegador." ]
+ ];
+ return {environment,standalone,isNativeBridge,native,nativeError,isAndroid,isIOS,connection,rows,online:navigator.onLine};
+}
+function renderIlsCapabilities(){
+ const d=ilsCapabilitySnapshot();
+ const env=document.getElementById("cap-environment"),bridge=document.getElementById("cap-bridge"),install=document.getElementById("cap-install"),list=document.getElementById("capability-list"),guide=document.getElementById("capability-guidance");
+ if(!env||!bridge||!install||!list||!guide)return;
+ env.textContent=d.environment;
+ bridge.textContent=d.isNativeBridge?(d.nativeError?"Detectada · erro de leitura":(d.native?.available===false?"Detectada · dados limitados":"Detectada")):"Não detectada";
+ install.textContent=d.isNativeBridge?"Aplicativo com ponte nativa":(d.standalone?"PWA instalado":"Acesso pelo navegador");
+ list.innerHTML=d.rows.map(([label,ok,detail])=>'<div class="diag-item"><span><strong>'+esc(label)+'</strong><br><small class="muted">'+esc(detail)+'</small></span><b class="'+(ok?'':'warn')+'">'+(ok?'Disponível':'Não disponível')+'</b></div>').join("");
+ const network=d.connection?["API de rede: "+(d.connection.effectiveType||"tipo não informado"),d.connection.downlink?"estimativa de downlink "+d.connection.downlink+" Mbps":null,d.connection.rtt?"RTT estimado pelo navegador "+d.connection.rtt+" ms":null].filter(Boolean).join(" · "):"A API de informações de rede não está disponível neste navegador.";
+ let message=d.isNativeBridge?"A ponte nativa ILS foi detectada. Consulte as permissões do Android e execute 'Ler sinal Wi-Fi' para validar os dados de rádio.":d.standalone?"Este dispositivo está usando o PWA instalado. Ele mantém as funções web do ILS, mas não recebe automaticamente permissões/API nativas do Android. Para RSSI/dBm, SSID e frequência, é necessário o ILS Android Intelligence com ponte nativa.":"Este acesso está ocorrendo pelo navegador. Você pode usar IQC-ILS, sondas HTTPS, mapas, catálogo orbital e recursos locais compatíveis. Para dados de rádio nativos, será necessário o aplicativo Android Intelligence.";
+ guide.innerHTML='<strong>Orientação para este dispositivo</strong><p>'+esc(message)+'</p><p>'+esc(network)+'</p><p><strong>Estado informado pelo navegador:</strong> '+(d.online?'há uma interface de rede indicada (isso não comprova Internet funcional).':'navegador informa modo offline.')+'</p>'+(d.nativeError?'<p>Erro ao consultar a ponte: '+esc(d.nativeError)+'</p>':'');
+ return d;
+}
+document.getElementById("refreshCapabilities")?.addEventListener("click",()=>{renderIlsCapabilities();toast("Capacidades do dispositivo atualizadas.");});
+window.addEventListener("online",()=>renderIlsCapabilities());window.addEventListener("offline",()=>renderIlsCapabilities());
+renderIlsCapabilities();
+
  analyze();
 })();
 
