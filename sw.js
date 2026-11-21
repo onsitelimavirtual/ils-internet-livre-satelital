@@ -1,5 +1,19 @@
-const CACHE_NAME="ils-v6.0.0-consolidation-rc2-omm";
-const FILES=["./","./index.html","./manifest.webmanifest","./ils-logo.png","./icon-192.png","./icon-512.png","./observatory.js"];
-self.addEventListener("install",event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE_NAME);await Promise.allSettled(FILES.map(async url=>{try{const r=await fetch(url,{cache:"reload"});if(r.ok)await cache.put(url,r)}catch{}}));await self.skipWaiting()})()));
-self.addEventListener("activate",event=>event.waitUntil((async()=>{/* Mantém caches de versões anteriores para permitir rollback e preservar dados offline; limpeza será feita em migração controlada. */await self.clients.claim()})()));
-self.addEventListener("fetch",event=>{const req=event.request;if(req.method!=="GET")return;const u=new URL(req.url);if(u.origin!==location.origin)return;if(req.mode==="navigate"||u.pathname.endsWith("/index.html")){event.respondWith((async()=>{try{const r=await fetch(req,{cache:"no-store"});if(r.ok){const c=await caches.open(CACHE_NAME);c.put(req,r.clone()).catch(()=>{});}return r}catch{return await caches.match(req)||await caches.match("./index.html")||new Response("Offline sem cache",{status:503})}})());return;}event.respondWith((async()=>{const hit=await caches.match(req);if(hit)return hit;try{const r=await fetch(req);if(r.ok){const c=await caches.open(CACHE_NAME);c.put(req,r.clone()).catch(()=>{});}return r}catch{return new Response("Offline",{status:503})}})())});
+const CACHE_NAME = "ils-v6.3.7-capability-intelligence";
+const CORE = ["./", "./index.html", "./manifest.webmanifest", "./favicon-64.png", "./icon-192.png", "./icon-512.png"];
+self.addEventListener("install", event => event.waitUntil((async () => {
+  const cache = await caches.open(CACHE_NAME);
+  await Promise.allSettled(CORE.map(async path => { try { const response = await fetch(path, {cache:"reload"}); if (response.ok) await cache.put(path, response); } catch (_) {} }));
+  await self.skipWaiting();
+})()));
+self.addEventListener("activate", event => event.waitUntil((async () => { await self.clients.claim(); })()));
+self.addEventListener("fetch", event => {
+  const request = event.request;
+  if (request.method !== "GET") return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  if (request.mode === "navigate" || url.pathname.endsWith("/index.html")) {
+    event.respondWith((async () => { try { const response = await fetch(request, {cache:"no-store"}); if (response.ok) { const cache = await caches.open(CACHE_NAME); cache.put("./index.html", response.clone()).catch(()=>{}); } return response; } catch (_) { return await caches.match(request) || await caches.match("./index.html") || new Response("ILS indisponível offline", {status:503}); } })());
+    return;
+  }
+  event.respondWith((async () => { const cached = await caches.match(request); if (cached) return cached; try { const response = await fetch(request); if (response.ok) { const cache = await caches.open(CACHE_NAME); cache.put(request, response.clone()).catch(()=>{}); } return response; } catch (_) { return new Response("Recurso indisponível offline", {status:503}); } })());
+});
