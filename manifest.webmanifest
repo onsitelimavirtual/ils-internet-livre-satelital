@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "ILS 6.1.2 — Internet Livre Satelital",
-  "short_name": "ILS 6.1.2",
-  "description": "ILS 6.1.2 — inteligência de conectividade, inclusão digital, localização Wi-Fi e análise orbital.",
+  "name": "ILS 6.3.9 — Internet Livre Satelital",
+  "short_name": "ILS 6.3.9",
+  "description": "Inteligência de conectividade, diagnóstico de capacidade do dispositivo e análise satelital.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
