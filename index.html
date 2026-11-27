@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071525">
 <meta name="description" content="ILS — inteligência de conectividade e inclusão digital: localização de pontos Wi-Fi mapeados, oportunidades públicas e diagnóstico preliminar.">
-<meta name="application-name" content="ILS 6.3.10 — Internet Livre Satelital">
+<meta name="application-name" content="ILS 7.0.1 — Internet Livre Satelital">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>ILS 6.3.10 — Internet Livre Satelital</title>
+<title>ILS 7.0.1 — Internet Livre Satelital</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style id="ils-inline-styles">
@@ -92,14 +92,14 @@ footer a:hover{text-decoration:underline}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6ab4ff;outline-offset:2px}
 .nav-item{min-height:42px}
 
-/* ILS 6.3.10 accessibility and analyzer refinements */
+/* ILS 7.0.1 accessibility and analyzer refinements */
 #wifiSignalResult{min-height:90px}
 .locator-result p strong{display:inline-block}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #287bd8;outline-offset:2px}
 
 
 
-/* ILS 6.3.10 business workspace */
+/* ILS 7.0.1 business workspace */
 .business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.business-stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px}.business-stat small{display:block;color:#8292a6;font-size:10px}.business-stat strong{display:block;font:600 23px 'Space Grotesk';margin:7px 0}.license-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.license-form label{display:grid;gap:6px;font-size:11px;color:#687b91}.license-form .wide{grid-column:1/-1}.license-table td{vertical-align:top}.license-status{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#edf3fb;color:#52708f}.license-status.active{background:#e6f8f1;color:#16845f}.license-status.expired{background:#fff0ed;color:#b64c3d}.business-note{padding:12px 14px;border:1px solid #f0dfb8;background:#fff9ec;border-radius:10px;color:#80672d;font-size:11px;line-height:1.6}.business-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.legal-document{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff}.legal-document h4{color:var(--ink);margin:18px 0 6px}.legal-document p,.legal-document li{font-size:11px;line-height:1.65;color:#64768c}.license-table input,.license-table select{min-width:110px}
 @media(max-width:900px){.business-grid{grid-template-columns:1fr 1fr}.license-form{grid-template-columns:1fr}}
 @media(max-width:600px){.business-grid{grid-template-columns:1fr}.business-grid .business-stat{padding:13px}}
@@ -109,7 +109,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .public-wifi-filters label{display:grid;gap:6px;font-size:11px;color:#687b91}
 .public-wifi-map{height:310px;min-height:250px;border:1px solid var(--line);border-radius:12px;margin:12px 0;background:#eaf0f6;overflow:hidden}
 @media(max-width:760px){.public-wifi-filters{grid-template-columns:1fr}.public-wifi-map{height:280px}}
-/* ILS 6.3.10 — layout additions for Remote and Impact */
+/* ILS 7.0.1 — layout additions for Remote and Impact */
 .grid-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:start}
 .stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
 .stats-grid .stat{background:#f4f7fb;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
@@ -126,7 +126,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:560px){#view-remote .form-grid,#view-impact .form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}}
 
 
-/* ILS 6.3.10 consolidation — Wi-Fi locator integrated into the main navigation */
+/* ILS 7.0.1 consolidation — Wi-Fi locator integrated into the main navigation */
 #view-locator .section-heading{max-width:900px;margin:0 0 18px}
 #view-locator .section-heading h2{font:600 22px 'Space Grotesk';color:var(--ink);margin:6px 0}
 #view-locator .section-heading p{color:var(--muted);line-height:1.65;margin:6px 0}
@@ -137,7 +137,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #view-locator .results-list{max-height:none}
 @media(max-width:760px){#view-locator .public-wifi-map{height:235px;min-height:200px}}
 
-/* ILS 6.3.10 SD-WAN module */
+/* ILS 7.0.1 SD-WAN module */
 #view-sdwan .metric{display:block;font:700 25px 'Space Grotesk',Arial,sans-serif;margin:8px 0;color:var(--ink,#17324d)}
 #view-sdwan .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
 #view-sdwan .form-grid label,#view-sdwan>div>label{display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--ink,#17324d)}
@@ -191,7 +191,7 @@ img,svg,canvas{max-width:100%}
  .metric strong{overflow-wrap:anywhere}
 }
 
-/* ILS 6.3.10: menu estável, catálogo visual e foco em acessibilidade */
+/* ILS 7.0.1: menu estável, catálogo visual e foco em acessibilidade */
 html{scroll-behavior:auto}
 .view{scroll-margin-top:12px}
 .menu-backdrop{display:none}
@@ -223,12 +223,12 @@ html{scroll-behavior:auto}
 @media(max-width:380px){.satellite-card-grid{grid-template-columns:1fr}}
 
 </style>
-<meta name="ils-build" content="6.3.10-iconfix">
+<meta name="ils-build" content="6.3.9-falhas-corrigidas">
 </head>
 <body>
 <div class="app-shell">
   <aside class="sidebar" id="sidebar">
-    <div class="brand"><span class="brand-mark" aria-hidden="true">ILS</span><span class="brand-copy"><strong>ILS 6.3.10</strong><small>Internet Livre Satelital</small></span></div>
+    <div class="brand"><span class="brand-mark" aria-hidden="true">ILS</span><span class="brand-copy"><strong>ILS 7.0.1</strong><small>Internet Livre Satelital</small></span></div>
     <nav aria-label="Navegação principal">
       <button class="nav-item active" data-view="overview"><span>◫</span> Visão geral</button>
       <button class="nav-item" data-view="satellites"><span>◉</span> Catálogo orbital</button>
@@ -254,14 +254,14 @@ html{scroll-behavior:auto}
       <button class="nav-item" data-view="sdwan"><span>⇄</span> ILS SD-WAN Intelligence</button>
       <button class="nav-item" data-view="legal"><span>§</span> Termos e privacidade</button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 6.3.10 · connectivity intelligence</small></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span><span id="network-label">Verificando conexão…</span><small>ILS 7.0.1 · connectivity intelligence</small></div>
   </aside>
   <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
   <main class="main">
-    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 6.3.10</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
+    <header class="topbar"><button class="mobile-menu" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button><div><span class="eyebrow">INTELIGÊNCIA DE CONECTIVIDADE E INCLUSÃO DIGITAL · ILS 7.0.1</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="pill" id="clock">--:--:--</span><button class="btn btn-ghost" id="refreshBtn">↻ Atualizar dados</button></div></header>
     <section class="view active" id="view-overview">
       <div class="hero">
-        <div><span class="eyebrow light">ILS 6.3.10 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
+        <div><span class="eyebrow light">ILS 7.0.1 · INTELIGÊNCIA DE CONECTIVIDADE</span><h2>Investigar. Identificar.<br><em>Conectar.</em></h2><p>Inteligência de conectividade e inclusão digital: localize pontos Wi-Fi mapeados, investigue programas públicos e organize diagnósticos para ampliar o acesso à Internet.</p><div class="hero-actions"><button class="btn btn-primary" data-goto="satellites">Explorar satélites <span>→</span></button><button class="btn btn-outline" data-goto="access">Encontrar acesso gratuito</button></div></div>
         <div class="orbit-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="planet">🌐</div><div class="sat sat-a">✦</div><div class="sat sat-b">✦</div></div>
       </div>
       <div class="notice"><strong>Transparência técnica</strong><span>Receber uma transmissão satelital não significa ter acesso à Internet. O acesso depende de uma rede bidirecional e autorização do provedor.</span></div>
@@ -376,7 +376,45 @@ html{scroll-behavior:auto}
 <tr><td>Ku</td><td>Comunicações fixas e banda larga via satélite</td><td>Plano de frequências e terminal autorizado</td></tr>
 <tr><td>Ka</td><td>Banda larga e enlaces de alta capacidade</td><td>Subfaixa, cobertura e autorização</td></tr>
 </tbody></table></div><p class="micro">Categorias amplas, não frequências exatas, canais livres ou parâmetros de sintonia. Consulte a regulamentação vigente da Anatel.</p><a href="https://www.gov.br/anatel/pt-br/regulado/espectro" target="_blank" rel="noopener">Gestão do espectro na Anatel ↗</a></div>
-    </section>
+    
+<style>
+/* ILS Signal Intelligence 7.0.0 — native, dependency-free chart */
+#ilsSignalLab .signal-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+#ilsSignalLab .signal-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0}
+#ilsSignalLab .signal-stat{border:1px solid var(--border,#dbe3ea);border-radius:12px;padding:12px;background:var(--surface,#fff)}
+#ilsSignalLab .signal-stat small{display:block;color:var(--muted,#64748b);font-size:.78rem}
+#ilsSignalLab .signal-stat strong{display:block;font-size:1.35rem;margin-top:5px}
+#ilsSignalLab .signal-chart-wrap{border:1px solid var(--border,#dbe3ea);border-radius:14px;padding:12px;overflow:hidden}
+#ilsSignalLab canvas{display:block;width:100%;height:250px;max-width:100%;} #ilsSignalLab .signal-chart-wrap{min-width:0;overflow:hidden;}
+#ilsSignalLab .signal-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted,#64748b);margin:8px 0}
+#ilsSignalLab .signal-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#1687d9;margin-right:6px}
+#ilsSignalLab .signal-note{font-size:.82rem;color:var(--muted,#64748b);line-height:1.5}
+@media(max-width:520px){#ilsSignalLab canvas{height:220px}}
+</style>
+<section class="panel" id="ilsSignalLab">
+ <div class="section-head"><div><span class="eyebrow">DIAGNÓSTICO LOCAL</span><h3>ILS Signal Intelligence</h3><p class="muted">Medição de estabilidade HTTPS, sem bibliotecas de gráficos ou APIs de métricas pagas.</p></div></div>
+ <div class="signal-toolbar">
+  <button class="btn btn-primary" id="ilsSignalRun" type="button">Iniciar teste (10 sondas)</button>
+  <button class="btn btn-ghost" id="ilsSignalCsv" type="button">Exportar CSV</button>
+  <span id="ilsSignalStatus" class="micro" role="status" aria-live="polite">Pronto para medir.</span>
+ </div>
+ <div class="signal-stats">
+  <div class="signal-stat"><small>Latência média</small><strong id="ilsSigMean">—</strong></div>
+  <div class="signal-stat"><small>Mediana</small><strong id="ilsSigMedian">—</strong></div>
+  <div class="signal-stat"><small>P95</small><strong id="ilsSigP95">—</strong></div>
+  <div class="signal-stat"><small>Jitter médio</small><strong id="ilsSigJitter">—</strong></div>
+  <div class="signal-stat"><small>Sondas sem resposta</small><strong id="ilsSigLoss">—</strong></div>
+  <div class="signal-stat"><small>Latência min / máx.</small><strong id="ilsSigMinMax">—</strong></div>
+ </div>
+ <div class="signal-chart-wrap">
+  <canvas id="ilsSignalChart" role="img" aria-label="Gráfico de latência por sonda; pontos ausentes representam sondas sem resposta.">Gráfico de latência das sondas.</canvas>
+  <div class="signal-legend"><span><i class="signal-dot"></i>Latência HTTPS (ms)</span><span>— Sem resposta = falha da sonda</span></div>
+  <p class="signal-note" id="ilsSignalChartCaption">O gráfico será preenchido após executar o teste. São mostradas as últimas 30 sondas da sessão.</p>
+ </div>
+ <p class="signal-note">Método: tempo observado no navegador entre o início da requisição e sua conclusão. Inclui fatores de DNS/TLS/servidor e não equivale a ping ICMP nem a jitter RTP. Falhas podem ocorrer por bloqueio, CORS, rede ou indisponibilidade do destino. A porcentagem é a taxa de falhas destas sondas, não perda de pacotes IP medida no enlace.</p>
+ <p class="signal-note" id="ilsSignalRssiNote">RSSI/dBm e sua variação só são exibidos quando houver leituras nativas Android válidas.</p>
+</section>
+</section>
     <section class="view" id="view-sdr">
 <div class="section-head"><div><span class="eyebrow">HARDWARE OPCIONAL</span><h2>Ponte de integração SDR</h2><p class="muted">Conector experimental para consultar um serviço local controlado pelo operador.</p></div></div>
 <div class="notice"><strong>Segurança</strong><span>O navegador não acessa USB/SDR diretamente nesta versão. Não exponha a ponte à Internet. Use apenas equipamento e frequências autorizados.</span></div>
@@ -427,6 +465,7 @@ html{scroll-behavior:auto}
   <h2>Encontrar Wi-Fi público autorizado</h2>
   <p>Localize pontos publicados como Wi-Fi público ou comunitário. O ILS não tenta acessar redes privadas, contornar senhas ou ultrapassar portais de autenticação.</p>
  </div>
+ <div class="notice notice-info"><strong>Importante:</strong> esta busca mostra pontos de acesso públicos cadastrados no OpenStreetMap dentro do raio escolhido (metros). Não é uma varredura de rádio e não detecta SSIDs/redes Wi-Fi em tempo real. A detecção de redes físicas próximas exige aplicativo Android nativo com permissões e integração de leitura Wi-Fi; este pacote PWA não dispõe dessa ponte de varredura.</div>
  <div class="notice notice-warning">
   <strong>Uso responsável:</strong> a presença de uma rede no mapa não comprova que ela esteja ativa, gratuita ou aberta. Confirme as condições no local e utilize somente redes cujo responsável autorize seu acesso.
  </div>
@@ -435,12 +474,12 @@ html{scroll-behavior:auto}
   <input id="publicWifiLat" type="text" inputmode="decimal" placeholder="-15,7939">
   <label for="publicWifiLon">Longitude</label>
   <input id="publicWifiLon" type="text" inputmode="decimal" placeholder="-47,8828">
-  <label for="publicWifiRadius">Raio de busca</label>
+  <label for="publicWifiRadius">Raio dos registros mapeados</label>
   <select id="publicWifiRadius">
-   <option value="500">500 metros</option>
-   <option value="1000" selected>1 km</option>
-   <option value="3000">3 km</option>
-   <option value="5000">5 km</option>
+   <option value="250">250 metros</option><option value="500">500 metros</option>
+   <option value="750">750 metros</option><option value="1000" selected>1.000 metros (1 km)</option>
+   <option value="1500">1.500 metros</option><option value="2000">2.000 metros (2 km)</option>
+   <option value="3000">3.000 metros (3 km)</option><option value="5000">5.000 metros (5 km)</option>
   </select>
   <div class="form-actions">
    <button class="btn btn-primary" id="usePublicWifiLocation">Usar minha localização</button>
@@ -585,7 +624,7 @@ html{scroll-behavior:auto}
     </section>
     
 <section class="view" id="view-business">
-  <div class="section-head"><div><span class="eyebrow">ILS 6.3.10 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
+  <div class="section-head"><div><span class="eyebrow">ILS 7.0.1 · OPERAÇÃO E MONETIZAÇÃO</span><h2>Negócios e licenças</h2><p class="muted">Gestão local demonstrativa do modelo de licenciamento de uso.</p></div><span class="tag tag-green">Licença de uso · não venda</span></div>
   <div class="business-note"><strong>Modo de demonstração:</strong> os registros abaixo ficam somente neste navegador. Não existe autenticação administrativa, cobrança, validação criptográfica, sincronização ou emissão fiscal nesta versão. Não utilize este painel como mecanismo seguro de controle de licenças pagas.</div>
   <div class="business-grid">
     <div class="business-stat"><small>Licenças cadastradas neste dispositivo</small><strong id="bizTotal">0</strong><span class="micro">Registros locais</span></div>
@@ -723,14 +762,12 @@ html{scroll-behavior:auto}
   <p id="sdwanStatus" class="micro" aria-live="polite">Os dados serão armazenados neste navegador.</p>
  </div>
  <div class="panel" id="sdwanNativePanel">
-  <h3>ILS Android Intelligence — coleta nativa</h3>
-  <p class="muted">Substitui o coletor Termux por um aplicativo Android nativo em Java. O painel consulta a ponte local quando aberto dentro do aplicativo. No navegador comum, use importação de telemetria ou os testes HTTPS disponíveis.</p>
+  <h3>ILS Android Intelligence — coleta integrada</h3>
+  <p class="muted">Um único fluxo reúne a solicitação de permissões (quando disponível), a leitura do estado nativo do Android e as sondas HTTPS. Em navegador comum, executa as sondas e informa quais dados nativos não podem ser lidos.</p>
   <div class="form-actions">
-   <button class="btn primary" id="sdwanNativeRefresh" type="button">Ler estado do Android</button>
-   <button class="btn" id="sdwanNativePermissions" type="button">Solicitar permissões</button>
-   <button class="btn" id="sdwanNativeProbe" type="button">Executar sondas HTTPS</button>
+   <button class="btn primary" id="sdwanNativeProbe" type="button">Coletar telemetria + sondas HTTPS</button>
    <button class="btn" id="sdwanNativeExport" type="button">Exportar relatório CSV</button>
-   <input id="sdwanTermuxFile" type="file" accept=".jsonl,.json,.txt,application/json,text/plain" aria-label="Importar histórico legado JSONL">
+   <input id="sdwanTermuxFile" type="file" accept=".jsonl,.json,.txt,application/json,text/plain" aria-label="Selecionar arquivo de histórico anterior">
    <button class="btn" id="sdwanTermuxImport" type="button">Importar histórico anterior</button>
   </div>
   <div id="sdwanTermuxStatus" class="result-box" role="status" aria-live="polite">Verificando disponibilidade da ponte Android…</div>
@@ -789,7 +826,7 @@ html{scroll-behavior:auto}
 </section>
 
 <section class="view" id="view-legal">
-  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 6.3.10</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
+  <div class="section-head"><div><span class="eyebrow">INFORMAÇÕES LEGAIS · ILS 7.0.1</span><h2>Termos de uso e Política de Privacidade</h2><p class="muted">Minuta operacional inicial. Revisão jurídica e preenchimento dos dados reais são necessários antes da oferta comercial.</p></div></div>
   <div class="panel prose legal-panel">
     <h3>Identificação e propriedade intelectual</h3>
     <p><strong>ILS — Inteligência de Conectividade</strong><br><strong>Responsável indicado nesta fase:</strong> Nailson Lima · Pessoa Física<br><strong>Contato:</strong> <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a><br><strong>Direitos autorais:</strong> © 2026 Nailson Lima. Todos os direitos reservados.</p>
@@ -829,7 +866,7 @@ html{scroll-behavior:auto}
 #view-observatory table{width:100%;border-collapse:collapse;min-width:650px}
 #view-observatory th,#view-observatory td{padding:10px;border-bottom:1px solid var(--border,#dce3ec);text-align:left}
 </style>
-<div class="section-head"><div><span class="eyebrow">ILS 6.3.10 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Indicadores públicos agregados do backend compartilhado Painel Lima Virtual.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh" type="button">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport" type="button">Exportar CSV agregado</button></div></div>
+<div class="section-head"><div><span class="eyebrow">ILS 7.0.1 · INTELIGÊNCIA NACIONAL</span><h2>Observatório Nacional de Conectividade</h2><p class="muted">Indicadores públicos agregados do backend compartilhado Painel Lima Virtual.</p></div><div class="form-actions"><button class="btn btn-primary" id="obsRefresh" type="button">↻ Atualizar dados</button><button class="btn btn-ghost" id="obsExport" type="button">Exportar CSV agregado</button></div></div>
 <div class="notice"><strong>Privacidade e transparência</strong><span>Este painel consulta exclusivamente uma função pública de agregação. Não recebe identificadores de usuários, coordenadas individuais, registros brutos ou localidades abaixo do limite mínimo de cinco participantes distintos por grupo. Os dados disponíveis podem estar vazios até que haja amostra suficiente.</span></div>
 <div id="obsApiStatus" class="result-box" role="status" aria-live="polite">Aguardando consulta ao backend compartilhado…</div>
 <div class="obs-controls"><label>Período<select id="obsFilterPeriod"><option value="all">Todo o histórico agregado</option><option value="1">Últimas 24 horas</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></label></div>
@@ -841,7 +878,7 @@ html{scroll-behavior:auto}
 <div class="panel" style="margin-top:14px"><h3>Limites da evidência</h3><p>O backend atualmente publica somente grupos com pelo menos cinco participantes distintos. Os dados existentes podem não alcançar esse limiar; nesse caso, a resposta vazia é comportamento esperado de proteção de privacidade, e não falha de conexão. Latência agregada não equivale a ping ICMP nem a teste de velocidade. UF, tipo de rede e categoria dependem do preenchimento válido na origem.</p></div>
 </section>
 <footer>
-  <span>© 2026 Nailson Lima · ILS 6.3.10 · Todos os direitos reservados.</span>
+  <span>© 2026 Nailson Lima · ILS 7.0.1 · Todos os direitos reservados.</span>
   <span><a href="#" data-goto="legal">Termos de uso e Política de Privacidade</a> · <a href="mailto:onsite.limavirtual@gmail.com">onsite.limavirtual@gmail.com</a></span>
 </footer>
   
@@ -962,7 +999,14 @@ function readNativeWifi(){
   }
   const data=JSON.parse(window.IlsAndroid.getSnapshot());
   if(!data.wifiAvailable){box.textContent=data.wifiNote||"Leitura Wi-Fi indisponível. Verifique permissões e conexão.";return;}
-  const rssi=Number(data.rssiDbm),quality=Number.isFinite(rssi)?(rssi>=-50?"Muito forte":rssi>=-60?"Forte":rssi>=-67?"Boa":rssi>=-75?"Regular":"Fraca"):"Não informado";
+  const rssi=Number(data.rssiDbm);
+  if(Number.isFinite(rssi)){
+   try{const k="ils-native-rssi-history";const arr=JSON.parse(localStorage.getItem(k)||"[]");arr.push({at:new Date().toISOString(),rssi});localStorage.setItem(k,JSON.stringify(arr.slice(-30)));
+    const vals=arr.slice(-30).map(x=>Number(x.rssi)).filter(Number.isFinite),lo=Math.min(...vals),hi=Math.max(...vals);
+    const note=document.getElementById("ilsSignalRssiNote");if(note)note.textContent=`RSSI nativo: ${rssi} dBm · amplitude das últimas ${vals.length} leituras: ${(hi-lo).toFixed(0)} dB (${lo} a ${hi} dBm). A amplitude descreve variação observada neste dispositivo, não uma certificação de qualidade.`;
+   }catch(_){}
+  }
+  const quality=Number.isFinite(rssi)?(rssi>=-50?"Muito forte":rssi>=-60?"Forte":rssi>=-67?"Boa":rssi>=-75?"Regular":"Fraca"):"Não informado";
   box.innerHTML=`<strong>Leitura Android · ${new Date().toLocaleString("pt-BR")}</strong><div class="analysis-grid"><div class="analysis-chip">RSSI<strong>${Number.isFinite(rssi)?rssi+" dBm":"Indisponível"}</strong></div><div class="analysis-chip">Qualidade indicativa<strong>${quality}</strong></div><div class="analysis-chip">Frequência<strong>${data.frequencyMhz?data.frequencyMhz+" MHz":"Indisponível"}</strong></div><div class="analysis-chip">Link speed<strong>${data.linkSpeedMbps?data.linkSpeedMbps+" Mbps":"Indisponível"}</strong></div></div><p><strong>SSID:</strong> ${esc(data.ssid||"Oculto pelo Android")}</p><p class="micro">RSSI representa sinal recebido pelo dispositivo, não velocidade nem SLA da Internet.</p>`;
  }catch(e){box.textContent="Falha na ponte Android: "+(e.message||e);}
 }
@@ -976,6 +1020,63 @@ async function testBasicLatency(){
 }
 $("#readWifiSignal")?.addEventListener("click",readNativeWifi);
 $("#testNetworkQuality")?.addEventListener("click",testBasicLatency);
+
+
+// ILS Signal Intelligence: browser-native HTTPS probe statistics and canvas chart.
+(function(){
+ const $s=id=>document.getElementById(id), KEY="ils-signal-intelligence-7.0.0";
+ let samples=[]; try{const v=JSON.parse(localStorage.getItem(KEY)||"[]");if(Array.isArray(v))samples=v.slice(-30);}catch(_){}
+ const urls=["https://www.google.com/generate_204","https://www.cloudflare.com/cdn-cgi/trace","https://connectivitycheck.gstatic.com/generate_204"];
+ const sorted=a=>a.slice().sort((x,y)=>x-y);
+ const median=a=>{const s=sorted(a),n=s.length;return n?(n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2):null;};
+ const percentile=(a,p)=>{const s=sorted(a);return s.length?s[Math.min(s.length-1,Math.ceil(p*s.length)-1)]:null;};
+ const fmt=v=>v===null||!Number.isFinite(v)?"—":`${v.toFixed(1)} ms`;
+ function render(){
+  const ok=samples.filter(x=>Number.isFinite(x.ms)), vals=ok.map(x=>x.ms), fails=samples.length-ok.length;
+  const diffs=[];for(let i=1;i<ok.length;i++)diffs.push(Math.abs(ok[i].ms-ok[i-1].ms));
+  $s("ilsSigMean").textContent=fmt(vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null);
+  $s("ilsSigMedian").textContent=fmt(median(vals));$s("ilsSigP95").textContent=fmt(percentile(vals,.95));
+  $s("ilsSigJitter").textContent=fmt(diffs.length?diffs.reduce((a,b)=>a+b,0)/diffs.length:null);
+  $s("ilsSigLoss").textContent=samples.length?`${(fails/samples.length*100).toFixed(1)}% (${fails}/${samples.length})`:"—";
+  $s("ilsSigMinMax").textContent=vals.length?`${Math.min(...vals).toFixed(1)} / ${Math.max(...vals).toFixed(1)} ms`:"—";
+  $s("ilsSignalChartCaption").textContent=`${samples.length} sondas no histórico local · ${vals.length} respostas · ${fails} falhas. Estatísticas calculadas somente sobre as sondas desta sessão/histórico.`;
+  draw();try{localStorage.setItem(KEY,JSON.stringify(samples.slice(-30)));}catch(_){}
+ }
+ window.addEventListener("resize",()=>{if($s("ilsSignalChart"))draw();},{passive:true});
+ function draw(){
+  const c=$s("ilsSignalChart");if(!c)return;
+  const dpr=Math.min(window.devicePixelRatio||1,2),w=Math.max(240,Math.floor(c.clientWidth||600)),h=Math.max(200,Math.floor(c.clientHeight||250));
+  c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);const ctx=c.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);
+  const pad={l:w<360?38:46,r:16,t:18,b:36},pw=Math.max(80,w-pad.l-pad.r),ph=Math.max(80,h-pad.t-pad.b);
+  ctx.clearRect(0,0,w,h);const values=samples.map(x=>x.ms).filter(Number.isFinite);
+  const max=Math.max(100,Math.ceil((values.length?Math.max(...values):100)/50)*50);
+  ctx.font="12px system-ui,sans-serif";ctx.strokeStyle="rgba(120,135,150,.24)";ctx.fillStyle="#718096";ctx.lineWidth=1;ctx.textAlign="right";ctx.textBaseline="middle";
+  for(let i=0;i<=4;i++){const y=pad.t+ph*i/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();ctx.fillText(String(Math.round(max*(1-i/4))),pad.l-8,y);}
+  ctx.textAlign="right";ctx.textBaseline="top";ctx.fillText("ms",w-pad.r,h-18);
+  const n=samples.length,step=pw/Math.max(n-1,1);ctx.strokeStyle="#1687d9";ctx.lineWidth=2;ctx.beginPath();let active=false;
+  samples.forEach((p,i)=>{if(!Number.isFinite(p.ms)){active=false;return;}const x=pad.l+i*step,y=pad.t+ph-(Math.min(max,p.ms)/max)*ph;if(!active){ctx.moveTo(x,y);active=true;}else ctx.lineTo(x,y);});ctx.stroke();
+  samples.forEach((p,i)=>{const x=pad.l+i*step;if(Number.isFinite(p.ms)){const y=pad.t+ph-(Math.min(max,p.ms)/max)*ph;ctx.fillStyle="#1687d9";ctx.beginPath();ctx.arc(x,y,w<360?2.5:3,0,Math.PI*2);ctx.fill();}else{ctx.strokeStyle="#d97706";ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x-3,pad.t+ph-5);ctx.lineTo(x+3,pad.t+ph+1);ctx.moveTo(x+3,pad.t+ph-5);ctx.lineTo(x-3,pad.t+ph+1);ctx.stroke();}});
+  if(n){const ticks=[0,Math.floor((n-1)/2),n-1].filter((v,i,a)=>a.indexOf(v)===i);ctx.fillStyle="#718096";ctx.font="11px system-ui,sans-serif";ctx.textBaseline="top";ticks.forEach((idx,i)=>{const x=pad.l+idx*step;ctx.textAlign=idx===0?"left":idx===n-1?"right":"center";ctx.fillText(String(idx+1),x,h-30);});}
+  ctx.fillStyle="#718096";ctx.font="11px system-ui,sans-serif";ctx.textAlign="center";ctx.textBaseline="bottom";ctx.fillText("Nº da sonda",pad.l+pw/2,h-1);
+ }
+
+ async function run(){
+  const btn=$s("ilsSignalRun");btn.disabled=true;const status=$s("ilsSignalStatus");
+  for(let i=0;i<10;i++){
+   status.textContent=`Sonda ${i+1}/10…`;const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),4500),t=performance.now();let ms=null,err="";
+   try{await fetch(urls[i%urls.length],{mode:"no-cors",cache:"no-store",signal:controller.signal});ms=Math.round((performance.now()-t)*10)/10;}catch(e){err=e?.name||"falha";}finally{clearTimeout(timer);}
+   samples.push({index:i+1,at:new Date().toISOString(),ms,error:err});render();
+  }
+  status.textContent="Teste concluído.";btn.disabled=false;
+ }
+ $s("ilsSignalRun")?.addEventListener("click",run);
+ $s("ilsSignalCsv")?.addEventListener("click",()=>{if(!samples.length){$s("ilsSignalStatus").textContent="Execute um teste antes de exportar.";return;}
+  const rows=[["sonda","data_hora_UTC","latencia_ms","resultado"],...samples.map((x,i)=>[i+1,x.at,x.ms??"",x.ms===null?(x.error||"falha"):"ok"])];
+  const csv="\uFEFF"+rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ILS_Signal_Intelligence_7.0.0.csv";a.click();URL.revokeObjectURL(url);
+ });
+ window.addEventListener("resize",draw);render();
+})();
 
 function tick(){const d=new Date();$("#clock").textContent=d.toLocaleTimeString("pt-BR");}tick();setInterval(tick,1000);
 function ommEpochDate(o){const d=new Date(o?.EPOCH||o?.epoch||"");return Number.isFinite(d.getTime())?d:null;}
@@ -1184,7 +1285,7 @@ function initOrbitMap(){
  if(state.map || !window.L)return !!state.map;
  const el=$("#orbit-map");if(!el)return false;
  state.map=L.map(el,{worldCopyJump:true}).setView([0,0],2);
- L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:8,attribution:'&copy; OpenStreetMap'}).addTo(state.map);
+ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:8,attribution:'<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">&copy; OpenStreetMap contributors</a>'}).addTo(state.map);
  state.mapLayer=L.layerGroup().addTo(state.map);setTimeout(()=>state.map.invalidateSize(),120);return true;
 }
 function populateMapSelect(){
@@ -1224,7 +1325,7 @@ function updateOrbitMap(){
 $("#refreshMap")?.addEventListener("click",updateOrbitMap);
 $("#mapSatSelect")?.addEventListener("change",updateOrbitMap);
 $("#mapRate")?.addEventListener("change",e=>{if(state.mapTimer)clearInterval(state.mapTimer);state.mapTimer=null;const n=Number(e.target.value);if(n>0)state.mapTimer=setInterval(updateOrbitMap,n*1000);});
-/* ILS 6.3.10: listener duplicado removido; testLocalSdrBridge é o único fluxo de teste. */
+/* ILS 7.0.1: listener duplicado removido; testLocalSdrBridge é o único fluxo de teste. */
 $("#clearSdr")?.addEventListener("click",()=>$("#sdr-result").textContent="Nenhuma consulta realizada.");
 
 
@@ -1282,7 +1383,7 @@ $("#exportCsv")?.addEventListener("click",()=>{
  downloadFile("ils-checklist-v4.csv","\uFEFF"+csv,"text/csv;charset=utf-8");
 });
 $("#showValidation")?.addEventListener("click",()=>{
- $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 6.3.10</h3><table class="report-table"><tbody>
+ $("#validation-report").innerHTML=`<h3>Quadro de validação ILS 7.0.1</h3><table class="report-table"><tbody>
  <tr><td>Interface PWA e navegação</td><td>Implementada; validar em hospedagem</td></tr>
  <tr><td>Catálogo OMM JSON CelesTrak</td><td>Consulta externa; teste ao vivo pendente</td></tr>
  <tr><td>Mapa e propagação orbital</td><td>Estimativa implementada; comparação independente pendente</td></tr>
@@ -1406,7 +1507,7 @@ loadOpps();if("serviceWorker" in navigator && /^https?:$/.test(location.protocol
 
 // O localizador público oficial desta versão é o módulo OSM/Overpass abaixo.
 
-// ILS 6.3.10 — registros locais de necessidades de conectividade.
+// ILS 7.0.1 — registros locais de necessidades de conectividade.
 const CASE_KEY="ils-v4-connectivity-cases";
 let currentCaseAnalysis=null;
 function readCases(){try{const v=JSON.parse(localStorage.getItem(CASE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
@@ -1479,7 +1580,7 @@ document.getElementById("caseList")?.addEventListener("click",e=>{
 });
 
 
-/* ILS 6.3.10 — lawful public Wi-Fi discovery.
+/* ILS 7.0.1 — lawful public Wi-Fi discovery.
    Queries only mapped public/community hotspot records. It does not scan RF,
    connect to networks, collect credentials, or bypass captive portals. */
 async function queryOverpassResilient(query, statusEl){
@@ -1545,7 +1646,7 @@ function ensurePublicWifiMap(lat,lon){
  if(!publicWifiMap){
   el.innerHTML='';
   publicWifiMap=L.map(el,{scrollWheelZoom:false}).setView([lat,lon],13);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(publicWifiMap);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>'}).addTo(publicWifiMap);
   publicWifiMarkers=L.layerGroup().addTo(publicWifiMap);
  }
  return true;
@@ -1583,7 +1684,7 @@ function renderPublicWifiResults(){
   setTimeout(()=>publicWifiMap.invalidateSize(),150);
  }
 }
-// ILS 6.3.10 — validação centralizada de coordenadas geográficas.
+// ILS 7.0.1 — validação centralizada de coordenadas geográficas.
 function validLocatorCoords(lat, lon){
  return Number.isFinite(lat) && Number.isFinite(lon) && lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
 }
@@ -1620,7 +1721,7 @@ async function searchLawfulPublicWifi(){
   }).filter(el=>el&&wifiAccessState(el.tags)!=='none').sort((a,b)=>a._distance-b._distance);
   if(!publicWifiEntries.length){status.textContent='Busca concluída: nenhum registro com as etiquetas internet_access ou wifi foi encontrado neste raio. Isso não comprova ausência de redes públicas.';results.innerHTML='<div class="empty">Nenhum ponto mapeado encontrado. Amplie o raio ou tente outro local. Estabelecimentos podem oferecer Wi-Fi sem cadastrá-lo no OpenStreetMap.</div>';if(publicWifiMap){publicWifiMarkers.clearLayers();}return;}
   const sourceLabel=source==='cache local'?'cache local':new URL(source).hostname;
-  status.textContent=publicWifiEntries.length+' registro(s) encontrados, ordenados por proximidade. Fonte: '+sourceLabel+'. Consulta: '+new Date(dataTimestamp).toLocaleString('pt-BR')+'. Disponibilidade não verificada em campo.';
+  status.textContent=publicWifiEntries.length+' ponto(s) mapeado(s) no raio de '+radius+' m, ordenados por distância. Fonte: '+sourceLabel+'. Consulta: '+new Date(dataTimestamp).toLocaleString('pt-BR')+'. Disponibilidade não verificada em campo.';
   renderPublicWifiResults();
  }catch(err){
   status.textContent='Não foi possível concluir a busca. '+(err.message||'Falha de comunicação')+'.';
@@ -1642,7 +1743,7 @@ document.getElementById("usePublicWifiLocation")?.addEventListener("click",()=>{
 });
 
 
-/* ILS 6.3.10 — local license register. Demonstration only; not a secure entitlement system. */
+/* ILS 7.0.1 — local license register. Demonstration only; not a secure entitlement system. */
 const ILS_LICENSE_KEY="ils50-local-license-register";
 function readIlsLicenses(){try{const v=JSON.parse(localStorage.getItem(ILS_LICENSE_KEY)||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
 function saveIlsLicenses(rows){try{localStorage.setItem(ILS_LICENSE_KEY,JSON.stringify(rows));return true}catch(e){toast("Não foi possível salvar neste navegador.");return false}}
@@ -1654,10 +1755,10 @@ document.getElementById("licPlan")?.addEventListener("change",e=>{const v={Livre
 document.getElementById("licenseForm")?.addEventListener("submit",e=>{e.preventDefault();const row={id:"lic-"+Date.now(),name:document.getElementById("licName").value.trim(),email:document.getElementById("licEmail").value.trim(),plan:document.getElementById("licPlan").value,value:Number(document.getElementById("licValue").value||0),start:licStart.value,end:licEnd.value,notes:document.getElementById("licNotes").value.trim(),createdAt:new Date().toISOString()};if(!row.name||!row.email||!row.start||!row.end||row.end<row.start){toast("Confira os dados e o período da licença.");return}const rows=readIlsLicenses();rows.push(row);if(saveIlsLicenses(rows)){e.target.reset();const d=new Date();licStart.value=d.toISOString().slice(0,10);d.setDate(d.getDate()+30);licEnd.value=d.toISOString().slice(0,10);document.getElementById("licValue").value="9.90";renderIlsLicenses();toast("Registro local criado. Pagamento não foi verificado.")}});
 document.getElementById("licenseRows")?.addEventListener("click",e=>{const b=e.target.closest("[data-lic-delete]");if(!b)return;if(confirm("Excluir este registro local?")){saveIlsLicenses(readIlsLicenses().filter(x=>x.id!==b.dataset.licDelete));renderIlsLicenses()}});
 document.getElementById("refreshLicenses")?.addEventListener("click",renderIlsLicenses);
-document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 6.3.10",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
+document.getElementById("exportLicenses")?.addEventListener("click",()=>{const rows=readIlsLicenses();downloadFile("ils-5.0-registro-local-licencas.json",JSON.stringify({application:"ILS 7.0.1",exportedAt:new Date().toISOString(),mode:"local-demonstration-only",paymentVerified:false,licenses:rows},null,2),"application/json")});
 document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIlsLicenses();window.print()});
 
-/* ILS 6.3.10 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
+/* ILS 7.0.1 — módulos Remote e Impact: registros locais transparentes, sem alegação de validação automática. */
 (()=>{
  const $=id=>document.getElementById(id);
  const read=(key)=>{try{const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v)?v:[]}catch{return[]}};
@@ -1711,7 +1812,7 @@ document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIl
 })();
 </script>
 <script>
-/* ILS 6.3.10 — SD-WAN Intelligence.
+/* ILS 7.0.1 — SD-WAN Intelligence.
    Local assessment only. No router control, failover or live probing is claimed. */
 (()=>{
  const KEY="ils62-sdwan-links-v1";
@@ -1822,18 +1923,33 @@ document.getElementById("printLicenses")?.addEventListener("click",()=>{renderIl
   $("iqcMethod").textContent="Cálculo experimental: disponibilidade observada (40%), latência do navegador (35%) e estabilidade por desvio absoluto mediano (25%). Pesos redistribuídos quando um componente não tem amostras válidas. Amostras: "+probes.length+"; requisições concluídas: "+good.length+"; latências válidas: "+latencies.length+". Confiança "+confidence.toLowerCase()+". Não é certificação ITU, SLA nem medição IP. Sondas no-cors não validam status/conteúdo HTTP. Falhas não são perda de pacotes.";
  }
 
- function nativeSnapshot(){try{if(!window.IlsAndroid||typeof window.IlsAndroid.getSnapshot!=="function"){$("sdwanTermuxStatus").textContent="Ponte nativa não detectada. Este HTML está em modo navegador. Instale/abra o ILS Android Intelligence para habilitar a coleta sem Termux.";return null;}const d=JSON.parse(window.IlsAndroid.getSnapshot());$("sdwanTermuxStatus").textContent=d.available?"Ponte Android conectada · leitura local ativa.":(d.message||"Ponte disponível, mas sem dados suficientes.");return d;}catch(e){$("sdwanTermuxStatus").textContent="Falha na ponte Android: "+e.message;return null;}}
+ function nativeSnapshot(){try{if(!window.IlsAndroid||typeof window.IlsAndroid.getSnapshot!=="function"){$("sdwanTermuxStatus").textContent="Ponte Android não detectada. Navegador em modo limitado; dados de rádio dependem do aplicativo Android integrado.";return null;}const d=JSON.parse(window.IlsAndroid.getSnapshot());$("sdwanTermuxStatus").textContent=d.available?"Ponte Android conectada · leitura local ativa.":(d.message||"Ponte disponível, mas sem dados suficientes.");return d;}catch(e){$("sdwanTermuxStatus").textContent="Falha na ponte Android: "+e.message;return null;}}
  function saveNativeRecord(d){const access=renderAccess(d);const row={schema:"ils.edge.android.telemetry.v1",timestamp:d.timestamp||new Date().toISOString(),source:"ILS Android Intelligence",platform:"android-native",network:{connected:!!d.connected,transport:d.transport||"unknown",accessTechnology:access.value,accessEvidence:access.evidence,accessConfidence:access.confidence,metered:!!d.metered},path:{status:d.connected?"up":"down",interface:d.transport||"unknown",wifi:{available:!!d.wifiAvailable,ssid:d.ssid||null,rssiDbm:(d.rssiDbm!==null&&d.rssiDbm!==undefined&&Number.isFinite(Number(d.rssiDbm)))?Number(d.rssiDbm):null,frequencyMhz:d.frequencyMhz||null,linkSpeedMbps:d.linkSpeedMbps||null,note:d.wifiNote||null}},probes:[]};const old=JSON.parse(localStorage.getItem(NATIVE_KEY)||"[]");old.push(row);localStorage.setItem(NATIVE_KEY,JSON.stringify(old.slice(-2000)));renderTermux();}
- $("sdwanNativeRefresh")?.addEventListener("click",()=>{const d=nativeSnapshot();if(d){saveNativeRecord(d);readNativeWifi();}});
- $("sdwanNativePermissions")?.addEventListener("click",()=>{if(window.IlsAndroid&&typeof window.IlsAndroid.requestPermissions==="function"){window.IlsAndroid.requestPermissions();$("sdwanTermuxStatus").textContent="Solicitação de permissões enviada ao Android. Após autorizar, toque em Ler estado do Android.";}else{$("sdwanTermuxStatus").textContent="A solicitação de permissões está disponível somente no APK Android Intelligence.";}});
- async function fetchProbe(url,timeoutMs=7000){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);const t=performance.now();try{await fetch(url,{mode:"no-cors",cache:"no-store",signal:controller.signal});return {url,status:"request_completed_opaque",latency_ms:Math.round(performance.now()-t),measurement:"browser-fetch-opaque",http_status_verified:false};}catch(e){return {url,status:"failed_or_blocked",latency_ms:null,error:String(e.message||e),measurement:"browser-fetch"};}finally{clearTimeout(timer);}}
- $("sdwanNativeProbe")?.addEventListener("click",async()=>{const btn=$("sdwanNativeProbe"),status=$("sdwanTermuxStatus");btn.disabled=true;status.textContent="Executando sondas HTTPS...";try{const urls=["https://www.google.com/generate_204","https://www.cloudflare.com/cdn-cgi/trace","https://connectivitycheck.gstatic.com/generate_204"],probes=[];for(const url of urls)probes.push(await fetchProbe(url));const access=renderAccess();const good=probes.filter(x=>["reachable","up","ok","request_completed_opaque"].includes(String(x.status||"").toLowerCase())).length;const row={schema:"ils.edge.android.telemetry.v1",timestamp:new Date().toISOString(),source:"ILS Web HTTPS probes",platform:"browser",network:{connected:navigator.onLine,transport:access.value,accessTechnology:access.value,accessEvidence:access.evidence,accessConfidence:access.confidence},path:{status:navigator.onLine?"interface_available":"unknown",interface:access.value},probes,limitations:["navigator.onLine não comprova acesso à Internet.","Fetch no-cors não expõe status HTTP; sucesso indica apenas que a requisição foi concluída.","Latência inclui DNS/TLS e não é ping ICMP."]};const old=JSON.parse(localStorage.getItem(NATIVE_KEY)||"[]");old.push(row);localStorage.setItem(NATIVE_KEY,JSON.stringify(old.slice(-2000)));renderTermux();renderIQC();status.textContent="Coleta concluída: "+good+"/"+probes.length+" requisições HTTPS concluídas (resposta HTTP não validada pelo navegador). Tecnologia: "+(accessLabels[access.value]||accessLabels.unknown)+" ("+access.confidence+").";}catch(e){status.textContent="Não foi possível concluir a coleta: "+(e.message||e);}finally{btn.disabled=false;}});
+ async function fetchProbe(url,timeoutMs=5000){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeoutMs);const t=performance.now();try{await fetch(url,{mode:"no-cors",cache:"no-store",signal:controller.signal});return {url,status:"request_completed_opaque",latency_ms:Math.round(performance.now()-t),measurement:"browser-fetch-opaque",http_status_verified:false};}catch(e){return {url,status:"failed_or_blocked",latency_ms:null,error:String(e.message||e),measurement:"browser-fetch"};}finally{clearTimeout(timer);}}
+ $("sdwanNativeProbe")?.addEventListener("click",async()=>{const btn=$("sdwanNativeProbe"),status=$("sdwanTermuxStatus");btn.disabled=true;const original=btn.textContent;btn.textContent="Coletando…";let native=null,probes=[];try{
+  status.textContent="Etapa 1/3 · verificando ponte e permissões Android…";
+  if(window.IlsAndroid&&typeof window.IlsAndroid.getSnapshot==="function"){
+   if(typeof window.IlsAndroid.requestPermissions==="function"){
+    try{window.IlsAndroid.requestPermissions();await new Promise(resolve=>setTimeout(resolve,900));}catch(permissionError){status.textContent="Não foi possível solicitar permissões: "+(permissionError.message||permissionError)+". Continuando com os dados permitidos.";}
+   }
+   try{native=JSON.parse(window.IlsAndroid.getSnapshot());}catch(snapshotError){status.textContent="Leitura nativa indisponível: "+(snapshotError.message||snapshotError)+". Continuando com sondas HTTPS.";}
+  }
+  status.textContent="Etapa 2/3 · lendo estado do Android…";
+  if(native){status.textContent=native.available?"Android conectado · estado nativo recebido.":(native.message||native.wifiNote||"Ponte encontrada; alguns sensores/permissões podem estar indisponíveis.");}
+  status.textContent="Etapa 3/3 · executando 3 sondas HTTPS sequenciais…";
+  const urls=["https://www.google.com/generate_204","https://www.cloudflare.com/cdn-cgi/trace","https://connectivitycheck.gstatic.com/generate_204"];
+  for(const url of urls){probes.push(await fetchProbe(url));}
+  const access=renderAccess(native||undefined);const good=probes.filter(x=>x.status==="request_completed_opaque").length;
+  const row=native?{schema:"ils.edge.android.telemetry.v1",timestamp:native.timestamp||new Date().toISOString(),source:"ILS Android Intelligence + HTTPS probes",platform:"android-native",network:{connected:!!native.connected,transport:native.transport||"unknown",accessTechnology:access.value,accessEvidence:access.evidence,accessConfidence:access.confidence,metered:!!native.metered},path:{status:native.connected?"up":"unknown",interface:native.transport||"unknown",wifi:{available:!!native.wifiAvailable,ssid:native.ssid||null,rssiDbm:(native.rssiDbm!==null&&native.rssiDbm!==undefined&&Number.isFinite(Number(native.rssiDbm)))?Number(native.rssiDbm):null,frequencyMhz:native.frequencyMhz||null,linkSpeedMbps:native.linkSpeedMbps||null,note:native.wifiNote||null}},probes,limitations:["Sondas fetch no-cors não validam código/conteúdo HTTP.","Latência inclui DNS/TLS, navegador e servidor; não é ping ICMP.","Falhas de sondas não equivalem a perda de pacotes IP."]}:{schema:"ils.edge.android.telemetry.v1",timestamp:new Date().toISOString(),source:"ILS Web HTTPS probes",platform:"browser",network:{connected:navigator.onLine,transport:"browser-estimate",accessTechnology:access.value,accessEvidence:access.evidence,accessConfidence:access.confidence},path:{status:good?"up":"unknown",interface:"browser-estimate"},probes,limitations:["Ponte Android não detectada: RSSI/SSID/estado de rádio não foram coletados.","Sondas fetch no-cors não validam código/conteúdo HTTP.","Latência inclui DNS/TLS, navegador e servidor; não é ping ICMP.","Falhas de sondas não equivalem a perda de pacotes IP."]};
+  const old=JSON.parse(localStorage.getItem(NATIVE_KEY)||"[]");old.push(row);localStorage.setItem(NATIVE_KEY,JSON.stringify(old.slice(-2000)));renderTermux();readNativeWifi();
+  status.textContent="Coleta concluída: "+(native?"estado Android registrado; ":"modo navegador; dados nativos indisponíveis; ")+good+"/"+probes.length+" requisições HTTPS concluídas. Respostas opacas, não status HTTP validados.";
+ }catch(e){status.textContent="Coleta interrompida: "+(e.message||e)+". Os registros anteriores foram preservados.";}finally{btn.disabled=false;btn.textContent=original;}});
  $("sdwanNativeExport")?.addEventListener("click",()=>{const rows=termuxRead();const cols=["timestamp","source","accessTechnology","accessEvidence","transport","connected","ssid","rssiDbm","frequencyMhz","linkSpeedMbps"];const escCsv=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const lines=[cols.join(";"),...rows.map(r=>{const w=r.path?.wifi||r.wifi||{};return [r.timestamp,r.source||r.agent?.name||r.platform,r.network?.accessTechnology||r.network?.transport,r.network?.accessEvidence,r.network?.transport||r.path?.interface,r.network?.connected??r.path?.status,w.ssid,w.rssiDbm,w.frequencyMhz,w.linkSpeedMbps].map(escCsv).join(";");})];const blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ils-android-intelligence.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
  $("sdwanTermuxFile")?.addEventListener("change",()=>{const f=$("sdwanTermuxFile")?.files?.[0];if(f)$("sdwanTermuxStatus").textContent="Histórico legado selecionado: "+f.name+". Importe para preservar os registros anteriores.";});
  $("sdwanTermuxImport")?.addEventListener("click",async()=>{const file=$("sdwanTermuxFile")?.files?.[0];if(!file){$("sdwanTermuxStatus").textContent="Selecione o JSONL anterior.";return;}try{const raw=await file.text();let parsed;try{const j=JSON.parse(raw);parsed=Array.isArray(j)?j:(Array.isArray(j.records)?j.records:[j]);}catch{parsed=raw.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));}const valid=parsed.filter(r=>r&&r.timestamp&&(r.path||r.network)&&((Array.isArray(r.tcp_probes)&&Array.isArray(r.https_probes))||Array.isArray(r.probes)||r.path?.wifi));if(!valid.length)throw new Error("Nenhum registro de telemetria reconhecido.");const old=JSON.parse(localStorage.getItem(TERMUX_KEY)||"[]"),map=new Map(old.concat(valid).map(r=>[String(r.timestamp),r]));localStorage.setItem(TERMUX_KEY,JSON.stringify([...map.values()].sort((a,b)=>String(a.timestamp).localeCompare(String(b.timestamp))).slice(-2000)));renderTermux();renderIQC();$("sdwanTermuxStatus").textContent="Importação concluída: "+valid.length+" registros. Histórico preservado localmente.";}catch(e){$("sdwanTermuxStatus").textContent="Falha na importação: "+e.message;}});
- const initial=nativeSnapshot();if(initial?.available)saveNativeRecord(initial);else {renderAccess();renderTermux();renderIQC();}
+ const initial=nativeSnapshot();renderAccess(initial||undefined);renderTermux();renderIQC();
 
-// ILS 6.3.10 — classificação de conectividade baseada em evidências disponíveis.
+// ILS 7.0.1 — classificação de conectividade baseada em evidências disponíveis.
 function classifyIlsConnectivity(record){
  const probes=[...(record.tcp_probes||[]),...(record.https_probes||[]),...(record.probes||[])];
  const completed=probes.filter(p=>["reachable","up","ok","request_completed_opaque"].includes(String(p.status||"").toLowerCase())).length;
@@ -1869,7 +1985,7 @@ document.getElementById("si-analyze")?.addEventListener("click",siRender);
 document.getElementById("si-save")?.addEventListener("click",()=>{const a=siRender();if(!a)return;const rows=siRead();rows.push(a);try{localStorage.setItem(SI_KEY,JSON.stringify(rows.slice(-500)));toast("Avaliação satelital salva neste dispositivo.");}catch(e){toast("Não foi possível salvar: armazenamento cheio.");}});
 document.getElementById("si-export")?.addEventListener("click",()=>{const rows=siRead();const blob=new Blob([JSON.stringify({application:"ILS",module:"Satellite Intelligence",version:"6.3.9",exportedAt:new Date().toISOString(),records:rows},null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="ils-satellite-intelligence.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);});
 
-// ILS 6.3.10 — registro local e limitado de erros para auditoria; não envia dados à rede.
+// ILS 7.0.1 — registro local e limitado de erros para auditoria; não envia dados à rede.
 (function ilsLocalErrorAudit(){
  const KEY='ils-local-error-audit-v1';
  function record(entry){try{const rows=JSON.parse(localStorage.getItem(KEY)||'[]');rows.push({...entry,at:new Date().toISOString(),page:location.pathname,version:'6.3.9'});localStorage.setItem(KEY,JSON.stringify(rows.slice(-40)));}catch(_){/* armazenamento indisponível: não interromper a aplicação */}}
@@ -1879,7 +1995,7 @@ document.getElementById("si-export")?.addEventListener("click",()=>{const rows=s
  window.ILS_clearLocalErrorAudit=()=>{try{localStorage.removeItem(KEY);return true}catch{return false}};
 })();
 
-// ILS 6.3.10 — detecção transparente do ambiente e das capacidades reais.
+// ILS 7.0.1 — detecção transparente do ambiente e das capacidades reais.
 function ilsCapabilitySnapshot(){
  const ua=navigator.userAgent||"";
  const isAndroid=/Android/i.test(ua), isIOS=/iPhone|iPad|iPod/i.test(ua);
@@ -1933,7 +2049,7 @@ renderIlsCapabilities();
 })();
 
 
-// ILS 6.3.10 — integração somente com RPC agregado e protegido.
+// ILS 7.0.1 — integração somente com RPC agregado e protegido.
 (() => {
   const OBS_URL = "https://piagfpnjiwpngbikkkfp.supabase.co";
   const OBS_PUBLIC_KEY = "sb_publishable_G7GV4Yox1KkbjZtjnYxFAQ_kzo9V05a";
